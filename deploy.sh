@@ -1,45 +1,49 @@
 #!/bin/bash
 
-# --- TOYZONE NUCLEAR DEPLOYMENT SCRIPT ---
-# Version: 3.0 (Absolute Clean Start)
+# --- TOYZONE GOD-MODE DEPLOYMENT SCRIPT ---
+# Version: 5.0 (Full Cleanup + Professional Setup)
 # Domain: aqeel.app | IP: 139.59.38.59
+# Project: /var/www/ecom | Django: e_com_pro
 
 set -e
 
-echo "🚀 Starting Nuclear Deployment for ToyZone..."
+echo "🧹 PHASE 1: CLEANING UP OLD MESS..."
+# Stop old services if they exist
+sudo systemctl stop gunicorn || true
+sudo systemctl disable gunicorn || true
+sudo systemctl stop nginx || true
 
-# 1. System Cleanup & Updates
+# Remove old config files
+sudo rm -f /etc/systemd/system/gunicorn.service
+sudo rm -f /etc/nginx/sites-available/toyzone
+sudo rm -f /etc/nginx/sites-enabled/toyzone
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo rm -f /run/gunicorn.sock
+
+echo "🛠️ PHASE 2: REINSTALLING CORE TOOLS..."
 sudo apt update
 sudo apt install python3-pip python3-venv python3-full nginx git curl -y
 
-# 2. Setup Project Directory
+echo "📂 PHASE 3: SETTING UP PROJECT..."
 PROJECT_DIR="/var/www/ecom"
 VENV_DIR="$PROJECT_DIR/venv"
 
 cd $PROJECT_DIR
-echo "📂 Working in: $PROJECT_DIR"
 
-# 3. FRESH START: Delete old venv if it exists to avoid errors
-echo "🧹 Cleaning up old environment..."
+# Clean and recreate virtual environment
 sudo rm -rf $VENV_DIR
-
-# 4. Create Fresh Virtual Environment
-echo "🏗️ Creating fresh virtual environment..."
 python3 -m venv $VENV_DIR
 
-# 5. Install Python Packages using Venv's Python binary
-echo "📦 Installing requirements (This avoids PEP 668 error)..."
+echo "📦 PHASE 4: INSTALLING DEPENDENCIES..."
 $VENV_DIR/bin/python3 -m pip install --upgrade pip
 $VENV_DIR/bin/python3 -m pip install -r requirements.txt
 $VENV_DIR/bin/python3 -m pip install gunicorn
 
-# 6. Database Migrations & Static Files
-echo "📊 Running migrations and static collection..."
+echo "📊 PHASE 5: PREPARING DJANGO (Migrations & Static)..."
 $VENV_DIR/bin/python3 manage.py migrate
 $VENV_DIR/bin/python3 manage.py collectstatic --noinput
 
-# 7. Create Gunicorn Systemd Service
-echo "⚙️ Configuring Gunicorn Service..."
+echo "⚙️ PHASE 6: CONFIGURING GUNICORN SERVICE..."
 sudo bash -c "cat > /etc/systemd/system/gunicorn.service <<EOF
 [Unit]
 Description=gunicorn daemon for ToyZone
@@ -56,21 +60,20 @@ WantedBy=multi-user.target
 EOF"
 
 sudo systemctl daemon-reload
-sudo systemctl restart gunicorn
+sudo systemctl start gunicorn
 sudo systemctl enable gunicorn
 
-# 8. Configure Nginx
-echo "🌐 Configuring Nginx for aqeel.app..."
+echo "🌐 PHASE 7: CONFIGURING NGINX..."
 sudo bash -c "cat > /etc/nginx/sites-available/toyzone <<EOF
 server {
-    listen 80;
+    listen 80 default_server;
+    listen [::]:80 default_server;
     server_name aqeel.app 139.59.38.59;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     
     location /static/ {
         alias $PROJECT_DIR/staticfiles/;
-        expires 30d;
     }
 
     location /media/ {
@@ -84,16 +87,22 @@ server {
 }
 EOF"
 
-# Enable Nginx Config & Remove Default
-sudo rm -f /etc/nginx/sites-enabled/default
+# Enable and Restart Nginx
 sudo ln -sf /etc/nginx/sites-available/toyzone /etc/nginx/sites-enabled
 sudo nginx -t
+sudo systemctl start nginx
 sudo systemctl restart nginx
 
-# 9. Final Permissions Fix (CRITICAL)
-echo "🔐 Fixing permissions for Nginx..."
+echo "🔐 PHASE 8: OPENING FIREWALLS..."
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 'Nginx Full'
+sudo ufw --force enable
+
+echo "✅ FINAL PERMISSIONS FIX..."
 sudo chown -R www-data:www-data $PROJECT_DIR
 sudo chmod -R 755 $PROJECT_DIR
 
-echo "✅ DEPLOYMENT COMPLETE!"
-echo "🌍 Visit: http://aqeel.app"
+echo "🔥 DEPLOYMENT COMPLETE!"
+echo "🌍 Check your site now at: http://aqeel.app"
+echo "💡 If it still says 'Refused', check DigitalOcean Cloud Firewall settings!"

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Checkout – ToyZone{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row g-5">
+    <!-- Shipping Form -->
+    <div class="col-lg-7">
+      <div class="checkout-card">
+        <h3 class="checkout-title"><i class="bi bi-geo-alt-fill me-2"></i>Shipping Address</h3>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">First Name</label>
+              {{ form.first_name }}
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Last Name</label>
+              {{ form.last_name }}
+            </div>
+            <div class="col-12">
+              <label class="form-label">Email</label>
+              {{ form.email }}
+            </div>
+            <div class="col-12">
+              <label class="form-label">Phone Number</label>
+              {{ form.phone_no }}
+            </div>
+            <div class="col-12">
+              <label class="form-label">Street Address</label>
+              {{ form.address }}
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">City</label>
+              {{ form.city }}
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">State</label>
+              {{ form.state }}
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">PIN Code</label>
+              {{ form.pin_code }}
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Country</label>
+              {{ form.country }}
+            </div>
+          </div>
+          <button type="submit" class="btn-checkout-submit mt-4">
+            <i class="bi bi-arrow-right-circle me-2"></i>Continue to Payment
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="col-lg-5">
+      <div class="checkout-summary">
+        <h5 class="summary-title">Your Order</h5>
+        {% for product, qty in products.items %}
+        <div class="checkout-item">
+          <img src="{{ product.image_1.url }}" alt="{{ product.name }}" class="checkout-item-img"/>
+          <div class="checkout-item-info">
+            <p class="checkout-item-name">{{ product.name }}</p>
+            <small>Qty: {{ qty }}</small>
+          </div>
+          <span class="checkout-item-price">
+            ₹{% if product.is_discount %}{{ product.discount_price }}{% else %}{{ product.price }}{% endif %}
+          </span>
+        </div>
+        {% endfor %}
+        <hr/>
+        <div class="summary-row"><span>Subtotal</span><span>₹{{ total }}</span></div>
+        <div class="summary-row"><span>Delivery</span><span>₹100</span></div>
+        <div class="summary-row total-row"><strong>Total</strong><strong>₹{{ total|add:100 }}</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

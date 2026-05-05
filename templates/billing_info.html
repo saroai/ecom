@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Billing & Payment – ToyZone{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row g-5 justify-content-center">
+    <div class="col-lg-7">
+      <div class="billing-card">
+        <h3 class="checkout-title"><i class="bi bi-credit-card-2-front-fill me-2"></i>Order Summary & Payment</h3>
+
+        <!-- Shipping Address Display -->
+        <div class="billing-address mb-4">
+          <h6 class="address-label">📍 Delivering To:</h6>
+          <p>{{ order.address.first_name }} {{ order.address.last_name }}<br/>
+          {{ order.address.address }}, {{ order.address.city }}<br/>
+          {{ order.address.state }} – {{ order.address.pin_code }}<br/>
+          📞 {{ order.address.phone_no }}</p>
+          <a href="{% url 'checkout' %}" class="change-address-link">Change Address</a>
+        </div>
+
+        <!-- Products -->
+        {% for product, qty in products.items %}
+        <div class="checkout-item mb-2">
+          <img src="{{ product.image_1.url }}" alt="{{ product.name }}" class="checkout-item-img"/>
+          <div class="checkout-item-info">
+            <p class="checkout-item-name">{{ product.name }}</p>
+            <small>Qty: {{ qty }}</small>
+          </div>
+          <span class="checkout-item-price">
+            ₹{% if product.is_discount %}{{ product.discount_price }}{% else %}{{ product.price }}{% endif %}
+          </span>
+        </div>
+        {% endfor %}
+
+        <hr/>
+        <div class="summary-row"><span>Subtotal</span><span>₹{{ total }}</span></div>
+        <div class="summary-row"><span>Delivery Charge</span><span>₹{{ delivery }}</span></div>
+        <div class="summary-row total-row"><strong>Grand Total</strong><strong>₹{{ total|add:delivery }}</strong></div>
+
+        <!-- Razorpay Pay Button -->
+        <button id="payNowBtn" class="btn-pay-now mt-4" data-order-pk="{{ order.pk }}">
+          <i class="bi bi-shield-lock-fill me-2"></i>Pay ₹{{ total|add:delivery }} Securely
+        </button>
+
+        <div class="secure-info mt-3">
+          <i class="bi bi-lock-fill me-1"></i> Your payment is 100% secured by Razorpay
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+document.getElementById("payNowBtn").addEventListener("click", function () {
+  const orderPk = this.dataset.orderPk;
+  fetch(`/payment/process_order/${orderPk}/`, {
+    method: "GET",
+    headers: { "X-CSRFToken": "{{ csrf_token }}" }
+  })
+  .then(r => r.json())
+  .then(data => {
+    const options = {
+      key:          data.razorpay_key_id,
+      amount:       data.amount,
+      currency:     "INR",
+      name:         "ToyZone",
+      description:  "Toy Purchase",
+      order_id:     data.order_id,
+      callback_url: data.callback_url,
+      prefill: {
+        name:  data.product_name,
+        email: "{{ request.user.email }}",
+      },
+      theme: { color: "#FFB703" }
+    };
+    const rzp = new Razorpay(options);
+    rzp.open();
+  })
+  .catch(err => console.error("Payment error:", err));
+});
+</script>
+{% endblock %}

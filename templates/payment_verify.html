@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Payment Status – ToyZone{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="payment-result-card">
+        {% if status == "success" %}
+        <div class="result-icon success-icon">✅</div>
+        <h2 class="result-title text-success">Payment Successful!</h2>
+        <p class="result-msg">Your order has been placed successfully. We'll start packing your toys right away! 🧸</p>
+        {% if order %}
+        <div class="order-ref">
+          <strong>Order Reference:</strong> {{ order.id|slice:":8"|upper }}
+        </div>
+        {% endif %}
+        <div class="result-actions">
+          <a href="{% url 'your_orders' %}" class="btn btn-primary">View My Orders</a>
+          <a href="{% url 'home' %}" class="btn btn-outline-secondary ms-2">Continue Shopping</a>
+        </div>
+
+        {% elif status == "failed" %}
+        <div class="result-icon fail-icon">❌</div>
+        <h2 class="result-title text-danger">Payment Failed</h2>
+        <p class="result-msg">We couldn't verify your payment. Please try again or contact our support team.</p>
+        <div class="result-actions">
+          <a href="{% url 'home' %}" class="btn btn-primary">Go to Homepage</a>
+        </div>
+
+        {% else %}
+        <div class="result-icon fail-icon">⚠️</div>
+        <h2 class="result-title text-warning">Invalid Request</h2>
+        <p class="result-msg">Something went wrong. Please try again.</p>
+        <a href="{% url 'home' %}" class="btn btn-primary">Go to Homepage</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

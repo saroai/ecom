@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Contact Us – ToyZone{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row g-5">
+    <div class="col-lg-5">
+      <h1 class="page-title mb-4">Get in Touch 📞</h1>
+      <p class="text-muted mb-4">Have a question about a toy, an order, or just want to say hi? We're here to help! Fill out the form or reach us via our contact details below.</p>
+      
+      <div class="d-flex align-items-center mb-4">
+        <div class="feature-icon me-3">📍</div>
+        <div>
+          <h5 class="mb-1">Our Store</h5>
+          <p class="text-muted mb-0">123 Playland Avenue, Chennai, Tamil Nadu, 600001</p>
+        </div>
+      </div>
+      
+      <div class="d-flex align-items-center mb-4">
+        <div class="feature-icon me-3">📧</div>
+        <div>
+          <h5 class="mb-1">Email Us</h5>
+          <p class="text-muted mb-0">support@toyzone.in</p>
+        </div>
+      </div>
+      
+      <div class="d-flex align-items-center">
+        <div class="feature-icon me-3">📱</div>
+        <div>
+          <h5 class="mb-1">Call Us</h5>
+          <p class="text-muted mb-0">+91 98765 43210 <br><small>(Mon - Sat, 9 AM - 6 PM)</small></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-7">
+      <div class="checkout-card">
+        <h3 class="checkout-title">Send a Message ✉️</h3>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Your Name</label>
+              <input type="text" name="cname" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email Address</label>
+              <input type="email" name="cemail" class="form-control" placeholder="john@example.com" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone Number</label>
+              <input type="number" name="cphone" class="form-control" placeholder="9876543210" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Subject</label>
+              <input type="text" name="csubject" class="form-control" placeholder="Order Inquiry" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message</label>
+              <textarea name="cmessage" class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-pay-now mt-3">Send Message <i class="bi bi-send-fill ms-2"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}My Cart – ToyZone{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <h2 class="page-title mb-4"><i class="bi bi-bag me-2"></i>My Shopping Cart</h2>
+
+  {% if all_products %}
+  <div class="row g-4">
+    <!-- Cart Items -->
+    <div class="col-lg-8">
+      {% for product, qty in all_products.items %}
+      <div class="cart-item" id="cart-row-{{ product.id }}">
+        <div class="cart-item-img">
+          <img src="{{ product.image_1.url }}" alt="{{ product.name }}"/>
+        </div>
+        <div class="cart-item-info">
+          <a href="{% url 'product' id=product.id %}" class="cart-item-name">{{ product.name }}</a>
+          <span class="cart-item-cat">{{ product.get_category_display }} · {{ product.get_age_group_display }}</span>
+          <div class="cart-item-price">
+            {% if product.is_discount %}
+            <span class="price-cur">₹{{ product.discount_price }}</span>
+            <span class="price-old">₹{{ product.price }}</span>
+            {% else %}
+            <span class="price-cur">₹{{ product.price }}</span>
+            {% endif %}
+          </div>
+        </div>
+        <div class="cart-item-actions">
+          <div class="qty-selector-sm">
+            <button class="qty-btn-sm" onclick="updateCart('{{ product.id }}', -1, {{ qty }})">−</button>
+            <span class="qty-value" id="qty-{{ product.id }}">{{ qty }}</span>
+            <button class="qty-btn-sm" onclick="updateCart('{{ product.id }}', 1, {{ qty }})">+</button>
+          </div>
+          <button class="cart-remove-btn" onclick="removeFromCart('{{ product.id }}')">
+            <i class="bi bi-trash3"></i>
+          </button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="col-lg-4">
+      <div class="cart-summary">
+        <h5 class="summary-title">Order Summary</h5>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cartTotal">₹{{ total }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Delivery</span>
+          <span>₹100</span>
+        </div>
+        <div class="summary-row total-row">
+          <strong>Total</strong>
+          <strong id="cartGrandTotal">₹{{ total|add:100 }}</strong>
+        </div>
+        <a href="{% url 'checkout' %}" class="btn-checkout-now">
+          <i class="bi bi-lock-fill me-2"></i>Proceed to Checkout
+        </a>
+        <a href="{% url 'products' %}" class="btn-continue-shopping">
+          <i class="bi bi-arrow-left me-1"></i> Continue Shopping
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% else %}
+  <div class="empty-cart">
+    <div class="empty-emoji">🛒</div>
+    <h3>Your cart is empty!</h3>
+    <p>Looks like you haven't added any toys yet. Start shopping!</p>
+    <a href="{% url 'products' %}" class="btn btn-primary btn-lg">Shop Now</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function updateCart(productId, delta, currentQty) {
+  let newQty = parseInt(currentQty) + delta;
+  if (newQty < 1) { removeFromCart(productId); return; }
+  document.getElementById("qty-" + productId).textContent = newQty;
+  fetch("{% url 'cart_update' %}", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded", "X-CSRFToken": "{{ csrf_token }}" },
+    body: `action=post&product_id=${productId}&qty=${newQty}`,
+  }).then(() => location.reload());
+}
+function removeFromCart(productId) {
+  fetch("{% url 'delete_cart' %}", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded", "X-CSRFToken": "{{ csrf_token }}" },
+    body: `action=post&product_id=${productId}`,
+  }).then(() => {
+    document.getElementById("cart-row-" + productId)?.remove();
+    location.reload();
+  });
+}
+</script>
+{% endblock %}

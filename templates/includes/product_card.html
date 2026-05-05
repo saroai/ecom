@@ -1,0 +1,79 @@
+{% load static %}
+<!-- Product Card Component -->
+<div class="product-card">
+  <!-- Badges -->
+  <div class="product-badges">
+    {% if product.is_discount %}
+    <span class="badge-discount">-{{ product.discount_percentage }}%</span>
+    {% endif %}
+    {% if product.is_featured %}
+    <span class="badge-featured">Featured</span>
+    {% endif %}
+    {% if not product.is_in_stock %}
+    <span class="badge-oos">Out of Stock</span>
+    {% endif %}
+  </div>
+
+  <!-- Wishlist button -->
+  {% if user.is_authenticated %}
+  <button class="wishlist-btn {% if product.id|stringformat:'s' in wishlist_ids %}active{% endif %}"
+          data-product-id="{{ product.id }}" title="Add to Wishlist">
+    <i class="bi bi-heart{% if product.id|stringformat:'s' in wishlist_ids %}-fill{% endif %}"></i>
+  </button>
+  {% endif %}
+
+  <!-- Image -->
+  <a href="{% url 'product' id=product.id %}" class="product-img-link">
+    <div class="product-img-wrapper">
+      <img src="{{ product.image_1.url }}" alt="{{ product.name }}" class="product-img" loading="lazy"/>
+      {% if product.image_2 %}
+      <img src="{{ product.image_2.url }}" alt="{{ product.name }}" class="product-img product-img-hover" loading="lazy"/>
+      {% endif %}
+    </div>
+  </a>
+
+  <!-- Info -->
+  <div class="product-body">
+    <div class="product-meta">
+      <span class="product-category">{{ product.get_category_display }}</span>
+      <span class="product-age">{{ product.get_age_group_display }}</span>
+    </div>
+
+    <h3 class="product-name">
+      <a href="{% url 'product' id=product.id %}">{{ product.name }}</a>
+    </h3>
+
+    <!-- Rating Stars -->
+    <div class="product-rating">
+      {% with avg=product.average_rating count=product.review_count %}
+      {% for i in "12345" %}
+        {% if forloop.counter <= avg %}
+          <i class="bi bi-star-fill star-filled"></i>
+        {% else %}
+          <i class="bi bi-star star-empty"></i>
+        {% endif %}
+      {% endfor %}
+      <span class="rating-count">({{ count }})</span>
+      {% endwith %}
+    </div>
+
+    <!-- Price -->
+    <div class="product-price">
+      {% if product.is_discount %}
+      <span class="price-current">₹{{ product.discount_price }}</span>
+      <span class="price-original">₹{{ product.price }}</span>
+      {% else %}
+      <span class="price-current">₹{{ product.price }}</span>
+      {% endif %}
+    </div>
+
+    <!-- Add to Cart -->
+    {% if product.is_in_stock %}
+    <button class="btn-add-cart" data-product-id="{{ product.id }}" data-qty="1">
+      <i class="bi bi-bag-plus me-1"></i> Add to Cart
+    </button>
+    {% else %}
+    <button class="btn-add-cart disabled" disabled>Out of Stock</button>
+    {% endif %}
+  </div>
+</div>

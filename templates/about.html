@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Us – ToyZone{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row align-items-center mb-5">
+    <div class="col-lg-6">
+      <h1 class="page-title mb-4">About ToyZone 🧸</h1>
+      <p class="lead text-muted">We believe that play is the greatest form of learning. Since 2020, ToyZone has been on a mission to bring the safest, most creative, and most joyful toys to kids across India.</p>
+      <p>Every toy on our platform is carefully curated by our team of child development experts and parents. We focus on educational value, safety, and, most importantly, fun! Whether it's a remote control car that sparks a love for engineering or a soft toy that becomes a lifelong companion, we've got something for every child.</p>
+      <div class="mt-4">
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 100% Non-toxic & Safe Materials</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Focus on Brain Development & Creativity</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Fast & Reliable Delivery Across India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-6 text-center">
+      <div class="hero-circle mx-auto" style="width: 350px; height: 350px; animation: none;">
+        <div class="hero-emoji-main" style="font-size: 130px;">🪁</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4 mt-4 text-center">
+    <div class="col-md-4">
+      <div class="category-card p-4">
+        <div class="cat-emoji">👶</div>
+        <h4 class="cat-name">For Every Age</h4>
+        <p class="text-muted mt-2">From infants to teens, we have age-appropriate toys that grow with them.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="category-card p-4">
+        <div class="cat-emoji">🛡️</div>
+        <h4 class="cat-name">Uncompromising Safety</h4>
+        <p class="text-muted mt-2">All our products pass strict quality and safety certifications.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="category-card p-4">
+        <div class="cat-emoji">💖</div>
+        <h4 class="cat-name">Made with Love</h4>
+        <p class="text-muted mt-2">We treat every order as a special gift to a child, packed with care.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

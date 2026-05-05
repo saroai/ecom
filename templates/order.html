@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+    <style>
+        .table td, .table th {
+            padding: 1rem; /* increase spacing */
+        }
+    </style>
+
+    {% include 'includes/nav.html' %}
+
+    {% if orders %}
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Ordered Date</th>
+                        <th scope="col">Amount Paid</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in orders %}
+                        {% if order.is_paid %}
+                            <tr>
+                                <th scope="row" class="">{{ order.order_id }}</th>
+                                <td class="">{{ order.user }}</td>
+                                <td>{{ order.ordered_date }}</td>
+                                <td>{{ order.amount_paid }}</td>
+                                <td>
+                                    <a class="btn btn-sm btn-primary"
+                                       href="{% url 'order_details' order.pk %}">Details</a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="load-more-container text-center">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        {% if orders.has_previous %}
+                            <li class="btn btn-outline-primary-2 btn-order btn-block">
+                                <a class="page-link" href="?page={{ orders.previous_page_number }}">Previous
+                                    Products</a>
+
+                            </li>
+                            <br>
+                            <br>
+                        {% endif %}
+                        {% if orders.has_next %}
+                            <li class="btn btn-outline-primary-2 btn-order btn-block">
+                                <a class="page-link" href="?page={{ orders.next_page_number }}">More Products</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+
+
+    {% else %}
+        <div class="container min-vh-100">
+            <h1>{{ no_order }}</h1>
+            <a href="{% url 'products' %}" class="btn btn-primary">Go to Shopping section</a>
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}My Orders – ToyZone{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <h2 class="page-title mb-4"><i class="bi bi-box-seam me-2"></i>My Orders</h2>
+
+  {% if orders %}
+  <div class="orders-list">
+    {% for order in orders %}
+    <div class="order-card">
+      <div class="order-card-header">
+        <div>
+          <span class="order-id"># {{ order.id|slice:":8"|upper }}</span>
+          <span class="order-date">{{ order.ordered_date|date:"M d, Y" }}</span>
+        </div>
+        <span class="order-status-badge status-{{ order.status }}">{{ order.get_status_display }}</span>
+      </div>
+      <div class="order-card-body">
+        <div class="order-items-preview">
+          {% for item in order.items.all|slice:":3" %}
+          <span class="order-item-name">{{ item.product_name }} x{{ item.product_qty }}</span>
+          {% endfor %}
+          {% if order.items.count > 3 %}<span class="more-items">+{{ order.items.count|add:"-3" }} more</span>{% endif %}
+        </div>
+        <div class="order-card-footer">
+          <strong class="order-amount">₹{{ order.amount_paid }}</strong>
+          <a href="{% url 'order_details' pk=order.pk %}" class="btn-view-order">View Details →</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-cart">
+    <div class="empty-emoji">📦</div>
+    <h3>No orders yet!</h3>
+    <p>When you place an order, it will appear here.</p>
+    <a href="{% url 'products' %}" class="btn btn-primary btn-lg">Start Shopping</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

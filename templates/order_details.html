@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Order Details – ToyZone{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <a href="{% url 'your_orders' %}" class="back-link"><i class="bi bi-arrow-left me-1"></i>Back to Orders</a>
+  <h2 class="page-title mt-3 mb-4">Order #{{ order.id|slice:":8"|upper }}</h2>
+
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="order-detail-card">
+        <div class="order-detail-header">
+          <span class="order-status-badge status-{{ order.status }}">{{ order.get_status_display }}</span>
+          <span class="text-muted ms-3">Placed on {{ order.ordered_date|date:"M d, Y" }}</span>
+        </div>
+        <table class="table order-table mt-3">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in items %}
+            <tr>
+              <td>{{ item.product_name }}</td>
+              <td>₹{{ item.product_price }}</td>
+              <td>{{ item.product_qty }}</td>
+              <td>₹{{ item.line_total }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="text-end"><strong>Delivery</strong></td>
+              <td><strong>₹100</strong></td>
+            </tr>
+            <tr>
+              <td colspan="3" class="text-end"><strong>Total Paid</strong></td>
+              <td><strong>₹{{ order.amount_paid }}</strong></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="order-detail-card">
+        <h5>📍 Shipping Address</h5>
+        <p>
+          {{ order.address.first_name }} {{ order.address.last_name }}<br/>
+          {{ order.address.address }}<br/>
+          {{ order.address.city }}, {{ order.address.state }} {{ order.address.pin_code }}<br/>
+          {{ order.address.country }}<br/>
+          📞 {{ order.address.phone_no }}<br/>
+          ✉️ {{ order.address.email }}
+        </p>
+      </div>
+      <div class="order-detail-card mt-3">
+        <h5>💳 Payment Info</h5>
+        <p>
+          <strong>Status:</strong> {% if order.is_paid %}<span class="text-success">Paid</span>{% else %}Pending{% endif %}<br/>
+          {% if order.payment_id %}
+          <strong>Payment ID:</strong> {{ order.payment_id }}
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

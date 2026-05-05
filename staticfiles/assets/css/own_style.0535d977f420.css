@@ -1,0 +1,69 @@
+.menu>li>a {
+    color: black;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 992px) {
+    .sticky-header.fixed.header-middle .menu>li>a {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        color: white;
+    }
+}
+
+header {
+    background-color: black;
+}
+
+.bg-white {
+    background-color: white;
+    padding: 5px 5px;
+}
+
+.menu.sf-arrows>li>.sf-with-ul {
+    color: black;
+}
+
+.content h5 {
+    font-size: 7rem;
+}
+
+
+/* .product-image {
+    width: 500px;
+    height: 200px;
+} */
+
+.cart-dropdown .dropdown-toggle,
+.compare-dropdown .dropdown-toggle,
+.search-toggle {
+    color: black;
+}
+
+.mobile-menu-toggler {
+    color: black;
+}
+
+.products .product-media {
+    width: 200px;
+}
+
+.total_amount {
+    background-color: orange;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.message {
+    text-align: center;
+    background-color: orange;
+    padding: 10px;
+    color: whitesmoke;
+    border-radius: 50px;
+}
+
+.ruppe {
+    font-family: 'Roboto', 'Arial', 'Noto Sans', sans-serif;
+}

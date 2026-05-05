@@ -1,0 +1,170 @@
+{% load static %}
+
+<header class="header">
+
+    <div class="header-middle sticky-header">
+        <div class="header-left">
+            <button class="mobile-menu-toggler">
+                <span class="sr-only">Toggle mobile menu</span>
+                <i class="icon-bars"></i>
+            </button>
+
+            <a href="{% url 'home' %}" class="logo">
+                <img src="{% static 'assets/images/demos/demo-24/logo.png' %}" alt="Elben Creatives Logo"
+                     width="110" height="25" class="">
+            </a>
+        </div>
+        <!-- End .header-left -->
+
+        <div class="header-center">
+            <nav class="main-nav">
+                <ul class="menu ">
+                    <li class="megamenu-container active">
+                        <a href="{% url 'home' %}" class="">Home</a>
+                        <!-- End .megamenu -->
+                    </li>
+
+                    <li>
+                        <a href="{% url 'products' %}" class="">Shop</a>
+                        <!-- End .megamenu megamenu-md -->
+                        <ul>
+                            <li> <a href="{% url 'products' 'english_quote' %}" >English Quote</a> </li>
+                            <li> <a href="{% url 'products' 'tamil_quote' %}" >Tamil Quote</a> </li>
+
+                        </ul>
+
+
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}" class="">About</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}" class="">Contact</a>
+                    </li>
+
+                    {% if request.user.is_superuser %}
+                        <li>
+                            <a  href="{% url 'orders' %}" class="">Orders</a>
+                        </li>
+                        {% elif request.user.is_authenticated %}
+                        <li>
+                            <a  href="{% url 'your_orders' %}" class="">Your Orders</a>
+                        </li>
+                    {% endif %}
+
+
+                    <li><a href="tel:+919444424338"><i class="icon-phone"></i>Call: +91 9444424338</a></li>
+
+                    {% if request.user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'account_logout' %}" id="bg-red-rounded">Logout</a>
+                        </li>
+
+                    {% else %}
+                        <li>
+                            <a href="{% url 'account_login' %}" id="bg-green-rounded">Login</a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'account_signup' %}" id="bg-green-rounded">Signup</a>
+                        </li>
+
+                    {% endif %}
+
+
+                </ul>
+                <!-- End .menu -->
+            </nav>
+            <!-- End .main-nav -->
+        </div>
+        <div class="header-right">
+            <div class="header-search">
+                <a href="#" class="search-toggle" role="button" title="Search"><i class="icon-search"></i></a>
+                <form action="{% url 'products' %}" method="post">
+                    {% csrf_token %}
+                    <div class="header-search-wrapper">
+                        <label for="q" class="sr-only">Search</label>
+                        <input type="search" class="form-control" name="search" id="q" placeholder="Search in..."
+                               required>
+                    </div><!-- End .header-search-wrapper -->
+                </form>
+            </div><!-- End .header-search -->
+
+            <div class="dropdown cart-dropdown">
+                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false" data-display="static">
+                    <i class="icon-shopping-cart"></i>
+{#                    <i class="fa-solid fa-cart-plus" style="font-size: 25px"></i>#}
+                    <span class="cart-count">{{ cart | length }}</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-cart-products">
+
+                        {% for product,qty in cart.products.items %}
+                            <div class="product">
+
+                                <div class="product-cart-details">
+                                    <h4 class="product-title">
+                                        <a href="{% url 'product' product.id %}">{{ product }}</a>
+                                    </h4>
+
+                                    <span class="cart-product-info">
+                                        {% if product.is_discount %}
+                                            <span class="cart-product-qty"> {{ qty }}</span>
+                                            x ${{ product.discount_price }}
+                                            </span>
+                                        {% else %}
+                                            <span class="cart-product-qty"> {{ qty }}</span>
+                                            x ${{ product.price }}
+                                            </span>
+                                        {% endif %}
+                                </div><!-- End .product-cart-details -->
+
+                                <figure class="product-image-container">
+                                    <a href="{% url 'product' product.id %}" class="product-image">
+                                        <img src="{{ product.image_1.url }}" alt="product">
+                                    </a>
+                                </figure>
+                                <button href="{% url 'delete_cart' %}" class="btn-remove delete_cart"
+                                        id="{{ product.id }}" title="Remove Product"><i class="icon-close"></i></button>
+                            </div><!-- End .product -->
+                        {% endfor %}
+
+
+                    </div><!-- End .cart-product -->
+
+                    {#                    <div class="dropdown-cart-total">#}
+                    {#                        <span>Total</span>#}
+                    {##}
+                    {#                        <span class="cart-total-price">$160.00</span>#}
+                    {#                    </div><!-- End .dropdown-cart-total -->#}
+
+                    <div class="dropdown-cart-action">
+                        <a href="{% url 'cart_summary' %}" class="btn btn-primary">View Cart</a>
+
+                    </div><!-- End .dropdown-cart-total -->
+                </div><!-- End .dropdown-menu -->
+            </div><!-- End .cart-dropdown -->
+        </div><!-- End .header-right -->
+
+        <!-- End .header-right -->
+    </div>
+    <!-- End .header-middle -->
+
+ {% if messages %}
+  <div id="message-container" class="fixed top-5 left-1/2 transform -translate-x-1/2 z-50">
+    {% for message in messages %}
+      <div class="alert {{ message.tags }} bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4 transition-opacity duration-500" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+</header>
+
+

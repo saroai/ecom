@@ -1,0 +1,360 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ToyZone – Toys for Every Joy!{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════ -->
+<section class="hero-section">
+  <div class="hero-bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="container">
+    <div class="row align-items-center min-vh-85">
+      <div class="col-lg-6">
+        <div class="hero-content">
+          <div class="hero-badge">🎉 New Arrivals Every Week!</div>
+          <h1 class="hero-title">
+            Where Every Day<br/>
+            is <span class="text-highlight">Play Day!</span>
+          </h1>
+          <p class="hero-subtitle">
+            Discover 500+ premium toys crafted for learning, creativity and endless fun.
+            Safe, certified & loved by thousands of kids across India.
+          </p>
+          <div class="hero-actions">
+            <a href="{% url 'products' %}" class="btn btn-hero-primary">
+              <i class="bi bi-grid-fill me-2"></i>Shop Now
+            </a>
+            <a href="{% url 'products' %}?category=educational" class="btn btn-hero-secondary">
+              📚 Educational Toys
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Products</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">10K+</span>
+              <span class="stat-label">Happy Kids</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">4.8★</span>
+              <span class="stat-label">Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual">
+          <div class="hero-img-wrapper">
+            <div class="floating-toy toy-pos-1">🚀</div>
+            <div class="floating-toy toy-pos-2">⭐</div>
+            <div class="floating-toy toy-pos-3">🎈</div>
+            <div class="floating-toy toy-pos-4">🎯</div>
+            <div class="hero-circle">
+              <div class="hero-emoji-main">🧸</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FEATURES STRIP
+═══════════════════════════════════════ -->
+<section class="features-strip">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-6 col-md-3">
+        <div class="feature-card">
+          <span class="feature-icon">🚚</span>
+          <div>
+            <strong>Free Shipping</strong>
+            <p>On orders above ₹999</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="feature-card">
+          <span class="feature-icon">✅</span>
+          <div>
+            <strong>Safety Certified</strong>
+            <p>All toys are BIS certified</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="feature-card">
+          <span class="feature-icon">🔄</span>
+          <div>
+            <strong>Easy Returns</strong>
+            <p>7-day hassle-free return</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="feature-card">
+          <span class="feature-icon">🔒</span>
+          <div>
+            <strong>Secure Payment</strong>
+            <p>100% safe via Razorpay</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CATEGORIES SECTION
+═══════════════════════════════════════ -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-subtitle">Find the perfect toy for every little explorer</p>
+    </div>
+    <div class="row g-3 justify-content-center">
+      {% for cat in categories %}
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="{% url 'products' %}?category={{ cat.key }}" class="category-card-link">
+          <div class="category-card">
+            <div class="cat-emoji">{{ cat.icon }}</div>
+            <span class="cat-name">{{ cat.label }}</span>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FEATURED PRODUCTS
+═══════════════════════════════════════ -->
+{% if featured_products %}
+<section class="section-gap bg-section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">✨ Featured Toys</h2>
+      <p class="section-subtitle">Hand-picked by our toy experts</p>
+      <a href="{% url 'products' %}" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="row g-4">
+      {% for product in featured_products %}
+      <div class="col-6 col-md-4 col-lg-3">
+        {% include "includes/product_card.html" with product=product %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ═══════════════════════════════════════
+     PROMO BANNER
+═══════════════════════════════════════ -->
+<section class="promo-section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="promo-card promo-yellow">
+          <div class="promo-content">
+            <div class="promo-tag">Limited Offer</div>
+            <h3>Educational Toys<br/><span>Up to 40% OFF</span></h3>
+            <p>Smart toys that make learning fun!</p>
+            <a href="{% url 'products' %}?category=educational" class="btn promo-btn">Shop Now →</a>
+          </div>
+          <div class="promo-emoji">📚</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="promo-card promo-blue">
+          <div class="promo-content">
+            <div class="promo-tag">New Arrivals</div>
+            <h3>Remote Control<br/><span>Cars & Drones</span></h3>
+            <p>Thrilling RC toys for big adventures!</p>
+            <a href="{% url 'products' %}?category=remote_control" class="btn promo-btn">Shop Now →</a>
+          </div>
+          <div class="promo-emoji">🚗</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     BEST SELLERS
+═══════════════════════════════════════ -->
+{% if best_sellers %}
+<section class="section-gap">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">🔥 Best Sellers</h2>
+      <p class="section-subtitle">Most loved by kids and parents alike</p>
+      <a href="{% url 'products' %}?sort=popular" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="row g-4">
+      {% for product in best_sellers %}
+      <div class="col-6 col-md-4 col-lg-3">
+        {% include "includes/product_card.html" with product=product %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ═══════════════════════════════════════
+     AGE GROUP SECTION
+═══════════════════════════════════════ -->
+<section class="section-gap bg-section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">🎂 Shop by Age Group</h2>
+      <p class="section-subtitle">Age-appropriate toys for every stage of growth</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <a href="{% url 'products' %}?age_group=0-3" class="age-card-link">
+          <div class="age-card age-baby">
+            <div class="age-emoji">👶</div>
+            <h4>0–3 Years</h4>
+            <p>Sensory toys, rattles & soft books</p>
+            <span class="age-cta">Shop →</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="{% url 'products' %}?age_group=3-7" class="age-card-link">
+          <div class="age-card age-kid">
+            <div class="age-emoji">🧒</div>
+            <h4>3–7 Years</h4>
+            <p>Building blocks, art & role play</p>
+            <span class="age-cta">Shop →</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="{% url 'products' %}?age_group=7%2B" class="age-card-link">
+          <div class="age-card age-teen">
+            <div class="age-emoji">🧑</div>
+            <h4>7+ Years</h4>
+            <p>STEM kits, RC toys & board games</p>
+            <span class="age-cta">Shop →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     NEW ARRIVALS
+═══════════════════════════════════════ -->
+{% if new_arrivals %}
+<section class="section-gap">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">🆕 New Arrivals</h2>
+      <p class="section-subtitle">Fresh toys just landed in our store</p>
+      <a href="{% url 'products' %}?sort=newest" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="row g-4">
+      {% for product in new_arrivals %}
+      <div class="col-6 col-md-4 col-lg-3">
+        {% include "includes/product_card.html" with product=product %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════ -->
+<section class="section-gap bg-section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">💬 What Parents Say</h2>
+      <p class="section-subtitle">Real reviews from real families</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"My daughter absolutely loves the educational toys from ToyZone. Quality is amazing and delivery was super fast!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">P</div>
+            <div>
+              <strong>Priya S.</strong><br/>
+              <small>Mother of 2, Chennai</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Bought a remote control car for my son's birthday. He's been playing non-stop! Great value for money."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">R</div>
+            <div>
+              <strong>Rahul M.</strong><br/>
+              <small>Father, Bengaluru</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="stars">★★★★☆</div>
+          <p>"The soft toys are so cute and well-made. My 2-year-old won't put down the stuffed elephant!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">A</div>
+            <div>
+              <strong>Ananya K.</strong><br/>
+              <small>Mother, Mumbai</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CTA NEWSLETTER
+═══════════════════════════════════════ -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h3>🎁 Get Exclusive Toy Deals!</h3>
+          <p>Subscribe and be the first to know about new arrivals, offers and kid-friendly tips.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address…" class="newsletter-input"/>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

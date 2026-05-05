@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="page-wrapper">
+
+    {% include 'includes/nav.html' %}
+    <!-- End .header -->
+
+    <main class="main">
+        <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+            <div class="container">
+                <h1 class="page-title">our Product<span>Shop</span></h1>
+            </div>
+            <!-- End .container -->
+        </div>
+        <!-- End .page-header -->
+        <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'products' %}">Shop</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">products</li>
+                </ol>
+            </div>
+            <!-- End .container -->
+        </nav>
+        <!-- End .breadcrumb-nav -->
+
+        <div class="page-content">
+
+            <div class="container">
+
+
+                <!-- End .toolbox -->
+
+                <!-- products -->
+
+                <div class="products">
+                    <div class="row">
+
+                        {% for product in product %}
+
+                            <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <span class="product-label label-new">New</span>
+                                        <a href="{% url 'product' product.id %}">
+                                            <img src="{{ product.image_1.url }}" alt="Product image"
+                                                 class="product-image">
+                                        </a>
+                                    </figure>
+
+                                    <div class="product-body">
+                                        <div class="product-cat">
+                                            <a href="#"></a>
+                                        </div>
+                                        <h3 class="product-title"><a
+                                                href="{% url 'product' product.id %}">{{ product.name }}</a></h3>
+                                        {% if product.is_discount %}
+                                            <div class="product-price">
+                                                <span class="new-price"> &#8377;{{ product.discount_price }}</span>
+                                                <span class="old-price"> &#8377;{{ product.price }}</span>
+                                            </div>
+                                        {% else %}
+                                            <div class="product-price">
+                                                <span class=""> &#8377;{{ product.price }}</span>
+                                            </div>
+                                        {% endif %}
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <!-- End .col-sm-6 col-lg-4 col-xl-3 -->
+
+                        <!-- End .col-sm-6 col-lg-4 col-xl-3 -->
+                    </div>
+                    <!-- End .row -->
+
+                    <div class="load-more-container text-center">
+                        <a href="category_page_2.html" class="btn btn-outline-darker btn-load-more">More Products <i
+                                class="icon-refresh"></i></a>
+                    </div>
+                    <!-- End .load-more-container -->
+                </div>
+                <!-- End .products -->
+
+                <div class="sidebar-filter-overlay"></div>
+                <!-- End .sidebar-filter-overlay -->
+                <!-- End .sidebar-filter -->
+            </div>
+            <!-- End .container -->
+        </div>
+        <!-- End .page-content -->
+    </main>
+    <!-- End .main -->
+{% endblock %}
+

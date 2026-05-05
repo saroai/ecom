@@ -21,12 +21,12 @@ def home(request):
 
     # Category display with product counts
     categories = [
-        {"key": "educational",    "label": "Educational",       "icon": "📚"},
-        {"key": "remote_control", "label": "Remote Control",    "icon": "🚗"},
-        {"key": "soft_toys",      "label": "Soft Toys",         "icon": "🧸"},
-        {"key": "outdoor",        "label": "Outdoor Toys",      "icon": "⚽"},
-        {"key": "puzzles",        "label": "Puzzles & Board",   "icon": "🧩"},
-        {"key": "action_figures", "label": "Action Figures",    "icon": "🦸"},
+        {"key": "educational",    "label": "Educational",       "icon": "bi-book"},
+        {"key": "remote_control", "label": "Remote Control",    "icon": "bi-car-front"},
+        {"key": "soft_toys",      "label": "Soft Toys",         "icon": "bi-bear-face"},
+        {"key": "outdoor",        "label": "Outdoor Toys",      "icon": "bi-dribbble"},
+        {"key": "puzzles",        "label": "Puzzles & Board",   "icon": "bi-puzzle"},
+        {"key": "action_figures", "label": "Action Figures",    "icon": "bi-robot"},
     ]
 
     context = {

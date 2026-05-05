@@ -36,3 +36,5 @@ INFO 2026-05-05 13:32:32,915 basehttp "GET /media/product_images/61wmDgJwBL._SL1
 INFO 2026-05-05 13:32:32,915 basehttp "GET /media/product_images/61QGzJuMBLL._SL1184_.jpg HTTP/1.1" 304 0
 INFO 2026-05-05 14:17:44,429 autoreload D:\On process\e_commerce-main-main\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
 INFO 2026-05-05 14:17:45,196 autoreload Watching for file changes with StatReloader
+INFO 2026-05-05 14:34:36,998 autoreload D:\On process\e_commerce-main-main\e_commerce-main-main\core\views.py changed, reloading.
+INFO 2026-05-05 14:34:37,717 autoreload Watching for file changes with StatReloader

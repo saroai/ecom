@@ -32,7 +32,7 @@
               <i class="bi bi-grid-fill me-2"></i>Shop Now
             </a>
             <a href="{% url 'products' %}?category=educational" class="btn btn-hero-secondary">
-              📚 Educational Toys
+              <i class="bi bi-mortarboard me-2"></i> Educational Toys
             </a>
           </div>
           <div class="hero-stats">
@@ -56,12 +56,12 @@
       <div class="col-lg-6">
         <div class="hero-visual">
           <div class="hero-img-wrapper">
-            <div class="floating-toy toy-pos-1">🚀</div>
-            <div class="floating-toy toy-pos-2">⭐</div>
-            <div class="floating-toy toy-pos-3">🎈</div>
-            <div class="floating-toy toy-pos-4">🎯</div>
+            <div class="floating-toy toy-pos-1"><i class="bi bi-rocket-takeoff-fill"></i></div>
+            <div class="floating-toy toy-pos-2"><i class="bi bi-star-fill"></i></div>
+            <div class="floating-toy toy-pos-3"><i class="bi bi-controller"></i></div>
+            <div class="floating-toy toy-pos-4"><i class="bi bi-puzzle-fill"></i></div>
             <div class="hero-circle">
-              <div class="hero-emoji-main">🧸</div>
+              <div class="hero-emoji-main"><i class="bi bi-robot"></i></div>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@
     <div class="row g-3">
       <div class="col-6 col-md-3">
         <div class="feature-card">
-          <span class="feature-icon">🚚</span>
+          <span class="feature-icon"><i class="bi bi-truck"></i></span>
           <div>
             <strong>Free Shipping</strong>
             <p>On orders above ₹999</p>
@@ -87,7 +87,7 @@
       </div>
       <div class="col-6 col-md-3">
         <div class="feature-card">
-          <span class="feature-icon">✅</span>
+          <span class="feature-icon"><i class="bi bi-shield-check"></i></span>
           <div>
             <strong>Safety Certified</strong>
             <p>All toys are BIS certified</p>
@@ -96,7 +96,7 @@
       </div>
       <div class="col-6 col-md-3">
         <div class="feature-card">
-          <span class="feature-icon">🔄</span>
+          <span class="feature-icon"><i class="bi bi-arrow-repeat"></i></span>
           <div>
             <strong>Easy Returns</strong>
             <p>7-day hassle-free return</p>
@@ -105,7 +105,7 @@
       </div>
       <div class="col-6 col-md-3">
         <div class="feature-card">
-          <span class="feature-icon">🔒</span>
+          <span class="feature-icon"><i class="bi bi-lock"></i></span>
           <div>
             <strong>Secure Payment</strong>
             <p>100% safe via Razorpay</p>
@@ -130,7 +130,7 @@
       <div class="col-6 col-md-4 col-lg-2">
         <a href="{% url 'products' %}?category={{ cat.key }}" class="category-card-link">
           <div class="category-card">
-            <div class="cat-emoji">{{ cat.icon }}</div>
+            <div class="cat-emoji"><i class="bi {{ cat.icon }}"></i></div>
             <span class="cat-name">{{ cat.label }}</span>
           </div>
         </a>
@@ -176,7 +176,7 @@
             <p>Smart toys that make learning fun!</p>
             <a href="{% url 'products' %}?category=educational" class="btn promo-btn">Shop Now →</a>
           </div>
-          <div class="promo-emoji">📚</div>
+          <div class="promo-emoji"><i class="bi bi-mortarboard"></i></div>
         </div>
       </div>
       <div class="col-md-6">
@@ -187,7 +187,7 @@
             <p>Thrilling RC toys for big adventures!</p>
             <a href="{% url 'products' %}?category=remote_control" class="btn promo-btn">Shop Now →</a>
           </div>
-          <div class="promo-emoji">🚗</div>
+          <div class="promo-emoji"><i class="bi bi-controller"></i></div>
         </div>
       </div>
     </div>

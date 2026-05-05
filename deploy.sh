@@ -8,21 +8,25 @@
 set -e
 
 echo "🧹 PHASE 1: CLEANING UP OLD MESS..."
-# Stop old services if they exist
+# Kill anything on port 80
+sudo fuser -k 80/tcp || true
 sudo systemctl stop gunicorn || true
-sudo systemctl disable gunicorn || true
 sudo systemctl stop nginx || true
 
-# Remove old config files
+# Remove Nginx completely and reinstall
+sudo apt remove nginx nginx-common -y
+sudo apt autoremove -y
+
+# Clear old config files
 sudo rm -f /etc/systemd/system/gunicorn.service
 sudo rm -f /etc/nginx/sites-available/toyzone
 sudo rm -f /etc/nginx/sites-enabled/toyzone
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo rm -f /run/gunicorn.sock
 
-echo "🛠️ PHASE 2: REINSTALLING CORE TOOLS..."
+echo "🛠️ PHASE 2: FRESH INSTALL CORE TOOLS..."
 sudo apt update
-sudo apt install python3-pip python3-venv python3-full nginx git curl -y
+sudo apt install python3-pip python3-venv python3-full nginx git curl psmisc -y
 
 echo "📂 PHASE 3: SETTING UP PROJECT..."
 PROJECT_DIR="/var/www/ecom"

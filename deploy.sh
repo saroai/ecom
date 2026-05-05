@@ -84,15 +84,16 @@ server {
 }
 EOF"
 
-# Enable Nginx Config
+# Enable Nginx Config & Remove Default
+sudo rm -f /etc/nginx/sites-enabled/default
 sudo ln -sf /etc/nginx/sites-available/toyzone /etc/nginx/sites-enabled
 sudo nginx -t
 sudo systemctl restart nginx
 
-# 9. Final Permissions Fix
+# 9. Final Permissions Fix (CRITICAL)
 echo "🔐 Fixing permissions for Nginx..."
-sudo chown -R root:www-data $PROJECT_DIR
+sudo chown -R www-data:www-data $PROJECT_DIR
 sudo chmod -R 755 $PROJECT_DIR
 
-echo "✅ NUCLEAR DEPLOYMENT COMPLETE!"
+echo "✅ DEPLOYMENT COMPLETE!"
 echo "🌍 Visit: http://aqeel.app"

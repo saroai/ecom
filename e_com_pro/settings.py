@@ -29,11 +29,11 @@ SECRET_KEY = 'django-insecure-testkey-1234567890abcdefg'
 DEBUG = True
 
 if os.environ.get("ENVIRONMENT") == "production":
-    ALLOWED_HOSTS = ["ecommerce-production-30e6.up.railway.app","www.elbencs.com","elbencs.com","ecommerce-production-0956.up.railway.app"]
-    CSRF_TRUSTED_ORIGINS = ["https://ecommerce-production-30e6.up.railway.app","https://elbencs.com","https://www.elbencs.com","https://ecommerce-production-0956.up.railway.app"]
+    ALLOWED_HOSTS = ["ecommerce-production-30e6.up.railway.app","www.elbencs.com","elbencs.com","ecommerce-production-0956.up.railway.app", "aqeel.app", "139.59.38.59"]
+    CSRF_TRUSTED_ORIGINS = ["https://ecommerce-production-30e6.up.railway.app","https://elbencs.com","https://www.elbencs.com","https://ecommerce-production-0956.up.railway.app", "https://aqeel.app"]
     DEBUG = False
 else:
-    ALLOWED_HOSTS = ['saroai.site', 'www.saroai.site', '159.89.167.141', 'localhost', '127.0.0.1']
+    ALLOWED_HOSTS = ['aqeel.app', '139.59.38.59', 'saroai.site', 'www.saroai.site', '159.89.167.141', 'localhost', '127.0.0.1']
 
 
 # Application definition

@@ -1,35 +1,34 @@
 #!/bin/bash
 
-# --- TOYZONE ULTIMATE AUTO-DEPLOYMENT SCRIPT ---
-# Version: 2.0 (Ubuntu 24.04 / Python 3.12+ compatible)
+# --- TOYZONE NUCLEAR DEPLOYMENT SCRIPT ---
+# Version: 3.0 (Absolute Clean Start)
 # Domain: aqeel.app | IP: 139.59.38.59
 
 set -e
 
-echo "🚀 Starting Ultimate Deployment for ToyZone..."
+echo "🚀 Starting Nuclear Deployment for ToyZone..."
 
-# 1. Update System
-sudo apt update && sudo apt upgrade -y
-
-# 2. Install Dependencies (Added python3-full for better venv support)
+# 1. System Cleanup & Updates
+sudo apt update
 sudo apt install python3-pip python3-venv python3-full nginx git curl -y
 
-# 3. Setup Project Directory
+# 2. Setup Project Directory
 PROJECT_DIR="/var/www/ecom"
 VENV_DIR="$PROJECT_DIR/venv"
 
-# Ensure we are in the right place
 cd $PROJECT_DIR
-
 echo "📂 Working in: $PROJECT_DIR"
 
-# 4. Create Virtual Environment properly
-if [ ! -d "$VENV_DIR" ]; then
-    python3 -m venv $VENV_DIR
-fi
+# 3. FRESH START: Delete old venv if it exists to avoid errors
+echo "🧹 Cleaning up old environment..."
+sudo rm -rf $VENV_DIR
 
-# 5. Install Python Packages using Venv's Pip directly (Avoids externally-managed-environment error)
-echo "📦 Installing requirements..."
+# 4. Create Fresh Virtual Environment
+echo "🏗️ Creating fresh virtual environment..."
+python3 -m venv $VENV_DIR
+
+# 5. Install Python Packages using Venv's Python binary
+echo "📦 Installing requirements (This avoids PEP 668 error)..."
 $VENV_DIR/bin/python3 -m pip install --upgrade pip
 $VENV_DIR/bin/python3 -m pip install -r requirements.txt
 $VENV_DIR/bin/python3 -m pip install gunicorn
@@ -72,7 +71,6 @@ server {
     location /static/ {
         alias $PROJECT_DIR/staticfiles/;
         expires 30d;
-        add_header Cache-Control \"public, max-age=2592000\";
     }
 
     location /media/ {
@@ -91,8 +89,10 @@ sudo ln -sf /etc/nginx/sites-available/toyzone /etc/nginx/sites-enabled
 sudo nginx -t
 sudo systemctl restart nginx
 
-# 9. Firewall setup
-sudo ufw allow 'Nginx Full'
+# 9. Final Permissions Fix
+echo "🔐 Fixing permissions for Nginx..."
+sudo chown -R root:www-data $PROJECT_DIR
+sudo chmod -R 755 $PROJECT_DIR
 
-echo "✅ ULTIMATE DEPLOYMENT COMPLETE!"
+echo "✅ NUCLEAR DEPLOYMENT COMPLETE!"
 echo "🌍 Visit: http://aqeel.app"

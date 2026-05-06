@@ -3,7 +3,7 @@
 {% load account socialaccount %}
 {% load crispy_forms_tags %}
 
-{% block title %}Login – ToyZone{% endblock %}
+{% block title %}Login – Fimiku{% endblock %}
 
 {% block content %}
 <div class="container py-5">
@@ -15,7 +15,7 @@
             <span style="font-size: 35px;">🧸</span>
           </div>
           <h2 class="font-weight-bold" style="font-family: var(--font-heading); color: var(--secondary-color);">Welcome Back!</h2>
-          <p class="text-muted">Sign in to your ToyZone account</p>
+          <p class="text-muted">Sign in to your Fimiku account</p>
         </div>
 
         {% get_providers as socialaccount_providers %}
@@ -48,7 +48,7 @@
         </form>
 
         <p class="text-center mt-4 mb-0" style="font-weight: 600;">
-          New to ToyZone? <a href="{{ signup_url }}" class="text-decoration-none">Create an Account</a>
+          New to Fimiku? <a href="{{ signup_url }}" class="text-decoration-none">Create an Account</a>
         </p>
       </div>
     </div>

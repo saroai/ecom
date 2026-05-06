@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}ToyZone – Toys for Every Joy!{% endblock %}
+{% block title %}Fimiku – Toys for Every Joy!{% endblock %}
 
 {% block content %}
 
@@ -18,37 +18,36 @@
     <div class="row align-items-center min-vh-85">
       <div class="col-lg-6">
         <div class="hero-content">
-          <div class="hero-badge">🎉 New Arrivals Every Week!</div>
+          <div class="hero-badge">🎈 Pure, Safe, and Gentle</div>
           <h1 class="hero-title">
-            Where Every Day<br/>
-            is <span class="text-highlight">Play Day!</span>
+            Safe, Soft, and<br/>
+            <span class="text-highlight">Pure Silicone</span>
           </h1>
           <p class="hero-subtitle">
-            Discover 500+ premium toys crafted for learning, creativity and endless fun.
-            Safe, certified & loved by thousands of kids across India.
+            Discover premium silicone toys crafted for your baby's comfort. BPA-free, non-toxic, and loved by families everywhere.
           </p>
           <div class="hero-actions">
             <a href="{% url 'products' %}" class="btn btn-hero-primary">
-              <i class="bi bi-grid-fill me-2"></i>Shop Now
+              <i class="bi bi-grid-fill me-2"></i>Shop Collection
             </a>
-            <a href="{% url 'products' %}?category=educational" class="btn btn-hero-secondary">
-              <i class="bi bi-mortarboard me-2"></i> Educational Toys
+            <a href="{% url 'products' %}?category=teething" class="btn btn-hero-secondary">
+              <i class="bi bi-emoji-smile me-2"></i> Teething Toys
             </a>
           </div>
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">Products</span>
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Safe & Non-Toxic</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-number">10K+</span>
-              <span class="stat-label">Happy Kids</span>
+              <span class="stat-number">BPA</span>
+              <span class="stat-label">Free Material</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-number">4.8★</span>
-              <span class="stat-label">Rating</span>
+              <span class="stat-number">4.9★</span>
+              <span class="stat-label">Loved by Parents</span>
             </div>
           </div>
         </div>
@@ -56,12 +55,12 @@
       <div class="col-lg-6">
         <div class="hero-visual">
           <div class="hero-img-wrapper">
-            <div class="floating-toy toy-pos-1"><i class="bi bi-rocket-takeoff-fill"></i></div>
-            <div class="floating-toy toy-pos-2"><i class="bi bi-star-fill"></i></div>
-            <div class="floating-toy toy-pos-3"><i class="bi bi-controller"></i></div>
-            <div class="floating-toy toy-pos-4"><i class="bi bi-puzzle-fill"></i></div>
+            <div class="floating-toy toy-pos-1"><i class="bi bi-balloon"></i></div>
+            <div class="floating-toy toy-pos-2"><i class="bi bi-stars"></i></div>
+            <div class="floating-toy toy-pos-3"><i class="bi bi-droplet"></i></div>
+            <div class="floating-toy toy-pos-4"><i class="bi bi-heart-fill"></i></div>
             <div class="hero-circle">
-              <div class="hero-emoji-main"><i class="bi bi-robot"></i></div>
+              <div class="hero-emoji-main"><i class="bi bi-brightness-high"></i></div>
             </div>
           </div>
         </div>
@@ -89,8 +88,8 @@
         <div class="feature-card">
           <span class="feature-icon"><i class="bi bi-shield-check"></i></span>
           <div>
-            <strong>Safety Certified</strong>
-            <p>All toys are BIS certified</p>
+            <strong>100% Safe Silicone</strong>
+            <p>Food-grade & BPA-free</p>
           </div>
         </div>
       </div>
@@ -171,23 +170,23 @@
       <div class="col-md-6">
         <div class="promo-card promo-yellow">
           <div class="promo-content">
-            <div class="promo-tag">Limited Offer</div>
-            <h3>Educational Toys<br/><span>Up to 40% OFF</span></h3>
-            <p>Smart toys that make learning fun!</p>
-            <a href="{% url 'products' %}?category=educational" class="btn promo-btn">Shop Now →</a>
+            <div class="promo-tag">Soothing Comfort</div>
+            <h3>Teething Toys<br/><span>Gentle on Gums</span></h3>
+            <p>Soft silicone shapes designed for teething relief.</p>
+            <a href="{% url 'products' %}?category=teething" class="btn promo-btn">Shop Now →</a>
           </div>
-          <div class="promo-emoji"><i class="bi bi-mortarboard"></i></div>
+          <div class="promo-emoji"><i class="bi bi-emoji-smile"></i></div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="promo-card promo-blue">
           <div class="promo-content">
-            <div class="promo-tag">New Arrivals</div>
-            <h3>Remote Control<br/><span>Cars & Drones</span></h3>
-            <p>Thrilling RC toys for big adventures!</p>
-            <a href="{% url 'products' %}?category=remote_control" class="btn promo-btn">Shop Now →</a>
+            <div class="promo-tag">Fun in the Tub</div>
+            <h3>Bath Time<br/><span>Play Sets</span></h3>
+            <p>Safe and mold-resistant toys for aquatic fun.</p>
+            <a href="{% url 'products' %}?category=bath" class="btn promo-btn">Shop Now →</a>
           </div>
-          <div class="promo-emoji"><i class="bi bi-controller"></i></div>
+          <div class="promo-emoji"><i class="bi bi-droplet"></i></div>
         </div>
       </div>
     </div>
@@ -227,31 +226,31 @@
     </div>
     <div class="row g-4 justify-content-center">
       <div class="col-md-4">
-        <a href="{% url 'products' %}?age_group=0-3" class="age-card-link">
+        <a href="{% url 'products' %}?age_group=0-12m" class="age-card-link">
           <div class="age-card age-baby">
             <div class="age-emoji">👶</div>
-            <h4>0–3 Years</h4>
-            <p>Sensory toys, rattles & soft books</p>
+            <h4>0–12 Months</h4>
+            <p>Teethers, sensory blocks & rattles</p>
             <span class="age-cta">Shop →</span>
           </div>
         </a>
       </div>
       <div class="col-md-4">
-        <a href="{% url 'products' %}?age_group=3-7" class="age-card-link">
+        <a href="{% url 'products' %}?age_group=1-3y" class="age-card-link">
           <div class="age-card age-kid">
             <div class="age-emoji">🧒</div>
-            <h4>3–7 Years</h4>
-            <p>Building blocks, art & role play</p>
+            <h4>1–3 Years</h4>
+            <p>Bath toys, stacking cups & feeding</p>
             <span class="age-cta">Shop →</span>
           </div>
         </a>
       </div>
       <div class="col-md-4">
-        <a href="{% url 'products' %}?age_group=7%2B" class="age-card-link">
+        <a href="{% url 'products' %}?age_group=3%2By" class="age-card-link">
           <div class="age-card age-teen">
-            <div class="age-emoji">🧑</div>
-            <h4>7+ Years</h4>
-            <p>STEM kits, RC toys & board games</p>
+            <div class="age-emoji">⭐</div>
+            <h4>3+ Years</h4>
+            <p>Creative play & learning accessories</p>
             <span class="age-cta">Shop →</span>
           </div>
         </a>
@@ -295,12 +294,12 @@
       <div class="col-md-4">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
-          <p>"My daughter absolutely loves the educational toys from ToyZone. Quality is amazing and delivery was super fast!"</p>
+          <p>"My daughter absolutely loves the silicone teethers from Fimiku. Quality is amazing and I have peace of mind knowing it's BPA-free!"</p>
           <div class="reviewer">
             <div class="reviewer-avatar">P</div>
             <div>
               <strong>Priya S.</strong><br/>
-              <small>Mother of 2, Chennai</small>
+              <small>Mother of a 6-month-old</small>
             </div>
           </div>
         </div>
@@ -308,7 +307,7 @@
       <div class="col-md-4">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
-          <p>"Bought a remote control car for my son's birthday. He's been playing non-stop! Great value for money."</p>
+          <p>"Bought the bath toy set for my son. It's so easy to clean and sterilize compared to plastic toys. Highly recommended!"</p>
           <div class="reviewer">
             <div class="reviewer-avatar">R</div>
             <div>
@@ -321,7 +320,7 @@
       <div class="col-md-4">
         <div class="testimonial-card">
           <div class="stars">★★★★☆</div>
-          <p>"The soft toys are so cute and well-made. My 2-year-old won't put down the stuffed elephant!"</p>
+          <p>"The sensory blocks are so soft and beautifully designed. My 1-year-old won't put them down!"</p>
           <div class="reviewer">
             <div class="reviewer-avatar">A</div>
             <div>

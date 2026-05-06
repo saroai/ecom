@@ -21,12 +21,10 @@ def home(request):
 
     # Category display with product counts
     categories = [
-        {"key": "educational",    "label": "Educational",       "icon": "bi-book"},
-        {"key": "remote_control", "label": "Remote Control",    "icon": "bi-car-front"},
-        {"key": "soft_toys",      "label": "Soft Toys",         "icon": "bi-bear-face"},
-        {"key": "outdoor",        "label": "Outdoor Toys",      "icon": "bi-dribbble"},
-        {"key": "puzzles",        "label": "Puzzles & Board",   "icon": "bi-puzzle"},
-        {"key": "action_figures", "label": "Action Figures",    "icon": "bi-robot"},
+        {"key": "teething", "label": "Teething Toys", "icon": "bi-emoji-smile"},
+        {"key": "bath",     "label": "Bath Toys",     "icon": "bi-droplet"},
+        {"key": "feeding",  "label": "Feeding Accs",  "icon": "bi-cup-straw"},
+        {"key": "sensory",  "label": "Sensory Play",  "icon": "bi-stars"},
     ]
 
     context = {
@@ -101,17 +99,15 @@ def products(request, product_cat=None):
         "sort":         sort,
         "wishlist_ids": [str(i) for i in wishlist_ids],
         "categories": [
-            ("educational",    "Educational"),
-            ("remote_control", "Remote Control"),
-            ("soft_toys",      "Soft Toys"),
-            ("outdoor",        "Outdoor Toys"),
-            ("puzzles",        "Puzzles & Board"),
-            ("action_figures", "Action Figures"),
+            ("teething", "Teething Toys"),
+            ("bath",     "Bath Toys"),
+            ("feeding",  "Feeding Accessories"),
+            ("sensory",  "Sensory Learning"),
         ],
         "age_groups": [
-            ("0-3", "0–3 Years"),
-            ("3-7", "3–7 Years"),
-            ("7+",  "7+ Years"),
+            ("0-12m", "0–12 Months"),
+            ("1-3y",  "1–3 Years"),
+            ("3+y",   "3+ Years"),
         ],
     }
     return render(request, "products.html", context)

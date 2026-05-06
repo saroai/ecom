@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="ToyZone – India's most playful toy store. Shop educational, remote control, soft toys & more for kids."/>
-  <title>{% block title %}ToyZone – Toys for Every Joy!{% endblock %}</title>
+  <meta name="description" content="Fimiku – Premium silicone baby toys for everyday comfort. Safe, soft, and pure."/>
+  <title>{% block title %}Fimiku – Premium Silicone Baby Toys{% endblock %}</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -29,7 +29,7 @@
 ═══════════════════════════════════════ -->
 <div class="announcement-bar">
   <div class="container text-center">
-    <i class="bi bi-gift-fill me-1"></i> Free Delivery on orders above ₹999! | Use code <strong>TOYFUN10</strong> for 10% OFF | <i class="bi bi-truck-flatbed ms-2 me-1"></i> Fast Delivery Across India
+    <i class="bi bi-gift-fill me-1"></i> Free Delivery on orders above ₹999! | Use code <strong>FIMIKU10</strong> for 10% OFF | <i class="bi bi-truck-flatbed ms-2 me-1"></i> Fast Delivery Across India
   </div>
 </div>
 
@@ -40,8 +40,8 @@
   <div class="container">
     <!-- Logo -->
     <a class="navbar-brand toy-logo" href="{% url 'home' %}">
-      <span class="logo-icon"><i class="bi bi-robot"></i></span>
-      <span class="logo-text">Toy<span class="logo-accent">Zone</span></span>
+      <span class="logo-icon"><i class="bi bi-balloon-heart"></i></span>
+      <span class="logo-text">Fimi<span class="logo-accent">ku</span></span>
     </a>
 
     <!-- Search Bar (Desktop) -->
@@ -66,12 +66,10 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Categories</a>
           <ul class="dropdown-menu toy-dropdown">
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=educational"><i class="bi bi-mortarboard me-2"></i> Educational</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=remote_control"><i class="bi bi-controller me-2"></i> Remote Control</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=soft_toys"><i class="bi bi-bear-face me-2"></i> Soft Toys</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=outdoor"><i class="bi bi-dribbble me-2"></i> Outdoor Toys</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=puzzles"><i class="bi bi-puzzle me-2"></i> Puzzles & Board</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=action_figures"><i class="bi bi-robot me-2"></i> Action Figures</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=teething"><i class="bi bi-emoji-smile me-2"></i> Teething Toys</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=bath"><i class="bi bi-droplet me-2"></i> Bath Toys</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=feeding"><i class="bi bi-cup-straw me-2"></i> Feeding Accessories</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=sensory"><i class="bi bi-stars me-2"></i> Sensory Learning</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">All Toys</a></li>
@@ -163,8 +161,8 @@
       <!-- Brand -->
       <div class="col-lg-4 col-md-6">
         <div class="footer-brand">
-          <span class="footer-logo"><i class="bi bi-robot me-2"></i>ToyZone</span>
-          <p class="footer-tagline">Bringing joy to every childhood, one toy at a time. Shop premium educational, creative and fun toys for kids of all ages.</p>
+          <span class="footer-logo"><i class="bi bi-balloon-heart me-2"></i>Fimiku</span>
+          <p class="footer-tagline">Premium baby brand dedicated to creating safe, soft, and pure silicone toys designed for your baby’s everyday comfort.</p>
           <div class="footer-socials">
             <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
             <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
@@ -189,11 +187,10 @@
       <div class="col-lg-3 col-md-6 col-6">
         <h6 class="footer-heading">Categories</h6>
         <ul class="footer-links">
-          <li><a href="{% url 'products' %}?category=educational">Educational Toys</a></li>
-          <li><a href="{% url 'products' %}?category=remote_control">Remote Control</a></li>
-          <li><a href="{% url 'products' %}?category=soft_toys">Soft Toys</a></li>
-          <li><a href="{% url 'products' %}?category=outdoor">Outdoor Toys</a></li>
-          <li><a href="{% url 'products' %}?category=puzzles">Puzzles & Games</a></li>
+          <li><a href="{% url 'products' %}?category=teething">Teething Toys</a></li>
+          <li><a href="{% url 'products' %}?category=bath">Bath Toys</a></li>
+          <li><a href="{% url 'products' %}?category=feeding">Feeding Accessories</a></li>
+          <li><a href="{% url 'products' %}?category=sensory">Sensory Learning</a></li>
         </ul>
       </div>
 
@@ -206,7 +203,7 @@
           <li><a href="{% url 'refund' %}">Refund Policy</a></li>
         </ul>
         <div class="footer-contact mt-3">
-          <p><i class="bi bi-envelope-fill me-2"></i>support@toyzone.in</p>
+          <p><i class="bi bi-envelope-fill me-2"></i>support@fimiku.com</p>
           <p><i class="bi bi-telephone-fill me-2"></i>+91 98765 43210</p>
           <p><i class="bi bi-geo-alt-fill me-2"></i>Chennai, Tamil Nadu, India</p>
         </div>
@@ -215,7 +212,7 @@
 
     <hr class="footer-divider"/>
     <div class="footer-bottom">
-      <p>© 2025 ToyZone. All rights reserved. Made with ❤️ for little ones.</p>
+      <p>© 2026 Fimiku. All rights reserved. Made with ❤️ for little ones.</p>
       <div class="payment-badges">
         <span class="pay-badge">🔒 Secure Pay</span>
         <span class="pay-badge">📱 Razorpay</span>

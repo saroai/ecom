@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Billing & Payment – ToyZone{% endblock %}
+{% block title %}Billing & Payment – Fimiku{% endblock %}
 
 {% block content %}
 <div class="container py-5">
@@ -66,7 +66,7 @@ document.getElementById("payNowBtn").addEventListener("click", function () {
       key:          data.razorpay_key_id,
       amount:       data.amount,
       currency:     "INR",
-      name:         "ToyZone",
+      name:         "Fimiku",
       description:  "Toy Purchase",
       order_id:     data.order_id,
       callback_url: data.callback_url,

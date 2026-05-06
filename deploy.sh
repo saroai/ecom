@@ -1,37 +1,28 @@
 #!/bin/bash
 
 # --- TOYZONE GOD-MODE DEPLOYMENT SCRIPT ---
-# Version: 5.0 (Full Cleanup + Professional Setup)
-# Domain: aqeel.app | IP: 139.59.38.59
+# Version: 6.0 (New Droplet & SSL Support)
+# Domain: learnmythos.app | IP: 143.110.182.223
 # Project: /var/www/ecom | Django: e_com_pro
 
 set -e
 
 echo "🧹 PHASE 1: CLEANING UP OLD MESS..."
-# Kill anything on port 80
 sudo fuser -k 80/tcp || true
 sudo systemctl stop gunicorn || true
 sudo systemctl stop nginx || true
 
-# Remove Nginx completely and reinstall
-sudo apt remove nginx nginx-common -y
-sudo apt autoremove -y
-
-# Clear old config files
-sudo rm -f /etc/systemd/system/gunicorn.service
-sudo rm -f /etc/nginx/sites-available/toyzone
-sudo rm -f /etc/nginx/sites-enabled/toyzone
-sudo rm -f /etc/nginx/sites-enabled/default
-sudo rm -f /run/gunicorn.sock
-
-echo "🛠️ PHASE 2: FRESH INSTALL CORE TOOLS..."
+echo "🛠️ PHASE 2: INSTALLING SYSTEM TOOLS..."
 sudo apt update
-sudo apt install python3-pip python3-venv python3-full nginx git curl psmisc -y
+sudo apt install python3-pip python3-venv python3-full nginx git curl psmisc certbot python3-certbot-nginx -y
 
 echo "📂 PHASE 3: SETTING UP PROJECT..."
 PROJECT_DIR="/var/www/ecom"
 VENV_DIR="$PROJECT_DIR/venv"
 
+# Ensure directory exists and permissions are correct
+sudo mkdir -p $PROJECT_DIR
+sudo chown -R $USER:$USER $PROJECT_DIR
 cd $PROJECT_DIR
 
 # Clean and recreate virtual environment
@@ -47,7 +38,7 @@ echo "📊 PHASE 5: PREPARING DJANGO (Migrations & Static)..."
 $VENV_DIR/bin/python3 manage.py migrate
 $VENV_DIR/bin/python3 manage.py collectstatic --noinput
 
-echo "⚙️ PHASE 6: CONFIGURING GUNICORN SERVICE..."
+echo "⚙️ PHASE 6: CONFIGURING GUNICORN..."
 sudo bash -c "cat > /etc/systemd/system/gunicorn.service <<EOF
 [Unit]
 Description=gunicorn daemon for ToyZone
@@ -57,6 +48,7 @@ After=network.target
 User=root
 Group=www-data
 WorkingDirectory=$PROJECT_DIR
+Environment=\"ENVIRONMENT=production\"
 ExecStart=$VENV_DIR/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock e_com_pro.wsgi:application
 
 [Install]
@@ -68,11 +60,11 @@ sudo systemctl start gunicorn
 sudo systemctl enable gunicorn
 
 echo "🌐 PHASE 7: CONFIGURING NGINX..."
+sudo rm -f /etc/nginx/sites-enabled/default
 sudo bash -c "cat > /etc/nginx/sites-available/toyzone <<EOF
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    server_name aqeel.app 139.59.38.59;
+    listen 80;
+    server_name learnmythos.app www.learnmythos.app 143.110.182.223;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     
@@ -91,10 +83,9 @@ server {
 }
 EOF"
 
-# Enable and Restart Nginx
+# Enable Nginx Config
 sudo ln -sf /etc/nginx/sites-available/toyzone /etc/nginx/sites-enabled
 sudo nginx -t
-sudo systemctl start nginx
 sudo systemctl restart nginx
 
 echo "🔐 PHASE 8: OPENING FIREWALLS..."
@@ -104,10 +95,10 @@ sudo ufw allow 443/tcp
 sudo ufw allow 'Nginx Full'
 sudo ufw --force enable
 
-echo "✅ FINAL PERMISSIONS FIX..."
+echo "🔐 PHASE 9: FIXING PERMISSIONS..."
 sudo chown -R www-data:www-data $PROJECT_DIR
 sudo chmod -R 755 $PROJECT_DIR
 
 echo "🔥 DEPLOYMENT COMPLETE!"
-echo "🌍 Check your site now at: http://aqeel.app"
-echo "💡 If it still says 'Refused', check DigitalOcean Cloud Firewall settings!"
+echo "🌍 Visit: http://learnmythos.app"
+echo "🔐 NEXT STEP: Run 'sudo certbot --nginx -d learnmythos.app -d www.learnmythos.app' to enable HTTPS!"

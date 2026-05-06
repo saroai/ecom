@@ -38,3 +38,8 @@ INFO 2026-05-05 14:17:44,429 autoreload D:\On process\e_commerce-main-main\e_com
 INFO 2026-05-05 14:17:45,196 autoreload Watching for file changes with StatReloader
 INFO 2026-05-05 14:34:36,998 autoreload D:\On process\e_commerce-main-main\e_commerce-main-main\core\views.py changed, reloading.
 INFO 2026-05-05 14:34:37,717 autoreload Watching for file changes with StatReloader
+INFO 2026-05-05 14:58:40,964 basehttp "GET / HTTP/1.1" 200 47147
+INFO 2026-05-05 14:58:40,998 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-05-05 14:58:40,999 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2026-05-05 14:58:41,237 log Not Found: /favicon.ico
+WARNING 2026-05-05 14:58:41,238 basehttp "GET /favicon.ico HTTP/1.1" 404 7872

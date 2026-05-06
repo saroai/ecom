@@ -295,22 +295,22 @@ LOGGING = {
 from django.urls import reverse_lazy
 
 UNFOLD = {
-    "SITE_TITLE": "ToyZone Admin",
-    "SITE_HEADER": "ToyZone",
+    "SITE_TITLE": "Fimiku Admin",
+    "SITE_HEADER": "Fimiku",
     "SITE_URL": "/",
-    "SITE_ICON": "🧸",
+    "SITE_ICON": "💎",
     "COLORS": {
         "primary": {
-            "50": "#fff8e6",
-            "100": "#ffefcc",
-            "200": "#ffdd99",
-            "300": "#ffcc66",
-            "400": "#ffbb33",
-            "500": "#ffb703",  # ToyZone Primary (Yellow)
-            "600": "#e6a400",
-            "700": "#b38000",
-            "800": "#805c00",
-            "900": "#4d3700",
+            "50": "#e6fcf5",
+            "100": "#c3fae8",
+            "200": "#96f2d7",
+            "300": "#63e6be",
+            "400": "#38d9a9",
+            "500": "#20c997",  # Fimiku Premium Teal
+            "600": "#12b886",
+            "700": "#0ca678",
+            "800": "#099268",
+            "900": "#087f5b",
         },
     },
     "SIDEBAR": {
@@ -318,7 +318,7 @@ UNFOLD = {
         "show_all_applications": True,
         "navigation": [
             {
-                "title": "Toy Management",
+                "title": "Store Management",
                 "separator": True,
                 "items": [
                     {
@@ -368,3 +368,17 @@ UNFOLD = {
         ],
     },
 }
+
+# Email Configuration
+if os.environ.get("ENVIRONMENT") == "production":
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+    ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", EMAIL_HOST_USER)
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_HOST_USER = 'local@fimiku.com'
+    ADMIN_EMAIL = 'admin@fimiku.com'

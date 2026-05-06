@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.urls import reverse
 import razorpay
+from django.core.mail import send_mail
 
 from .form import ShippingAddressForm
 from .models import Order, ShippingAddress, OrderItems
@@ -101,6 +102,14 @@ def proccess_order(request, pk):
     if os.environ.get("ENVIRONMENT") == "production":
         callback_url = callback_url.replace("http://", "https://")
 
+    # Send Notification for New Order Attempt
+    try:
+        subject = f"New Order Initiated: #{order.pk}"
+        message = f"User {request.user.username} ({request.user.email}) has initiated an order for ₹{total_amount}.\nPending payment confirmation."
+        send_mail(subject, message, settings.EMAIL_HOST_USER, [settings.ADMIN_EMAIL], fail_silently=True)
+    except Exception:
+        pass
+
     return JsonResponse({
         "order_id":      razorpay_order["id"],
         "razorpay_key_id": settings.RAZOR_PAY_KEY_ID,
@@ -147,6 +156,21 @@ def payment_verify(request):
             # Clear cart
             if "session_key" in request.session:
                 del request.session["session_key"]
+
+            # Send Email Notifications
+            try:
+                subject = f"Fimiku: Payment Confirmed for Order #{order.pk} 🎉"
+                message = f"Hello,\n\nOrder #{order.pk} has been successfully paid and confirmed!\n\nAmount: ₹{order.amount_paid}\nCustomer: {order.user.username} ({order.user.email})\n\nThank you!"
+                # To Admin and Customer
+                send_mail(
+                    subject, 
+                    message, 
+                    settings.EMAIL_HOST_USER, 
+                    [settings.ADMIN_EMAIL, order.user.email], 
+                    fail_silently=True
+                )
+            except Exception:
+                pass
 
             return render(request, "payment_verify.html", {
                 "status":   "success",

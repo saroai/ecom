@@ -21,7 +21,7 @@ class ProductAdmin(ModelAdmin):
     list_per_page = 20
 
     fieldsets = (
-        ("🧸 Basic Info", {
+        ("💎 Basic Info", {
             "fields": ("name", "description", "category", "age_group", "is_featured", "is_active")
         }),
         ("💰 Pricing & Stock", {
@@ -80,6 +80,6 @@ admin.site.register(CustomerForm, CustomerFormAdmin)
 # ─────────────────────────────────────────────
 # Customize admin site branding
 # ─────────────────────────────────────────────
-admin.site.site_header  = "🧸 ToyZone Admin"
-admin.site.site_title   = "ToyZone Admin Panel"
-admin.site.index_title  = "Welcome to ToyZone Dashboard"
+admin.site.site_header  = "💎 Fimiku Admin"
+admin.site.site_title   = "Fimiku Admin Panel"
+admin.site.index_title  = "Welcome to Fimiku Dashboard"

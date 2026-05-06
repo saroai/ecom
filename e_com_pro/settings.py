@@ -243,8 +243,8 @@ ACCOUNT_SIGNUP_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_REDIRECT_URL = "account_login"
 
 
-RAZOR_PAY_SECRET_KEY  = os.environ.get("RAZORPAY_SECRET_KEY")
-RAZOR_PAY_KEY_ID = os.environ.get("RAZORPAY_SECRET_KEY_ID")
+RAZOR_PAY_SECRET_KEY = os.environ.get("RAZORPAY_SECRET_KEY", "")
+RAZOR_PAY_KEY_ID = os.environ.get("RAZORPAY_KEY_ID", "")
 
 RAZOR_PAY_CALLBACK_URL = "payment_verify"
 

@@ -1,4 +1,4 @@
 .env
-static/
+# static/ removed to allow deployment of design files
 .idea/
 .venv/

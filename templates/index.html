@@ -60,7 +60,7 @@
             <div class="floating-toy toy-pos-3"><i class="bi bi-droplet"></i></div>
             <div class="floating-toy toy-pos-4"><i class="bi bi-heart-fill"></i></div>
             <div class="hero-circle">
-              <div class="hero-emoji-main"><i class="bi bi-brightness-high"></i></div>
+              <img src="{% static 'img/hero_toys.png' %}" alt="Premium Silicone Toys" class="hero-main-img" />
             </div>
           </div>
         </div>
@@ -175,7 +175,9 @@
             <p>Soft silicone shapes designed for teething relief.</p>
             <a href="{% url 'products' %}?category=teething" class="btn promo-btn">Shop Now →</a>
           </div>
-          <div class="promo-emoji"><i class="bi bi-emoji-smile"></i></div>
+          <div class="promo-emoji">
+            <img src="{% static 'img/promo_teething.png' %}" alt="Teething" class="promo-img" />
+          </div>
         </div>
       </div>
       <div class="col-md-6">
@@ -186,7 +188,9 @@
             <p>Safe and mold-resistant toys for aquatic fun.</p>
             <a href="{% url 'products' %}?category=bath" class="btn promo-btn">Shop Now →</a>
           </div>
-          <div class="promo-emoji"><i class="bi bi-droplet"></i></div>
+          <div class="promo-emoji">
+            <img src="{% static 'img/promo_bath.png' %}" alt="Bath Toys" class="promo-img" />
+          </div>
         </div>
       </div>
     </div>

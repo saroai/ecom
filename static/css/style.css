@@ -2,13 +2,13 @@
    TOYZONE GLOBAL STYLES & VARIABLES
 ═══════════════════════════════════════ */
 :root {
-  --primary-color: #FFB703; /* Playful Yellow */
-  --secondary-color: #023047; /* Deep Navy */
-  --accent-color: #219EBC; /* Bright Blue */
-  --accent-light: #8ECAE6; /* Light Blue */
-  --bg-color: #F8F9FA; /* Soft White */
-  --text-dark: #333333;
-  --text-muted: #6c757d;
+  --primary-color: #20c997; /* Premium Teal */
+  --secondary-color: #495057; /* Deep Charcoal */
+  --accent-color: #f783ac; /* Soft Pink */
+  --accent-light: #eebefa; /* Soft Lavender */
+  --bg-color: #f8f9fa; /* Soft White */
+  --text-dark: #343a40;
+  --text-muted: #868e96;
   --white: #FFFFFF;
   --danger: #ef233c;
   --success: #2b9348;
@@ -353,31 +353,45 @@ a:hover {
 }
 
 .hero-circle {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  width: 450px;
+  height: 450px;
+  background: transparent;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: var(--shadow-lg);
   position: relative;
-  animation: float 6s ease-in-out infinite;
+  animation: float-main 6s ease-in-out infinite;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border: 12px solid var(--white);
+}
+
+@keyframes float-main {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.02); }
+  100% { transform: translateY(0px) scale(1); }
 }
 
 .hero-emoji-main {
-  font-size: 150px;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+  display: none;
 }
 
 .floating-toy {
   position: absolute;
-  font-size: 40px;
+  font-size: 35px;
   background: var(--white);
   padding: 15px;
   border-radius: 50%;
   box-shadow: var(--shadow-md);
   z-index: 2;
+  color: var(--accent-color);
 }
 
 .toy-pos-1 { top: 10%; left: 0; animation: float 5s ease-in-out infinite 0.5s; }
@@ -748,12 +762,25 @@ a:hover {
 }
 
 .promo-emoji {
-  font-size: 120px;
   position: absolute;
-  right: 20px;
-  bottom: 0;
-  opacity: 0.8;
-  transform: rotate(-15deg);
+  right: -20px;
+  bottom: -20px;
+  width: 250px;
+  height: 250px;
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.promo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px) rotate(-5deg); }
+  50% { transform: translateY(-15px) rotate(0deg); }
+  100% { transform: translateY(0px) rotate(-5deg); }
 }
 
 /* ═══════════════════════════════════════

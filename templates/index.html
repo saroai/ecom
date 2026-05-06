@@ -1,67 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Fimiku – Toys for Every Joy!{% endblock %}
+{% block title %}Fimiku – Premium Silicone Baby Toys{% endblock %}
 
 {% block content %}
-
-<!-- ═══════════════════════════════════════
-     HERO SECTION
-═══════════════════════════════════════ -->
-<section class="hero-section">
-  <div class="hero-bg-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-  <div class="container">
-    <div class="row align-items-center min-vh-85">
-      <div class="col-lg-6">
-        <div class="hero-content">
-          <div class="hero-badge">🎈 Pure, Safe, and Gentle</div>
-          <h1 class="hero-title">
-            Safe, Soft, and<br/>
-            <span class="text-highlight">Pure Silicone</span>
-          </h1>
-          <p class="hero-subtitle">
-            Discover premium silicone toys crafted for your baby's comfort. BPA-free, non-toxic, and loved by families everywhere.
-          </p>
-          <div class="hero-actions">
-            <a href="{% url 'products' %}" class="btn btn-hero-primary">
-              <i class="bi bi-grid-fill me-2"></i>Shop Collection
-            </a>
-            <a href="{% url 'products' %}?category=teething" class="btn btn-hero-secondary">
-              <i class="bi bi-emoji-smile me-2"></i> Teething Toys
-            </a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">Safe & Non-Toxic</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-number">BPA</span>
-              <span class="stat-label">Free Material</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-number">4.9★</span>
-              <span class="stat-label">Loved by Parents</span>
-            </div>
+<!-- VIBRANT HERO BANNERS -->
+<section class="mt-3">
+  <div class="container-fluid px-4">
+    <div class="row g-2">
+      <div class="col-md-8">
+        <div class="main-banner rounded-4 overflow-hidden position-relative hover-scale-slight" style="height: 400px;">
+          <img src="https://loremflickr.com/1200/600/baby,play?random=1" class="w-100 h-100 object-fit-cover" alt="Main Promo">
+          <div class="banner-overlay p-5 d-flex flex-column justify-content-center h-100 position-absolute top-0 start-0 w-100" style="background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);">
+            <h1 class="display-4 fw-bold text-white mb-3" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Safe, Soft & Pure</h1>
+            <h3 class="text-white mb-4" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">100% Silicone Playtime</h3>
+            <a href="{% url 'products' %}" class="btn btn-warning btn-lg rounded-pill fw-bold w-auto shadow-lg" style="max-width: 200px; color: #d32f2f;">Shop Now</a>
           </div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="hero-visual">
-          <div class="hero-img-wrapper">
-            <div class="floating-toy toy-pos-1"><i class="bi bi-balloon"></i></div>
-            <div class="floating-toy toy-pos-2"><i class="bi bi-stars"></i></div>
-            <div class="floating-toy toy-pos-3"><i class="bi bi-droplet"></i></div>
-            <div class="floating-toy toy-pos-4"><i class="bi bi-heart-fill"></i></div>
-            <div class="hero-circle">
-              <img src="{% static 'img/hero_toys.png' %}" alt="Premium Silicone Toys" class="hero-main-img" />
-            </div>
+      <div class="col-md-4 d-flex flex-column gap-2">
+        <div class="side-banner rounded-4 overflow-hidden position-relative hover-scale-slight" style="height: 196px;">
+          <img src="https://loremflickr.com/600/300/toddler,toy?random=2" class="w-100 h-100 object-fit-cover" alt="Promo">
+          <div class="banner-overlay p-4 d-flex flex-column justify-content-center h-100 position-absolute top-0 start-0 w-100" style="background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);">
+            <h4 class="fw-bold text-white" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">New Arrivals</h4>
+            <a href="{% url 'products' %}?sort=newest" class="text-warning fw-bold mt-2">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="side-banner rounded-4 overflow-hidden position-relative hover-scale-slight" style="height: 196px;">
+          <img src="https://loremflickr.com/600/300/silicone,teether?random=3" class="w-100 h-100 object-fit-cover" alt="Promo">
+          <div class="banner-overlay p-4 d-flex flex-column justify-content-center h-100 position-absolute top-0 start-0 w-100" style="background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);">
+            <h4 class="fw-bold text-white" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Soothing Teethers</h4>
+            <a href="{% url 'products' %}?category=teething" class="text-warning fw-bold mt-2">Shop Now <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -69,193 +38,111 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     FEATURES STRIP
-═══════════════════════════════════════ -->
-<section class="features-strip">
-  <div class="container">
-    <div class="row g-3">
-      <div class="col-6 col-md-3">
-        <div class="feature-card">
-          <span class="feature-icon"><i class="bi bi-truck"></i></span>
-          <div>
-            <strong>Free Shipping</strong>
-            <p>On orders above ₹999</p>
-          </div>
+<!-- SHOP BY AGE (Circles) -->
+<section class="py-5 mt-4">
+  <div class="container text-center">
+    <h2 class="fw-black mb-5" style="color: #d32f2f; font-family: 'Baloo 2', cursive; font-size: 2.5rem; letter-spacing: 2px;">SHOP BY AGE</h2>
+    <div class="d-flex justify-content-center flex-wrap gap-4">
+      <a href="{% url 'products' %}?age_group=0-6m" class="age-circle-link text-decoration-none">
+        <div class="age-circle bg-danger text-white rounded-circle d-flex flex-column justify-content-center align-items-center shadow hover-scale" style="width: 130px; height: 130px; border: 5px solid #ffcdd2;">
+          <h2 class="fw-bold mb-0">0-6</h2>
+          <span class="fw-bold text-uppercase" style="font-size: 0.8rem;">months</span>
         </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="feature-card">
-          <span class="feature-icon"><i class="bi bi-shield-check"></i></span>
-          <div>
-            <strong>100% Safe Silicone</strong>
-            <p>Food-grade & BPA-free</p>
-          </div>
+      </a>
+      <a href="{% url 'products' %}?age_group=6-12m" class="age-circle-link text-decoration-none">
+        <div class="age-circle text-white rounded-circle d-flex flex-column justify-content-center align-items-center shadow hover-scale" style="width: 130px; height: 130px; background-color: #f57c00; border: 5px solid #ffe0b2;">
+          <h2 class="fw-bold mb-0">6-12</h2>
+          <span class="fw-bold text-uppercase" style="font-size: 0.8rem;">months</span>
         </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="feature-card">
-          <span class="feature-icon"><i class="bi bi-arrow-repeat"></i></span>
-          <div>
-            <strong>Easy Returns</strong>
-            <p>7-day hassle-free return</p>
-          </div>
+      </a>
+      <a href="{% url 'products' %}?age_group=1-2y" class="age-circle-link text-decoration-none">
+        <div class="age-circle bg-success text-white rounded-circle d-flex flex-column justify-content-center align-items-center shadow hover-scale" style="width: 130px; height: 130px; border: 5px solid #c8e6c9;">
+          <h2 class="fw-bold mb-0">1-2</h2>
+          <span class="fw-bold text-uppercase" style="font-size: 0.8rem;">years</span>
         </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="feature-card">
-          <span class="feature-icon"><i class="bi bi-lock"></i></span>
-          <div>
-            <strong>Secure Payment</strong>
-            <p>100% safe via Razorpay</p>
-          </div>
+      </a>
+      <a href="{% url 'products' %}?age_group=2-3y" class="age-circle-link text-decoration-none">
+        <div class="age-circle bg-info text-white rounded-circle d-flex flex-column justify-content-center align-items-center shadow hover-scale" style="width: 130px; height: 130px; border: 5px solid #b3e5fc;">
+          <h2 class="fw-bold mb-0">2-3</h2>
+          <span class="fw-bold text-uppercase" style="font-size: 0.8rem;">years</span>
         </div>
-      </div>
+      </a>
+      <a href="{% url 'products' %}?age_group=3%2By" class="age-circle-link text-decoration-none">
+        <div class="age-circle text-white rounded-circle d-flex flex-column justify-content-center align-items-center shadow hover-scale" style="width: 130px; height: 130px; background-color: #9c27b0; border: 5px solid #e1bee7;">
+          <h2 class="fw-bold mb-0">3+</h2>
+          <span class="fw-bold text-uppercase" style="font-size: 0.8rem;">years</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     CATEGORIES SECTION
-═══════════════════════════════════════ -->
-<section class="section-gap">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Shop by Category</h2>
-      <p class="section-subtitle">Find the perfect toy for every little explorer</p>
-    </div>
-    <div class="row g-3 justify-content-center">
-      {% for cat in categories %}
-      <div class="col-6 col-md-4 col-lg-2">
-        <a href="{% url 'products' %}?category={{ cat.key }}" class="category-card-link">
-          <div class="category-card">
-            <div class="cat-emoji"><i class="bi {{ cat.icon }}"></i></div>
-            <span class="cat-name">{{ cat.label }}</span>
-          </div>
-        </a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     FEATURED PRODUCTS
-═══════════════════════════════════════ -->
-{% if featured_products %}
-<section class="section-gap bg-section-alt">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">✨ Featured Toys</h2>
-      <p class="section-subtitle">Hand-picked by our toy experts</p>
-      <a href="{% url 'products' %}" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
-    </div>
-    <div class="row g-4">
-      {% for product in featured_products %}
-      <div class="col-6 col-md-4 col-lg-3">
-        {% include "includes/product_card.html" with product=product %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<!-- ═══════════════════════════════════════
-     PROMO BANNER
-═══════════════════════════════════════ -->
-<section class="promo-section">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="promo-card promo-yellow">
-          <div class="promo-content">
-            <div class="promo-tag">Soothing Comfort</div>
-            <h3>Teething Toys<br/><span>Gentle on Gums</span></h3>
-            <p>Soft silicone shapes designed for teething relief.</p>
-            <a href="{% url 'products' %}?category=teething" class="btn promo-btn">Shop Now →</a>
-          </div>
-          <div class="promo-emoji">
-            <img src="{% static 'img/promo_teething.png' %}" alt="Teething" class="promo-img" />
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="promo-card promo-blue">
-          <div class="promo-content">
-            <div class="promo-tag">Fun in the Tub</div>
-            <h3>Bath Time<br/><span>Play Sets</span></h3>
-            <p>Safe and mold-resistant toys for aquatic fun.</p>
-            <a href="{% url 'products' %}?category=bath" class="btn promo-btn">Shop Now →</a>
-          </div>
-          <div class="promo-emoji">
-            <img src="{% static 'img/promo_bath.png' %}" alt="Bath Toys" class="promo-img" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     BEST SELLERS
-═══════════════════════════════════════ -->
-{% if best_sellers %}
-<section class="section-gap">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">🔥 Best Sellers</h2>
-      <p class="section-subtitle">Most loved by kids and parents alike</p>
-      <a href="{% url 'products' %}?sort=popular" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
-    </div>
-    <div class="row g-4">
-      {% for product in best_sellers %}
-      <div class="col-6 col-md-4 col-lg-3">
-        {% include "includes/product_card.html" with product=product %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<!-- ═══════════════════════════════════════
-     AGE GROUP SECTION
-═══════════════════════════════════════ -->
-<section class="section-gap bg-section-alt">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">🎂 Shop by Age Group</h2>
-      <p class="section-subtitle">Age-appropriate toys for every stage of growth</p>
-    </div>
+<!-- SHOP BY CATEGORY (Colorful Cards) -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-black mb-5" style="color: #1976d2; font-family: 'Baloo 2', cursive; font-size: 2.5rem; letter-spacing: 2px;">SHOP BY CATEGORY</h2>
     <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <a href="{% url 'products' %}?age_group=0-12m" class="age-card-link">
-          <div class="age-card age-baby">
-            <div class="age-emoji">👶</div>
-            <h4>0–12 Months</h4>
-            <p>Teethers, sensory blocks & rattles</p>
-            <span class="age-cta">Shop →</span>
+      {% for cat in categories %}
+      <div class="col-6 col-md-3">
+        <a href="{% url 'products' %}?category={{ cat.key }}" class="text-decoration-none">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden hover-scale h-100">
+            <div class="card-header border-0 py-3" style="background-color: {% cycle '#e53935' '#fdd835' '#43a047' '#1e88e5' '#8e24aa' '#ffb300' '#00acc1' '#e91e63' %};">
+              <h5 class="fw-bold text-white mb-0">{{ cat.label }}</h5>
+            </div>
+            <div class="card-body p-0 bg-white" style="height: 200px;">
+              <img src="https://loremflickr.com/400/400/{{ cat.key }},toy?random={{ forloop.counter }}" class="w-100 h-100 object-fit-contain p-3" alt="{{ cat.label }}">
+            </div>
           </div>
         </a>
       </div>
-      <div class="col-md-4">
-        <a href="{% url 'products' %}?age_group=1-3y" class="age-card-link">
-          <div class="age-card age-kid">
-            <div class="age-emoji">🧒</div>
-            <h4>1–3 Years</h4>
-            <p>Bath toys, stacking cups & feeding</p>
-            <span class="age-cta">Shop →</span>
+      {% endfor %}
+      
+      <!-- Static Categories to make it grid rich -->
+      <div class="col-6 col-md-3">
+        <a href="{% url 'products' %}?category=gifts" class="text-decoration-none">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden hover-scale h-100">
+            <div class="card-header border-0 py-3 bg-danger">
+              <h5 class="fw-bold text-white mb-0">Gift Sets</h5>
+            </div>
+            <div class="card-body p-0 bg-white" style="height: 200px;">
+              <img src="https://loremflickr.com/400/400/gift,baby?random=10" class="w-100 h-100 object-fit-contain p-3" alt="Gifts">
+            </div>
           </div>
         </a>
       </div>
-      <div class="col-md-4">
-        <a href="{% url 'products' %}?age_group=3%2By" class="age-card-link">
-          <div class="age-card age-teen">
-            <div class="age-emoji">⭐</div>
-            <h4>3+ Years</h4>
-            <p>Creative play & learning accessories</p>
-            <span class="age-cta">Shop →</span>
+      <div class="col-6 col-md-3">
+        <a href="{% url 'products' %}?category=bundles" class="text-decoration-none">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden hover-scale h-100">
+            <div class="card-header border-0 py-3" style="background-color: #ff9800;">
+              <h5 class="fw-bold text-white mb-0">Value Bundles</h5>
+            </div>
+            <div class="card-body p-0 bg-white" style="height: 200px;">
+              <img src="https://loremflickr.com/400/400/box,toys?random=11" class="w-100 h-100 object-fit-contain p-3" alt="Bundles">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="{% url 'products' %}?category=outdoor" class="text-decoration-none">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden hover-scale h-100">
+            <div class="card-header border-0 py-3 bg-info">
+              <h5 class="fw-bold text-white mb-0">Outdoor Play</h5>
+            </div>
+            <div class="card-body p-0 bg-white" style="height: 200px;">
+              <img src="https://loremflickr.com/400/400/park,baby?random=12" class="w-100 h-100 object-fit-contain p-3" alt="Outdoor">
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="{% url 'products' %}?category=learning" class="text-decoration-none">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden hover-scale h-100">
+            <div class="card-header border-0 py-3 bg-success">
+              <h5 class="fw-bold text-white mb-0">Early Learning</h5>
+            </div>
+            <div class="card-body p-0 bg-white" style="height: 200px;">
+              <img src="https://loremflickr.com/400/400/blocks,baby?random=13" class="w-100 h-100 object-fit-contain p-3" alt="Learning">
+            </div>
           </div>
         </a>
       </div>
@@ -263,20 +150,31 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     NEW ARRIVALS
-═══════════════════════════════════════ -->
-{% if new_arrivals %}
-<section class="section-gap">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">🆕 New Arrivals</h2>
-      <p class="section-subtitle">Fresh toys just landed in our store</p>
-      <a href="{% url 'products' %}?sort=newest" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
-    </div>
+<!-- FULL WIDTH BANNERS -->
+<section class="py-5 bg-white">
+  <div class="container-fluid px-4">
     <div class="row g-4">
-      {% for product in new_arrivals %}
-      <div class="col-6 col-md-4 col-lg-3">
+      <div class="col-md-6">
+        <a href="{% url 'products' %}"><img src="https://loremflickr.com/800/300/cute,baby?random=20" class="img-fluid rounded-4 shadow hover-scale w-100" style="height: 250px; object-fit: cover;" alt="Promo"></a>
+      </div>
+      <div class="col-md-6">
+        <a href="{% url 'products' %}"><img src="https://loremflickr.com/800/300/silicone,play?random=21" class="img-fluid rounded-4 shadow hover-scale w-100" style="height: 250px; object-fit: cover;" alt="Promo"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SILICONE SHOP (Featured) -->
+{% if featured_products %}
+<section class="py-5" style="background-color: #ffb300;">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-black text-white mb-0" style="font-family: 'Baloo 2', cursive; font-size: 2.2rem; letter-spacing: 1px;">THE SILICONE SHOP</h2>
+      <a href="{% url 'products' %}" class="btn btn-light rounded-pill fw-bold text-danger px-4 py-2 shadow-sm">View All</a>
+    </div>
+    <div class="row g-4 flex-nowrap overflow-auto scrollbar-hide pb-4 pt-2 px-2">
+      {% for product in featured_products %}
+      <div class="col-9 col-md-4 col-lg-3">
         {% include "includes/product_card.html" with product=product %}
       </div>
       {% endfor %}
@@ -285,78 +183,71 @@
 </section>
 {% endif %}
 
-<!-- ═══════════════════════════════════════
-     TESTIMONIALS
-═══════════════════════════════════════ -->
-<section class="section-gap bg-section-alt">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">💬 What Parents Say</h2>
-      <p class="section-subtitle">Real reviews from real families</p>
+<!-- THEMES & CHARACTERS (Silicone Collections) -->
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <h2 class="fw-black mb-5" style="color: #e91e63; font-family: 'Baloo 2', cursive; font-size: 2.5rem; letter-spacing: 2px;">THEMES & CHARACTERS</h2>
+    <div class="row g-3 justify-content-center">
+      {% for i in '123456789012'|make_list %}
+      <div class="col-4 col-md-2">
+        <a href="{% url 'products' %}">
+            <div class="rounded-4 overflow-hidden shadow-sm hover-scale border bg-light" style="height: 140px;">
+            <img src="https://loremflickr.com/300/300/baby,toy?random={{ forloop.counter|add:30 }}" class="w-100 h-100 object-fit-cover p-2" alt="Collection">
+            </div>
+        </a>
+      </div>
+      {% endfor %}
     </div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"My daughter absolutely loves the silicone teethers from Fimiku. Quality is amazing and I have peace of mind knowing it's BPA-free!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">P</div>
-            <div>
-              <strong>Priya S.</strong><br/>
-              <small>Mother of a 6-month-old</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Bought the bath toy set for my son. It's so easy to clean and sterilize compared to plastic toys. Highly recommended!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">R</div>
-            <div>
-              <strong>Rahul M.</strong><br/>
-              <small>Father, Bengaluru</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial-card">
-          <div class="stars">★★★★☆</div>
-          <p>"The sensory blocks are so soft and beautifully designed. My 1-year-old won't put them down!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">A</div>
-            <div>
-              <strong>Ananya K.</strong><br/>
-              <small>Mother, Mumbai</small>
-            </div>
-          </div>
-        </div>
+  </div>
+</section>
+
+<!-- PROMO STRIP 2 -->
+<section class="py-5 bg-light">
+  <div class="container-fluid px-4">
+    <div class="rounded-4 overflow-hidden shadow hover-scale position-relative" style="height: 350px;">
+      <img src="https://loremflickr.com/1600/500/toddler,smile?random=50" class="w-100 h-100 object-fit-cover" alt="Huge Promo">
+      <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
+        <h2 class="display-3 fw-black text-white" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.8); font-family: 'Baloo 2', cursive;">SUMMER SPLASH SALE</h2>
+        <h4 class="text-white mb-4 fw-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Up to 50% Off on Bath Toys!</h4>
+        <a href="{% url 'products' %}?category=bath" class="btn btn-danger btn-lg rounded-pill fw-bold shadow-lg px-5 py-3 fs-5">Shop Water Toys</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     CTA NEWSLETTER
-═══════════════════════════════════════ -->
-<section class="newsletter-section">
+<!-- BEST SELLERS -->
+{% if best_sellers %}
+<section class="py-5 bg-white">
   <div class="container">
-    <div class="newsletter-inner">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h3>🎁 Get Exclusive Toy Deals!</h3>
-          <p>Subscribe and be the first to know about new arrivals, offers and kid-friendly tips.</p>
-        </div>
-        <div class="col-lg-6">
-          <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email address…" class="newsletter-input"/>
-            <button type="submit" class="newsletter-btn">Subscribe</button>
-          </form>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-black mb-0" style="color: #0288d1; font-family: 'Baloo 2', cursive; font-size: 2.2rem; letter-spacing: 1px;">BEST SELLERS</h2>
+      <a href="{% url 'products' %}?sort=popular" class="btn btn-outline-info rounded-pill fw-bold px-4 py-2">View All</a>
+    </div>
+    <div class="row g-4 flex-nowrap overflow-auto scrollbar-hide pb-4 pt-2 px-2">
+      {% for product in best_sellers %}
+      <div class="col-9 col-md-4 col-lg-3">
+        {% include "includes/product_card.html" with product=product %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- DISCOVER INSTAGRAM -->
+<section class="py-5" style="background-color: #d32f2f;">
+  <div class="container text-center">
+    <h2 class="fw-black mb-4 text-white" style="font-family: 'Baloo 2', cursive; font-size: 2.2rem; letter-spacing: 1px;">DISCOVER ON INSTAGRAM</h2>
+    <div class="row g-2 justify-content-center">
+      {% for i in '12345'|make_list %}
+      <div class="col-6 col-md">
+        <div class="ratio ratio-1x1 overflow-hidden hover-scale rounded-3 shadow">
+          <img src="https://loremflickr.com/400/400/baby,cute?random={{ forloop.counter|add:60 }}" class="w-100 h-100 object-fit-cover" alt="Instagram">
         </div>
       </div>
+      {% endfor %}
     </div>
+    <a href="#" class="btn btn-light rounded-pill fw-bold mt-4 px-5 text-danger shadow">Follow @Fimiku</a>
   </div>
 </section>
 

@@ -1430,3 +1430,55 @@ a:hover {
   .hero-title { font-size: 2.2rem; }
   .hero-circle { width: 250px; height: 250px; }
 }
+/* ---------------------------------------
+   RESPONSIVE MOBILE FIXES
+--------------------------------------- */
+@media (max-width: 768px) {
+  /* Fix Hero Image and Animations on mobile */
+  .hero-circle {
+    width: 280px !important;
+    height: 280px !important;
+    margin: 30px auto;
+  }
+  
+  /* Fix Huge text sizes */
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Fix Promo Banner overflowing */
+  .promo-emoji {
+    width: 160px !important;
+    height: 160px !important;
+    right: -10px !important;
+    bottom: -10px !important;
+  }
+  
+  .promo-card {
+    padding: 25px !important;
+    overflow: hidden !important;
+  }
+  
+  .promo-card h3 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Fix floating icons sizes */
+  .floating-toy {
+    font-size: 24px !important;
+    padding: 10px !important;
+  }
+  
+  /* Make category text and layout smaller for phones */
+  .cat-emoji {
+    font-size: 40px !important;
+  }
+  .cat-name {
+    font-size: 0.95rem !important;
+  }
+}

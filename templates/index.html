@@ -18,36 +18,36 @@
     <div class="row align-items-center min-vh-85">
       <div class="col-lg-6">
         <div class="hero-content">
-          <div class="hero-badge">🎈 Pure, Safe, and Gentle</div>
+          <div class="deal-badge mb-3"><i class="bi bi-lightning-charge-fill"></i> Flash Sale: 20% OFF Everything!</div>
           <h1 class="hero-title">
-            Safe, Soft, and<br/>
-            <span class="text-highlight">Pure Silicone</span>
+            The Safest Choice for<br/>
+            <span class="text-highlight">Happy Little Ones</span>
           </h1>
           <p class="hero-subtitle">
-            Discover premium silicone toys crafted for your baby's comfort. BPA-free, non-toxic, and loved by families everywhere.
+            Premium food-grade silicone toys that are BPA-free, ultra-soft, and designed for your baby's ultimate comfort and growth.
           </p>
           <div class="hero-actions">
             <a href="{% url 'products' %}" class="btn btn-hero-primary">
-              <i class="bi bi-grid-fill me-2"></i>Shop Collection
+              <i class="bi bi-bag-heart-fill me-2"></i>Shop Best Sellers
             </a>
-            <a href="{% url 'products' %}?category=teething" class="btn btn-hero-secondary">
-              <i class="bi bi-emoji-smile me-2"></i> Teething Toys
+            <a href="#why-us" class="btn btn-hero-secondary">
+              Learn Why We're Best <i class="bi bi-arrow-down-short"></i>
             </a>
           </div>
           <div class="hero-stats">
             <div class="stat-item">
+              <span class="stat-number">5k+</span>
+              <span class="stat-label">Happy Moms</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
               <span class="stat-number">100%</span>
-              <span class="stat-label">Safe & Non-Toxic</span>
+              <span class="stat-label">Non-Toxic</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-number">BPA</span>
-              <span class="stat-label">Free Material</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-number">4.9★</span>
-              <span class="stat-label">Loved by Parents</span>
+              <span class="stat-number">India</span>
+              <span class="stat-label">Wide Shipping</span>
             </div>
           </div>
         </div>
@@ -55,12 +55,12 @@
       <div class="col-lg-6">
         <div class="hero-visual">
           <div class="hero-img-wrapper">
-            <div class="floating-toy toy-pos-1"><i class="bi bi-balloon"></i></div>
+            <div class="floating-toy toy-pos-1"><i class="bi bi-balloon-heart"></i></div>
             <div class="floating-toy toy-pos-2"><i class="bi bi-stars"></i></div>
-            <div class="floating-toy toy-pos-3"><i class="bi bi-droplet"></i></div>
-            <div class="floating-toy toy-pos-4"><i class="bi bi-heart-fill"></i></div>
+            <div class="floating-toy toy-pos-3"><i class="bi bi-droplet-half"></i></div>
+            <div class="floating-toy toy-pos-4"><i class="bi bi-emoji-smile"></i></div>
             <div class="hero-circle">
-              <img src="{% static 'img/hero_toys.png' %}" alt="Premium Silicone Toys" class="hero-main-img" />
+              <img src="{% static 'img/hero_toys.png' %}" alt="Fimiku Silicone Toys" class="hero-main-img" />
             </div>
           </div>
         </div>
@@ -70,45 +70,74 @@
 </section>
 
 <!-- ═══════════════════════════════════════
-     FEATURES STRIP
+     WHY CHOOSE FIMIKU? (WHY US)
 ═══════════════════════════════════════ -->
-<section class="features-strip">
+<section id="why-us" class="why-us-section">
   <div class="container">
-    <div class="row g-3">
-      <div class="col-6 col-md-3">
-        <div class="feature-card">
-          <span class="feature-icon"><i class="bi bi-truck"></i></span>
-          <div>
-            <strong>Free Shipping</strong>
-            <p>On orders above ₹999</p>
-          </div>
+    <div class="section-header">
+      <div class="hero-badge">The Fimiku Promise</div>
+      <h2 class="section-title">Why Parents Trust Us?</h2>
+      <p class="section-subtitle">We don't just sell toys; we provide peace of mind for parents and joy for babies.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-shield-check"></i></div>
+          <h4>Medical Grade Safety</h4>
+          <p>Our silicone is 100% food-grade, FDA approved, and free from BPA, Phthalates, and PVC. Safe enough to chew!</p>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="feature-card">
-          <span class="feature-icon"><i class="bi bi-shield-check"></i></span>
-          <div>
-            <strong>100% Safe Silicone</strong>
-            <p>Food-grade & BPA-free</p>
-          </div>
+      <div class="col-md-4">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-stars"></i></div>
+          <h4>Growth Focused</h4>
+          <p>Designed with pediatric experts to stimulate sensory development, motor skills, and creative play in every stage.</p>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="feature-card">
-          <span class="feature-icon"><i class="bi bi-arrow-repeat"></i></span>
-          <div>
-            <strong>Easy Returns</strong>
-            <p>7-day hassle-free return</p>
-          </div>
+      <div class="col-md-4">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-heart-fill"></i></div>
+          <h4>Eco-Friendly Choice</h4>
+          <p>Durable, mold-resistant, and endlessly reusable. Better for your baby, and better for the planet than cheap plastics.</p>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="feature-card">
-          <span class="feature-icon"><i class="bi bi-lock"></i></span>
-          <div>
-            <strong>Secure Payment</strong>
-            <p>100% safe via Razorpay</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     OUR STORY (ABOUT US)
+═══════════════════════════════════════ -->
+<section class="about-home-section">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1544126592-807daa2b565b?auto=format&fit=crop&q=80&w=800" alt="About Fimiku" class="img-fluid rounded-4 shadow-lg"/>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="ps-lg-5">
+          <h2 class="display-5 fw-bold mb-4">Born from a Mother's Love</h2>
+          <p class="lead mb-4">Fimiku started with a simple question: "Can we make toys that are as safe as they are fun?"</p>
+          <p class="mb-4">Founded in Chennai, we are on a mission to replace every toxic plastic toy in Indian households with premium, pure silicone alternatives. Every product we design is tested by our own little ones before it reaches yours.</p>
+          <div class="d-flex gap-3 mb-5">
+            <div class="text-center">
+              <h3 class="fw-bold mb-0">10k+</h3>
+              <small>Products Sold</small>
+            </div>
+            <div class="vr mx-3"></div>
+            <div class="text-center">
+              <h3 class="fw-bold mb-0">20+</h3>
+              <small>Safety Awards</small>
+            </div>
+            <div class="vr mx-3"></div>
+            <div class="text-center">
+              <h3 class="fw-bold mb-0">100%</h3>
+              <small>Plastic Free</small>
+            </div>
           </div>
+          <a href="{% url 'about' %}" class="btn btn-hero-primary px-5">Our Full Story</a>
         </div>
       </div>
     </div>
@@ -122,11 +151,11 @@
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Shop by Category</h2>
-      <p class="section-subtitle">Find the perfect toy for every little explorer</p>
+      <p class="section-subtitle">Premium silicone essentials for every need</p>
     </div>
-    <div class="row g-3 justify-content-center">
+    <div class="row g-4 justify-content-center">
       {% for cat in categories %}
-      <div class="col-6 col-md-4 col-lg-2">
+      <div class="col-6 col-md-4 col-lg-3">
         <a href="{% url 'products' %}?category={{ cat.key }}" class="category-card-link">
           <div class="category-card">
             <div class="cat-emoji"><i class="bi {{ cat.icon }}"></i></div>
@@ -140,14 +169,36 @@
 </section>
 
 <!-- ═══════════════════════════════════════
-     FEATURED PRODUCTS
+     FLASH DEALS (NEW)
 ═══════════════════════════════════════ -->
-{% if featured_products %}
+{% if discounted %}
 <section class="section-gap bg-section-alt">
   <div class="container">
     <div class="section-header">
+      <div class="deal-badge mb-3">Don't Miss Out!</div>
+      <h2 class="section-title">Todays Hot Deals</h2>
+      <p class="section-subtitle">Grab these favorites before they're gone</p>
+    </div>
+    <div class="row g-4">
+      {% for product in discounted %}
+      <div class="col-6 col-md-4 col-lg-3">
+        {% include "includes/product_card.html" with product=product %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ═══════════════════════════════════════
+     FEATURED PRODUCTS
+═══════════════════════════════════════ -->
+{% if featured_products %}
+<section class="section-gap">
+  <div class="container">
+    <div class="section-header">
       <h2 class="section-title">✨ Featured Toys</h2>
-      <p class="section-subtitle">Hand-picked by our toy experts</p>
+      <p class="section-subtitle">Hand-picked by our toy experts for quality and fun</p>
       <a href="{% url 'products' %}" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
     </div>
     <div class="row g-4">
@@ -160,295 +211,6 @@
   </div>
 </section>
 {% endif %}
-
-<!-- ═══════════════════════════════════════
-     PROMO BANNER
-═══════════════════════════════════════ -->
-<section class="promo-section">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="promo-card promo-yellow">
-          <div class="promo-content">
-            <div class="promo-tag">Soothing Comfort</div>
-            <h3>Teething Toys<br/><span>Gentle on Gums</span></h3>
-            <p>Soft silicone shapes designed for teething relief.</p>
-            <a href="{% url 'products' %}?category=teething" class="btn promo-btn">Shop Now →</a>
-          </div>
-          <div class="promo-emoji">
-            <img src="{% static 'img/promo_teething.png' %}" alt="Teething" class="promo-img" />
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="promo-card promo-blue">
-          <div class="promo-content">
-            <div class="promo-tag">Fun in the Tub</div>
-            <h3>Bath Time<br/><span>Play Sets</span></h3>
-            <p>Safe and mold-resistant toys for aquatic fun.</p>
-            <a href="{% url 'products' %}?category=bath" class="btn promo-btn">Shop Now →</a>
-          </div>
-          <div class="promo-emoji">
-            <img src="{% static 'img/promo_bath.png' %}" alt="Bath Toys" class="promo-img" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     BEST SELLERS
-═══════════════════════════════════════ -->
-{% if best_sellers %}
-<section class="section-gap">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">🔥 Best Sellers</h2>
-      <p class="section-subtitle">Most loved by kids and parents alike</p>
-      <a href="{% url 'products' %}?sort=popular" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
-    </div>
-    <div class="row g-4">
-      {% for product in best_sellers %}
-      <div class="col-6 col-md-4 col-lg-3">
-        {% include "includes/product_card.html" with product=product %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<!-- ═══════════════════════════════════════
-     AGE GROUP SECTION
-═══════════════════════════════════════ -->
-<section class="section-gap bg-section-alt">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">🎂 Shop by Age Group</h2>
-      <p class="section-subtitle">Age-appropriate toys for every stage of growth</p>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <a href="{% url 'products' %}?age_group=0-12m" class="age-card-link">
-          <div class="age-card age-baby">
-            <div class="age-emoji">👶</div>
-            <h4>0–12 Months</h4>
-            <p>Teethers, sensory blocks & rattles</p>
-            <span class="age-cta">Shop →</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="{% url 'products' %}?age_group=1-3y" class="age-card-link">
-          <div class="age-card age-kid">
-            <div class="age-emoji">🧒</div>
-            <h4>1–3 Years</h4>
-            <p>Bath toys, stacking cups & feeding</p>
-            <span class="age-cta">Shop →</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="{% url 'products' %}?age_group=3%2By" class="age-card-link">
-          <div class="age-card age-teen">
-            <div class="age-emoji">⭐</div>
-            <h4>3+ Years</h4>
-            <p>Creative play & learning accessories</p>
-            <span class="age-cta">Shop →</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     NEW ARRIVALS
-═══════════════════════════════════════ -->
-{% if new_arrivals %}
-<section class="section-gap">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">🆕 New Arrivals</h2>
-      <p class="section-subtitle">Fresh toys just landed in our store</p>
-      <a href="{% url 'products' %}?sort=newest" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
-    </div>
-    <div class="row g-4">
-      {% for product in new_arrivals %}
-      <div class="col-6 col-md-4 col-lg-3">
-        {% include "includes/product_card.html" with product=product %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<!-- ═══════════════════════════════════════
-     SILICONE VS PLASTIC SECTION
-     (Requested)
-═══════════════════════════════════════ -->
-<section class="section-gap">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Silicone vs. Plastic</h2>
-      <p class="section-subtitle">Why premium silicone is the safest choice for your baby</p>
-    </div>
-    <div class="row g-4">
-      <!-- Silicone -->
-      <div class="col-md-6">
-        <div class="vs-card">
-          <div class="vs-header text-silicone">
-            <i class="bi bi-check-circle-fill"></i> Premium Silicone
-          </div>
-          <ul class="vs-list">
-            <li><i class="bi bi-shield-check text-silicone"></i> 100% Non-Toxic & BPA-Free</li>
-            <li><i class="bi bi-thermometer-half text-silicone"></i> Dishwasher & Sterilizer Safe</li>
-            <li><i class="bi bi-heart-pulse text-silicone"></i> Naturally Bacteria Resistant</li>
-            <li><i class="bi bi-recycle text-silicone"></i> Eco-Friendly & Long Lasting</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Plastic -->
-      <div class="col-md-6">
-        <div class="vs-card">
-          <div class="vs-header text-plastic">
-            <i class="bi bi-x-circle-fill"></i> Traditional Plastic
-          </div>
-          <ul class="vs-list">
-            <li><i class="bi bi-exclamation-triangle text-plastic"></i> May contain Harmful Chemicals</li>
-            <li><i class="bi bi-fire text-plastic"></i> Can release toxins when heated</li>
-            <li><i class="bi bi-bug text-plastic"></i> Scratches easily (hides bacteria)</li>
-            <li><i class="bi bi-trash text-plastic"></i> Breaks easily, more waste</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     TESTIMONIALS (Upgraded)
-═══════════════════════════════════════ -->
-<section class="section-gap bg-section-alt">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">💬 What Parents Say</h2>
-      <p class="section-subtitle">Real reviews from real families</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="testimonial-card-premium">
-          <i class="bi bi-chat-left-quote-fill quote-icon"></i>
-          <div class="stars mb-3">★★★★★</div>
-          <p>"My daughter absolutely loves the silicone teethers from Fimiku. Quality is amazing and I have peace of mind knowing it's BPA-free!"</p>
-          <div class="reviewer mt-4">
-            <div class="reviewer-avatar">P</div>
-            <div>
-              <strong>Priya S.</strong><br/>
-              <small>Mother of a 6-month-old</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial-card-premium">
-          <i class="bi bi-chat-left-quote-fill quote-icon"></i>
-          <div class="stars mb-3">★★★★★</div>
-          <p>"Bought the bath toy set for my son. It's so easy to clean and sterilize compared to plastic toys. Highly recommended!"</p>
-          <div class="reviewer mt-4">
-            <div class="reviewer-avatar">R</div>
-            <div>
-              <strong>Rahul M.</strong><br/>
-              <small>Father, Bengaluru</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial-card-premium">
-          <i class="bi bi-chat-left-quote-fill quote-icon"></i>
-          <div class="stars mb-3">★★★★☆</div>
-          <p>"The sensory blocks are so soft and beautifully designed. My 1-year-old won't put them down! Worth every penny."</p>
-          <div class="reviewer mt-4">
-            <div class="reviewer-avatar">A</div>
-            <div>
-              <strong>Ananya K.</strong><br/>
-              <small>Mother, Mumbai</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     FAQ SECTION (Requested)
-═══════════════════════════════════════ -->
-<section class="faq-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-subtitle">Everything you need to know about Fimiku toys</p>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="accordion" id="faqAccordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                Are Fimiku toys 100% safe for newborns?
-              </button>
-            </h2>
-            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Yes! All our products are made from 100% food-grade silicone, which is BPA-free, PVC-free, and Phthalate-free. We test every batch to ensure they meet the highest safety standards.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                How do I clean and sterilize silicone toys?
-              </button>
-            </h2>
-            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Silicone is highly heat-resistant. You can wash them with warm soapy water, put them in the top rack of a dishwasher, or sterilize them in boiling water for 2-3 minutes.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                Do you offer cash on delivery (COD)?
-              </button>
-            </h2>
-            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Yes, we offer Cash on Delivery across most pin codes in India. You can also pay securely via Razorpay using UPI, Cards, or Netbanking.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                What is your return policy?
-              </button>
-            </h2>
-            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                We offer a 7-day hassle-free return policy for unused products in their original packaging. If you receive a damaged product, please contact us within 24 hours.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- ═══════════════════════════════════════

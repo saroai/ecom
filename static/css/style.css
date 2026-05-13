@@ -2,28 +2,18 @@
    TOYZONE GLOBAL STYLES & VARIABLES
 ═══════════════════════════════════════ */
 :root {
-  --primary-color: #20c997; /* Premium Teal */
-  --secondary-color: #495057; /* Deep Charcoal */
-  --accent-color: #f783ac; /* Soft Pink */
-  --accent-light: #eebefa; /* Soft Lavender */
-  --bg-color: #f8f9fa; /* Soft White */
-  --text-dark: #343a40;
-  --text-muted: #868e96;
+  --primary-color: #ff006e; /* Vibrant Pink */
+  --secondary-color: #7209b7; /* Deep Purple */
+  --accent-color: #ffbe0b; /* Sunshine Gold */
+  --accent-light: #ff85a1; /* Light Pink */
+  --bg-color: #fcf6f5; /* Soft Peach White */
+  --text-dark: #2b2d42;
+  --text-muted: #6d6875;
   --white: #FFFFFF;
   --danger: #ef233c;
-  --success: #2b9348;
+  --success: #06d6a0; /* Mint Green */
   
   --font-body: 'Nunito', sans-serif;
-  --font-heading: 'Baloo 2', cursive;
-  
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
-  --shadow-hover: 0 15px 35px rgba(255, 183, 3, 0.2);
-  
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
   --radius-pill: 50px;
 }
 
@@ -1617,4 +1607,94 @@ html, body {
   font-size: 40px;
   color: rgba(32, 201, 151, 0.2);
   margin-bottom: 10px;
+}
+
+/* ---------------------------------------
+   PREMIUM LOGO & NAV
+--------------------------------------- */
+.toy-logo {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 32px !important;
+    letter-spacing: -1px;
+}
+.logo-icon i {
+    color: var(--primary-color) !important;
+    -webkit-text-fill-color: initial;
+}
+
+/* ---------------------------------------
+   FLASH DEALS & BADGES
+--------------------------------------- */
+.deal-badge {
+    background: linear-gradient(45deg, #ff006e, #ffbe0b);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 15px rgba(255, 0, 110, 0.3);
+    display: inline-block;
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 0, 110, 0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 4px 25px rgba(255, 0, 110, 0.5); }
+    100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 0, 110, 0.3); }
+}
+
+/* ---------------------------------------
+   WHY US SECTION
+--------------------------------------- */
+.why-us-section {
+    background: white;
+    padding: 100px 0;
+    border-radius: 60px 60px 0 0;
+}
+.why-card {
+    text-align: center;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-color);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.why-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: var(--shadow-lg);
+}
+.why-icon {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* ---------------------------------------
+   ABOUT US SECTION
+--------------------------------------- */
+.about-home-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #3c096c 100%);
+    color: white;
+}
+.about-home-section h2, .about-home-section p {
+    color: white !important;
+}
+.about-img-wrap {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+.about-img-wrap img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+.about-img-wrap:hover img {
+    transform: scale(1.1);
 }

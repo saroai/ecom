@@ -26,8 +26,8 @@ def home(request):
         {"key": "feeding",  "label": "Feeding Accs",  "icon": "bi-cup-straw"},
         {"key": "sensory",  "label": "Sensory Play",  "icon": "bi-stars"},
         {"key": "play",     "label": "Baby Play",     "icon": "bi-puzzle"},
-        {"key": "pet",      "label": "Pet Toys",      "icon": "bi-dog"},
-        {"key": "kitchen",  "label": "Kitchen Silicone", "icon": "bi-kitchen"},
+        {"key": "pet",      "label": "Pet Toys",      "icon": "bi-paw"},
+        {"key": "kitchen",  "label": "Kitchen Silicone", "icon": "bi-house-heart"},
     ]
 
     context = {

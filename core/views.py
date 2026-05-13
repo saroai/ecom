@@ -25,6 +25,9 @@ def home(request):
         {"key": "bath",     "label": "Bath Toys",     "icon": "bi-droplet"},
         {"key": "feeding",  "label": "Feeding Accs",  "icon": "bi-cup-straw"},
         {"key": "sensory",  "label": "Sensory Play",  "icon": "bi-stars"},
+        {"key": "play",     "label": "Baby Play",     "icon": "bi-puzzle"},
+        {"key": "pet",      "label": "Pet Toys",      "icon": "bi-dog"},
+        {"key": "kitchen",  "label": "Kitchen Silicone", "icon": "bi-kitchen"},
     ]
 
     context = {
@@ -103,6 +106,9 @@ def products(request, product_cat=None):
             ("bath",     "Bath Toys"),
             ("feeding",  "Feeding Accessories"),
             ("sensory",  "Sensory Learning"),
+            ("play",     "Baby Play"),
+            ("pet",      "Pet Toys"),
+            ("kitchen",  "Kitchen Silicone"),
         ],
         "age_groups": [
             ("0-12m", "0–12 Months"),

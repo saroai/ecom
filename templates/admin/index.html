@@ -1,0 +1,294 @@
+{% extends "admin/index.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+:root{
+  --adm-accent:#7c3aed;
+  --adm-accent-2:#a78bfa;
+  --adm-green:#10b981;
+  --adm-amber:#f59e0b;
+  --adm-red:#ef4444;
+  --adm-blue:#3b82f6;
+  --adm-card:rgba(255,255,255,0.04);
+  --adm-border:rgba(255,255,255,0.08);
+  --adm-radius:14px;
+}
+.dash-section{margin-bottom:2rem}
+.dash-section h2{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.5;margin-bottom:1rem}
+
+/* ── KPI CARDS ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
+.kpi-card{background:var(--adm-card);border:1px solid var(--adm-border);border-radius:var(--adm-radius);padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.25rem;position:relative;overflow:hidden;transition:transform .15s ease,box-shadow .15s ease}
+.kpi-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.kpi-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--kpi-accent,var(--adm-accent))}
+.kpi-label{font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;opacity:.5}
+.kpi-value{font-size:1.75rem;font-weight:800;line-height:1;color:var(--kpi-accent,var(--adm-accent-2))}
+.kpi-sub{font-size:.78rem;opacity:.5;margin-top:.25rem}
+.kpi-icon{position:absolute;bottom:.75rem;right:1rem;font-size:2rem;opacity:.1}
+
+/* ── QUICK ACTIONS ── */
+.quick-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.qa-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.25rem;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid var(--adm-border);background:var(--adm-card);color:inherit;text-decoration:none;transition:all .15s ease;cursor:pointer}
+.qa-btn:hover{background:var(--adm-accent);border-color:var(--adm-accent);color:#fff;transform:translateY(-1px)}
+.qa-btn .material-symbols-outlined{font-size:1.1rem}
+
+/* ── ALERTS ── */
+.alert-row{display:flex;flex-direction:column;gap:.5rem}
+.alert-item{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:10px;border:1px solid;font-size:.85rem;font-weight:500}
+.alert-low-stock{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.2);color:var(--adm-red)}
+.alert-info{background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.2);color:var(--adm-blue)}
+.alert-warn{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.2);color:var(--adm-amber)}
+
+/* ── PIPELINE TABLE ── */
+.pipeline-table{width:100%;border-collapse:separate;border-spacing:0 .4rem}
+.pipeline-table th{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;opacity:.4;padding:.5rem 1rem;font-weight:700;border-bottom:1px solid var(--adm-border)}
+.pipeline-table td{padding:.75rem 1rem;background:var(--adm-card);border-top:1px solid var(--adm-border);border-bottom:1px solid var(--adm-border)}
+.pipeline-table td:first-child{border-left:1px solid var(--adm-border);border-radius:10px 0 0 10px}
+.pipeline-table td:last-child{border-right:1px solid var(--adm-border);border-radius:0 10px 10px 0}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.72rem;font-weight:700;color:#fff}
+.pill-pending{background:var(--adm-amber)}
+.pill-processing{background:var(--adm-blue)}
+.pill-shipped{background:var(--adm-accent)}
+.pill-delivered{background:var(--adm-green)}
+.pill-cancelled{background:var(--adm-red)}
+
+/* ── SIDE PANELS ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.panel{background:var(--adm-card);border:1px solid var(--adm-border);border-radius:var(--adm-radius);padding:1.25rem}
+.panel h3{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.4;margin-bottom:1rem}
+.panel-row{display:flex;align-items:center;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--adm-border);font-size:.85rem}
+.panel-row:last-child{border-bottom:none}
+.panel-avatar{width:32px;height:32px;border-radius:50%;background:var(--adm-accent);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff;flex-shrink:0}
+.panel-name{font-weight:600;flex:1}
+.panel-meta{opacity:.5;font-size:.78rem}
+.panel-badge{font-weight:700;color:var(--adm-green)}
+
+@media(max-width:768px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .two-col{grid-template-columns:1fr}
+}
+</style>
+
+<!-- ── SECTION: KPI CARDS ── -->
+<div class="dash-section">
+  <h2>📊 Key Metrics — Today &amp; This Week</h2>
+  <div class="kpi-grid">
+
+    <div class="kpi-card" style="--kpi-accent:#7c3aed">
+      <span class="kpi-label">Orders Today</span>
+      <span class="kpi-value">{{ kpi_orders_today|default:"0" }}</span>
+      <span class="kpi-sub">Paid &amp; confirmed</span>
+      <span class="material-symbols-outlined kpi-icon">shopping_bag</span>
+    </div>
+
+    <div class="kpi-card" style="--kpi-accent:#10b981">
+      <span class="kpi-label">Revenue Today</span>
+      <span class="kpi-value" style="font-size:1.4rem">{{ kpi_revenue_today|default:"₹0" }}</span>
+      <span class="kpi-sub">7d: {{ kpi_revenue_week|default:"₹0" }}</span>
+      <span class="material-symbols-outlined kpi-icon">currency_rupee</span>
+    </div>
+
+    <div class="kpi-card" style="--kpi-accent:#f59e0b">
+      <span class="kpi-label">Pending Orders</span>
+      <span class="kpi-value">{{ kpi_pending|default:"0" }}</span>
+      <span class="kpi-sub">Needs action</span>
+      <span class="material-symbols-outlined kpi-icon">pending_actions</span>
+    </div>
+
+    <div class="kpi-card" style="--kpi-accent:#3b82f6">
+      <span class="kpi-label">Processing</span>
+      <span class="kpi-value">{{ kpi_processing|default:"0" }}</span>
+      <span class="kpi-sub">Being packed</span>
+      <span class="material-symbols-outlined kpi-icon">inventory</span>
+    </div>
+
+    <div class="kpi-card" style="--kpi-accent:#8b5cf6">
+      <span class="kpi-label">Shipped</span>
+      <span class="kpi-value">{{ kpi_shipped|default:"0" }}</span>
+      <span class="kpi-sub">In transit</span>
+      <span class="material-symbols-outlined kpi-icon">local_shipping</span>
+    </div>
+
+    <div class="kpi-card" style="--kpi-accent:#06b6d4">
+      <span class="kpi-label">Avg. Order Value</span>
+      <span class="kpi-value" style="font-size:1.4rem">{{ kpi_aov|default:"₹0" }}</span>
+      <span class="kpi-sub">7-day AOV</span>
+      <span class="material-symbols-outlined kpi-icon">trending_up</span>
+    </div>
+
+    <div class="kpi-card" style="--kpi-accent:#10b981">
+      <span class="kpi-label">Active Products</span>
+      <span class="kpi-value">{{ kpi_total_products|default:"0" }}</span>
+      <span class="kpi-sub">In catalogue</span>
+      <span class="material-symbols-outlined kpi-icon">inventory_2</span>
+    </div>
+
+    <div class="kpi-card" style="--kpi-accent:#f472b6">
+      <span class="kpi-label">Total Customers</span>
+      <span class="kpi-value">{{ kpi_total_customers|default:"0" }}</span>
+      <span class="kpi-sub">Registered users</span>
+      <span class="material-symbols-outlined kpi-icon">group</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── SECTION: QUICK ACTIONS ── -->
+<div class="dash-section">
+  <h2>⚡ Quick Actions</h2>
+  <div class="quick-actions">
+    <a href="/admin/core/product/add/" class="qa-btn">
+      <span class="material-symbols-outlined">add_box</span> Add Product
+    </a>
+    <a href="/admin/payment/order/" class="qa-btn">
+      <span class="material-symbols-outlined">receipt_long</span> View All Orders
+    </a>
+    <a href="/admin/payment/order/?status__exact=Pending" class="qa-btn">
+      <span class="material-symbols-outlined">pending_actions</span> Pending Orders
+    </a>
+    <a href="/admin/core/product/?stock__lte=5" class="qa-btn">
+      <span class="material-symbols-outlined">warning</span> Low Stock Items
+    </a>
+    <a href="/admin/core/review/" class="qa-btn">
+      <span class="material-symbols-outlined">star_rate</span> Moderate Reviews
+    </a>
+    <a href="/admin/core/customerform/" class="qa-btn">
+      <span class="material-symbols-outlined">mail</span> Enquiries
+    </a>
+    <a href="/admin/auth/user/" class="qa-btn">
+      <span class="material-symbols-outlined">manage_accounts</span> Manage Users
+    </a>
+    <a href="/order-dashboard/" class="qa-btn">
+      <span class="material-symbols-outlined">dashboard</span> Order Dashboard
+    </a>
+  </div>
+</div>
+
+<!-- ── SECTION: ALERTS ── -->
+{% if kpi_low_stock %}
+<div class="dash-section">
+  <h2>🚨 Alerts</h2>
+  <div class="alert-row">
+    {% for p in kpi_low_stock %}
+    <div class="alert-item alert-low-stock">
+      <span class="material-symbols-outlined">warning</span>
+      <strong>{{ p.name }}</strong> — Only <strong>{{ p.stock }}</strong> left in stock.
+      <a href="/admin/core/product/{{ p.id }}/change/" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:underline">Update Stock →</a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- ── SECTION: LATEST ORDERS PIPELINE ── -->
+{% if kpi_latest_orders %}
+<div class="dash-section">
+  <h2>📦 Latest Orders Pipeline</h2>
+  <div style="overflow-x:auto">
+    <table class="pipeline-table">
+      <thead>
+        <tr>
+          <th>Order #</th>
+          <th>Customer</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for o in kpi_latest_orders %}
+        <tr>
+          <td><span style="font-family:monospace;font-weight:700;color:#a78bfa">#{{ o.id|stringformat:"s"|slice:":8"|upper }}</span></td>
+          <td>
+            <div style="font-weight:600">{{ o.user.get_full_name|default:o.user.username }}</div>
+            <div style="font-size:.75rem;opacity:.5">{{ o.user.email }}</div>
+          </td>
+          <td><strong>₹{{ o.amount_paid|floatformat:0 }}</strong></td>
+          <td>
+            {% if o.status == "Pending" %}<span class="pill pill-pending">{{ o.status }}</span>
+            {% elif o.status == "Processing" %}<span class="pill pill-processing">{{ o.status }}</span>
+            {% elif o.status == "Shipped" %}<span class="pill pill-shipped">{{ o.status }}</span>
+            {% elif o.status == "Delivered" %}<span class="pill pill-delivered">{{ o.status }}</span>
+            {% else %}<span class="pill pill-cancelled">{{ o.status }}</span>{% endif %}
+          </td>
+          <td style="opacity:.6;font-size:.82rem">{{ o.ordered_date|date:"d M, H:i" }}</td>
+          <td>
+            <a href="/admin/payment/order/{{ o.id }}/change/" style="color:#7c3aed;font-weight:600;font-size:.82rem;text-decoration:none">Edit →</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top:.75rem">
+    <a href="/admin/payment/order/" style="font-size:.85rem;color:#7c3aed;font-weight:600">View all orders →</a>
+  </div>
+</div>
+{% endif %}
+
+<!-- ── SECTION: TOP PRODUCTS + RECENT ENQUIRIES ── -->
+<div class="two-col dash-section">
+
+  <!-- Top Products -->
+  {% if kpi_top_products %}
+  <div class="panel">
+    <h3>🏆 Top Products by Sales</h3>
+    {% for p in kpi_top_products %}
+    <div class="panel-row">
+      {% if p.image_1 %}
+      <img src="{{ p.image_1.url }}" style="width:36px;height:36px;border-radius:8px;object-fit:cover;flex-shrink:0"/>
+      {% else %}
+      <div class="panel-avatar">{{ p.name|slice:":1" }}</div>
+      {% endif %}
+      <div class="panel-name">{{ p.name|truncatechars:30 }}</div>
+      <span class="panel-badge">{{ p.no_of_sales }} sold</span>
+    </div>
+    {% endfor %}
+    <a href="/admin/core/product/" style="font-size:.82rem;color:#7c3aed;font-weight:600;display:block;margin-top:.75rem">All products →</a>
+  </div>
+  {% endif %}
+
+  <!-- Recent Enquiries -->
+  {% if kpi_new_enquiries %}
+  <div class="panel">
+    <h3>📨 Recent Enquiries</h3>
+    {% for e in kpi_new_enquiries %}
+    <div class="panel-row">
+      <div class="panel-avatar">{{ e.name|slice:":1"|upper }}</div>
+      <div style="flex:1;min-width:0">
+        <div class="panel-name">{{ e.name }}</div>
+        <div class="panel-meta">{{ e.subject|truncatechars:35 }}</div>
+      </div>
+      <a href="/admin/core/customerform/{{ e.id }}/change/" style="font-size:.78rem;color:#7c3aed;font-weight:600;white-space:nowrap">View</a>
+    </div>
+    {% endfor %}
+    <a href="/admin/core/customerform/" style="font-size:.82rem;color:#7c3aed;font-weight:600;display:block;margin-top:.75rem">All enquiries →</a>
+  </div>
+  {% endif %}
+
+</div>
+
+<!-- ── SECTION: RECENT REVIEWS ── -->
+{% if kpi_new_reviews %}
+<div class="dash-section">
+  <h2>⭐ Recent Reviews to Moderate</h2>
+  <div class="panel">
+    {% for r in kpi_new_reviews %}
+    <div class="panel-row">
+      <div class="panel-avatar">{{ r.user.username|slice:":1"|upper }}</div>
+      <div style="flex:1;min-width:0">
+        <div class="panel-name">{{ r.product.name|truncatechars:30 }} — by {{ r.user.username }}</div>
+        <div class="panel-meta">{{ r.title|truncatechars:50 }}</div>
+      </div>
+      <span style="color:#f59e0b;font-size:1rem">{%for i in "12345"%}{%if forloop.counter <= r.rating%}★{%else%}☆{%endif%}{%endfor%}</span>
+      <a href="/admin/core/review/{{ r.id }}/change/" style="font-size:.78rem;color:#7c3aed;font-weight:600;margin-left:.75rem">Review</a>
+    </div>
+    {% endfor %}
+    <a href="/admin/core/review/" style="font-size:.82rem;color:#7c3aed;font-weight:600;display:block;margin-top:.75rem">All reviews →</a>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

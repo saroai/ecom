@@ -445,8 +445,54 @@ a:hover{color:var(--primary-2)}
   .newsletter-inner{padding:24px!important}
 }
 @media(max-width:480px){
+}
+@media(max-width:480px){
   .hero-title{font-size:1.6rem!important}
   .product-body{padding:12px}
   .product-name{font-size:.9rem}
   .price-current{font-size:1.1rem}
 }
+
+/* ── R) CART & PROFILE (PREMIUM) ── */
+.cart-page-premium { background: var(--bg); }
+.cart-header-top .page-title { font-weight: 700; font-size: 2.25rem; color: var(--text); }
+.cart-table-header { padding: 0 16px 12px; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--border); margin-bottom: 16px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.cart-items-list { display: flex; flex-direction: column; gap: 16px; }
+.cart-item-premium { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px; transition: all var(--ease); }
+.cart-item-premium:hover { box-shadow: var(--shadow-1); border-color: var(--primary-2); }
+.cart-img-wrap { width: 90px; height: 90px; flex-shrink: 0; background: var(--surface-2); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.cart-img { width: 100%; height: 100%; object-fit: cover; }
+.cart-info { display: flex; flex-direction: column; }
+.cart-product-title { font-weight: 600; font-size: 1.05rem; color: var(--text); text-decoration: none; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cart-product-title:hover { color: var(--primary); }
+.cart-product-meta { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+.qty-selector-premium { display: flex; align-items: center; background: var(--surface-2); border-radius: 8px; border: 1px solid var(--border); overflow: hidden; width: fit-content; }
+.qty-btn { background: transparent; border: none; padding: 6px 12px; color: var(--text); cursor: pointer; transition: all 0.2s; }
+.qty-btn:hover { background: var(--border); color: var(--primary); }
+.qty-val { padding: 6px 12px; font-weight: 600; font-size: 0.95rem; min-width: 40px; text-align: center; }
+.btn-remove-item { background: transparent; border: none; color: var(--muted); font-size: 1.25rem; transition: all 0.2s; padding: 8px; border-radius: 8px; }
+.btn-remove-item:hover { color: var(--danger); background: rgba(239, 68, 68, 0.1); }
+.cart-item-total { font-family: var(--font-heading); font-size: 1.15rem; color: var(--text); }
+.cart-summary-premium { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: var(--shadow-1); }
+.summary-heading { font-weight: 700; font-size: 1.25rem; margin-bottom: 24px; color: var(--text); }
+.summary-line { display: flex; justify-content: space-between; margin-bottom: 16px; font-size: 0.95rem; }
+.line-label { color: var(--muted); }
+.line-value { color: var(--text); }
+.total-line { font-size: 1.15rem; font-weight: 700; color: var(--text); }
+.promo-toggle { background: transparent; border: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; padding: 0; text-decoration: none; }
+.promo-input-group { display: flex; gap: 8px; }
+.btn-apply-promo { background: var(--surface-2); border: 1px solid var(--border); padding: 8px 16px; border-radius: 8px; font-weight: 600; color: var(--text); transition: all 0.2s; }
+.btn-apply-promo:hover { background: var(--primary); color: white; border-color: var(--primary); }
+.trust-feature { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+.profile-dashboard { background: var(--bg); }
+.profile-sidebar-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-1); }
+.profile-nav .list-group-item { padding: 12px 20px; font-weight: 500; color: var(--text); transition: all 0.2s; }
+.profile-nav .list-group-item:hover { background: var(--surface-2); color: var(--primary); }
+.profile-nav .list-group-item.active { background: var(--primary); color: white; border-color: var(--primary); }
+.dashboard-title { color: var(--text); font-size: 1.5rem; }
+.order-card-premium { transition: all 0.2s; }
+.order-card-premium:hover { box-shadow: var(--shadow-1); border-color: var(--primary-2); }
+.premium-input { border-radius: 8px; border: 1px solid var(--border); box-shadow: none; transition: all 0.2s; }
+.premium-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(124,58,237,0.1); }
+.address-card { border: 1px solid var(--border); }
+.cursor-pointer { cursor: pointer; }

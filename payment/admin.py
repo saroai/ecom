@@ -29,7 +29,6 @@ class OrderAdmin(ModelAdmin):
         "order_badge", "customer_display", "amount_display",
         "status_badge", "payment_badge", "ordered_date"
     ]
-    list_editable  = ["status"]
     list_filter    = ["status", "is_paid", "ordered_date"]
     search_fields  = ["user__username", "user__email", "order_id"]
     readonly_fields= ["order_id", "payment_id", "signature", "ordered_date", "updated_at"]

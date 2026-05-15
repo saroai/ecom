@@ -50,7 +50,6 @@ class ProductAdmin(ModelAdmin):
     search_fields = ["name", "description", "category"]
     ordering      = ["-created_at"]
     list_per_page = 25
-    actions_list  = ["export_csv_action"]
 
     fieldsets = (
         ("💎 Basic Info", {

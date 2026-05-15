@@ -13,10 +13,10 @@
   --success: #06d6a0;
   
   /* Typography Colors (Darker for Contrast) */
-  --text-dark: #3b1c54; /* Deep Plum / Dark Violet */
-  --text-muted: #73608a; /* Muted Purple Grey */
-  --text-heading: #5a3b8c; /* Strong Royal Lilac */
-  --text-link: #815ad5; /* Vibrant Purple */
+  --text-dark: #1A0B2E; /* Almost Black Purple */
+  --text-muted: #4A3B5C; /* Dark Purple Grey */
+  --text-heading: #2D1B4E; /* Very Dark Royal Purple */
+  --text-link: #492A8C; /* Deep Strong Purple */
   
   --font-heading: 'Fredoka', sans-serif;
   --font-body: 'Nunito', sans-serif;
@@ -60,7 +60,7 @@ a:hover {
 ═══════════════════════════════════════ */
 .announcement-bar {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--white);
   padding: 8px 0;
   font-size: 0.9rem;
   font-weight: 700;
@@ -80,7 +80,7 @@ a:hover {
   font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 800;
-  color: var(--secondary-color);
+  color: var(--text-heading);
 }
 
 .logo-icon { font-size: 32px; }
@@ -88,7 +88,7 @@ a:hover {
 
 .toy-navbar .nav-link {
   font-weight: 700;
-  color: var(--secondary-color) !important;
+  color: var(--text-dark) !important;
   padding: 10px 15px !important;
   border-radius: var(--radius-pill);
 }
@@ -1726,7 +1726,7 @@ html, body {
 }
 
 .cat-bar-link {
-    color: var(--secondary-color);
+    color: var(--text-dark);
     font-weight: 700;
     font-size: 0.95rem;
     text-decoration: none;

@@ -21,13 +21,13 @@ def home(request):
 
     # Category display with product counts
     categories = [
-        {"key": "teething", "label": "Teething Toys", "icon": "bi-emoji-smile"},
-        {"key": "bath",     "label": "Bath Toys",     "icon": "bi-droplet"},
-        {"key": "feeding",  "label": "Feeding Accs",  "icon": "bi-cup-straw"},
-        {"key": "sensory",  "label": "Sensory Play",  "icon": "bi-stars"},
-        {"key": "play",     "label": "Baby Play",     "icon": "bi-puzzle"},
-        {"key": "pet",      "label": "Pet Toys",      "icon": "bi-paw"},
-        {"key": "kitchen",  "label": "Kitchen Silicone", "icon": "bi-house-heart"},
+        {"key": "teething", "label": "Teething Toys", "img": "cat_teething.png"},
+        {"key": "bath",     "label": "Bath Toys",     "img": "cat_bath.png"},
+        {"key": "feeding",  "label": "Feeding Accs",  "img": "cat_feeding.png"},
+        {"key": "sensory",  "label": "Sensory Play",  "img": "cat_sensory.png"},
+        {"key": "play",     "label": "Baby Play",     "img": "cat_babyplay.png"},
+        {"key": "pet",      "label": "Pet Toys",      "img": "cat_pettoys.png"},
+        {"key": "kitchen",  "label": "Kitchen Silicone", "img": "cat_kitchen.png"},
     ]
 
     context = {

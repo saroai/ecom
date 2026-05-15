@@ -6,9 +6,93 @@
 {% block content %}
 
 <!-- ═══════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════ -->
+<section class="hero-section py-4">
+  <div class="container">
+    <div class="position-relative d-flex align-items-center rounded-5 shadow-lg overflow-hidden" style="min-height: 65vh; background: url('{% static 'img/hero_desktop.png' %}') no-repeat center right / cover;">
+      
+      <!-- Strong Gradient Overlay for Text Visibility -->
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 40%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0) 100%);"></div>
+      
+      <div class="position-relative z-1 px-4 px-md-5 w-100">
+        <div class="row">
+          <div class="col-lg-7 col-xl-6 py-5">
+            <div class="hero-content pe-lg-4">
+              <div class="deal-badge mb-3 bg-primary text-white shadow-sm" style="display: inline-block; padding: 6px 16px; border-radius: 30px; font-weight: 600; font-size: 0.9rem;">
+                <i class="bi bi-lightning-charge-fill text-warning"></i> Flash Sale: 20% OFF Everything!
+              </div>
+              <h1 class="hero-title display-4 fw-bold text-dark mb-3">
+                The Safest Choice for<br/>
+                <span style="color: var(--primary-color);">Happy Little Ones</span>
+              </h1>
+              <p class="hero-subtitle text-muted fs-5 mb-4" style="font-weight: 500; max-width: 500px;">
+                Premium food-grade silicone toys that are BPA-free, ultra-soft, and designed for your baby's ultimate comfort.
+              </p>
+              <div class="hero-actions">
+                <a href="{% url 'products' %}" class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-sm" style="font-weight: 600;">
+                  <i class="bi bi-bag-heart-fill me-2"></i>Shop Best Sellers
+                </a>
+              </div>
+              <!-- Mini Trust Badges -->
+              <div class="d-flex align-items-center mt-4 gap-3 text-dark" style="font-size: 0.85rem; font-weight: 600;">
+                <div><i class="bi bi-shield-check text-success fs-5 align-middle me-1"></i>BPA-Free</div>
+                <div><i class="bi bi-droplet text-info fs-5 align-middle me-1"></i>Dishwasher Safe</div>
+                <div><i class="bi bi-truck text-primary fs-5 align-middle me-1"></i>Fast Delivery</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     DIRECT CATEGORY ACCESS
+═══════════════════════════════════════ -->
+<section class="category-bar bg-white border-bottom sticky-top-below-nav shadow-sm">
+  <div class="container">
+    <div class="d-flex overflow-x-auto py-3 gap-4 justify-content-lg-center no-scrollbar">
+      {% for cat in categories %}
+      <a href="{% url 'products' %}?category={{ cat.key }}" class="cat-bar-link text-nowrap fw-bold text-dark">
+        {{ cat.label }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SHOP BY CATEGORY (VISUAL TILES)
+═══════════════════════════════════════ -->
+<section class="section-gap bg-section-alt">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title display-6 fw-bold">Shop by Category</h2>
+      <p class="section-subtitle">Premium silicone essentials for every need</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      {% for cat in categories %}
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="{% url 'products' %}?category={{ cat.key }}" class="text-decoration-none">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover h-100">
+            <img src="{% static 'img/'|add:cat.img %}" alt="{{ cat.label }}" class="card-img-top" style="aspect-ratio: 1/1; object-fit: cover;">
+            <div class="card-body py-3">
+              <h5 class="fw-bold mb-0 text-dark">{{ cat.label }}</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
      THE FIMIKU PROMISE (WHY US) - DETAILED
 ═══════════════════════════════════════ -->
-<section id="why-us" class="why-us-section py-5 bg-section-alt">
+<section id="why-us" class="why-us-section py-5">
   <div class="container">
     <div class="section-header text-center mb-5">
       <div class="deal-badge mb-2">The Fimiku Promise</div>
@@ -85,84 +169,6 @@
           <div class="card-body p-4 pt-0">
             <h4 class="fw-bold">Built to Last</h4>
             <p class="text-muted">Our toys won't break, crack, or fade. They are designed to withstand years of play and can be passed down to siblings.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     DIRECT CATEGORY ACCESS
-═══════════════════════════════════════ -->
-<section class="category-bar bg-white border-bottom sticky-top-below-nav shadow-sm">
-  <div class="container">
-    <div class="d-flex overflow-x-auto py-3 gap-4 justify-content-lg-center no-scrollbar">
-      {% for cat in categories %}
-      <a href="{% url 'products' %}?category={{ cat.key }}" class="cat-bar-link text-nowrap fw-bold text-dark">
-        {{ cat.label }}
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     SHOP BY CATEGORY (VISUAL TILES)
-═══════════════════════════════════════ -->
-<section class="section-gap bg-section-alt">
-  <div class="container">
-    <div class="section-header text-center mb-5">
-      <h2 class="section-title display-6 fw-bold">Shop by Category</h2>
-      <p class="section-subtitle">Premium silicone essentials for every need</p>
-    </div>
-    <div class="row g-4 justify-content-center">
-      {% for cat in categories %}
-      <div class="col-6 col-md-4 col-lg-3">
-        <a href="{% url 'products' %}?category={{ cat.key }}" class="text-decoration-none">
-          <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover h-100">
-            <img src="{% static 'img/'|add:cat.img %}" alt="{{ cat.label }}" class="card-img-top" style="aspect-ratio: 1/1; object-fit: cover;">
-            <div class="card-body py-3">
-              <h5 class="fw-bold mb-0 text-dark">{{ cat.label }}</h5>
-            </div>
-          </div>
-        </a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     HERO SECTION
-═══════════════════════════════════════ -->
-<section class="hero-section py-4">
-  <div class="container">
-    <div class="position-relative d-flex align-items-center rounded-5 shadow-lg overflow-hidden" style="min-height: 65vh; background: url('{% static 'img/hero_desktop.png' %}') no-repeat center right / cover;">
-      
-      <!-- Strong Gradient Overlay for Text Visibility -->
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 40%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0) 100%);"></div>
-      
-      <div class="position-relative z-1 px-4 px-md-5 w-100">
-        <div class="row">
-          <div class="col-lg-7 col-xl-6 py-5">
-            <div class="hero-content pe-lg-4">
-              <div class="deal-badge mb-3 bg-primary text-white shadow-sm" style="display: inline-block; padding: 6px 16px; border-radius: 30px; font-weight: 600; font-size: 0.9rem;">
-                <i class="bi bi-lightning-charge-fill text-warning"></i> Flash Sale: 20% OFF Everything!
-              </div>
-              <h1 class="hero-title display-4 fw-bold text-dark mb-3">
-                The Safest Choice for<br/>
-                <span style="color: var(--primary-color);">Happy Little Ones</span>
-              </h1>
-              <p class="hero-subtitle text-muted fs-5 mb-4" style="font-weight: 500; max-width: 500px;">
-                Premium food-grade silicone toys that are BPA-free, ultra-soft, and designed for your baby's ultimate comfort.
-              </p>
-              <div class="hero-actions">
-                <a href="{% url 'products' %}" class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-sm" style="font-weight: 600;">
-                  <i class="bi bi-bag-heart-fill me-2"></i>Shop Best Sellers
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>

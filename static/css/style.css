@@ -2,16 +2,21 @@
    TOYZONE GLOBAL STYLES & VARIABLES (LILAC DREAM THEME)
 ═══════════════════════════════════════ */
 :root {
+  /* Background & Accent Colors (Light Pastels) */
   --primary-color: #B197FC; /* Vibrant Lilac */
   --secondary-color: #CDB4DB; /* Dusty Lilac */
   --accent-color: #A0E7E5; /* Mint Green / Aqua */
   --accent-light: #E9D5FF; /* Very Light Purple */
   --bg-color: #FDF6FF; /* Cream White */
-  --text-dark: #2b2d42;
-  --text-muted: #6d6875;
   --white: #FFFFFF;
   --danger: #ef233c;
   --success: #06d6a0;
+  
+  /* Typography Colors (Darker for Contrast) */
+  --text-dark: #3b1c54; /* Deep Plum / Dark Violet */
+  --text-muted: #73608a; /* Muted Purple Grey */
+  --text-heading: #5a3b8c; /* Strong Royal Lilac */
+  --text-link: #815ad5; /* Vibrant Purple */
   
   --font-heading: 'Fredoka', sans-serif;
   --font-body: 'Nunito', sans-serif;

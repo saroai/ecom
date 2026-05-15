@@ -136,49 +136,26 @@
 <!-- ═══════════════════════════════════════
      HERO SECTION
 ═══════════════════════════════════════ -->
-<section class="hero-section">
-  <div class="hero-bg-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-  <div class="container">
-    <div class="row align-items-center min-vh-75">
-      <div class="col-lg-6">
+<section class="hero-section position-relative d-flex align-items-center" style="min-height: 85vh; background: url('{% static 'img/hero_desktop.png' %}') no-repeat right center / cover;">
+  <!-- Gradient Overlay -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(90deg, rgba(253, 248, 255, 1) 0%, rgba(253, 248, 255, 0.9) 45%, rgba(253, 248, 255, 0) 100%);"></div>
+  
+  <div class="container position-relative z-1 py-5">
+    <div class="row">
+      <div class="col-lg-7 col-xl-6 py-5">
         <div class="hero-content">
           <div class="deal-badge mb-3"><i class="bi bi-lightning-charge-fill"></i> Flash Sale: 20% OFF Everything!</div>
-          <h1 class="hero-title">
+          <h1 class="hero-title display-3 fw-bold" style="font-size: 4rem; line-height: 1.1;">
             The Safest Choice for<br/>
             <span class="text-highlight">Happy Little Ones</span>
           </h1>
-          <p class="hero-subtitle">
+          <p class="hero-subtitle lead mt-3 mb-4" style="font-size: 1.25rem;">
             Premium food-grade silicone toys that are BPA-free, ultra-soft, and designed for your baby's ultimate comfort.
           </p>
-          <div class="hero-actions">
-            <a href="{% url 'products' %}" class="btn btn-hero-primary">
+          <div class="hero-actions mt-4">
+            <a href="{% url 'products' %}" class="btn btn-hero-primary btn-lg px-5 py-3" style="font-size: 1.1rem; border-radius: 50px;">
               <i class="bi bi-bag-heart-fill me-2"></i>Shop Best Sellers
             </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="hero-visual">
-          <div class="hero-img-wrapper">
-            <div class="floating-toy toy-pos-1 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: white; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); color: #ff006e; font-size: 28px;">
-              <i class="bi bi-balloon-heart"></i>
-            </div>
-            <div class="floating-toy toy-pos-2 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: white; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); color: #ffbe0b; font-size: 28px;">
-              <i class="bi bi-stars"></i>
-            </div>
-            <div class="floating-toy toy-pos-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: white; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); color: #00bbf9; font-size: 28px;">
-              <i class="bi bi-droplet-half"></i>
-            </div>
-            <div class="floating-toy toy-pos-4 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background: white; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); color: #8338ec; font-size: 28px;">
-              <i class="bi bi-emoji-smile"></i>
-            </div>
-            <div class="hero-circle" style="border-radius: var(--radius-lg); overflow: hidden;">
-              <img src="{% static 'img/hero_desktop.png' %}" alt="Baby holding a soft food-grade silicone teether" class="img-fluid w-100 shadow-lg" style="object-fit: cover; aspect-ratio: 4/3; max-height: 650px;" />
-            </div>
           </div>
         </div>
       </div>

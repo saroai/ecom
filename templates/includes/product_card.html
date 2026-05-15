@@ -1,22 +1,22 @@
 {% load static %}
-<!-- Product Card Component -->
-<div class="product-card">
+<!-- Premium Product Card -->
+<div class="product-card-premium">
   <!-- Badges -->
   <div class="product-badges">
     {% if product.is_discount %}
-    <span class="badge-discount">-{{ product.discount_percentage }}%</span>
+    <span class="badge-premium badge-discount">-{{ product.discount_percentage }}%</span>
     {% endif %}
     {% if product.is_featured %}
-    <span class="badge-featured">Featured</span>
+    <span class="badge-premium badge-featured">Featured</span>
     {% endif %}
     {% if not product.is_in_stock %}
-    <span class="badge-oos">Out of Stock</span>
+    <span class="badge-premium badge-oos">Out of Stock</span>
     {% endif %}
   </div>
 
   <!-- Wishlist button -->
   {% if user.is_authenticated %}
-  <button class="wishlist-btn {% if product.id|stringformat:'s' in wishlist_ids %}active{% endif %}"
+  <button class="wishlist-btn-premium {% if product.id|stringformat:'s' in wishlist_ids %}active{% endif %}"
           data-product-id="{{ product.id }}" title="Add to Wishlist">
     <i class="bi bi-heart{% if product.id|stringformat:'s' in wishlist_ids %}-fill{% endif %}"></i>
   </button>
@@ -36,6 +36,7 @@
   <div class="product-body">
     <div class="product-meta">
       <span class="product-category">{{ product.get_category_display }}</span>
+      <span class="meta-dot">•</span>
       <span class="product-age">{{ product.get_age_group_display }}</span>
     </div>
 
@@ -57,23 +58,28 @@
       {% endwith %}
     </div>
 
-    <!-- Price -->
-    <div class="product-price">
-      {% if product.is_discount %}
-      <span class="price-current">₹{{ product.discount_price }}</span>
-      <span class="price-original">₹{{ product.price }}</span>
+    <!-- Price & Action -->
+    <div class="product-footer">
+      <div class="product-price">
+        {% if product.is_discount %}
+        <span class="price-current">₹{{ product.discount_price }}</span>
+        <span class="price-original">₹{{ product.price }}</span>
+        {% else %}
+        <span class="price-current">₹{{ product.price }}</span>
+        {% endif %}
+      </div>
+      
+      <!-- Quick Add -->
+      {% if product.is_in_stock %}
+      <button class="btn-quick-add" data-product-id="{{ product.id }}" data-qty="1" title="Add to Cart">
+        <i class="bi bi-plus-lg"></i>
+        <span class="quick-add-text">Add</span>
+      </button>
       {% else %}
-      <span class="price-current">₹{{ product.price }}</span>
+      <button class="btn-quick-add disabled" disabled title="Out of Stock">
+        <i class="bi bi-x-lg"></i>
+      </button>
       {% endif %}
     </div>
-
-    <!-- Add to Cart -->
-    {% if product.is_in_stock %}
-    <button class="btn-add-cart" data-product-id="{{ product.id }}" data-qty="1">
-      <i class="bi bi-bag-plus me-1"></i> Add to Cart
-    </button>
-    {% else %}
-    <button class="btn-add-cart disabled" disabled>Out of Stock</button>
-    {% endif %}
   </div>
 </div>

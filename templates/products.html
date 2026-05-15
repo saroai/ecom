@@ -4,84 +4,123 @@
 {% block title %}{% if category %}{{ category|title }} Toys{% else %}All Toys{% endif %} – Fimiku{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-  <div class="row g-4">
+<!-- ── COLLECTION HEADER ── -->
+<div class="collection-header">
+  <div class="container collection-header-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{% if category %}{{ category|title }}{% else %}All Toys{% endif %}</li>
+      </ol>
+    </nav>
+    
+    <div class="collection-title-row">
+      <div>
+        <h1 class="collection-title">
+          {% if search %}Results for "{{ search }}"
+          {% elif category %}
+              {% for key, label in categories %}
+                  {% if key == category %}{{ label }}{% endif %}
+              {% endfor %}
+          {% else %}All Toys
+          {% endif %}
+        </h1>
+        <p class="collection-count">{{ products.paginator.count }} products</p>
+      </div>
+      
+      <div class="collection-sort d-none d-lg-block">
+        <label for="sortDesktop" class="sort-label">Sort by:</label>
+        <select id="sortDesktop" name="sort" class="sort-select" form="filterForm" onchange="document.getElementById('filterForm').submit()">
+          <option value="newest" {% if sort == "newest" %}selected{% endif %}>Newest First</option>
+          <option value="popular" {% if sort == "popular" %}selected{% endif %}>Most Popular</option>
+          <option value="price_asc" {% if sort == "price_asc" %}selected{% endif %}>Price: Low to High</option>
+          <option value="price_desc" {% if sort == "price_desc" %}selected{% endif %}>Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- ── SIDEBAR FILTERS ── -->
-    <div class="col-lg-3">
-      <div class="filter-sidebar">
-        <div class="filter-header">
-          <h5><i class="bi bi-funnel-fill me-2"></i>Filters</h5>
-          <a href="{% url 'products' %}" class="clear-filters">Clear All</a>
+<div class="container py-4 py-lg-5">
+  <!-- Mobile Filter/Sort Bar (Sticky) -->
+  <div class="mobile-filter-bar d-lg-none">
+    <button class="btn-mobile-filter" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileFilterDrawer">
+      <i class="bi bi-funnel"></i> Filter
+    </button>
+    <div class="mobile-sort">
+      <select id="sortMobile" name="sort" class="sort-select" form="filterForm" onchange="document.getElementById('filterForm').submit()">
+        <option value="newest" {% if sort == "newest" %}selected{% endif %}>Newest</option>
+        <option value="popular" {% if sort == "popular" %}selected{% endif %}>Popular</option>
+        <option value="price_asc" {% if sort == "price_asc" %}selected{% endif %}>Price: Low to High</option>
+        <option value="price_desc" {% if sort == "price_desc" %}selected{% endif %}>Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- ── SIDEBAR FILTERS (DESKTOP) ── -->
+    <div class="col-lg-3 d-none d-lg-block">
+      <div class="premium-filter-card sticky-top" style="top: 100px;">
+        <div class="filter-card-header">
+          <h5 class="filter-card-title">Filters</h5>
+          <a href="{% url 'products' %}" class="filter-clear">Clear all</a>
         </div>
 
         <form method="GET" action="{% url 'products' %}" id="filterForm">
-          <!-- Search -->
-          <div class="filter-group">
-            <h6 class="filter-label">🔍 Search</h6>
-            <input type="text" name="q" value="{{ search|default:'' }}" class="filter-input" placeholder="Search toys…"/>
-          </div>
+          {% if search %}<input type="hidden" name="q" value="{{ search }}">{% endif %}
+          
+          <div class="accordion premium-accordion" id="filterAccordion">
+            <!-- Category -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#catCollapse">
+                  Category
+                </button>
+              </h2>
+              <div id="catCollapse" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  {% for key, label in categories %}
+                  <label class="premium-checkbox">
+                    <input type="radio" name="category" value="{{ key }}" {% if category == key %}checked{% endif %} onchange="this.form.submit()">
+                    <span class="checkmark"></span>
+                    <span class="label-text">{{ label }}</span>
+                  </label>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
 
-          <!-- Category -->
-          <div class="filter-group">
-            <h6 class="filter-label">📦 Category</h6>
-            {% for key, label in categories %}
-            <label class="filter-option">
-              <input type="radio" name="category" value="{{ key }}" {% if category == key %}checked{% endif %}/>
-              <span>{{ label }}</span>
-            </label>
-            {% endfor %}
+            <!-- Age Group -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ageCollapse">
+                  Age Group
+                </button>
+              </h2>
+              <div id="ageCollapse" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  {% for key, label in age_groups %}
+                  <label class="premium-checkbox">
+                    <input type="radio" name="age_group" value="{{ key }}" {% if age_group == key %}checked{% endif %} onchange="this.form.submit()">
+                    <span class="checkmark"></span>
+                    <span class="label-text">{{ label }}</span>
+                  </label>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            
           </div>
-
-          <!-- Age Group -->
-          <div class="filter-group">
-            <h6 class="filter-label">🎂 Age Group</h6>
-            {% for key, label in age_groups %}
-            <label class="filter-option">
-              <input type="radio" name="age_group" value="{{ key }}" {% if age_group == key %}checked{% endif %}/>
-              <span>{{ label }}</span>
-            </label>
-            {% endfor %}
-          </div>
-
-          <!-- Sort -->
-          <div class="filter-group">
-            <h6 class="filter-label">⬆️ Sort By</h6>
-            <select name="sort" class="filter-select" onchange="document.getElementById('filterForm').submit()">
-              <option value="newest" {% if sort == "newest" %}selected{% endif %}>Newest First</option>
-              <option value="popular" {% if sort == "popular" %}selected{% endif %}>Most Popular</option>
-              <option value="price_asc" {% if sort == "price_asc" %}selected{% endif %}>Price: Low to High</option>
-              <option value="price_desc" {% if sort == "price_desc" %}selected{% endif %}>Price: High to Low</option>
-            </select>
-          </div>
-
-          <button type="submit" class="btn-apply-filter">Apply Filters</button>
         </form>
       </div>
     </div>
 
     <!-- ── PRODUCTS GRID ── -->
     <div class="col-lg-9">
-      <!-- Header -->
-      <div class="products-header">
-        <div>
-          <h2 class="products-title">
-            {% if search %}Results for "{{ search }}"
-            {% elif category %}
-                {% for key, label in categories %}
-                    {% if key == category %}{{ label }}{% endif %}
-                {% endfor %} Toys
-            {% else %}All Toys 🧸
-            {% endif %}
-          </h2>
-          <p class="products-count">{{ products.paginator.count }} products found</p>
-        </div>
-      </div>
-
       {% if products %}
-      <div class="row g-4">
+      <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-xl-4">
         {% for product in products %}
-        <div class="col-6 col-md-4">
+        <div class="col">
           {% include "includes/product_card.html" with product=product %}
         </div>
         {% endfor %}
@@ -91,7 +130,7 @@
       {% if products.has_other_pages %}
       <div class="pagination-wrapper mt-5">
         <nav>
-          <ul class="pagination toy-pagination">
+          <ul class="pagination premium-pagination">
             {% if products.has_previous %}
             <li class="page-item">
               <a class="page-link" href="?page={{ products.previous_page_number }}&category={{ category|default:'' }}&age_group={{ age_group|default:'' }}&q={{ search|default:'' }}&sort={{ sort }}">
@@ -117,16 +156,57 @@
       {% endif %}
 
       {% else %}
-      <!-- No Products Found -->
-      <div class="no-products">
-        <div class="no-prod-emoji">🔍</div>
-        <h3>No toys found!</h3>
-        <p>Try different filters or search terms.</p>
-        <a href="{% url 'products' %}" class="btn btn-primary">View All Toys</a>
+      <!-- Empty State -->
+      <div class="empty-state-premium">
+        <div class="empty-icon"><i class="bi bi-search"></i></div>
+        <h3>No products match your filters</h3>
+        <p>Try adjusting your search or filter criteria to find what you're looking for.</p>
+        <a href="{% url 'products' %}" class="btn-stripe-secondary">Clear all filters</a>
       </div>
       {% endif %}
     </div>
 
+  </div>
+</div>
+
+<!-- ── MOBILE FILTER DRAWER ── -->
+<div class="offcanvas offcanvas-bottom premium-drawer" tabindex="-1" id="mobileFilterDrawer" aria-labelledby="mobileFilterDrawerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="mobileFilterDrawerLabel">Filters</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <form method="GET" action="{% url 'products' %}" id="mobileFilterForm">
+      {% if search %}<input type="hidden" name="q" value="{{ search }}">{% endif %}
+      {% if sort %}<input type="hidden" name="sort" value="{{ sort }}">{% endif %}
+      
+      <h6 class="drawer-section-title">Category</h6>
+      <div class="drawer-options">
+        {% for key, label in categories %}
+        <label class="premium-checkbox">
+          <input type="radio" name="category" value="{{ key }}" {% if category == key %}checked{% endif %}>
+          <span class="checkmark"></span>
+          <span class="label-text">{{ label }}</span>
+        </label>
+        {% endfor %}
+      </div>
+
+      <h6 class="drawer-section-title mt-4">Age Group</h6>
+      <div class="drawer-options">
+        {% for key, label in age_groups %}
+        <label class="premium-checkbox">
+          <input type="radio" name="age_group" value="{{ key }}" {% if age_group == key %}checked{% endif %}>
+          <span class="checkmark"></span>
+          <span class="label-text">{{ label }}</span>
+        </label>
+        {% endfor %}
+      </div>
+
+      <div class="drawer-footer">
+        <a href="{% url 'products' %}" class="btn-stripe-secondary flex-grow-1 text-center">Clear All</a>
+        <button type="submit" class="btn-stripe-primary flex-grow-1">Apply</button>
+      </div>
+    </form>
   </div>
 </div>
 {% endblock %}

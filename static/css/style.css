@@ -1,19 +1,23 @@
 /* ═══════════════════════════════════════
-   TOYZONE GLOBAL STYLES & VARIABLES
+   TOYZONE GLOBAL STYLES & VARIABLES (LILAC DREAM THEME)
 ═══════════════════════════════════════ */
 :root {
-  --primary-color: #ff006e; /* Vibrant Pink */
-  --secondary-color: #7209b7; /* Deep Purple */
-  --accent-color: #ffbe0b; /* Sunshine Gold */
-  --accent-light: #ff85a1; /* Light Pink */
-  --bg-color: #fcf6f5; /* Soft Peach White */
+  --primary-color: #B197FC; /* Vibrant Lilac */
+  --secondary-color: #CDB4DB; /* Dusty Lilac */
+  --accent-color: #A0E7E5; /* Mint Green / Aqua */
+  --accent-light: #E9D5FF; /* Very Light Purple */
+  --bg-color: #FDF6FF; /* Cream White */
   --text-dark: #2b2d42;
   --text-muted: #6d6875;
   --white: #FFFFFF;
   --danger: #ef233c;
-  --success: #06d6a0; /* Mint Green */
+  --success: #06d6a0;
   
+  --font-heading: 'Fredoka', sans-serif;
   --font-body: 'Nunito', sans-serif;
+  --radius-sm: 10px;
+  --radius-md: 15px;
+  --radius-lg: 25px;
   --radius-pill: 50px;
 }
 

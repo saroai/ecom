@@ -59,31 +59,35 @@
         </div>
       </form>
       
-      <!-- Cart Icon (Always visible on right) -->
-      <a href="{% url 'cart_summary' %}" class="nav-icon-btn cart-icon-btn ms-auto">
-        <i class="bi bi-bag"></i>
-        {% if cart_count > 0 %}
-        <span class="cart-badge">{{ cart_count }}</span>
-        {% endif %}
+      <!-- Cart Icon (Always visible on right, Made Larger/Premium) -->
+      <a href="{% url 'cart_summary' %}" class="btn-cart-premium ms-auto d-flex align-items-center">
+        <div class="cart-icon-wrapper position-relative">
+          <i class="bi bi-bag-fill fs-4 text-primary"></i>
+          {% if cart_count > 0 %}
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light shadow-sm" style="font-size: 0.75rem; padding: 0.35em 0.6em;">
+            {{ cart_count }}
+          </span>
+          {% endif %}
+        </div>
+        <span class="ms-3 fw-bold text-dark d-none d-sm-block fs-5">My Cart</span>
       </a>
     </div>
 
     <!-- Bottom Row (Mobile) / Right Side (Desktop): Direct Nav Links -->
-    <div class="w-100 overflow-hidden">
+    <div class="w-100 overflow-hidden mt-2">
       <ul class="navbar-nav flex-row overflow-x-auto flex-nowrap align-items-center gap-3 no-scrollbar pb-1">
-        <li class="nav-item"><a class="nav-link text-nowrap" href="{% url 'home' %}"><i class="bi bi-house-door me-1"></i>Home</a></li>
-        <li class="nav-item"><a class="nav-link text-nowrap" href="{% url 'products' %}"><i class="bi bi-grid me-1"></i>All Toys</a></li>
-        <li class="nav-item"><a class="nav-link text-nowrap" href="{% url 'about' %}"><i class="bi bi-info-circle me-1"></i>About</a></li>
-        <li class="nav-item"><a class="nav-link text-nowrap" href="{% url 'contact' %}"><i class="bi bi-envelope me-1"></i>Contact</a></li>
+        <li class="nav-item"><a class="nav-link text-nowrap fw-medium" href="{% url 'home' %}"><i class="bi bi-house-door me-1"></i>Home</a></li>
+        <li class="nav-item"><a class="nav-link text-nowrap fw-medium" href="{% url 'products' %}"><i class="bi bi-grid me-1"></i>All Toys</a></li>
+        <li class="nav-item"><a class="nav-link text-nowrap fw-medium" href="{% url 'about' %}"><i class="bi bi-info-circle me-1"></i>About</a></li>
+        <li class="nav-item"><a class="nav-link text-nowrap fw-medium" href="{% url 'contact' %}"><i class="bi bi-envelope me-1"></i>Contact</a></li>
 
         <!-- Auth -->
         {% if user.is_authenticated %}
-          <li class="nav-item"><a class="nav-link text-nowrap" href="{% url 'your_orders' %}"><i class="bi bi-person-circle me-1"></i>Profile</a></li>
-          <li class="nav-item"><a class="nav-link text-nowrap" href="{% url 'wishlist' %}"><i class="bi bi-heart me-1"></i>Wishlist</a></li>
+          <li class="nav-item ms-lg-auto"><a class="nav-link text-nowrap fw-medium text-primary" href="{% url 'your_orders' %}"><i class="bi bi-person-circle me-1"></i>Profile</a></li>
           {% if user.is_superuser %}
-            <li class="nav-item"><a class="nav-link text-nowrap text-warning" href="{% url 'order_dashboard' %}"><i class="bi bi-speedometer2 me-1"></i>Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link text-nowrap fw-medium text-warning" href="{% url 'order_dashboard' %}"><i class="bi bi-speedometer2 me-1"></i>Dashboard</a></li>
           {% endif %}
-          <li class="nav-item"><a class="nav-link text-nowrap text-danger" href="{% url 'account_logout' %}"><i class="bi bi-box-arrow-right me-1"></i>Logout</a></li>
+          <li class="nav-item"><a class="nav-link text-nowrap fw-medium text-danger" href="{% url 'account_logout' %}"><i class="bi bi-box-arrow-right me-1"></i>Logout</a></li>
         {% else %}
           <li class="nav-item"><a href="{% url 'account_login' %}" class="btn btn-outline-primary btn-sm nav-auth-btn text-nowrap ms-2">Login</a></li>
           <li class="nav-item"><a href="{% url 'account_signup' %}" class="btn btn-primary btn-sm nav-auth-btn text-nowrap">Sign Up</a></li>

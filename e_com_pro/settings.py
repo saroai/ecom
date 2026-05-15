@@ -294,6 +294,7 @@ LOGGING = {
 # ─────────────────────────────────────────────
 from django.urls import reverse_lazy
 
+
 def get_dashboard_callback(request, context):
     """Inject KPI data into the admin dashboard."""
     from django.utils import timezone
@@ -301,84 +302,53 @@ def get_dashboard_callback(request, context):
     try:
         from payment.models import Order
         from core.models import Product, CustomerForm, Review
-
-        today = timezone.now().date()
-        week_ago = today - timedelta(days=7)
-
-        orders_all     = Order.objects.filter(is_paid=True)
-        orders_today   = orders_all.filter(ordered_date__date=today)
-        orders_week    = orders_all.filter(ordered_date__date__gte=week_ago)
-        pending        = orders_all.filter(status="Pending").count()
-        processing     = orders_all.filter(status="Processing").count()
-        shipped        = orders_all.filter(status="Shipped").count()
-
-        revenue_today  = sum(o.amount_paid or 0 for o in orders_today)
-        revenue_week   = sum(o.amount_paid or 0 for o in orders_week)
-        aov            = (revenue_week / orders_week.count()) if orders_week.count() > 0 else 0
-        low_stock      = Product.objects.filter(stock__lte=5, is_active=True)
-        new_enquiries  = CustomerForm.objects.order_by("-created_at")[:5]
-        new_reviews    = Review.objects.order_by("-created_at")[:5]
-        latest_orders  = orders_all.order_by("-ordered_date")[:8]
-        top_products   = Product.objects.filter(is_active=True).order_by("-no_of_sales")[:5]
-
         from django.contrib.auth import get_user_model
-        User = get_user_model()
+
+        today    = timezone.now().date()
+        week_ago = today - timedelta(days=7)
+        User     = get_user_model()
+
+        orders_all   = Order.objects.filter(is_paid=True)
+        orders_today = orders_all.filter(ordered_date__date=today)
+        orders_week  = orders_all.filter(ordered_date__date__gte=week_ago)
+
+        revenue_today = sum(float(o.amount_paid or 0) for o in orders_today)
+        revenue_week  = sum(float(o.amount_paid or 0) for o in orders_week)
+        cnt_week      = orders_week.count()
+        aov           = revenue_week / cnt_week if cnt_week > 0 else 0
+
         context.update({
-            "kpi_orders_today":   orders_today.count(),
-            "kpi_revenue_today":  f"₹{revenue_today:,.0f}",
-            "kpi_revenue_week":   f"₹{revenue_week:,.0f}",
-            "kpi_pending":        pending,
-            "kpi_processing":     processing,
-            "kpi_shipped":        shipped,
-            "kpi_aov":            f"₹{aov:,.0f}",
-            "kpi_low_stock":      low_stock,
-            "kpi_new_enquiries":  new_enquiries,
-            "kpi_new_reviews":    new_reviews,
-            "kpi_latest_orders":  latest_orders,
-            "kpi_top_products":   top_products,
-            "kpi_total_products": Product.objects.filter(is_active=True).count(),
+            "kpi_orders_today":    orders_today.count(),
+            "kpi_revenue_today":   f"\u20b9{revenue_today:,.0f}",
+            "kpi_revenue_week":    f"\u20b9{revenue_week:,.0f}",
+            "kpi_pending":         orders_all.filter(status="Pending").count(),
+            "kpi_processing":      orders_all.filter(status="Processing").count(),
+            "kpi_shipped":         orders_all.filter(status="Shipped").count(),
+            "kpi_aov":             f"\u20b9{aov:,.0f}",
+            "kpi_low_stock":       Product.objects.filter(stock__lte=5, is_active=True),
+            "kpi_new_enquiries":   CustomerForm.objects.order_by("-created_at")[:5],
+            "kpi_new_reviews":     Review.objects.order_by("-created_at")[:5],
+            "kpi_latest_orders":   orders_all.order_by("-ordered_date")[:8],
+            "kpi_top_products":    Product.objects.filter(is_active=True).order_by("-no_of_sales")[:5],
+            "kpi_total_products":  Product.objects.filter(is_active=True).count(),
             "kpi_total_customers": User.objects.count(),
         })
     except Exception:
         pass
     return context
 
+
 UNFOLD = {
-    "SITE_TITLE": "Fimiku Command Center",
+    "SITE_TITLE":  "Fimiku Command Center",
     "SITE_HEADER": "Fimiku",
-    "SITE_URL": "/",
-    "SITE_ICON": {
-        "light": lambda request: "/static/img/hero_toys.png",
-        "dark":  lambda request: "/static/img/hero_toys.png",
-    },
-    "SITE_LOGO": {
-        "light": lambda request: "/static/img/hero_toys.png",
-        "dark":  lambda request: "/static/img/hero_toys.png",
-    },
+    "SITE_URL":    "/",
     "SITE_SYMBOL": "storefront",
-    "SHOW_HISTORY": True,
+    "SHOW_HISTORY":      True,
     "SHOW_VIEW_ON_SITE": True,
     "DASHBOARD_CALLBACK": "e_com_pro.settings.get_dashboard_callback",
-    "THEME": "dark",
-    "LOGIN": {
-        "image": lambda request: "/static/img/hero_desktop.png",
-        "redirect_after": lambda request: reverse_lazy("admin:index"),
-    },
-    "STYLES": [
-        lambda request: "/static/css/admin_premium.css",
-    ],
-    "SCRIPTS": [
-        lambda request: "/static/js/admin_premium.js",
-    ],
+    "STYLES":  ["/static/css/admin_premium.css"],
+    "SCRIPTS": ["/static/js/admin_premium.js"],
     "COLORS": {
-        "font": {
-            "subtle-light":   "107 114 128",
-            "subtle-dark":    "156 163 175",
-            "default-light":  "31 36 48",
-            "default-dark":   "243 244 246",
-            "important-light":"17 24 39",
-            "important-dark": "249 250 251",
-        },
         "primary": {
             "50":  "245 243 255",
             "100": "237 233 254",
@@ -393,95 +363,91 @@ UNFOLD = {
             "950": "46 16 101",
         },
     },
-    "EXTENSIONS": {
-        "modeltranslation": {
-            "flags": {}
-        }
-    },
     "SIDEBAR": {
-        "show_search": True,
+        "show_search":           True,
         "show_all_applications": False,
         "navigation": [
             {
-                "title": "📊 Dashboard",
+                "title": "Dashboard",
                 "separator": False,
                 "items": [
                     {
                         "title": "Overview",
-                        "icon": "dashboard",
-                        "link": reverse_lazy("admin:index"),
+                        "icon":  "dashboard",
+                        "link":  reverse_lazy("admin:index"),
                     },
                     {
                         "title": "Order Dashboard",
-                        "icon": "receipt_long",
-                        "link": reverse_lazy("order_dashboard"),
+                        "icon":  "receipt_long",
+                        "link":  reverse_lazy("order_dashboard"),
                     },
                 ],
             },
             {
-                "title": "🛍️ Store",
+                "title": "Store",
                 "separator": True,
                 "items": [
                     {
                         "title": "Products",
-                        "icon": "inventory_2",
-                        "link": reverse_lazy("admin:core_product_changelist"),
+                        "icon":  "inventory_2",
+                        "link":  reverse_lazy("admin:core_product_changelist"),
                         "badge": "core.admin.product_count_badge",
                     },
                     {
                         "title": "Reviews",
-                        "icon": "star",
-                        "link": reverse_lazy("admin:core_review_changelist"),
+                        "icon":  "star",
+                        "link":  reverse_lazy("admin:core_review_changelist"),
                     },
                     {
                         "title": "Wishlists",
-                        "icon": "favorite",
-                        "link": reverse_lazy("admin:core_wishlist_changelist"),
+                        "icon":  "favorite",
+                        "link":  reverse_lazy("admin:core_wishlist_changelist"),
                     },
                 ],
             },
             {
-                "title": "📦 Sales",
+                "title": "Sales",
                 "separator": True,
                 "items": [
                     {
                         "title": "All Orders",
-                        "icon": "shopping_cart",
-                        "link": reverse_lazy("admin:payment_order_changelist"),
+                        "icon":  "shopping_cart",
+                        "link":  reverse_lazy("admin:payment_order_changelist"),
                         "badge": "core.admin.pending_orders_badge",
                     },
                     {
                         "title": "Order Items",
-                        "icon": "list_alt",
-                        "link": reverse_lazy("admin:payment_orderitems_changelist"),
+                        "icon":  "list_alt",
+                        "link":  reverse_lazy("admin:payment_orderitems_changelist"),
                     },
                     {
                         "title": "Shipping Addresses",
-                        "icon": "local_shipping",
-                        "link": reverse_lazy("admin:payment_shippingaddress_changelist"),
+                        "icon":  "local_shipping",
+                        "link":  reverse_lazy("admin:payment_shippingaddress_changelist"),
                     },
                 ],
             },
             {
-                "title": "👥 Customers",
+                "title": "Customers",
                 "separator": True,
                 "items": [
                     {
                         "title": "Users",
-                        "icon": "group",
-                        "link": reverse_lazy("admin:auth_user_changelist"),
+                        "icon":  "group",
+                        "link":  reverse_lazy("admin:auth_user_changelist"),
                     },
                     {
                         "title": "Enquiries",
-                        "icon": "mail",
-                        "link": reverse_lazy("admin:core_customerform_changelist"),
+                        "icon":  "mail",
+                        "link":  reverse_lazy("admin:core_customerform_changelist"),
                         "badge": "core.admin.enquiry_count_badge",
                     },
                 ],
             },
         ],
     },
-}
+
+
 
 # Email Configuration
 if os.environ.get("ENVIRONMENT") == "production":

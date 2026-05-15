@@ -1,0 +1,187 @@
+/* FIMIKU COMPONENT SYSTEM v2 — Overrides old style.css using tokens.css */
+
+/* ── BASE ── */
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:600;color:var(--text)}
+a{color:var(--primary);text-decoration:none;transition:color var(--ease)}
+a:hover{color:var(--primary-2)}
+*:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.section-gap{padding:64px 0}
+.bg-section-alt{background:var(--surface-2)}
+
+/* ── A) HEADER / NAV ── */
+.announcement-bar{background:var(--primary);color:#fff;padding:10px 0;font-size:.85rem;font-weight:500;letter-spacing:.02em}
+.toy-navbar{background:var(--surface);box-shadow:var(--shadow-1);padding:12px 0;transition:all var(--ease)}
+.toy-navbar.scrolled{padding:8px 0;box-shadow:var(--shadow-2)}
+.toy-logo{display:flex;align-items:center;gap:8px;font-family:var(--font-heading);font-size:26px;font-weight:700;color:var(--text);background:none;-webkit-background-clip:unset;-webkit-text-fill-color:unset}
+.logo-icon i{color:var(--primary)!important;-webkit-text-fill-color:initial}
+.logo-accent{color:var(--primary)}
+.toy-navbar .nav-link{font-weight:600;color:var(--text)!important;padding:8px 14px!important;border-radius:var(--radius-pill);font-size:.95rem;transition:all var(--ease)}
+.toy-navbar .nav-link:hover{background:var(--surface-2);color:var(--primary)!important}
+.nav-auth-btn{border-radius:var(--radius-pill)!important;font-weight:600!important;padding:8px 20px!important;font-size:.9rem!important}
+
+/* ── B) SEARCH ── */
+.search-wrapper{position:relative;width:100%;max-width:420px}
+.search-input{width:100%;padding:10px 20px 10px 42px;border:2px solid var(--border);border-radius:var(--radius-pill);font-size:.95rem;transition:all var(--ease);background:var(--surface);color:var(--text)}
+.search-input:hover{border-color:var(--primary-2)}
+.search-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(123,97,255,.12)}
+.search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1rem}
+.search-btn{position:absolute;right:4px;top:4px;bottom:4px;background:var(--primary);color:#fff;border:none;border-radius:var(--radius-pill);padding:0 18px;font-weight:600;font-size:.9rem;transition:all var(--ease)}
+.search-btn:hover{background:var(--primary-2)}
+
+/* ── C) BUTTONS ── */
+.btn-hero-primary{background:var(--primary);color:#fff;font-weight:600;font-size:1rem;padding:14px 28px;border-radius:var(--radius-pill);border:none;box-shadow:0 8px 20px rgba(123,97,255,.25);transition:all var(--ease)}
+.btn-hero-primary:hover{background:var(--primary-2);color:#fff;transform:translateY(-2px);box-shadow:0 12px 28px rgba(123,97,255,.3)}
+.btn-hero-secondary{background:var(--surface);color:var(--primary);font-weight:600;font-size:1rem;padding:14px 28px;border-radius:var(--radius-pill);border:2px solid var(--border);transition:all var(--ease)}
+.btn-hero-secondary:hover{border-color:var(--primary);background:var(--surface-2);color:var(--primary)}
+
+/* Cart icon */
+.nav-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--surface-2);color:var(--text);font-size:1.15rem;position:relative;transition:all var(--ease)}
+.nav-icon-btn:hover{background:var(--primary);color:#fff}
+.cart-badge{position:absolute;top:-4px;right:-4px;background:var(--danger);color:#fff;font-size:.7rem;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--surface)}
+
+/* ── D) BADGES ── */
+.deal-badge{background:var(--primary);color:#fff;padding:8px 16px;border-radius:var(--radius-pill);font-weight:600;text-transform:uppercase;font-size:.78rem;letter-spacing:.04em;display:inline-block;animation:none;box-shadow:0 4px 12px rgba(123,97,255,.25)}
+.badge-discount{background:var(--danger);color:#fff;padding:4px 10px;border-radius:var(--radius-sm);font-size:.75rem;font-weight:700}
+.badge-featured{background:var(--primary);color:#fff}
+.badge-oos{background:var(--muted);color:#fff}
+
+/* ── E) HERO ── */
+.hero-section{position:relative;overflow:hidden;padding:48px 0;background:var(--bg)}
+.hero-bg-blobs .blob{filter:blur(100px);opacity:.35}
+.blob-1{background:var(--surface-2)!important}
+.blob-2{background:var(--primary-2)!important}
+.blob-3{background:var(--accent)!important;opacity:.2!important}
+.hero-title{font-size:2.75rem;line-height:1.15;margin-bottom:16px;font-weight:700;color:var(--text)}
+.text-highlight{color:var(--primary)}
+.hero-subtitle{font-size:1.1rem;color:var(--muted);margin-bottom:24px;max-width:90%;line-height:1.6}
+.hero-circle{width:420px;height:420px;border-radius:var(--radius-lg)!important;overflow:hidden!important}
+.hero-main-img{border:8px solid var(--surface)!important;border-radius:var(--radius-lg)!important}
+.floating-toy{width:52px!important;height:52px!important;padding:0!important;font-size:22px!important;background:var(--surface)!important;box-shadow:var(--shadow-1)!important}
+
+/* ── F) BENEFIT CARDS (Why Us) ── */
+.why-us-section{background:var(--surface-2)!important;padding:64px 0!important;border-radius:0!important;border-bottom:1px solid var(--border)!important}
+.why-us-section .card{background:var(--surface);border:1px solid var(--border)!important;border-radius:var(--radius-md)!important;transition:all var(--ease)}
+.why-us-section .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);border-color:var(--primary)!important}
+.why-us-section .card i{color:var(--primary)!important}
+.why-us-section .card h4{color:var(--text);font-size:1.1rem}
+.why-us-section .card p{color:var(--muted);font-size:.9rem;line-height:1.6}
+
+/* ── G) CATEGORY TILES ── */
+.category-bar{background:var(--surface)!important;border-bottom:1px solid var(--border)!important}
+.cat-bar-link{color:var(--text)!important;font-weight:600;font-size:.9rem;padding:6px 12px;border-radius:var(--radius-pill);border-bottom:none!important;transition:all var(--ease)}
+.cat-bar-link:hover{color:var(--primary)!important;background:var(--surface-2)}
+.transition-hover{transition:all var(--ease)}
+.transition-hover:hover{transform:translateY(-4px);box-shadow:var(--shadow-2)}
+
+/* ── H) FLASH SALE BANNER ── */
+.section-header{text-align:center;margin-bottom:40px}
+.section-title{font-size:2rem;font-weight:700;color:var(--text);margin-bottom:8px}
+.section-subtitle{color:var(--muted);font-size:1rem;max-width:560px;margin:0 auto}
+.section-cta{display:inline-block;margin-top:12px;font-weight:600;color:var(--primary);font-size:.95rem}
+.section-cta:hover{color:var(--primary-2)}
+
+/* ── J) PRODUCT CARD ── */
+.product-card{background:var(--surface);border-radius:var(--radius-md);box-shadow:var(--shadow-1);overflow:hidden;position:relative;transition:all var(--ease);height:100%;display:flex;flex-direction:column;border:1px solid var(--border)}
+.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);border-color:var(--primary-2)}
+.product-img-wrapper{background:var(--surface-2)}
+.product-body{padding:16px;display:flex;flex-direction:column;flex-grow:1}
+.product-meta{font-size:.78rem;color:var(--muted);font-weight:500;margin-bottom:6px}
+.product-name{font-size:1rem;margin-bottom:8px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.product-name a{color:var(--text)}
+.product-name a:hover{color:var(--primary)}
+.star-filled{color:var(--warning)}
+.star-empty{color:var(--border)}
+.price-current{font-family:var(--font-heading);font-size:1.25rem;font-weight:700;color:var(--text)}
+.price-original{font-size:.9rem;color:var(--muted);text-decoration:line-through}
+.btn-add-cart{width:100%;padding:10px;border-radius:var(--radius-sm);background:var(--surface);border:2px solid var(--primary);color:var(--primary);font-weight:600;font-size:.9rem;transition:all var(--ease);min-height:44px}
+.btn-add-cart:hover:not(:disabled){background:var(--primary);color:#fff}
+.btn-add-cart:disabled{border-color:var(--border);color:var(--muted)}
+.btn-add-cart.added{background:var(--success);border-color:var(--success);color:#fff}
+.wishlist-btn{width:36px;height:36px;background:var(--surface);box-shadow:var(--shadow-1);color:var(--muted);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all var(--ease)}
+.wishlist-btn:hover{color:var(--danger);transform:scale(1.1)}
+.wishlist-btn.active{color:var(--danger)}
+
+/* ── K) ABOUT SECTION ── */
+.about-home-section{padding:64px 0;background:var(--surface-2)!important;color:var(--text)!important}
+.about-home-section h2{color:var(--text)!important;font-weight:700}
+.about-home-section p{color:var(--muted)!important}
+.about-home-section .lead{color:var(--text)!important}
+.about-img-wrap{border-radius:var(--radius-lg);overflow:hidden}
+.about-img-wrap img{transition:transform .4s ease}
+.about-img-wrap:hover img{transform:scale(1.04)}
+
+/* ── L) AGE GROUP CARDS ── */
+.age-card{border-radius:var(--radius-lg);padding:32px 24px;text-align:center;transition:all var(--ease);height:100%;border:1px solid var(--border);overflow:hidden}
+.age-baby{background:linear-gradient(135deg,#EDE9FE,#F3E8FF)!important;color:var(--text)!important}
+.age-kid{background:linear-gradient(135deg,#DBEAFE,#E0F2FE)!important;color:var(--text)!important}
+.age-teen{background:linear-gradient(135deg,#FFF3E6,#FEF3C7)!important;color:var(--text)!important}
+.age-card h4{color:var(--text)!important;font-weight:700;font-size:1.3rem}
+.age-card p{color:var(--muted)!important;opacity:1!important}
+.age-cta{display:inline-block;padding:8px 20px;border-radius:var(--radius-pill);background:var(--primary);color:#fff!important;font-weight:600;font-size:.85rem;transition:all var(--ease)}
+.age-card-link:hover .age-card{transform:translateY(-4px);box-shadow:var(--shadow-2)}
+
+/* ── M) COMPARISON ── */
+.vs-card{background:var(--surface);padding:32px;border-radius:var(--radius-md);height:100%;box-shadow:var(--shadow-1);border:1px solid var(--border);transition:all var(--ease)}
+.vs-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-2)}
+.vs-header{font-size:1.4rem;font-weight:700;margin-bottom:20px;text-align:center;font-family:var(--font-heading)}
+.text-silicone{color:var(--success)!important}
+.text-plastic{color:var(--danger)!important}
+.vs-list{list-style:none;padding:0}
+.vs-list li{padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;font-weight:500;color:var(--text)}
+.vs-list li:last-child{border-bottom:none}
+
+/* ── N) TESTIMONIALS ── */
+.testimonial-card-premium{background:var(--surface);border-radius:var(--radius-md);padding:32px;box-shadow:var(--shadow-1);height:100%;border:1px solid var(--border);border-top:4px solid var(--primary)}
+.testimonial-card-premium .stars{color:var(--warning);font-size:1.1rem;margin-bottom:12px}
+.testimonial-card-premium p{font-style:italic;color:var(--text);line-height:1.65}
+.quote-icon{font-size:32px;color:var(--primary-2);opacity:.4;margin-bottom:8px}
+.reviewer-avatar{width:44px;height:44px;border-radius:50%;background:var(--surface-2);color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem}
+
+/* ── O) FAQ ACCORDION ── */
+.faq-section{padding:64px 0;background:var(--bg)}
+.accordion-item{border:1px solid var(--border)!important;background:var(--surface)!important;margin-bottom:12px!important;border-radius:var(--radius-md)!important;box-shadow:none!important;overflow:hidden}
+.accordion-button{font-weight:600!important;font-family:var(--font-heading)!important;font-size:1rem!important;padding:18px 20px!important;color:var(--text)!important;background:var(--surface)!important;box-shadow:none!important}
+.accordion-button:not(.collapsed){color:var(--primary)!important;background:var(--surface-2)!important}
+.accordion-body{padding:0 20px 20px!important;color:var(--muted);font-size:.95rem;line-height:1.7}
+
+/* ── P) NEWSLETTER ── */
+.newsletter-section{padding:48px 0;background:var(--bg)}
+.newsletter-inner{background:var(--surface-2)!important;border-radius:var(--radius-lg);padding:40px;border:1px solid var(--border)}
+
+/* ── Q) FOOTER ── */
+.toy-footer{background:var(--surface);padding:64px 0 24px;border-top:1px solid var(--border)}
+.footer-logo{font-family:var(--font-heading);font-size:1.75rem;font-weight:700;color:var(--text);display:block;margin-bottom:12px}
+.footer-tagline{color:var(--muted);font-size:.95rem}
+.social-btn{width:40px;height:40px;border-radius:50%;background:var(--surface-2);color:var(--text);display:flex;align-items:center;justify-content:center;transition:all var(--ease)}
+.social-btn:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
+.footer-heading{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:16px}
+.footer-links a{color:var(--muted);font-size:.95rem}
+.footer-links a:hover{color:var(--primary);padding-left:4px}
+.footer-contact p{color:var(--muted)}
+.footer-divider{border-color:var(--border)}
+.footer-bottom{color:var(--muted);font-size:.85rem}
+.pay-badge{background:var(--surface-2);padding:6px 12px;border-radius:var(--radius-sm);font-weight:600;font-size:.8rem;color:var(--text)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:991px){
+  .hero-title{font-size:2.2rem!important}
+  .hero-circle{width:300px!important;height:300px!important}
+}
+@media(max-width:768px){
+  .hero-title{font-size:1.85rem!important}
+  .hero-subtitle{font-size:.95rem!important;max-width:100%!important}
+  .hero-circle{width:260px!important;height:260px!important;margin:24px auto!important}
+  .hero-actions{flex-direction:column;width:100%;gap:8px}
+  .btn-hero-primary,.btn-hero-secondary{width:100%;text-align:center}
+  .section-title{font-size:1.6rem}
+  .section-gap{padding:40px 0}
+  .floating-toy{width:40px!important;height:40px!important;font-size:16px!important}
+  .newsletter-inner{padding:24px!important}
+}
+@media(max-width:480px){
+  .hero-title{font-size:1.6rem!important}
+  .product-body{padding:12px}
+  .product-name{font-size:.9rem}
+  .price-current{font-size:1.1rem}
+}

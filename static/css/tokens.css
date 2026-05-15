@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════
+   FIMIKU DESIGN TOKENS v2.0
+═══════════════════════════════════════ */
+:root {
+  /* Colors */
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: #FAF7FF;
+  --primary: #7B61FF;
+  --primary-2: #A89BFF;
+  --accent: #66C7FF;
+  --cream: #FFF3E6;
+  --text: #1F2430;
+  --muted: #667085;
+  --border: #E8E2F6;
+  --success: #12B76A;
+  --warning: #F79009;
+  --danger: #F04438;
+
+  /* Typography */
+  --font-heading: 'Poppins', 'Inter', sans-serif;
+  --font-body: 'Inter', 'Nunito', sans-serif;
+
+  /* Radii */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-1: 0 6px 20px rgba(31,36,48,0.06);
+  --shadow-2: 0 10px 30px rgba(31,36,48,0.08);
+
+  /* Focus */
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+
+  /* Transitions */
+  --ease: 180ms ease;
+}

@@ -91,6 +91,29 @@
 <!-- ═══════════════════════════════════════
      THE FIMIKU PROMISE (WHY US) - DETAILED
 ═══════════════════════════════════════ -->
+<style>
+  .promise-card {
+    background-size: cover;
+    background-position: center;
+    min-height: 280px;
+  }
+  .promise-card-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(16, 24, 40, 0.9) 0%, rgba(16, 24, 40, 0.4) 100%);
+    z-index: 0;
+  }
+  .promise-card .card-body {
+    position: relative;
+    z-index: 1;
+  }
+  .promise-card:hover .promise-card-overlay {
+    background: linear-gradient(to top, rgba(124, 58, 237, 0.9) 0%, rgba(16, 24, 40, 0.5) 100%);
+  }
+  .promise-card p {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+</style>
 <section id="why-us" class="why-us-section py-5">
   <div class="container">
     <div class="section-header text-center mb-5">
@@ -101,73 +124,67 @@
     <div class="row g-4">
       <!-- Point 1 -->
       <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover">
-          <div class="pt-5 pb-3">
-            <i class="bi bi-shield-check" style="font-size: 60px; color: var(--primary-color);"></i>
-          </div>
-          <div class="card-body p-4 pt-0">
-            <h4 class="fw-bold">Medical Grade Safety</h4>
-            <p class="text-muted">100% food-grade silicone, FDA approved, and totally free from BPA, Phthalates, and PVC. Safe enough to chew all day!</p>
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover promise-card" style="background-image: url('{% static 'images2/card1.png' %}');">
+          <div class="promise-card-overlay transition-hover"></div>
+          <div class="card-body p-4 d-flex flex-column justify-content-end align-items-center h-100 text-white pb-5">
+            <i class="bi bi-shield-check mb-3" style="font-size: 50px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
+            <h4 class="fw-bold mb-3 text-white">Medical Grade Safety</h4>
+            <p class="mb-0 fs-sm">100% food-grade silicone, FDA approved, and totally free from BPA, Phthalates, and PVC. Safe enough to chew all day!</p>
           </div>
         </div>
       </div>
       <!-- Point 2 -->
       <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover">
-          <div class="pt-5 pb-3">
-            <i class="bi bi-puzzle" style="font-size: 60px; color: var(--primary-color);"></i>
-          </div>
-          <div class="card-body p-4 pt-0">
-            <h4 class="fw-bold">Growth Focused</h4>
-            <p class="text-muted">Designed with pediatric experts to actively stimulate sensory development, motor skills, and creative play in every stage.</p>
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover promise-card" style="background-image: url('{% static 'images2/card2.png' %}');">
+          <div class="promise-card-overlay transition-hover"></div>
+          <div class="card-body p-4 d-flex flex-column justify-content-end align-items-center h-100 text-white pb-5">
+            <i class="bi bi-puzzle mb-3" style="font-size: 50px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
+            <h4 class="fw-bold mb-3 text-white">Growth Focused</h4>
+            <p class="mb-0 fs-sm">Designed with pediatric experts to actively stimulate sensory development, motor skills, and creative play in every stage.</p>
           </div>
         </div>
       </div>
       <!-- Point 3 -->
       <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover">
-          <div class="pt-5 pb-3">
-            <i class="bi bi-recycle" style="font-size: 60px; color: var(--primary-color);"></i>
-          </div>
-          <div class="card-body p-4 pt-0">
-            <h4 class="fw-bold">Eco-Friendly Choice</h4>
-            <p class="text-muted">Durable, mold-resistant, and endlessly reusable. Better for your baby's future, and better for the planet than plastics.</p>
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover promise-card" style="background-image: url('{% static 'images2/card3.png' %}');">
+          <div class="promise-card-overlay transition-hover"></div>
+          <div class="card-body p-4 d-flex flex-column justify-content-end align-items-center h-100 text-white pb-5">
+            <i class="bi bi-recycle mb-3" style="font-size: 50px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
+            <h4 class="fw-bold mb-3 text-white">Eco-Friendly Choice</h4>
+            <p class="mb-0 fs-sm">Durable, mold-resistant, and endlessly reusable. Better for your baby's future, and better for the planet than plastics.</p>
           </div>
         </div>
       </div>
       <!-- Point 4 -->
       <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover">
-          <div class="pt-5 pb-3">
-            <i class="bi bi-droplet" style="font-size: 60px; color: var(--primary-color);"></i>
-          </div>
-          <div class="card-body p-4 pt-0">
-            <h4 class="fw-bold">Boil & Bite Ready</h4>
-            <p class="text-muted">Extremely heat resistant. Simply toss them in the dishwasher or boil them to sterilize. Say goodbye to hidden mold!</p>
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover promise-card" style="background-image: url('{% static 'images2/card4.png' %}');">
+          <div class="promise-card-overlay transition-hover"></div>
+          <div class="card-body p-4 d-flex flex-column justify-content-end align-items-center h-100 text-white pb-5">
+            <i class="bi bi-droplet mb-3" style="font-size: 50px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
+            <h4 class="fw-bold mb-3 text-white">Boil & Bite Ready</h4>
+            <p class="mb-0 fs-sm">Extremely heat resistant. Simply toss them in the dishwasher or boil them to sterilize. Say goodbye to hidden mold!</p>
           </div>
         </div>
       </div>
       <!-- Point 5 -->
       <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover">
-          <div class="pt-5 pb-3">
-            <i class="bi bi-emoji-smile" style="font-size: 60px; color: var(--primary-color);"></i>
-          </div>
-          <div class="card-body p-4 pt-0">
-            <h4 class="fw-bold">Instant Soothing Relief</h4>
-            <p class="text-muted">The perfect soft-yet-firm texture to massage tender gums and provide immediate relief during difficult teething phases.</p>
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover promise-card" style="background-image: url('{% static 'images2/card5.png' %}');">
+          <div class="promise-card-overlay transition-hover"></div>
+          <div class="card-body p-4 d-flex flex-column justify-content-end align-items-center h-100 text-white pb-5">
+            <i class="bi bi-emoji-smile mb-3" style="font-size: 50px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
+            <h4 class="fw-bold mb-3 text-white">Instant Soothing Relief</h4>
+            <p class="mb-0 fs-sm">The perfect soft-yet-firm texture to massage tender gums and provide immediate relief during difficult teething phases.</p>
           </div>
         </div>
       </div>
       <!-- Point 6 -->
       <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover">
-          <div class="pt-5 pb-3">
-            <i class="bi bi-shield-shaded" style="font-size: 60px; color: var(--primary-color);"></i>
-          </div>
-          <div class="card-body p-4 pt-0">
-            <h4 class="fw-bold">Built to Last</h4>
-            <p class="text-muted">Our toys won't break, crack, or fade. They are designed to withstand years of play and can be passed down to siblings.</p>
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-center transition-hover promise-card" style="background-image: url('{% static 'images2/card6.png' %}');">
+          <div class="promise-card-overlay transition-hover"></div>
+          <div class="card-body p-4 d-flex flex-column justify-content-end align-items-center h-100 text-white pb-5">
+            <i class="bi bi-shield-shaded mb-3" style="font-size: 50px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
+            <h4 class="fw-bold mb-3 text-white">Built to Last</h4>
+            <p class="mb-0 fs-sm">Our toys won't break, crack, or fade. They are designed to withstand years of play and can be passed down to siblings.</p>
           </div>
         </div>
       </div>

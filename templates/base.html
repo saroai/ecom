@@ -37,9 +37,8 @@
     <!-- Top Row: Logo, Search, Cart -->
     <div class="d-flex w-100 justify-content-between align-items-center mb-2 mb-lg-0">
       <!-- Logo -->
-      <a class="navbar-brand toy-logo" href="{% url 'home' %}">
-        <span class="logo-icon"><i class="bi bi-balloon-heart"></i></span>
-        <span class="logo-text">Fimi<span class="logo-accent">ku</span></span>
+      <a class="navbar-brand toy-logo py-0" href="{% url 'home' %}">
+        <img src="{% static 'img/logo.jpeg' %}" alt="Fimiku Logo" style="height: 42px; width: auto; object-fit: contain;">
       </a>
 
       <!-- Search Bar -->
@@ -129,7 +128,9 @@
       <!-- Brand -->
       <div class="col-lg-4 col-md-6">
         <div class="footer-brand">
-          <span class="footer-logo"><i class="bi bi-balloon-heart me-2"></i>Fimiku</span>
+          <a href="{% url 'home' %}" class="d-inline-block mb-3">
+            <img src="{% static 'img/logo.jpeg' %}" alt="Fimiku Logo" style="height: 48px; width: auto; object-fit: contain; border-radius: 8px;">
+          </a>
           <p class="footer-tagline">Premium baby brand dedicated to creating safe, soft, and pure silicone toys designed for your baby’s everyday comfort.</p>
           <div class="footer-socials">
             <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>

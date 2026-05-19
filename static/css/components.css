@@ -415,7 +415,7 @@ a:hover{color:var(--primary-2)}
 .newsletter-inner{background:var(--surface-2)!important;border-radius:var(--radius-lg);padding:40px;border:1px solid var(--border)}
 
 /* ── Q) FOOTER ── */
-.toy-footer{background:var(--surface);padding:64px 0 24px;border-top:1px solid var(--border)}
+.toy-footer{background:#F4F0FF;padding:64px 0 24px;border-top:1px solid var(--border)}
 .footer-logo{font-family:var(--font-heading);font-size:1.75rem;font-weight:700;color:var(--text);display:block;margin-bottom:12px}
 .footer-tagline{color:var(--muted);font-size:.95rem}
 .social-btn{width:40px;height:40px;border-radius:50%;background:var(--surface-2);color:var(--text);display:flex;align-items:center;justify-content:center;transition:all var(--ease)}

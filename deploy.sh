@@ -2,7 +2,7 @@
 
 # --- TOYZONE GOD-MODE DEPLOYMENT SCRIPT ---
 # Version: 6.0 (New Droplet & SSL Support)
-# Domain: learnmythos.app | IP: 143.110.182.223
+# Domain: fimiku.com | IP: 143.110.182.223
 # Project: /var/www/ecom | Django: e_com_pro
 
 set -e
@@ -64,7 +64,7 @@ sudo rm -f /etc/nginx/sites-enabled/default
 sudo bash -c "cat > /etc/nginx/sites-available/toyzone <<EOF
 server {
     listen 80;
-    server_name learnmythos.app www.learnmythos.app 143.110.182.223;
+    server_name fimiku.com www.fimiku.com 143.110.182.223;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     
@@ -100,5 +100,5 @@ sudo chown -R www-data:www-data $PROJECT_DIR
 sudo chmod -R 755 $PROJECT_DIR
 
 echo "🔥 DEPLOYMENT COMPLETE!"
-echo "🌍 Visit: http://learnmythos.app"
-echo "🔐 NEXT STEP: Run 'sudo certbot --nginx -d learnmythos.app -d www.learnmythos.app' to enable HTTPS!"
+echo "🌍 Visit: http://fimiku.com"
+echo "🔐 NEXT STEP: Run 'sudo certbot --nginx -d fimiku.com -d www.fimiku.com' to enable HTTPS!"

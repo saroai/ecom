@@ -15,11 +15,11 @@ SECRET_KEY = 'django-insecure-testkey-1234567890abcdefg'
 DEBUG = True
 
 if os.environ.get("ENVIRONMENT") == "production":
-    ALLOWED_HOSTS = ["learnmythos.app", "www.learnmythos.app", "143.110.182.223"]
-    CSRF_TRUSTED_ORIGINS = ["https://learnmythos.app", "https://www.learnmythos.app"]
+    ALLOWED_HOSTS = ["fimiku.com", "www.fimiku.com", "143.110.182.223"]
+    CSRF_TRUSTED_ORIGINS = ["https://fimiku.com", "https://www.fimiku.com"]
     DEBUG = False
 else:
-    ALLOWED_HOSTS = ["learnmythos.app", "143.110.182.223", "localhost", "127.0.0.1"]
+    ALLOWED_HOSTS = ["fimiku.com", "143.110.182.223", "localhost", "127.0.0.1"]
 
 
 INSTALLED_APPS = [

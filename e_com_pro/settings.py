@@ -152,7 +152,7 @@ RAZOR_PAY_KEY_ID = os.environ.get("RAZORPAY_KEY_ID", "")
 RAZOR_PAY_CALLBACK_URL = "payment_verify"
 
 if os.environ.get("ENVIRONMENT") == 'production':
-    # SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True

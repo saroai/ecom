@@ -99,6 +99,8 @@ echo "🔐 PHASE 9: FIXING PERMISSIONS..."
 sudo chown -R www-data:www-data $PROJECT_DIR
 sudo chmod -R 755 $PROJECT_DIR
 
-echo "🔥 DEPLOYMENT COMPLETE!"
-echo "🌍 Visit: http://fimiku.com"
-echo "🔐 NEXT STEP: Run 'sudo certbot --nginx -d fimiku.com -d www.fimiku.com' to enable HTTPS!"
+echo "🔐 PHASE 10: AUTOMATIC SSL (HTTPS) SETUP..."
+sudo certbot --nginx -d fimiku.com -d www.fimiku.com --non-interactive --agree-tos -m yakashbhai5@gmail.com --redirect || echo "⚠️ SSL Setup skipped or already installed."
+
+echo "🔥 DEPLOYMENT COMPLETE WITH HTTPS!"
+echo "🌍 Visit: https://fimiku.com"

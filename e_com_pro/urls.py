@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    # path('admin/login/', RedirectView.as_view(url='/accounts/google/login/?process=login&next=/admin/')),
+    path('admin/login/', RedirectView.as_view(url='/accounts/google/login/?process=login&next=/admin/')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path("",include("core.urls")),

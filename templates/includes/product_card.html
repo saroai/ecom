@@ -35,9 +35,13 @@
   <!-- Info -->
   <div class="product-body">
     <div class="product-meta">
-      <span class="product-category">{{ product.get_category_display }}</span>
-      <span class="meta-dot">•</span>
-      <span class="product-age">{{ product.get_age_group_display }}</span>
+      <span class="product-category" style="color: #10b981; font-weight: 600;">
+        {% if product.offer_details %}
+          <i class="bi bi-tags-fill"></i> {{ product.offer_details|truncatechars:20 }}
+        {% else %}
+          New Arrival
+        {% endif %}
+      </span>
     </div>
 
     <h3 class="product-name">
@@ -61,11 +65,9 @@
     <!-- Price & Action -->
     <div class="product-footer">
       <div class="product-price">
-        {% if product.is_discount %}
-        <span class="price-current">₹{{ product.discount_price }}</span>
-        <span class="price-original">₹{{ product.price }}</span>
-        {% else %}
         <span class="price-current">₹{{ product.price }}</span>
+        {% if product.mrp %}
+        <span class="price-original" style="font-size: 0.8rem;">₹{{ product.mrp }}</span>
         {% endif %}
       </div>
       

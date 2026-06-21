@@ -45,12 +45,10 @@
     <!-- ── PRODUCT DETAILS ── -->
     <div class="col-lg-6">
       <div class="product-detail-info">
-        <!-- Category & Age Badge -->
+        <!-- Metadata -->
         <div class="detail-meta mb-3">
-          <span class="detail-cat-badge">{{ product.get_category_display }}</span>
-          <span class="detail-age-badge">{{ product.get_age_group_display }}</span>
           {% if product.is_in_stock %}
-          <span class="detail-stock-badge in-stock"><i class="bi bi-check-circle-fill me-1"></i>In Stock ({{ product.stock }})</span>
+          <span class="detail-stock-badge in-stock"><i class="bi bi-check-circle-fill me-1"></i>In Stock</span>
           {% else %}
           <span class="detail-stock-badge out-stock"><i class="bi bi-x-circle-fill me-1"></i>Out of Stock</span>
           {% endif %}
@@ -73,15 +71,24 @@
         </div>
 
         <!-- Price -->
-        <div class="detail-price mb-4">
-          {% if product.is_discount %}
-          <span class="detail-price-current">₹{{ product.discount_price }}</span>
-          <span class="detail-price-original">₹{{ product.price }}</span>
-          <span class="detail-savings">You save ₹{{ product.price|floatformat:0 }}!</span>
-          {% else %}
-          <span class="detail-price-current">₹{{ product.price }}</span>
+        <div class="detail-price mb-2">
+          <span class="detail-price-current" style="font-size: 1.8rem; font-weight: 800; color: #111;">₹{{ product.price }}</span>
+          {% if product.mrp %}
+          <span class="detail-price-original text-muted text-decoration-line-through ms-2" style="font-size: 1.1rem;">₹{{ product.mrp }}</span>
           {% endif %}
         </div>
+
+        {% if product.offer_details %}
+        <div class="mb-3" style="color: #10b981; font-weight: 700;">
+           <i class="bi bi-tags-fill me-1"></i> {{ product.offer_details }}
+        </div>
+        {% endif %}
+
+        {% if product.colors %}
+        <div class="mb-4">
+           <strong><i class="bi bi-palette me-1"></i> Colours available:</strong> <span style="color:#555;">{{ product.colors }}</span>
+        </div>
+        {% endif %}
 
         <!-- Description -->
         <div class="detail-description mb-4">

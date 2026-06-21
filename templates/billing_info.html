@@ -1,26 +1,223 @@
 {% extends "base.html" %}
 {% block title %}Billing & Payment – Fimiku{% endblock %}
 
+{% block extra_css %}
+<style>
+/* Premium White Theme for Billing Page */
+body {
+  background-color: #f8fafc; /* Cool grey background makes the white card pop */
+}
+.billing-wrapper {
+  animation: fadeIn 0.5s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.billing-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0,0,0,0.05);
+  padding: 3rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+.checkout-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+.checkout-title i {
+  color: #3b82f6; 
+  background: #eff6ff;
+  padding: 10px;
+  border-radius: 12px;
+  margin-right: 12px;
+  font-size: 1.4rem;
+}
+.billing-address {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 1.75rem;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.billing-address::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background: #3b82f6;
+}
+.address-label {
+  color: #64748b;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+.billing-address p {
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.change-address-link {
+  display: inline-block;
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  background: #eff6ff;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.change-address-link:hover {
+  background: #dbeafe;
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+.checkout-item {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+.checkout-item:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+}
+.checkout-item-img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-right: 1.25rem;
+  background: #f8fafc;
+  padding: 5px;
+  border: 1px solid #f1f5f9;
+}
+.checkout-item-info {
+  flex-grow: 1;
+}
+.checkout-item-name {
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+.checkout-item-info small {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.checkout-item-price {
+  font-weight: 800;
+  color: #0f172a;
+  font-size: 1.25rem;
+}
+.summary-container {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  color: #64748b;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+.total-row {
+  font-size: 1.35rem;
+  color: #0f172a;
+  border-top: 2px dashed #cbd5e1;
+  padding-top: 1.25rem;
+  margin-top: 0.75rem;
+  font-weight: 800;
+}
+.btn-pay-now {
+  width: 100%;
+  padding: 1.1rem;
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.btn-pay-now:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.3);
+  background: linear-gradient(135deg, #000000 0%, #1e293b 100%);
+}
+.btn-pay-now:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2);
+}
+.secure-info {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 1.25rem;
+}
+.secure-info i {
+  color: #10b981;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .billing-card { padding: 1.5rem; }
+  .checkout-item { padding: 1rem; flex-direction: column; text-align: center; }
+  .checkout-item-img { margin: 0 0 1rem 0; width: 100px; height: 100px; }
+  .checkout-title { font-size: 1.4rem; }
+}
+</style>
+{% endblock %}
+
 {% block content %}
-<div class="container py-5">
+<div class="container py-5 billing-wrapper">
   <div class="row g-5 justify-content-center">
     <div class="col-lg-7">
       <div class="billing-card">
-        <h3 class="checkout-title"><i class="bi bi-credit-card-2-front-fill me-2"></i>Order Summary & Payment</h3>
+        <h3 class="checkout-title"><i class="bi bi-credit-card-2-front-fill"></i>Order Summary</h3>
 
         <!-- Shipping Address Display -->
-        <div class="billing-address mb-4">
-          <h6 class="address-label">📍 Delivering To:</h6>
+        <div class="billing-address">
+          <h6 class="address-label">📍 Delivering To</h6>
           <p>{{ order.address.first_name }} {{ order.address.last_name }}<br/>
           {{ order.address.address }}, {{ order.address.city }}<br/>
           {{ order.address.state }} – {{ order.address.pin_code }}<br/>
           📞 {{ order.address.phone_no }}</p>
-          <a href="{% url 'checkout' %}" class="change-address-link">Change Address</a>
+          <a href="{% url 'checkout' %}" class="change-address-link"><i class="bi bi-pencil-square me-1"></i>Edit Address</a>
         </div>
 
         <!-- Products -->
         {% for product, qty in products.items %}
-        <div class="checkout-item mb-2">
+        <div class="checkout-item">
           <img src="{{ product.image_1.url }}" alt="{{ product.name }}" class="checkout-item-img"/>
           <div class="checkout-item-info">
             <p class="checkout-item-name">{{ product.name }}</p>
@@ -32,18 +229,19 @@
         </div>
         {% endfor %}
 
-        <hr/>
-        <div class="summary-row"><span>Subtotal</span><span>₹{{ total }}</span></div>
-        <div class="summary-row"><span>Delivery Charge</span><span>₹{{ delivery }}</span></div>
-        <div class="summary-row total-row"><strong>Grand Total</strong><strong>₹{{ total|add:delivery }}</strong></div>
+        <div class="summary-container">
+            <div class="summary-row"><span>Subtotal</span><span>₹{{ total }}</span></div>
+            <div class="summary-row"><span>Delivery Charge</span><span>₹{{ delivery }}</span></div>
+            <div class="summary-row total-row"><strong>Grand Total</strong><strong>₹{{ total|add:delivery }}</strong></div>
+        </div>
 
         <!-- Razorpay Pay Button -->
-        <button id="payNowBtn" class="btn-pay-now mt-4" data-order-pk="{{ order.pk }}">
+        <button id="payNowBtn" class="btn-pay-now" data-order-pk="{{ order.pk }}">
           <i class="bi bi-shield-lock-fill me-2"></i>Pay ₹{{ total|add:delivery }} Securely
         </button>
 
-        <div class="secure-info mt-3">
-          <i class="bi bi-lock-fill me-1"></i> Your payment is 100% secured by Razorpay
+        <div class="secure-info">
+          <i class="bi bi-check-circle-fill me-1"></i> Your payment is 100% secured by Razorpay
         </div>
       </div>
     </div>
@@ -55,6 +253,12 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 document.getElementById("payNowBtn").addEventListener("click", function () {
+  
+  // Visual feedback on button
+  const originalHtml = this.innerHTML;
+  this.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Processing...';
+  this.disabled = true;
+
   const orderPk = this.dataset.orderPk;
   fetch(`/payment/process_order/${orderPk}/`, {
     method: "GET",
@@ -62,6 +266,10 @@ document.getElementById("payNowBtn").addEventListener("click", function () {
   })
   .then(r => r.json())
   .then(data => {
+    // Reset button state
+    this.innerHTML = originalHtml;
+    this.disabled = false;
+
     const options = {
       key:          data.razorpay_key_id,
       amount:       data.amount,
@@ -74,12 +282,17 @@ document.getElementById("payNowBtn").addEventListener("click", function () {
         name:  data.product_name,
         email: "{{ request.user.email }}",
       },
-      theme: { color: "#FFB703" }
+      theme: { color: "#0f172a" }
     };
     const rzp = new Razorpay(options);
     rzp.open();
   })
-  .catch(err => console.error("Payment error:", err));
+  .catch(err => {
+      console.error("Payment error:", err);
+      this.innerHTML = originalHtml;
+      this.disabled = false;
+      alert("Something went wrong while initiating payment. Please try again.");
+  });
 });
 </script>
 {% endblock %}

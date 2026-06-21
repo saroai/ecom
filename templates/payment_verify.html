@@ -1,38 +1,174 @@
 {% extends "base.html" %}
 {% block title %}Payment Status – Fimiku{% endblock %}
 
+{% block extra_css %}
+<style>
+/* Premium White Theme for Payment Result */
+body {
+  background-color: #f8fafc; /* Matching cool grey background */
+}
+.result-wrapper {
+  animation: fadeIn 0.5s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.payment-result-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0,0,0,0.05);
+  padding: 4rem 3rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  text-align: center;
+}
+.result-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+.success-icon {
+  background: #ecfdf5;
+  color: #10b981;
+  animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.fail-icon {
+  background: #fef2f2;
+  color: #ef4444;
+  animation: shake 0.5s ease-in-out;
+}
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+.result-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.text-success-premium { color: #059669; }
+.text-danger-premium { color: #dc2626; }
+.text-warning-premium { color: #d97706; }
+
+.result-msg {
+  color: #475569;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+.order-ref {
+  display: inline-block;
+  background: #f8fafc;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+  color: #334155;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  word-break: break-all;
+}
+.order-ref strong {
+  color: #0f172a;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn-premium-primary {
+  padding: 0.85rem 1.75rem;
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(15, 23, 42, 0.15);
+}
+.btn-premium-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.25);
+  background: linear-gradient(135deg, #000000 0%, #1e293b 100%);
+  color: #ffffff;
+}
+.btn-premium-secondary {
+  padding: 0.85rem 1.75rem;
+  background: #ffffff;
+  color: #0f172a;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-premium-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  color: #0f172a;
+}
+@media (max-width: 576px) {
+  .result-actions { flex-direction: column; width: 100%; }
+  .btn-premium-primary, .btn-premium-secondary { width: 100%; }
+  .payment-result-card { padding: 2.5rem 1.5rem; }
+  .result-title { font-size: 1.8rem; }
+}
+</style>
+{% endblock %}
+
 {% block content %}
-<div class="container py-5">
+<div class="container py-5 result-wrapper">
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-lg-7 col-md-9">
       <div class="payment-result-card">
         {% if status == "success" %}
-        <div class="result-icon success-icon">✅</div>
-        <h2 class="result-title text-success">Payment Successful!</h2>
+        <div class="result-icon success-icon"><i class="bi bi-check-circle-fill"></i></div>
+        <h2 class="result-title text-success-premium">Payment Successful!</h2>
         <p class="result-msg">Your order has been placed successfully. We'll start packing your toys right away! 🧸</p>
         {% if order %}
         <div class="order-ref">
-          <strong>Order Reference:</strong> {{ order.id|slice:":8"|upper }}
+          <strong>Order Reference:</strong> {{ order.pk }}
         </div>
         {% endif %}
         <div class="result-actions">
-          <a href="{% url 'your_orders' %}" class="btn btn-primary">View My Orders</a>
-          <a href="{% url 'home' %}" class="btn btn-outline-secondary ms-2">Continue Shopping</a>
+          <a href="{% url 'your_orders' %}" class="btn-premium-primary">View My Orders</a>
+          <a href="{% url 'home' %}" class="btn-premium-secondary">Continue Shopping</a>
         </div>
 
         {% elif status == "failed" %}
-        <div class="result-icon fail-icon">❌</div>
-        <h2 class="result-title text-danger">Payment Failed</h2>
+        <div class="result-icon fail-icon"><i class="bi bi-x-circle-fill"></i></div>
+        <h2 class="result-title text-danger-premium">Payment Failed</h2>
         <p class="result-msg">We couldn't verify your payment. Please try again or contact our support team.</p>
         <div class="result-actions">
-          <a href="{% url 'home' %}" class="btn btn-primary">Go to Homepage</a>
+          <a href="{% url 'home' %}" class="btn-premium-primary">Go to Homepage</a>
         </div>
 
         {% else %}
-        <div class="result-icon fail-icon">⚠️</div>
-        <h2 class="result-title text-warning">Invalid Request</h2>
+        <div class="result-icon fail-icon" style="background:#fef3c7; color:#f59e0b;"><i class="bi bi-exclamation-triangle-fill"></i></div>
+        <h2 class="result-title text-warning-premium">Invalid Request</h2>
         <p class="result-msg">Something went wrong. Please try again.</p>
-        <a href="{% url 'home' %}" class="btn btn-primary">Go to Homepage</a>
+        <div class="result-actions">
+          <a href="{% url 'home' %}" class="btn-premium-primary">Go to Homepage</a>
+        </div>
         {% endif %}
       </div>
     </div>

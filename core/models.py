@@ -33,12 +33,19 @@ class Product(models.Model):
     description   = models.TextField()
     category      = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="educational")
     age_group     = models.CharField(max_length=10, choices=AGE_GROUP_CHOICES, default="3-7")
-    price         = models.DecimalField(max_digits=8, decimal_places=2)
+    
+    # NEW FIELDS based on user request
+    colors        = models.CharField(max_length=200, default="Pink", help_text="e.g., Pink, Blue, Green")
+    mrp           = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True, help_text="Maximum Retail Price")
+    price         = models.DecimalField(max_digits=8, decimal_places=2, help_text="Selling Price (e.g., 1089.34)")
+    offer_details = models.CharField(max_length=255, null=True, blank=True, help_text="e.g., free-shipping, 50% offer from MRP")
+    
+    # Hidden fields used internally
     is_discount   = models.BooleanField(default=False)
     discount_price= models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
-    stock         = models.PositiveIntegerField(default=0)
+    stock         = models.PositiveIntegerField(default=100) # Default to 100 so it's always in stock
     no_of_sales   = models.IntegerField(default=0)
-    is_featured   = models.BooleanField(default=False)  # show on homepage
+    is_featured   = models.BooleanField(default=False)
     is_active     = models.BooleanField(default=True)
 
     # Multiple product images

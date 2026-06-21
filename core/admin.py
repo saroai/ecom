@@ -40,23 +40,20 @@ def enquiry_count_badge(request):
 @admin.register(Product)
 class ProductAdmin(ModelAdmin):
     list_display  = [
-        "product_thumbnail", "name", "category", "age_group",
-        "price", "discount_price", "is_discount", "stock_display",
-        "no_of_sales", "is_featured", "is_active"
+        "product_thumbnail", "name", "colors",
+        "mrp", "price", "offer_details"
     ]
     list_display_links = ["product_thumbnail", "name"]
-    list_editable = ["is_discount", "is_featured", "is_active"]
-    list_filter   = ["category", "age_group", "is_discount", "is_featured", "is_active"]
-    search_fields = ["name", "description", "category"]
+    search_fields = ["name", "description"]
     ordering      = ["-created_at"]
     list_per_page = 25
 
     fieldsets = (
-        ("💎 Basic Info", {
-            "fields": ("name", "description", "category", "age_group", "is_featured", "is_active")
+        ("💎 Product Details", {
+            "fields": ("name", "description", "colors")
         }),
-        ("💰 Pricing & Stock", {
-            "fields": ("price", "is_discount", "discount_price", "stock")
+        ("💰 Pricing & Offers", {
+            "fields": ("mrp", "price", "offer_details")
         }),
         ("🖼️ Product Images", {
             "fields": ("image_1", "image_2", "image_3", "image_4"),
@@ -73,14 +70,7 @@ class ProductAdmin(ModelAdmin):
             )
         return format_html('<span style="color:#888;">No img</span>')
 
-    @display(description="Stock", ordering="stock")
-    def stock_display(self, obj):
-        color = "#ef4444" if obj.stock <= 5 else "#10b981" if obj.stock > 20 else "#f59e0b"
-        label = "Low" if obj.stock <= 5 else "OK"
-        return format_html(
-            '<span style="background:{};color:#fff;padding:2px 10px;border-radius:999px;font-size:.75rem;font-weight:700;">{} ({})</span>',
-            color, label, obj.stock
-        )
+
 
 
 # ─────────────────────────────────────────────

@@ -7,7 +7,6 @@ django.setup()
 
 from core.models import Product, Review, Wishlist, CustomerForm
 from payment.models import Order, OrderItems, ShippingAddress
-from cart.models import Cart
 from django.contrib.auth.models import User
 from allauth.socialaccount.models import SocialAccount, SocialToken
 
@@ -21,8 +20,6 @@ def clear_all_test_data():
     Order.objects.all().delete()
     print("Deleting Shipping Addresses...")
     ShippingAddress.objects.all().delete()
-    print("Deleting Carts...")
-    Cart.objects.all().delete()
 
     # 2. Store Models
     print("Deleting Reviews...")

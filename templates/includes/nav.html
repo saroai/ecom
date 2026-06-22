@@ -103,33 +103,36 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="dropdown-cart-products">
 
-                        {% for product,qty in cart.products.items %}
+                        {% for item in cart.get_items %}
                             <div class="product">
 
                                 <div class="product-cart-details">
                                     <h4 class="product-title">
-                                        <a href="{% url 'product' product.id %}">{{ product }}</a>
+                                        <a href="{% url 'product' item.product.id %}">{{ item.product }}</a>
                                     </h4>
+                                    {% if item.color %}
+                                        <small style="display:block; color:#777;">Color: {{ item.color }}</small>
+                                    {% endif %}
 
                                     <span class="cart-product-info">
-                                        {% if product.is_discount %}
-                                            <span class="cart-product-qty"> {{ qty }}</span>
-                                            x ${{ product.discount_price }}
+                                        {% if item.product.is_discount %}
+                                            <span class="cart-product-qty"> {{ item.qty }}</span>
+                                            x ₹{{ item.product.discount_price }}
                                             </span>
                                         {% else %}
-                                            <span class="cart-product-qty"> {{ qty }}</span>
-                                            x ${{ product.price }}
+                                            <span class="cart-product-qty"> {{ item.qty }}</span>
+                                            x ₹{{ item.product.price }}
                                             </span>
                                         {% endif %}
                                 </div><!-- End .product-cart-details -->
 
                                 <figure class="product-image-container">
-                                    <a href="{% url 'product' product.id %}" class="product-image">
-                                        <img src="{{ product.image_1.url }}" alt="product">
+                                    <a href="{% url 'product' item.product.id %}" class="product-image">
+                                        <img src="{{ item.product.image_1.url }}" alt="product">
                                     </a>
                                 </figure>
                                 <button href="{% url 'delete_cart' %}" class="btn-remove delete_cart"
-                                        id="{{ product.id }}" title="Remove Product"><i class="icon-close"></i></button>
+                                        id="{{ item.cart_key }}" title="Remove Product"><i class="icon-close"></i></button>
                             </div><!-- End .product -->
                         {% endfor %}
 

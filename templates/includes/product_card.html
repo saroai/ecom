@@ -73,10 +73,17 @@
       
       <!-- Quick Add -->
       {% if product.is_in_stock %}
-      <button class="btn-quick-add" data-product-id="{{ product.id }}" data-qty="1" title="Add to Cart">
-        <i class="bi bi-plus-lg"></i>
-        <span class="quick-add-text">Add</span>
-      </button>
+        {% if product.get_colors_list %}
+        <a href="{% url 'product' id=product.id %}" class="btn-quick-add" style="text-decoration: none;" title="Select Options">
+          <i class="bi bi-list"></i>
+          <span class="quick-add-text">Options</span>
+        </a>
+        {% else %}
+        <button class="btn-quick-add" data-product-id="{{ product.id }}" data-qty="1" title="Add to Cart">
+          <i class="bi bi-plus-lg"></i>
+          <span class="quick-add-text">Add</span>
+        </button>
+        {% endif %}
       {% else %}
       <button class="btn-quick-add disabled" disabled title="Out of Stock">
         <i class="bi bi-x-lg"></i>

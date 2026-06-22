@@ -20,8 +20,9 @@ from cart.cart import Cart
 def checkout(request):
     """Step 1: Collect shipping address."""
     cart = Cart(request)
+    cart_items = cart.get_items()
 
-    if not cart.products():
+    if not cart_items:
         return redirect("cart_summary")
 
     if request.method == "POST":
@@ -34,9 +35,9 @@ def checkout(request):
         form = ShippingAddressForm()
 
     context = {
-        "form":     form,
-        "products": cart.products(),
-        "total":    cart.total(),
+        "form":       form,
+        "cart_items": cart_items,
+        "total":      cart.total(),
     }
     return render(request, "checkout.html", context)
 
@@ -50,10 +51,10 @@ def billing_info(request, pk):
     order = get_object_or_404(Order, pk=pk)
 
     context = {
-        "products": cart.products(),
-        "total":    cart.total(),
-        "order":    order,
-        "delivery": 100,  # flat delivery charge ₹100
+        "cart_items": cart.get_items(),
+        "total":      cart.total(),
+        "order":      order,
+        "delivery":   100,  # flat delivery charge ₹100
     }
     return render(request, "billing_info.html", context)
 
@@ -64,9 +65,9 @@ def billing_info(request, pk):
 @login_required
 def proccess_order(request, pk):
     """Create Razorpay order and save order items; return JSON for frontend."""
-    cart      = Cart(request)
-    products  = cart.products()
-    delivery  = 100  # flat ₹100 delivery
+    cart       = Cart(request)
+    cart_items = cart.get_items()
+    delivery   = 100  # flat ₹100 delivery
     total_amount = cart.total() + delivery
 
     client = razorpay.Client(auth=(settings.RAZOR_PAY_KEY_ID, settings.RAZOR_PAY_SECRET_KEY))
@@ -83,7 +84,11 @@ def proccess_order(request, pk):
     order.save()
 
     # Create line items & reduce stock
-    for product, qty in products.items():
+    for item in cart_items:
+        product = item['product']
+        qty = item['qty']
+        color = item['color']
+        
         price = product.discount_price if product.is_discount else product.price
         OrderItems.objects.create(
             order            = order,
@@ -91,6 +96,7 @@ def proccess_order(request, pk):
             product_name     = product.name,
             product_price    = price,
             product_qty      = qty,
+            product_color    = color,
             product_category = product.category,
         )
         # Decrease stock

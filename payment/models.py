@@ -72,6 +72,7 @@ class OrderItems(models.Model):
     product_name  = models.CharField(max_length=255)
     product_price = models.DecimalField(max_digits=8, decimal_places=2)
     product_qty   = models.IntegerField()
+    product_color = models.CharField(max_length=100, blank=True, null=True)
     product_category = models.CharField(max_length=50, blank=True)
 
     def line_total(self):

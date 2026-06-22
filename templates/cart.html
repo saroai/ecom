@@ -25,26 +25,29 @@
           </div>
           
           <div class="cart-items-list">
-            {% for product, qty in all_products.items %}
-            <div class="cart-item-premium" id="cart-row-{{ product.id }}">
+            {% for item in cart_items %}
+            <div class="cart-item-premium" id="cart-row-{{ item.product.id }}">
               <div class="row align-items-center w-100 m-0">
                 <!-- Product Info -->
                 <div class="col-12 col-md-6 cart-item-info-col p-0 mb-3 mb-md-0">
                   <div class="d-flex align-items-center gap-3">
-                    <a href="{% url 'product' id=product.id %}" class="cart-img-wrap">
-                      <img src="{{ product.image_1.url }}" alt="{{ product.name }}" class="cart-img"/>
+                    <a href="{% url 'product' id=item.product.id %}" class="cart-img-wrap">
+                      <img src="{{ item.product.image_1.url }}" alt="{{ item.product.name }}" class="cart-img"/>
                     </a>
                     <div class="cart-info">
-                      <a href="{% url 'product' id=product.id %}" class="cart-product-title">{{ product.name }}</a>
-                      <span class="cart-product-meta">{{ product.get_category_display }}</span>
+                      <a href="{% url 'product' id=item.product.id %}" class="cart-product-title">{{ item.product.name }}</a>
+                      {% if item.color %}
+                      <div class="text-muted small mt-1">Color: {{ item.color }}</div>
+                      {% endif %}
+                      <span class="cart-product-meta">{{ item.product.get_category_display }}</span>
                       
                       <!-- Mobile Price -->
                       <div class="cart-product-price-mobile d-md-none mt-1">
-                        {% if product.is_discount %}
-                        <span class="price-cur">₹{{ product.discount_price }}</span>
-                        <span class="price-old text-muted text-decoration-line-through fs-sm">₹{{ product.price }}</span>
+                        {% if item.product.is_discount %}
+                        <span class="price-cur">₹{{ item.product.discount_price }}</span>
+                        <span class="price-old text-muted text-decoration-line-through fs-sm">₹{{ item.product.price }}</span>
                         {% else %}
-                        <span class="price-cur">₹{{ product.price }}</span>
+                        <span class="price-cur">₹{{ item.product.price }}</span>
                         {% endif %}
                       </div>
                     </div>
@@ -54,22 +57,24 @@
                 <!-- Quantity -->
                 <div class="col-6 col-md-3 p-0 d-flex justify-content-start justify-content-md-center">
                   <div class="qty-selector-premium">
-                    <button class="qty-btn" onclick="updateCart('{{ product.id }}', -1, {{ qty }})"><i class="bi bi-dash"></i></button>
-                    <span class="qty-val" id="qty-{{ product.id }}">{{ qty }}</span>
-                    <button class="qty-btn" onclick="updateCart('{{ product.id }}', 1, {{ qty }})"><i class="bi bi-plus"></i></button>
+                    <select class="form-select qty-select mx-auto" data-cart-key="{{ item.cart_key }}" data-product-id="{{ item.product.id }}">
+                      {% for i in "123456789"|make_list %}
+                      <option value="{{ forloop.counter }}" {% if item.qty|slugify == forloop.counter|slugify %}selected{% endif %}>{{ forloop.counter }}</option>
+                      {% endfor %}
+                    </select>
                   </div>
                 </div>
 
                 <!-- Total & Remove -->
                 <div class="col-6 col-md-3 p-0 d-flex justify-content-end align-items-center gap-3">
                   <div class="cart-item-total d-none d-md-block">
-                    {% if product.is_discount %}
-                    <strong>₹<span class="item-calc-total">{{ product.discount_price|default:product.price }}</span></strong>
+                    {% if item.product.is_discount %}
+                    <strong>₹<span class="item-calc-total">{{ item.product.discount_price|default:item.product.price }}</span></strong>
                     {% else %}
-                    <strong>₹<span class="item-calc-total">{{ product.price }}</span></strong>
+                    <strong>₹<span class="item-calc-total">{{ item.product.price }}</span></strong>
                     {% endif %}
                   </div>
-                  <button class="btn-remove-item" onclick="removeFromCart('{{ product.id }}')" title="Remove from cart">
+                  <button class="btn-remove-item btn-remove" data-cart-key="{{ item.cart_key }}" data-product-id="{{ item.product.id }}" title="Remove from cart">
                     <i class="bi bi-trash3"></i>
                   </button>
                 </div>
@@ -165,29 +170,38 @@
 
 {% block extra_js %}
 <script>
-function updateCart(productId, delta, currentQty) {
-  let newQty = parseInt(currentQty) + delta;
-  if (newQty < 1) { removeFromCart(productId); return; }
-  
-  // Show loading spinner on quantity
-  document.getElementById("qty-" + productId).innerHTML = '<span class="spinner-border spinner-border-sm"></span>';
-  
+$('.qty-select').on('change', function(e) {
+  const qty = $(this).val();
+  const cartKey = $(this).data('cart-key');
+  const productId = $(this).data('product-id');
+
+  // Split cartKey if it has color (format: product_id_color)
+  let color = "";
+  if (cartKey && cartKey.includes('_')) {
+      color = cartKey.split('_')[1];
+  }
+
   fetch("{% url 'cart_update' %}", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded", "X-CSRFToken": "{{ csrf_token }}" },
-    body: `action=post&product_id=${productId}&qty=${newQty}`,
+    body: `action=post&product_id=${productId}&qty=${qty}&color=${encodeURIComponent(color)}&cart_key=${cartKey}`,
   }).then(() => location.reload());
-}
-function removeFromCart(productId) {
+});
+
+$('.btn-remove').on('click', function(e) {
+  e.preventDefault();
+  const cartKey = $(this).data('cart-key');
+  const productId = $(this).data('product-id');
+
   if(confirm("Remove this toy from your cart?")) {
     document.getElementById("cart-row-" + productId).style.opacity = '0.5';
     fetch("{% url 'delete_cart' %}", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded", "X-CSRFToken": "{{ csrf_token }}" },
-      body: `action=post&product_id=${productId}`,
+      body: `action=post&product_id=${productId}&cart_key=${cartKey}`,
     }).then(() => location.reload());
   }
-}
+});
 
 // Enable tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');

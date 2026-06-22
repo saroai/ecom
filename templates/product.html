@@ -84,9 +84,14 @@
         </div>
         {% endif %}
 
-        {% if product.colors %}
+        {% if product.get_colors_list %}
         <div class="mb-4">
-           <strong><i class="bi bi-palette me-1"></i> Colours available:</strong> <span style="color:#555;">{{ product.colors }}</span>
+           <strong><i class="bi bi-palette me-1"></i> Colours available:</strong>
+           <select id="colorSelect" class="form-select mt-2" style="max-width: 200px; border-radius: 8px; font-weight: 500;">
+             {% for color in product.get_colors_list %}
+               <option value="{{ color }}">{{ color }}</option>
+             {% endfor %}
+           </select>
         </div>
         {% endif %}
 
@@ -236,13 +241,16 @@ if (cartBtn) {
   cartBtn.addEventListener("click", function () {
     const productId = this.dataset.productId;
     const qty = document.getElementById("qtyInput").value;
+    const colorSelect = document.getElementById("colorSelect");
+    const color = colorSelect ? colorSelect.value : "";
+
     fetch("{% url 'add_cart' %}", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
         "X-CSRFToken": "{{ csrf_token }}",
       },
-      body: `action=post&product_id=${productId}&qty=${qty}`,
+      body: `action=post&product_id=${productId}&qty=${qty}&color=${encodeURIComponent(color)}`,
     })
     .then(r => r.json())
     .then(() => {

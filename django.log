@@ -43,3 +43,1166 @@ INFO 2026-05-05 14:58:40,998 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
 INFO 2026-05-05 14:58:40,999 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
 WARNING 2026-05-05 14:58:41,237 log Not Found: /favicon.ico
 WARNING 2026-05-05 14:58:41,238 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-21 13:59:09,919 autoreload Watching for file changes with StatReloader
+INFO 2026-06-21 13:59:16,274 basehttp "GET / HTTP/1.1" 200 57458
+INFO 2026-06-21 13:59:16,321 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-21 13:59:16,322 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-21 13:59:16,323 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-21 13:59:16,328 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-21 13:59:16,347 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 200 629591
+INFO 2026-06-21 13:59:16,348 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 200 702170
+INFO 2026-06-21 13:59:16,349 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 200 589385
+INFO 2026-06-21 13:59:16,349 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 200 651656
+INFO 2026-06-21 13:59:16,351 basehttp "GET /static/img/logo.png HTTP/1.1" 200 849264
+INFO 2026-06-21 13:59:16,359 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 200 653032
+INFO 2026-06-21 13:59:16,402 basehttp "GET /static/images2/card1.png HTTP/1.1" 200 65433
+INFO 2026-06-21 13:59:16,408 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 200 613266
+INFO 2026-06-21 13:59:16,413 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 200 631376
+INFO 2026-06-21 13:59:16,420 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 200 670560
+INFO 2026-06-21 13:59:16,422 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 200 906743
+INFO 2026-06-21 13:59:16,424 basehttp "GET /static/images2/card3.png HTTP/1.1" 200 143583
+INFO 2026-06-21 13:59:16,426 basehttp "GET /static/images2/card2.png HTTP/1.1" 200 145619
+INFO 2026-06-21 13:59:16,427 basehttp "GET /static/images2/card4.png HTTP/1.1" 200 93201
+INFO 2026-06-21 13:59:16,427 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 200 766515
+INFO 2026-06-21 13:59:16,430 basehttp "GET /static/images2/card5.png HTTP/1.1" 200 113679
+INFO 2026-06-21 13:59:16,433 basehttp "GET /static/images2/card6.png HTTP/1.1" 200 162807
+INFO 2026-06-21 13:59:16,448 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 200 279579
+INFO 2026-06-21 13:59:16,452 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 200 518103
+INFO 2026-06-21 13:59:16,453 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 200 600536
+INFO 2026-06-21 13:59:16,453 basehttp "GET /static/img/about_hands.png HTTP/1.1" 200 740598
+WARNING 2026-06-21 13:59:16,662 log Not Found: /favicon.ico
+WARNING 2026-06-21 13:59:16,663 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-21 13:59:19,035 basehttp "GET /products/?category=feeding HTTP/1.1" 200 20980
+INFO 2026-06-21 13:59:19,057 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:19,061 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:19,061 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:19,062 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:19,062 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:23,084 basehttp "GET /products/ HTTP/1.1" 200 33337
+INFO 2026-06-21 13:59:23,107 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:23,107 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:23,107 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:23,108 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:23,108 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:23,318 basehttp "GET /media/product_images/71on-AODBL._SY879_.jpg HTTP/1.1" 200 91244
+INFO 2026-06-21 13:59:23,319 basehttp "GET /media/product_images/61wmDgJwBL._SL1000_.jpg HTTP/1.1" 200 89453
+INFO 2026-06-21 13:59:23,322 basehttp "GET /media/product_images/61QGzJuMBLL._SL1184_.jpg HTTP/1.1" 200 111969
+INFO 2026-06-21 13:59:23,323 basehttp "GET /media/product_images/71dyRrwkljL._SL1500_.jpg HTTP/1.1" 200 204375
+INFO 2026-06-21 13:59:23,325 basehttp "GET /media/product_images/51IIPDX2HIL.jpg HTTP/1.1" 200 46047
+INFO 2026-06-21 13:59:23,325 basehttp "GET /media/product_images/71CjQ2NYkeL._SL1500_.jpg HTTP/1.1" 200 171761
+INFO 2026-06-21 13:59:23,325 basehttp "GET /media/product_images/81DAWrjwZKL._SL1500_.jpg HTTP/1.1" 200 214910
+INFO 2026-06-21 13:59:23,327 basehttp "GET /media/product_images/61-kgLJ0-4L.jpg HTTP/1.1" 200 72274
+INFO 2026-06-21 13:59:23,328 basehttp "GET /media/product_images/61FBnRfEleL._SX569_.jpg HTTP/1.1" 200 37764
+INFO 2026-06-21 13:59:23,334 basehttp "GET /media/product_images/61iNvqcBgrL._SX569_.jpg HTTP/1.1" 200 54191
+INFO 2026-06-21 13:59:23,335 basehttp "GET /media/product_images/1.jpg HTTP/1.1" 200 75737
+INFO 2026-06-21 13:59:23,335 basehttp "GET /media/product_images/2.jpg HTTP/1.1" 200 93392
+INFO 2026-06-21 13:59:25,156 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-21 13:59:25,180 basehttp "GET /products/ HTTP/1.1" 200 33337
+INFO 2026-06-21 13:59:25,200 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:25,201 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:25,201 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:25,201 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:25,201 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:26,966 basehttp "GET /cart/ HTTP/1.1" 200 18130
+INFO 2026-06-21 13:59:26,985 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:26,985 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:26,986 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:26,986 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:26,986 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:28,449 basehttp "GET /payment/checkout/ HTTP/1.1" 302 0
+INFO 2026-06-21 13:59:28,471 basehttp "GET /accounts/login/?next=/payment/checkout/ HTTP/1.1" 200 13699
+INFO 2026-06-21 13:59:28,494 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:28,494 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:28,495 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:28,495 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 13:59:28,495 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:05:50,171 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:05:50,207 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 11908
+INFO 2026-06-21 14:05:50,257 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 200 608
+INFO 2026-06-21 14:05:50,263 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 200 164
+INFO 2026-06-21 14:05:50,266 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 200 4647
+INFO 2026-06-21 14:05:50,267 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 200 30131
+INFO 2026-06-21 14:05:50,268 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 200 50918
+INFO 2026-06-21 14:05:50,269 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 200 27176
+INFO 2026-06-21 14:05:50,271 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 200 200633
+INFO 2026-06-21 14:05:50,273 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 200 330254
+INFO 2026-06-21 14:05:50,279 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 200 15524
+INFO 2026-06-21 14:05:50,306 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 200 837
+INFO 2026-06-21 14:05:50,307 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 200 38101
+INFO 2026-06-21 14:05:50,312 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 200 703
+INFO 2026-06-21 14:05:50,315 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 200 44758
+INFO 2026-06-21 14:05:50,356 basehttp "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 200 114348
+INFO 2026-06-21 14:05:50,356 basehttp "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 200 111268
+INFO 2026-06-21 14:05:50,357 basehttp "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 200 114812
+INFO 2026-06-21 14:05:50,359 basehttp "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 200 291696
+INFO 2026-06-21 14:06:37,942 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12750
+INFO 2026-06-21 14:06:37,970 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,971 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,972 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,972 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,972 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,972 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,975 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,975 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,979 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,985 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,985 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,986 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:37,986 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,801 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12750
+INFO 2026-06-21 14:06:46,823 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,823 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,824 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,824 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,824 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,824 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,826 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,827 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,838 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,838 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,838 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,839 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:46,839 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,074 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12750
+INFO 2026-06-21 14:06:51,094 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,094 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,094 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,095 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,095 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,095 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,097 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,097 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,105 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,107 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,107 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,107 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:51,107 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,150 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12750
+INFO 2026-06-21 14:06:59,171 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,171 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,172 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,172 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,172 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,174 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,174 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,175 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,180 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,185 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,185 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,185 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:06:59,185 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,598 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12749
+INFO 2026-06-21 14:07:23,619 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,620 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,620 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,621 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,621 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,623 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,623 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,624 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,627 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,636 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,636 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,636 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:07:23,638 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:27,746 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12749
+INFO 2026-06-21 14:08:27,764 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 200 608
+INFO 2026-06-21 14:08:27,769 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 200 164
+INFO 2026-06-21 14:08:27,769 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 200 4647
+INFO 2026-06-21 14:08:27,770 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 200 30131
+INFO 2026-06-21 14:08:27,770 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 200 50918
+INFO 2026-06-21 14:08:27,772 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 200 27176
+INFO 2026-06-21 14:08:27,773 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 200 200633
+INFO 2026-06-21 14:08:27,774 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 200 330254
+INFO 2026-06-21 14:08:27,780 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 200 15524
+INFO 2026-06-21 14:08:27,784 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 200 837
+INFO 2026-06-21 14:08:27,787 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 200 38101
+INFO 2026-06-21 14:08:27,791 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 200 703
+INFO 2026-06-21 14:08:27,795 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 200 44758
+INFO 2026-06-21 14:08:28,097 basehttp "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 200 111268
+INFO 2026-06-21 14:08:28,098 basehttp "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 200 114812
+INFO 2026-06-21 14:08:28,098 basehttp "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 200 114348
+INFO 2026-06-21 14:08:28,099 basehttp "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 200 291696
+WARNING 2026-06-21 14:08:28,136 log Not Found: /favicon.ico
+WARNING 2026-06-21 14:08:28,136 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-21 14:08:33,660 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:08:33,694 basehttp "GET /admin/ HTTP/1.1" 200 45759
+INFO 2026-06-21 14:08:33,716 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,716 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,716 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,716 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,716 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,716 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,718 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,718 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,727 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,727 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,731 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,731 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,731 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:33,748 basehttp "GET /static/unfold/fonts/inter/Inter-Bold.woff2 HTTP/1.1" 200 114840
+INFO 2026-06-21 14:08:56,572 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 69082
+INFO 2026-06-21 14:08:56,593 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,594 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,594 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,595 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,595 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,598 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,601 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-06-21 14:08:56,602 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9241
+INFO 2026-06-21 14:08:56,604 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 7977
+INFO 2026-06-21 14:08:56,606 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2026-06-21 14:08:56,606 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:08:56,608 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-06-21 14:08:56,610 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-06-21 14:08:56,611 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,612 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,614 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2026-06-21 14:08:56,615 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2026-06-21 14:08:56,619 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,623 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,633 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,633 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:08:56,633 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:46,710 basehttp "GET /cart/ HTTP/1.1" 200 18388
+INFO 2026-06-21 14:09:51,257 basehttp "GET /admin/search/?s=Social%20applications HTTP/1.1" 200 762
+INFO 2026-06-21 14:09:54,981 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 47570
+INFO 2026-06-21 14:09:55,003 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,004 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,004 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,004 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,005 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,006 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,009 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,009 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,009 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,010 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,013 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,014 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,017 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,017 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,018 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,018 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,019 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:09:55,023 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,023 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,033 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,033 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:09:55,033 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,727 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 49094
+INFO 2026-06-21 14:10:06,747 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,747 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,748 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,748 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,748 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,750 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-06-21 14:10:06,753 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,753 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,755 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,758 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,759 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,760 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,760 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,763 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,764 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,764 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,764 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,765 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:10:06,768 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,770 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,775 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,775 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,775 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:06,775 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-06-21 14:10:14,613 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 47570
+INFO 2026-06-21 14:10:14,635 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,635 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,635 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,635 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,636 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,636 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,640 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,640 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,642 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,642 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,643 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,647 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,647 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,648 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,648 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:10:14,648 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,650 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,654 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,660 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,661 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,661 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:14,661 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,641 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 49094
+INFO 2026-06-21 14:10:17,661 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,661 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,663 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,663 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,665 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,665 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,668 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,668 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,668 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,670 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,670 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,675 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,675 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,676 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:10:17,676 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,678 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,678 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,679 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,685 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,685 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,687 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,687 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,687 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:17,687 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,891 basehttp "POST /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:10:22,911 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 49560
+INFO 2026-06-21 14:10:22,932 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,932 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,932 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,932 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,934 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,935 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,938 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,939 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,939 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,939 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,942 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,943 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,944 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,946 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,946 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:10:22,946 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,948 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,948 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,955 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,955 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,955 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,956 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,956 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:22,957 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,169 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 47570
+INFO 2026-06-21 14:10:34,195 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,195 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,196 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,196 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,196 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,198 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,201 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,202 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,203 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,204 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,205 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,207 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,209 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,211 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,211 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,211 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,213 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:10:34,216 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,217 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,224 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,224 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:34,224 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,897 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 49094
+INFO 2026-06-21 14:10:42,917 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,917 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,917 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,917 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,920 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,920 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,926 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,927 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,927 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,928 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,928 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,930 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:10:42,933 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,933 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,933 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,934 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,935 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,936 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,941 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,943 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,944 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,944 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,944 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:42,944 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,430 basehttp "GET /admin/socialaccount/socialapp/1/delete/ HTTP/1.1" 200 41203
+INFO 2026-06-21 14:10:44,452 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,452 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,452 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,452 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,452 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,452 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,457 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,459 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,459 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,459 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,460 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,460 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,463 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,463 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,464 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,464 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,472 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,474 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,474 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,474 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,474 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:44,476 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2026-06-21 14:10:46,114 basehttp "POST /admin/socialaccount/socialapp/1/delete/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:10:46,145 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 43781
+INFO 2026-06-21 14:10:46,170 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,171 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,171 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,171 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,171 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,173 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,177 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,177 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,178 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,178 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,181 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,182 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,184 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,184 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,184 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:10:46,184 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,186 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,189 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,194 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,194 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,194 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:46,195 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,701 basehttp "GET /admin/socialaccount/socialapp/add/ HTTP/1.1" 200 46620
+INFO 2026-06-21 14:10:47,725 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,725 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,727 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,727 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,727 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,728 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,731 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,731 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,731 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,731 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,734 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,738 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,738 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,740 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,740 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,741 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:10:47,745 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,745 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,757 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,758 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,758 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,758 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,758 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:10:47,758 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,610 basehttp "POST /admin/socialaccount/socialapp/add/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:11:40,625 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 48005
+INFO 2026-06-21 14:11:40,649 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,655 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,655 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,657 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,657 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,661 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,661 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,661 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,661 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,664 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,666 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,668 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,668 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,668 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,671 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,671 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,671 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-06-21 14:11:40,678 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,679 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,683 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,683 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:40,684 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:48,360 basehttp "GET /payment/checkout/ HTTP/1.1" 200 14280
+INFO 2026-06-21 14:11:48,379 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:48,379 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:48,380 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:48,380 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:48,380 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:52,059 basehttp "GET /my-orders/ HTTP/1.1" 200 18176
+INFO 2026-06-21 14:11:52,078 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:52,079 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:52,079 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:52,081 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:52,081 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:56,546 basehttp "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:11:56,566 basehttp "GET /accounts/login/ HTTP/1.1" 200 13793
+INFO 2026-06-21 14:11:56,587 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:56,588 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:56,589 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:56,589 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:56,589 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:58,129 basehttp "GET /accounts/login/ HTTP/1.1" 200 13551
+INFO 2026-06-21 14:11:58,161 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:58,162 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:58,163 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:58,163 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:58,163 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:11:59,539 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 302 0
+INFO 2026-06-21 14:12:05,594 basehttp "GET /accounts/google/login/callback/?state=tXopCaz52cfR1Odn&iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AdkVLPygKbWmoOe0w5l2R8qnUL-piIaMPy05AX_xr1J4eoLFvp9MFqIX82BjXrhT_4FfPw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent HTTP/1.1" 302 0
+INFO 2026-06-21 14:12:05,608 basehttp "GET /accounts/3rdparty/signup/ HTTP/1.1" 200 1721
+INFO 2026-06-21 14:12:11,010 basehttp "GET /accounts/login/ HTTP/1.1" 200 13551
+INFO 2026-06-21 14:12:11,046 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:12:11,047 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:12:11,047 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:12:11,047 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:12:11,048 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:12:13,120 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 302 0
+INFO 2026-06-21 14:12:16,506 basehttp "GET /accounts/google/login/callback/?state=0WoGsEJL8NIQH09n&iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AdkVLPyH5xQcsHynZ6yGLxGLh5QlTkOcUvVD8kvcQtq4pmPQMfaI4FqqmnW6fhx_4Auv4Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none HTTP/1.1" 302 0
+INFO 2026-06-21 14:12:16,516 basehttp "GET /accounts/3rdparty/signup/ HTTP/1.1" 200 1721
+INFO 2026-06-21 14:12:57,051 autoreload D:\On process\e_commerce\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
+INFO 2026-06-21 14:12:57,819 autoreload Watching for file changes with StatReloader
+INFO 2026-06-21 14:13:34,750 basehttp "GET /admin/password_change/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:13:34,773 basehttp "GET /admin/login/?next=/admin/password_change/ HTTP/1.1" 200 11924
+INFO 2026-06-21 14:13:34,795 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,796 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,799 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,799 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,799 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,801 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,801 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,801 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,813 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,813 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,813 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,814 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:34,814 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,483 basehttp "GET / HTTP/1.1" 200 57458
+INFO 2026-06-21 14:13:37,510 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,511 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,511 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,512 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,512 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,512 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,516 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,518 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,519 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,519 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,519 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,521 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,521 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,523 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,525 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,525 basehttp "GET /static/images2/card1.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,527 basehttp "GET /static/images2/card2.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,531 basehttp "GET /static/images2/card3.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,531 basehttp "GET /static/images2/card4.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,533 basehttp "GET /static/images2/card5.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,535 basehttp "GET /static/images2/card6.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,535 basehttp "GET /static/img/about_hands.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,536 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,540 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:37,546 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:41,051 basehttp "GET /accounts/login/ HTTP/1.1" 200 13551
+INFO 2026-06-21 14:13:41,070 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:41,070 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:41,070 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:41,070 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:41,070 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:42,376 basehttp "GET /accounts/google/login/?process=login HTTP/1.1" 302 0
+INFO 2026-06-21 14:13:48,196 basehttp "GET /accounts/google/login/callback/?state=bysSny9qPJNv8kJz&iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AdkVLPw3QntZOhUVK3rFpFNPLDsOwz4H4ce13a5rImUrrU_59twMqGyHu8YSKpZhOFpGgQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+INFO 2026-06-21 14:13:48,215 basehttp "GET /accounts/3rdparty/signup/ HTTP/1.1" 200 1721
+INFO 2026-06-21 14:13:51,353 basehttp "POST /accounts/3rdparty/signup/ HTTP/1.1" 200 1902
+INFO 2026-06-21 14:13:59,424 basehttp "POST /accounts/3rdparty/signup/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:13:59,459 basehttp "GET / HTTP/1.1" 200 59562
+INFO 2026-06-21 14:13:59,481 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,481 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,481 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,481 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,481 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,481 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,485 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,486 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,486 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,487 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,488 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,488 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,491 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,493 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,493 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,493 basehttp "GET /static/images2/card1.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,496 basehttp "GET /static/images2/card2.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,497 basehttp "GET /static/images2/card3.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,498 basehttp "GET /static/images2/card4.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,500 basehttp "GET /static/images2/card5.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,502 basehttp "GET /static/img/about_hands.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,502 basehttp "GET /static/images2/card6.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,503 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,504 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:13:59,504 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:05,724 basehttp "GET /cart/ HTTP/1.1" 200 12622
+INFO 2026-06-21 14:14:05,744 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:05,745 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:05,745 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:05,745 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:05,746 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:08,080 basehttp "GET /products/ HTTP/1.1" 200 34477
+INFO 2026-06-21 14:14:08,096 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:08,098 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:08,098 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:08,098 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:08,098 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:09,820 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-21 14:14:09,839 basehttp "GET /products/ HTTP/1.1" 200 34477
+INFO 2026-06-21 14:14:09,859 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:09,859 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:09,859 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:09,861 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:09,861 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:11,654 basehttp "GET /cart/ HTTP/1.1" 200 18208
+INFO 2026-06-21 14:14:11,672 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:11,672 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:11,672 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:11,672 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:11,673 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:12,947 basehttp "GET /payment/checkout/ HTTP/1.1" 200 14100
+INFO 2026-06-21 14:14:12,964 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:12,969 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:12,970 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:12,970 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:12,970 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:25,026 basehttp "POST /payment/checkout/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:14:25,043 basehttp "GET /payment/billinginfo/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 200 13102
+INFO 2026-06-21 14:14:25,063 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:25,066 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:25,067 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:25,067 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:14:25,067 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+ERROR 2026-06-21 14:14:28,655 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:28,659 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:31,796 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:31,798 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:32,133 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:32,134 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:32,276 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:32,279 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:32,429 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:32,431 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:32,617 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:32,619 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:32,739 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:32,741 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:32,905 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:32,907 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:33,057 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:33,060 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:33,293 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:33,296 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:14:35,982 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:14:35,983 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+ERROR 2026-06-21 14:15:27,184 log Internal Server Error: /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\payment\views.py", line 73, in proccess_order
+    razorpay_order = client.order.create({
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\order.py", line 71, in create
+    return self.post_url(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\resources\base.py", line 20, in post_url
+    return self.client.post(url, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 156, in post
+    return self.request('post', path, data=data, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\razorpay\client.py", line 137, in request
+    raise BadRequestError(msg)
+razorpay.errors.BadRequestError: Authentication failed
+ERROR 2026-06-21 14:15:27,186 basehttp "GET /payment/process_order/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 500 105001
+INFO 2026-06-21 14:16:36,869 autoreload Watching for file changes with StatReloader
+INFO 2026-06-21 14:16:59,698 basehttp "GET / HTTP/1.1" 200 59306
+INFO 2026-06-21 14:16:59,749 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,751 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,752 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,752 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,753 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,754 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,759 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,760 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,761 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,763 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,763 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,764 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,766 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,766 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,768 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,772 basehttp "GET /static/images2/card2.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,772 basehttp "GET /static/images2/card3.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,772 basehttp "GET /static/images2/card1.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,774 basehttp "GET /static/images2/card4.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,775 basehttp "GET /static/images2/card5.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,775 basehttp "GET /static/images2/card6.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,778 basehttp "GET /static/img/about_hands.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,778 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,779 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:16:59,781 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:04,864 basehttp "GET /my-orders/ HTTP/1.1" 200 18007
+INFO 2026-06-21 14:17:04,884 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:04,884 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:04,884 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:04,884 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:04,884 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:07,510 basehttp "GET /cart/ HTTP/1.1" 200 18208
+INFO 2026-06-21 14:17:07,530 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:07,530 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:07,531 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:07,531 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:07,531 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:09,455 basehttp "GET /payment/checkout/ HTTP/1.1" 200 14100
+INFO 2026-06-21 14:17:09,474 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:09,474 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:09,474 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:09,474 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:09,475 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:14,380 basehttp "POST /payment/checkout/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:17:14,389 basehttp "GET /payment/billinginfo/f62aa484-3986-48be-b71b-4fc5e18d3ea3/ HTTP/1.1" 200 13095
+INFO 2026-06-21 14:17:14,412 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:14,412 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:14,414 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:14,414 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:14,414 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:17:16,554 basehttp "GET /payment/process_order/f62aa484-3986-48be-b71b-4fc5e18d3ea3/ HTTP/1.1" 200 191
+INFO 2026-06-21 14:18:36,156 basehttp "GET /payment/process_order/f62aa484-3986-48be-b71b-4fc5e18d3ea3/ HTTP/1.1" 200 191
+INFO 2026-06-21 14:26:12,916 basehttp "GET /payment/billinginfo/f62aa484-3986-48be-b71b-4fc5e18d3ea3/ HTTP/1.1" 200 17855
+INFO 2026-06-21 14:26:12,950 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-21 14:26:12,952 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-21 14:26:12,953 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-21 14:26:12,955 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-21 14:26:12,961 basehttp "GET /static/img/logo.png HTTP/1.1" 200 849264
+INFO 2026-06-21 14:26:13,018 basehttp "GET /media/product_images/71on-AODBL._SY879_.jpg HTTP/1.1" 200 91244
+WARNING 2026-06-21 14:26:13,521 log Not Found: /favicon.ico
+WARNING 2026-06-21 14:26:13,522 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-21 14:26:22,115 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:26:22,116 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:26:22,116 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+WARNING 2026-06-21 14:26:22,142 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-06-21 14:26:22,143 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7983
+INFO 2026-06-21 14:26:29,032 basehttp "GET /payment/process_order/f62aa484-3986-48be-b71b-4fc5e18d3ea3/ HTTP/1.1" 200 191
+INFO 2026-06-21 14:28:33,693 basehttp "POST /payment/payment_verify/ HTTP/1.1" 200 11047
+INFO 2026-06-21 14:28:33,716 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:33,716 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:33,717 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:33,717 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:33,718 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:35,634 basehttp "GET /payment/billinginfo/f2296f1d-b643-42f6-9019-6ed78aeb98e5/ HTTP/1.1" 200 17303
+INFO 2026-06-21 14:28:35,657 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:35,657 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:35,657 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:35,658 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:35,658 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:57,557 basehttp "GET /my-orders/ HTTP/1.1" 302 0
+INFO 2026-06-21 14:28:57,582 basehttp "GET /accounts/login/?next=/my-orders/ HTTP/1.1" 200 13674
+INFO 2026-06-21 14:28:57,604 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:57,604 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:57,605 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:57,605 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:57,605 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:28:59,584 basehttp "GET /accounts/google/login/?process=login&next=%2Fmy-orders%2F HTTP/1.1" 302 0
+INFO 2026-06-21 14:29:02,343 basehttp "GET /accounts/google/login/callback/?state=qqX0qcuiYV8fgbHx&iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AdkVLPx2WFP0e-a2qJGc6JjOKIs0wia7FoZBCQf7C12XuJ66_yF72H8D2JzNOZzp0xdnRw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none HTTP/1.1" 302 0
+INFO 2026-06-21 14:29:02,360 basehttp "GET /my-orders/ HTTP/1.1" 200 20184
+INFO 2026-06-21 14:29:02,425 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:29:02,426 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:29:02,427 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:29:02,428 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:29:02,428 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+ERROR 2026-06-21 14:29:08,733 log Internal Server Error: /wishlist/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\core\views.py", line 181, in wishlist
+    return render(request, "wishlist.html", {"items": items})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: wishlist.html
+ERROR 2026-06-21 14:29:08,736 basehttp "GET /wishlist/ HTTP/1.1" 500 102052
+INFO 2026-06-21 14:30:14,418 basehttp "GET /my-orders/ HTTP/1.1" 200 19928
+INFO 2026-06-21 14:30:14,446 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-21 14:30:14,447 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-21 14:30:14,447 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-21 14:30:14,448 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-21 14:30:14,453 basehttp "GET /static/img/logo.png HTTP/1.1" 200 849264
+WARNING 2026-06-21 14:30:14,605 log Not Found: /favicon.ico
+WARNING 2026-06-21 14:30:14,605 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-21 14:31:03,203 basehttp "GET / HTTP/1.1" 200 59306
+INFO 2026-06-21 14:31:03,223 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,227 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,228 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,228 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,228 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,229 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,230 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,230 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,232 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,233 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,236 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,240 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,245 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,245 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,245 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,246 basehttp "GET /static/images2/card1.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,248 basehttp "GET /static/images2/card2.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,253 basehttp "GET /static/images2/card3.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,254 basehttp "GET /static/images2/card4.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,259 basehttp "GET /static/images2/card5.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,262 basehttp "GET /static/img/about_hands.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,262 basehttp "GET /static/images2/card6.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,263 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,264 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:31:03,264 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 304 0
+INFO 2026-06-21 14:36:37,719 basehttp "GET / HTTP/1.1" 200 59306
+INFO 2026-06-21 14:36:37,739 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-21 14:36:37,744 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-21 14:36:37,744 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-21 14:36:37,751 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-21 14:36:37,761 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 200 629591
+INFO 2026-06-21 14:36:37,763 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 200 651656
+INFO 2026-06-21 14:36:37,765 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 200 702170
+INFO 2026-06-21 14:36:37,766 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 200 589385
+INFO 2026-06-21 14:36:37,767 basehttp "GET /static/img/logo.png HTTP/1.1" 200 849264
+INFO 2026-06-21 14:36:37,769 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 200 653032
+INFO 2026-06-21 14:36:37,780 basehttp "GET /static/images2/card1.png HTTP/1.1" 200 65433
+INFO 2026-06-21 14:36:37,789 basehttp "GET /static/images2/card2.png HTTP/1.1" 200 145619
+INFO 2026-06-21 14:36:37,789 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 200 613266
+INFO 2026-06-21 14:36:37,794 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 200 670560
+INFO 2026-06-21 14:36:37,795 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 200 631376
+INFO 2026-06-21 14:36:37,801 basehttp "GET /static/images2/card4.png HTTP/1.1" 200 93201
+INFO 2026-06-21 14:36:37,802 basehttp "GET /static/images2/card3.png HTTP/1.1" 200 143583
+INFO 2026-06-21 14:36:37,802 basehttp "GET /static/images2/card5.png HTTP/1.1" 200 113679
+INFO 2026-06-21 14:36:37,803 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 200 766515
+INFO 2026-06-21 14:36:37,805 basehttp "GET /static/images2/card6.png HTTP/1.1" 200 162807
+INFO 2026-06-21 14:36:37,805 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 200 906743
+INFO 2026-06-21 14:36:37,812 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 200 279579
+INFO 2026-06-21 14:36:37,814 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 200 518103
+INFO 2026-06-21 14:36:37,815 basehttp "GET /static/img/about_hands.png HTTP/1.1" 200 740598
+INFO 2026-06-21 14:36:37,949 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 200 600536
+WARNING 2026-06-21 14:36:38,067 log Not Found: /favicon.ico
+WARNING 2026-06-21 14:36:38,068 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-21 15:32:17,403 autoreload Watching for file changes with StatReloader
+INFO 2026-06-21 15:33:34,179 autoreload D:\On process\e_commerce\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
+INFO 2026-06-21 15:33:34,752 autoreload Watching for file changes with StatReloader
+INFO 2026-06-21 15:35:55,610 autoreload D:\On process\e_commerce\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
+INFO 2026-06-21 15:35:56,248 autoreload Watching for file changes with StatReloader
+INFO 2026-06-21 15:57:38,557 autoreload D:\On process\e_commerce\e_commerce-main-main\core\models.py changed, reloading.
+INFO 2026-06-21 15:57:39,145 autoreload Watching for file changes with StatReloader
+INFO 2026-06-21 15:57:50,304 autoreload D:\On process\e_commerce\e_commerce-main-main\core\admin.py changed, reloading.
+INFO 2026-06-21 15:57:50,933 autoreload Watching for file changes with StatReloader
+INFO 2026-06-21 15:58:02,069 autoreload D:\On process\e_commerce\e_commerce-main-main\core\admin.py changed, reloading.
+INFO 2026-06-21 15:58:02,642 autoreload Watching for file changes with StatReloader
+INFO 2026-06-21 16:18:24,165 autoreload D:\On process\e_commerce\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
+INFO 2026-06-21 16:18:24,778 autoreload Watching for file changes with StatReloader

@@ -75,6 +75,12 @@ class Product(models.Model):
             return round(100 - (float(self.discount_price) / float(self.price)) * 100)
         return 0
 
+    def get_colors_list(self):
+        """Returns a list of colors from the comma-separated string."""
+        if self.colors:
+            return [c.strip() for c in self.colors.split(',') if c.strip()]
+        return []
+
     def is_in_stock(self):
         return self.stock > 0
 

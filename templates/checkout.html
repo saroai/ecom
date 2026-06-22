@@ -60,15 +60,16 @@
     <div class="col-lg-5">
       <div class="checkout-summary">
         <h5 class="summary-title">Your Order</h5>
-        {% for product, qty in products.items %}
+        {% for item in cart_items %}
         <div class="checkout-item">
-          <img src="{{ product.image_1.url }}" alt="{{ product.name }}" class="checkout-item-img"/>
+          <img src="{{ item.product.image_1.url }}" alt="{{ item.product.name }}" class="checkout-item-img"/>
           <div class="checkout-item-info">
-            <p class="checkout-item-name">{{ product.name }}</p>
-            <small>Qty: {{ qty }}</small>
+            <p class="checkout-item-name">{{ item.product.name }}</p>
+            {% if item.color %}<small class="d-block text-muted">Color: {{ item.color }}</small>{% endif %}
+            <small>Qty: {{ item.qty }}</small>
           </div>
           <span class="checkout-item-price">
-            ₹{% if product.is_discount %}{{ product.discount_price }}{% else %}{{ product.price }}{% endif %}
+            ₹{% if item.product.is_discount %}{{ item.product.discount_price }}{% else %}{{ item.product.price }}{% endif %}
           </span>
         </div>
         {% endfor %}

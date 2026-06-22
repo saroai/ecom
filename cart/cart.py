@@ -13,53 +13,64 @@ class Cart:
 
         self.cart = cart
 
-    def add(self,product,qty):
+    def add(self, product, qty, color=""):
         product = str(product)
         qty = int(qty)
+        color = str(color).strip()
 
-        if product in self.cart:
-            self.cart[product] = qty
+        cart_key = f"{product}_{color}" if color else product
+
+        # If it's an old cart format, clear it
+        if type(self.cart.get(list(self.cart.keys())[0])) == int if self.cart else False:
+             self.cart.clear()
+
+        if cart_key in self.cart:
+            self.cart[cart_key]['qty'] = qty
         else:
-            self.cart[product] = qty
+            self.cart[cart_key] = {'qty': qty, 'product_id': product, 'color': color}
 
         self.session.modified = True
 
-
-    def products(self):
-
-        all_products = {}
+    def get_items(self):
+        items = []
         try:
-            for key,val in self.cart.items():
-                product = Product.objects.get(id=key)
-                all_products[product] = val
+            for key, data in self.cart.items():
+                # Handle old session formats gracefully
+                if not isinstance(data, dict):
+                    continue
+                product = Product.objects.get(id=data['product_id'])
+                items.append({
+                    'product': product,
+                    'qty': data['qty'],
+                    'color': data.get('color', ''),
+                    'cart_key': key
+                })
         except Exception as e:
-            del self.session["session_key"]
-            self.session.modified = True
-        return all_products
+            pass
+        return items
 
-    def delete(self,product_id):
-
-        if product_id in self.cart:
-            del self.cart[product_id]
+    def delete(self, cart_key):
+        if cart_key in self.cart:
+            del self.cart[cart_key]
             self.session.modified = True
 
     def __len__(self):
-         return sum(self.cart.values())
+        return sum(item['qty'] for item in self.cart.values() if isinstance(item, dict))
 
     def total(self):
         total = 0
-        for pro_id,qty in self.cart.items():
+        for key, data in self.cart.items():
+            if not isinstance(data, dict):
+                continue
             try:
-                product = Product.objects.get(id=pro_id)
+                product = Product.objects.get(id=data['product_id'])
                 if product.is_discount and product.discount_price:
                     product_price = product.discount_price
                 else:
                     product_price = product.price or 0
-                total += product_price * int(qty)
+                total += product_price * int(data['qty'])
             except Product.DoesNotExist:
                 pass
-
-
         return total
 
 

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load account socialaccount %}
-{% load crispy_forms_tags %}
+{% load account socialaccount %}
 
 {% block title %}Login – Fimiku{% endblock %}
 
@@ -37,7 +37,7 @@
 
         <form class="login" method="POST" action="{% url 'account_login' %}">
           {% csrf_token %}
-          {{ form|crispy }}
+          {{ form }}
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}

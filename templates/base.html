@@ -15,6 +15,9 @@
   <!-- Bootstrap 5 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
 
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
 
@@ -54,11 +57,9 @@
       <a href="{% url 'cart_summary' %}" class="btn-cart-premium ms-auto d-flex align-items-center">
         <div class="cart-icon-wrapper position-relative">
           <i class="bi bi-bag-fill fs-4 text-primary"></i>
-          {% if cart_count > 0 %}
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light shadow-sm" style="font-size: 0.75rem; padding: 0.35em 0.6em;">
-            {{ cart_count }}
+          <span id="cart_qty" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light shadow-sm" style="font-size: 0.75rem; padding: 0.35em 0.6em; {% if cart|length == 0 %}display: none;{% endif %}">
+            {{ cart|length }}
           </span>
-          {% endif %}
         </div>
         <span class="ms-3 fw-bold text-dark d-none d-sm-block fs-5">My Cart</span>
       </a>

@@ -1206,3 +1206,689 @@ INFO 2026-06-21 15:58:02,069 autoreload D:\On process\e_commerce\e_commerce-main
 INFO 2026-06-21 15:58:02,642 autoreload Watching for file changes with StatReloader
 INFO 2026-06-21 16:18:24,165 autoreload D:\On process\e_commerce\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
 INFO 2026-06-21 16:18:24,778 autoreload Watching for file changes with StatReloader
+INFO 2026-06-22 23:21:25,371 autoreload Watching for file changes with StatReloader
+INFO 2026-06-22 23:21:54,208 basehttp "GET / HTTP/1.1" 200 58933
+INFO 2026-06-22 23:21:54,246 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-22 23:21:54,249 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-22 23:21:54,250 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-22 23:21:54,252 basehttp "GET /static/img/logo.png HTTP/1.1" 200 66051
+INFO 2026-06-22 23:21:54,276 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-22 23:21:54,282 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 200 651656
+INFO 2026-06-22 23:21:54,306 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 200 589385
+INFO 2026-06-22 23:21:54,309 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 200 653032
+INFO 2026-06-22 23:21:54,310 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 200 702170
+INFO 2026-06-22 23:21:54,312 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 200 629591
+INFO 2026-06-22 23:21:54,320 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 200 613266
+INFO 2026-06-22 23:21:54,321 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 200 670560
+INFO 2026-06-22 23:21:54,344 basehttp "GET /static/images2/card1.png HTTP/1.1" 200 65433
+INFO 2026-06-22 23:21:54,349 basehttp "GET /static/images2/card2.png HTTP/1.1" 200 145619
+INFO 2026-06-22 23:21:54,353 basehttp "GET /static/images2/card3.png HTTP/1.1" 200 143583
+INFO 2026-06-22 23:21:54,364 basehttp "GET /static/images2/card5.png HTTP/1.1" 200 113679
+INFO 2026-06-22 23:21:54,365 basehttp "GET /static/images2/card4.png HTTP/1.1" 200 93201
+INFO 2026-06-22 23:21:54,369 basehttp "GET /static/images2/card6.png HTTP/1.1" 200 162807
+INFO 2026-06-22 23:21:54,373 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 200 631376
+INFO 2026-06-22 23:21:54,376 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 200 766515
+INFO 2026-06-22 23:21:54,381 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 200 279579
+INFO 2026-06-22 23:21:54,383 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 200 906743
+INFO 2026-06-22 23:21:54,388 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 200 518103
+INFO 2026-06-22 23:21:54,393 basehttp "GET /static/img/about_hands.png HTTP/1.1" 200 740598
+INFO 2026-06-22 23:21:54,419 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 200 600536
+WARNING 2026-06-22 23:21:54,649 log Not Found: /favicon.ico
+WARNING 2026-06-22 23:21:54,650 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-22 23:22:53,604 basehttp "GET / HTTP/1.1" 200 58933
+INFO 2026-06-22 23:22:53,629 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-22 23:22:53,631 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-22 23:22:53,632 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-22 23:22:53,636 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-22 23:22:53,636 basehttp "GET /static/img/logo.png HTTP/1.1" 200 54535
+INFO 2026-06-22 23:22:53,649 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 200 589385
+INFO 2026-06-22 23:22:53,649 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 200 651656
+INFO 2026-06-22 23:22:53,651 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 200 702170
+INFO 2026-06-22 23:22:53,651 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 200 629591
+INFO 2026-06-22 23:22:53,655 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 200 653032
+INFO 2026-06-22 23:22:53,658 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 200 613266
+INFO 2026-06-22 23:22:53,675 basehttp "GET /static/images2/card1.png HTTP/1.1" 200 65433
+INFO 2026-06-22 23:22:53,677 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 200 670560
+INFO 2026-06-22 23:22:53,678 basehttp "GET /static/images2/card2.png HTTP/1.1" 200 145619
+INFO 2026-06-22 23:22:53,688 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 200 631376
+INFO 2026-06-22 23:22:53,692 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 200 906743
+INFO 2026-06-22 23:22:53,694 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 200 766515
+INFO 2026-06-22 23:22:53,697 basehttp "GET /static/images2/card3.png HTTP/1.1" 200 143583
+INFO 2026-06-22 23:22:53,710 basehttp "GET /static/images2/card4.png HTTP/1.1" 200 93201
+INFO 2026-06-22 23:22:53,711 basehttp "GET /static/images2/card5.png HTTP/1.1" 200 113679
+INFO 2026-06-22 23:22:53,713 basehttp "GET /static/images2/card6.png HTTP/1.1" 200 162807
+INFO 2026-06-22 23:22:53,718 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 200 518103
+INFO 2026-06-22 23:22:53,720 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 200 279579
+INFO 2026-06-22 23:22:53,722 basehttp "GET /static/img/about_hands.png HTTP/1.1" 200 740598
+INFO 2026-06-22 23:22:53,729 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 200 600536
+WARNING 2026-06-22 23:22:53,829 log Not Found: /favicon.ico
+WARNING 2026-06-22 23:22:53,831 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-22 23:24:40,270 basehttp "GET / HTTP/1.1" 200 58932
+INFO 2026-06-22 23:24:40,292 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-22 23:24:40,296 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-22 23:24:40,297 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-22 23:24:40,298 basehttp "GET /static/img/logo.png HTTP/1.1" 200 54535
+INFO 2026-06-22 23:24:40,305 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-22 23:24:40,314 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 200 629591
+INFO 2026-06-22 23:24:40,316 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 200 702170
+INFO 2026-06-22 23:24:40,316 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 200 651656
+INFO 2026-06-22 23:24:40,317 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 200 589385
+INFO 2026-06-22 23:24:40,320 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 200 653032
+INFO 2026-06-22 23:24:40,324 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 200 613266
+INFO 2026-06-22 23:24:40,338 basehttp "GET /static/images2/card1.png HTTP/1.1" 200 65433
+INFO 2026-06-22 23:24:40,341 basehttp "GET /static/images2/card2.png HTTP/1.1" 200 145619
+INFO 2026-06-22 23:24:40,348 basehttp "GET /static/images2/card3.png HTTP/1.1" 200 143583
+INFO 2026-06-22 23:24:40,353 basehttp "GET /static/images2/card4.png HTTP/1.1" 200 93201
+INFO 2026-06-22 23:24:40,354 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 200 631376
+INFO 2026-06-22 23:24:40,356 basehttp "GET /static/images2/card5.png HTTP/1.1" 200 113679
+INFO 2026-06-22 23:24:40,357 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 200 670560
+INFO 2026-06-22 23:24:40,357 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 200 766515
+INFO 2026-06-22 23:24:40,359 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 200 906743
+INFO 2026-06-22 23:24:40,363 basehttp "GET /static/images2/card6.png HTTP/1.1" 200 162807
+INFO 2026-06-22 23:24:40,375 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 200 279579
+INFO 2026-06-22 23:24:40,378 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 200 518103
+INFO 2026-06-22 23:24:40,381 basehttp "GET /static/img/about_hands.png HTTP/1.1" 200 740598
+INFO 2026-06-22 23:24:40,382 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 200 600536
+WARNING 2026-06-22 23:24:40,706 log Not Found: /favicon.ico
+WARNING 2026-06-22 23:24:40,708 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-22 23:24:48,974 basehttp "GET /media/product_images/71on-AODBL._SY879_.jpg HTTP/1.1" 200 91244
+INFO 2026-06-22 23:24:48,980 basehttp "GET /media/product_images/51IIPDX2HIL.jpg HTTP/1.1" 200 46047
+INFO 2026-06-22 23:24:48,980 basehttp "GET /media/product_images/61wmDgJwBL._SL1000_.jpg HTTP/1.1" 200 89453
+INFO 2026-06-22 23:24:48,982 basehttp "GET /media/product_images/61QGzJuMBLL._SL1184_.jpg HTTP/1.1" 200 111969
+INFO 2026-06-22 23:24:48,984 basehttp "GET /media/product_images/71dyRrwkljL._SL1500_.jpg HTTP/1.1" 200 204375
+INFO 2026-06-22 23:24:48,984 basehttp "GET /media/product_images/71CjQ2NYkeL._SL1500_.jpg HTTP/1.1" 200 171761
+INFO 2026-06-22 23:24:48,985 basehttp "GET /media/product_images/81DAWrjwZKL._SL1500_.jpg HTTP/1.1" 200 214910
+INFO 2026-06-22 23:24:48,989 basehttp "GET /media/product_images/61-kgLJ0-4L.jpg HTTP/1.1" 200 72274
+INFO 2026-06-22 23:24:50,878 basehttp "GET /media/product_images/1.jpg HTTP/1.1" 200 75737
+INFO 2026-06-22 23:24:50,878 basehttp "GET /media/product_images/61FBnRfEleL._SX569_.jpg HTTP/1.1" 200 37764
+INFO 2026-06-22 23:24:50,879 basehttp "GET /media/product_images/61iNvqcBgrL._SX569_.jpg HTTP/1.1" 200 54191
+INFO 2026-06-22 23:24:50,880 basehttp "GET /media/product_images/2.jpg HTTP/1.1" 200 93392
+INFO 2026-06-24 22:12:50,873 autoreload Watching for file changes with StatReloader
+INFO 2026-06-24 22:13:12,752 basehttp "GET /cart/ HTTP/1.1" 200 12758
+INFO 2026-06-24 22:19:22,864 autoreload D:\On process\e_commerce\e_commerce-main-main\cart\cart.py changed, reloading.
+INFO 2026-06-24 22:19:23,807 autoreload Watching for file changes with StatReloader
+INFO 2026-06-24 22:19:39,978 autoreload D:\On process\e_commerce\e_commerce-main-main\cart\cart.py changed, reloading.
+INFO 2026-06-24 22:19:40,511 autoreload Watching for file changes with StatReloader
+ERROR 2026-06-24 22:37:59,984 exception Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2026-06-24 22:38:00,170 log Bad Request: /cart_add/
+ERROR 2026-06-24 22:38:00,171 exception Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2026-06-24 22:38:00,183 log Bad Request: /cart/
+ERROR 2026-06-25 00:14:49,577 exception Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2026-06-25 00:14:49,908 log Bad Request: /cart_add/
+WARNING 2026-06-25 00:15:14,367 log Not Found: /checkout/
+INFO 2026-06-25 00:24:27,134 autoreload Watching for file changes with StatReloader
+INFO 2026-06-25 00:24:55,938 basehttp "GET / HTTP/1.1" 200 58389
+INFO 2026-06-25 00:24:55,956 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-25 00:24:55,962 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-25 00:24:55,962 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-25 00:24:55,964 basehttp "GET /static/img/logo.png HTTP/1.1" 200 54535
+INFO 2026-06-25 00:24:55,969 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-25 00:24:55,982 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 200 651656
+INFO 2026-06-25 00:24:55,985 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 200 629591
+INFO 2026-06-25 00:24:55,986 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 200 702170
+INFO 2026-06-25 00:24:55,989 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 200 589385
+INFO 2026-06-25 00:24:55,998 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 200 613266
+INFO 2026-06-25 00:24:55,999 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 200 653032
+INFO 2026-06-25 00:24:56,007 basehttp "GET /static/images2/card1.png HTTP/1.1" 200 65433
+INFO 2026-06-25 00:24:56,011 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 200 670560
+INFO 2026-06-25 00:24:56,017 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 200 631376
+INFO 2026-06-25 00:24:56,019 basehttp "GET /static/images2/card2.png HTTP/1.1" 200 145619
+INFO 2026-06-25 00:24:56,022 basehttp "GET /static/images2/card3.png HTTP/1.1" 200 143583
+INFO 2026-06-25 00:24:56,026 basehttp "GET /static/images2/card4.png HTTP/1.1" 200 93201
+INFO 2026-06-25 00:24:56,029 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 200 906743
+INFO 2026-06-25 00:24:56,030 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 200 766515
+INFO 2026-06-25 00:24:56,033 basehttp "GET /static/images2/card5.png HTTP/1.1" 200 113679
+INFO 2026-06-25 00:24:56,035 basehttp "GET /static/images2/card6.png HTTP/1.1" 200 162807
+INFO 2026-06-25 00:24:56,040 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 200 279579
+INFO 2026-06-25 00:24:56,042 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 200 518103
+INFO 2026-06-25 00:24:56,043 basehttp "GET /static/img/about_hands.png HTTP/1.1" 200 740598
+INFO 2026-06-25 00:24:56,063 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 200 600536
+WARNING 2026-06-25 00:24:56,258 log Not Found: /favicon.ico
+WARNING 2026-06-25 00:24:56,259 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-25 00:24:57,704 basehttp "GET /products/ HTTP/1.1" 200 34641
+INFO 2026-06-25 00:24:57,713 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:24:57,713 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:24:57,714 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:24:57,714 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:24:57,714 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:24:57,944 basehttp "GET /media/product_images/71dyRrwkljL._SL1500_.jpg HTTP/1.1" 200 204375
+INFO 2026-06-25 00:24:57,949 basehttp "GET /media/product_images/61wmDgJwBL._SL1000_.jpg HTTP/1.1" 200 89453
+INFO 2026-06-25 00:24:57,950 basehttp "GET /media/default_product.jpg HTTP/1.1" 200 38556
+INFO 2026-06-25 00:24:57,955 basehttp "GET /media/product_images/81DAWrjwZKL._SL1500_.jpg HTTP/1.1" 200 214910
+INFO 2026-06-25 00:24:57,955 basehttp "GET /media/product_images/51IIPDX2HIL.jpg HTTP/1.1" 200 46047
+INFO 2026-06-25 00:24:57,956 basehttp "GET /media/product_images/61QGzJuMBLL._SL1184_.jpg HTTP/1.1" 200 111969
+INFO 2026-06-25 00:24:57,956 basehttp "GET /media/product_images/71on-AODBL._SY879_.jpg HTTP/1.1" 200 91244
+INFO 2026-06-25 00:24:57,957 basehttp "GET /media/product_images/71CjQ2NYkeL._SL1500_.jpg HTTP/1.1" 200 171761
+INFO 2026-06-25 00:24:57,957 basehttp "GET /media/product_images/61-kgLJ0-4L.jpg HTTP/1.1" 200 72274
+INFO 2026-06-25 00:24:57,965 basehttp "GET /media/product_images/61FBnRfEleL._SX569_.jpg HTTP/1.1" 200 37764
+INFO 2026-06-25 00:24:57,967 basehttp "GET /media/product_images/61iNvqcBgrL._SX569_.jpg HTTP/1.1" 200 54191
+INFO 2026-06-25 00:24:57,968 basehttp "GET /media/product_images/1.jpg HTTP/1.1" 200 75737
+INFO 2026-06-25 00:24:57,968 basehttp "GET /media/product_images/2.jpg HTTP/1.1" 200 93392
+INFO 2026-06-25 00:25:03,895 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:25:03,918 basehttp "GET /products/ HTTP/1.1" 200 34641
+INFO 2026-06-25 00:25:03,928 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:03,928 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:03,928 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:03,928 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:03,929 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:05,617 basehttp "GET /cart/ HTTP/1.1" 200 12852
+INFO 2026-06-25 00:25:05,624 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:05,624 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:05,624 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:05,625 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:05,625 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:07,085 basehttp "GET /products/ HTTP/1.1" 200 34641
+INFO 2026-06-25 00:25:07,093 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:07,094 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:07,094 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:07,095 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:07,095 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:09,885 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:25:09,902 basehttp "GET /products/ HTTP/1.1" 200 34641
+INFO 2026-06-25 00:25:09,912 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:09,912 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:09,912 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:09,912 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:09,912 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:11,860 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:25:11,879 basehttp "GET /products/ HTTP/1.1" 200 34641
+INFO 2026-06-25 00:25:11,888 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:11,888 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:11,888 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:11,889 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:11,889 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:14,022 basehttp "GET /cart/ HTTP/1.1" 200 12852
+INFO 2026-06-25 00:25:14,031 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:14,032 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:14,033 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:14,033 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:25:14,034 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:05,717 basehttp "GET / HTTP/1.1" 200 58389
+INFO 2026-06-25 00:26:05,805 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-25 00:26:05,807 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-25 00:26:05,808 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-25 00:26:05,809 basehttp "GET /static/img/logo.png HTTP/1.1" 200 54535
+INFO 2026-06-25 00:26:05,816 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-25 00:26:05,819 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 200 651656
+INFO 2026-06-25 00:26:05,820 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 200 629591
+INFO 2026-06-25 00:26:05,821 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 200 589385
+INFO 2026-06-25 00:26:05,824 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 200 702170
+INFO 2026-06-25 00:26:05,825 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 200 653032
+INFO 2026-06-25 00:26:05,836 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 200 613266
+INFO 2026-06-25 00:26:05,841 basehttp "GET /static/images2/card1.png HTTP/1.1" 200 65433
+INFO 2026-06-25 00:26:05,843 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 200 670560
+INFO 2026-06-25 00:26:05,844 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 200 631376
+INFO 2026-06-25 00:26:05,847 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 200 906743
+INFO 2026-06-25 00:26:05,851 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 200 766515
+INFO 2026-06-25 00:26:05,852 basehttp "GET /static/images2/card2.png HTTP/1.1" 200 145619
+INFO 2026-06-25 00:26:05,853 basehttp "GET /static/images2/card3.png HTTP/1.1" 200 143583
+INFO 2026-06-25 00:26:05,855 basehttp "GET /static/images2/card4.png HTTP/1.1" 200 93201
+INFO 2026-06-25 00:26:05,857 basehttp "GET /static/images2/card5.png HTTP/1.1" 200 113679
+INFO 2026-06-25 00:26:05,863 basehttp "GET /static/images2/card6.png HTTP/1.1" 200 162807
+INFO 2026-06-25 00:26:05,867 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 200 279579
+INFO 2026-06-25 00:26:05,869 basehttp "GET /static/img/about_hands.png HTTP/1.1" 200 740598
+INFO 2026-06-25 00:26:05,869 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 200 518103
+INFO 2026-06-25 00:26:05,968 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 200 600536
+WARNING 2026-06-25 00:26:07,981 log Not Found: /favicon.ico
+WARNING 2026-06-25 00:26:07,981 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-25 00:26:15,985 basehttp "GET /products/ HTTP/1.1" 200 34641
+INFO 2026-06-25 00:26:16,041 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:16,054 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:16,054 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:16,054 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:16,055 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:16,164 basehttp "GET /media/product_images/61wmDgJwBL._SL1000_.jpg HTTP/1.1" 200 89453
+INFO 2026-06-25 00:26:16,164 basehttp "GET /media/product_images/61QGzJuMBLL._SL1184_.jpg HTTP/1.1" 200 111969
+INFO 2026-06-25 00:26:16,168 basehttp "GET /media/default_product.jpg HTTP/1.1" 200 38556
+INFO 2026-06-25 00:26:16,168 basehttp "GET /media/product_images/71on-AODBL._SY879_.jpg HTTP/1.1" 200 91244
+INFO 2026-06-25 00:26:16,169 basehttp "GET /media/product_images/71dyRrwkljL._SL1500_.jpg HTTP/1.1" 200 204375
+INFO 2026-06-25 00:26:16,174 basehttp "GET /media/product_images/71CjQ2NYkeL._SL1500_.jpg HTTP/1.1" 200 171761
+INFO 2026-06-25 00:26:16,190 basehttp "GET /media/product_images/61FBnRfEleL._SX569_.jpg HTTP/1.1" 200 37764
+INFO 2026-06-25 00:26:16,190 basehttp "GET /media/product_images/51IIPDX2HIL.jpg HTTP/1.1" 200 46047
+INFO 2026-06-25 00:26:16,190 basehttp "GET /media/product_images/61-kgLJ0-4L.jpg HTTP/1.1" 200 72274
+INFO 2026-06-25 00:26:16,192 basehttp "GET /media/product_images/61iNvqcBgrL._SX569_.jpg HTTP/1.1" 200 54191
+INFO 2026-06-25 00:26:16,192 basehttp "GET /media/product_images/1.jpg HTTP/1.1" 200 75737
+INFO 2026-06-25 00:26:16,194 basehttp "GET /media/product_images/81DAWrjwZKL._SL1500_.jpg HTTP/1.1" 200 214910
+INFO 2026-06-25 00:26:16,199 basehttp "GET /media/product_images/2.jpg HTTP/1.1" 200 93392
+INFO 2026-06-25 00:26:21,834 basehttp "GET /product/47fcebfe-1b89-4c4a-ad4b-3002818bf0bb/ HTTP/1.1" 200 17627
+INFO 2026-06-25 00:26:21,894 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:21,901 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:21,901 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:21,901 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:21,901 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:38,321 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:26:48,511 basehttp "GET /cart/ HTTP/1.1" 200 12852
+INFO 2026-06-25 00:26:48,582 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:48,583 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:48,583 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:48,584 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:48,584 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:53,186 basehttp "GET /product/47fcebfe-1b89-4c4a-ad4b-3002818bf0bb/ HTTP/1.1" 200 17627
+INFO 2026-06-25 00:26:53,238 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:53,245 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:53,245 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:53,246 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:26:53,246 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:04,979 basehttp "GET /product/47fcebfe-1b89-4c4a-ad4b-3002818bf0bb/ HTTP/1.1" 200 17627
+INFO 2026-06-25 00:27:05,035 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:05,041 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:05,042 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:05,042 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:05,043 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:12,474 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:27:21,132 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:27:32,758 basehttp "GET /product/47fcebfe-1b89-4c4a-ad4b-3002818bf0bb/ HTTP/1.1" 200 17627
+INFO 2026-06-25 00:27:39,970 basehttp "GET /products/ HTTP/1.1" 200 34641
+INFO 2026-06-25 00:27:40,058 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:40,059 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:40,066 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:40,071 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:40,107 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:54,735 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:27:54,819 basehttp "GET /products/ HTTP/1.1" 200 34641
+INFO 2026-06-25 00:27:54,871 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:54,875 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:54,875 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:54,881 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:27:54,882 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:01,520 basehttp "GET /cart/ HTTP/1.1" 200 12852
+INFO 2026-06-25 00:28:01,563 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:01,571 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:01,571 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:01,571 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:01,571 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:07,621 basehttp "GET /product/ec317166-83e9-4dfa-9f60-bc9f338c61c8/ HTTP/1.1" 200 18368
+INFO 2026-06-25 00:28:07,676 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:07,679 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:07,680 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:07,680 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:07,682 basehttp "GET /media/product_images/71e-clEXp5L._SL1500_.jpg HTTP/1.1" 200 136317
+INFO 2026-06-25 00:28:07,688 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:07,693 basehttp "GET /media/product_images/71VND1SiL._SL1500_.jpg HTTP/1.1" 200 167074
+INFO 2026-06-25 00:28:19,859 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:28:24,113 basehttp "GET /cart/ HTTP/1.1" 200 12852
+INFO 2026-06-25 00:28:24,169 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:24,179 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:24,179 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:24,180 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:24,181 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:35,742 basehttp "GET /accounts/signup/ HTTP/1.1" 200 13716
+INFO 2026-06-25 00:28:35,788 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:35,798 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:35,800 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:35,801 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:35,802 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,614 basehttp "POST /accounts/signup/ HTTP/1.1" 302 0
+INFO 2026-06-25 00:28:53,664 basehttp "GET / HTTP/1.1" 200 60669
+INFO 2026-06-25 00:28:53,723 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,734 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,735 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,735 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,736 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,737 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,738 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,740 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,742 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,743 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,750 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,750 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,750 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,753 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,757 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,758 basehttp "GET /static/images2/card1.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,761 basehttp "GET /static/images2/card2.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,764 basehttp "GET /static/images2/card3.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,764 basehttp "GET /static/images2/card6.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,764 basehttp "GET /static/images2/card5.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,765 basehttp "GET /static/images2/card4.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,767 basehttp "GET /static/img/about_hands.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,767 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,772 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:53,772 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:57,385 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:28:57,425 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:57,434 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:57,434 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:57,434 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:28:57,434 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:08,887 basehttp "GET /product/47fcebfe-1b89-4c4a-ad4b-3002818bf0bb/ HTTP/1.1" 200 19267
+INFO 2026-06-25 00:29:08,940 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:08,974 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:08,975 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:08,975 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:08,975 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:20,472 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:29:24,288 basehttp "GET /cart/ HTTP/1.1" 200 12930
+INFO 2026-06-25 00:29:24,338 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:24,349 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:24,349 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:24,349 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:29:24,350 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:31:32,679 autoreload D:\On process\e_commerce\e_commerce-main-main\cart\cart.py changed, reloading.
+INFO 2026-06-25 00:31:33,429 autoreload Watching for file changes with StatReloader
+ERROR 2026-06-25 00:31:43,533 log Internal Server Error: /cart_add/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\On process\e_commerce\e_commerce-main-main\cart\views.py", line 15, in cart_add
+    cart.add(product_id, qty, color)
+  File "D:\On process\e_commerce\e_commerce-main-main\cart\cart.py", line 13, in add
+    product_id_str = str(product.id)
+                         ^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'id'
+INFO 2026-06-25 00:32:13,438 autoreload D:\On process\e_commerce\e_commerce-main-main\cart\cart.py changed, reloading.
+INFO 2026-06-25 00:32:14,130 autoreload Watching for file changes with StatReloader
+INFO 2026-06-25 00:33:20,374 autoreload D:\On process\e_commerce\e_commerce-main-main\cart\views.py changed, reloading.
+INFO 2026-06-25 00:33:21,004 autoreload Watching for file changes with StatReloader
+ERROR 2026-06-25 00:33:29,906 exception Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2026-06-25 00:33:30,121 log Bad Request: /cart_add/
+ERROR 2026-06-25 00:33:30,122 exception Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2026-06-25 00:33:30,134 log Bad Request: /cart/
+INFO 2026-06-25 00:34:20,529 autoreload D:\On process\e_commerce\e_commerce-main-main\cart\views.py changed, reloading.
+INFO 2026-06-25 00:34:21,211 autoreload Watching for file changes with StatReloader
+INFO 2026-06-25 00:34:43,580 basehttp "GET / HTTP/1.1" 200 60414
+INFO 2026-06-25 00:34:43,675 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,677 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,681 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,683 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,685 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,685 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,687 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,687 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,688 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,688 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,692 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,698 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,699 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,700 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,701 basehttp "GET /static/images2/card1.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,702 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,704 basehttp "GET /static/images2/card2.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,706 basehttp "GET /static/images2/card3.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,713 basehttp "GET /static/images2/card4.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,713 basehttp "GET /static/images2/card5.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,713 basehttp "GET /static/images2/card6.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,713 basehttp "GET /static/img/about_hands.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,716 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:34:43,716 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:24,026 basehttp "GET /product/ec317166-83e9-4dfa-9f60-bc9f338c61c8/ HTTP/1.1" 200 20008
+INFO 2026-06-25 00:35:24,097 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:24,097 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:24,098 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:24,098 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:24,098 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:30,744 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:35:39,412 basehttp "GET /cart/ HTTP/1.1" 200 12930
+INFO 2026-06-25 00:35:39,476 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:39,477 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:39,478 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:39,478 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:39,478 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:50,699 basehttp "GET /product/ec317166-83e9-4dfa-9f60-bc9f338c61c8/ HTTP/1.1" 200 20008
+INFO 2026-06-25 00:35:50,765 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:50,765 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:50,765 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:50,765 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:50,766 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:35:59,982 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:36:05,939 basehttp "GET /product/ec317166-83e9-4dfa-9f60-bc9f338c61c8/ HTTP/1.1" 200 20008
+INFO 2026-06-25 00:36:05,988 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:36:05,989 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:36:05,990 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:36:05,990 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:36:05,991 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:36:12,549 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:36:31,197 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:36:49,417 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:36:59,197 basehttp "GET /product/ec317166-83e9-4dfa-9f60-bc9f338c61c8/ HTTP/1.1" 200 20008
+INFO 2026-06-25 00:36:59,271 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:36:59,271 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:36:59,271 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:36:59,272 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:36:59,272 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:11,726 basehttp "GET /product/ec317166-83e9-4dfa-9f60-bc9f338c61c8/ HTTP/1.1" 200 20008
+INFO 2026-06-25 00:38:16,243 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:36,551 basehttp "GET /product/ec317166-83e9-4dfa-9f60-bc9f338c61c8/ HTTP/1.1" 200 20008
+INFO 2026-06-25 00:38:36,592 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:36,594 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:36,596 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:36,598 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:36,602 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:43,380 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:38:51,435 basehttp "GET / HTTP/1.1" 200 60414
+INFO 2026-06-25 00:38:51,477 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,488 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,488 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,489 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,489 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,492 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,492 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,497 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,498 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,499 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,504 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,505 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,506 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,506 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,512 basehttp "GET /static/images2/card1.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,512 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,527 basehttp "GET /static/images2/card2.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,528 basehttp "GET /static/images2/card3.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,530 basehttp "GET /static/images2/card4.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,531 basehttp "GET /static/images2/card5.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,532 basehttp "GET /static/images2/card6.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,533 basehttp "GET /static/img/about_hands.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,534 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,535 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:38:51,538 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:13,790 basehttp "GET /products/?category=feeding HTTP/1.1" 200 21152
+INFO 2026-06-25 00:39:13,812 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:13,817 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:13,818 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:13,818 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:13,819 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:17,313 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:39:17,329 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:17,332 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:17,333 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:17,333 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:17,334 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:19,607 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:39:19,633 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:39:19,651 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:19,651 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:19,651 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:19,651 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:19,652 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:21,129 basehttp "GET /cart/ HTTP/1.1" 200 12930
+INFO 2026-06-25 00:39:21,149 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:21,150 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:21,150 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:21,150 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:39:21,150 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:00,246 basehttp "GET /cart/ HTTP/1.1" 200 12930
+INFO 2026-06-25 00:42:00,272 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-06-25 00:42:00,273 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-06-25 00:42:00,273 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-06-25 00:42:00,273 basehttp "GET /static/css/style.css HTTP/1.1" 200 43863
+INFO 2026-06-25 00:42:00,274 basehttp "GET /static/img/logo.png HTTP/1.1" 200 54535
+WARNING 2026-06-25 00:42:00,396 log Not Found: /favicon.ico
+WARNING 2026-06-25 00:42:00,397 basehttp "GET /favicon.ico HTTP/1.1" 404 7872
+INFO 2026-06-25 00:42:02,482 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:02,499 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:02,502 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:02,502 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:02,503 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:02,503 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:04,758 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:42:04,784 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:04,800 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:04,802 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:04,803 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:04,803 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:04,803 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:06,279 basehttp "GET /cart/ HTTP/1.1" 200 12930
+INFO 2026-06-25 00:42:06,295 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:06,296 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:06,296 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:06,296 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:06,296 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:07,829 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:07,847 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:07,855 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:07,856 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:07,856 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:07,856 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:09,729 basehttp "GET /product/ec317166-83e9-4dfa-9f60-bc9f338c61c8/ HTTP/1.1" 200 20008
+INFO 2026-06-25 00:42:09,748 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:09,755 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:09,755 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:09,755 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:09,755 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:10,721 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:42:12,104 basehttp "GET /cart/ HTTP/1.1" 200 12930
+INFO 2026-06-25 00:42:12,122 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:12,129 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:12,130 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:12,130 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:12,130 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:14,623 basehttp "GET /my-orders/ HTTP/1.1" 200 18078
+INFO 2026-06-25 00:42:14,643 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:14,647 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:14,647 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:14,648 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:14,648 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:20,768 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:20,785 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:20,791 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:20,791 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:20,791 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:20,791 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:23,696 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:42:23,719 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:23,737 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:23,738 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:23,738 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:23,738 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:23,738 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,543 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:42:24,561 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:24,577 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,577 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,577 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,578 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,578 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,894 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:42:24,921 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:24,939 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,942 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,943 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,943 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:24,943 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,246 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:42:25,267 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:25,285 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,286 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,286 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,287 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,287 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,579 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:42:25,598 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:25,616 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,616 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,617 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,617 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,617 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,918 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:42:25,940 basehttp "GET /products/ HTTP/1.1" 200 35958
+INFO 2026-06-25 00:42:25,958 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,961 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,961 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,962 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:25,962 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:28,068 basehttp "GET /cart/ HTTP/1.1" 200 12930
+INFO 2026-06-25 00:42:28,086 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:28,086 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:28,086 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:28,086 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-06-25 00:42:28,086 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-06-25 00:45:03,347 basehttp "GET / HTTP/1.1" 200 58389
+INFO 2026-06-25 00:45:03,353 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:45:03,358 basehttp "GET /cart/ HTTP/1.1" 200 12852
+INFO 2026-06-25 00:45:25,446 basehttp "GET / HTTP/1.1" 200 58389
+INFO 2026-06-25 00:45:25,454 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:45:25,458 basehttp "GET /cart/ HTTP/1.1" 200 12852
+INFO 2026-06-25 00:45:40,892 basehttp "GET / HTTP/1.1" 200 58389
+INFO 2026-06-25 00:45:40,899 basehttp "POST /cart_add/ HTTP/1.1" 200 45
+INFO 2026-06-25 00:45:40,904 basehttp "GET /cart/ HTTP/1.1" 200 12852
+INFO 2026-06-25 00:47:50,361 autoreload D:\On process\e_commerce\e_commerce-main-main\cart\views.py changed, reloading.
+INFO 2026-06-25 00:47:51,006 autoreload Watching for file changes with StatReloader

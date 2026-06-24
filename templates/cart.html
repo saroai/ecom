@@ -7,12 +7,12 @@
   <div class="container">
     <div class="cart-header-top mb-5">
       <h1 class="page-title"><i class="bi bi-bag me-2"></i>My Shopping Cart</h1>
-      {% if all_products %}
-      <p class="text-muted">You have {{ all_products|length }} item(s) in your cart.</p>
+      {% if cart_items %}
+      <p class="text-muted">You have {{ cart_items|length }} item(s) in your cart.</p>
       {% endif %}
     </div>
 
-    {% if all_products %}
+    {% if cart_items %}
     <div class="row g-5">
       <!-- ── CART ITEMS ── -->
       <div class="col-lg-8">

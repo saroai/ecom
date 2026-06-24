@@ -12,9 +12,10 @@ def cart_add(request):
         qty = request.POST.get("qty")
         color = request.POST.get("color", "")
 
+        print("POST TO CART ADD:", product_id, qty, color)
         cart.add(product_id, qty, color)
 
-        return JsonResponse({str(product_id): qty})
+        return JsonResponse({'qty': len(cart)})
 
     return None
 
@@ -23,6 +24,9 @@ def cart_summary(request):
     cart = Cart(request)
 
     cart_items = cart.get_items()
+    print("SESSION KEY:", request.session.session_key)
+    print("CART CONTENTS IN SESSION:", request.session.get("session_key"))
+    print("CART ITEMS RETURNED:", cart_items)
     total = cart.total()
     context = {
         "cart_items": cart_items,

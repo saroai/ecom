@@ -253,9 +253,16 @@ if (cartBtn) {
       body: `action=post&product_id=${productId}&qty=${qty}&color=${encodeURIComponent(color)}`,
     })
     .then(r => r.json())
-    .then(() => {
+    .then(json => {
       cartBtn.innerHTML = '<i class="bi bi-check-lg me-2"></i>Added to Cart!';
       cartBtn.classList.add("added");
+      
+      const badge = document.getElementById("cart_qty");
+      if (badge) {
+         badge.style.display = "inline-block";
+         badge.textContent = json.qty;
+      }
+
       setTimeout(() => {
         cartBtn.innerHTML = '<i class="bi bi-bag-plus me-2"></i>Add to Cart';
         cartBtn.classList.remove("added");

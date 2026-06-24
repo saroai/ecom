@@ -11,6 +11,7 @@ from django.core.mail import send_mail
 from .form import ShippingAddressForm
 from .models import Order, ShippingAddress, OrderItems
 from cart.cart import Cart
+from core.shiprocket import create_shiprocket_order
 
 
 # ─────────────────────────────────────────────
@@ -152,6 +153,12 @@ def payment_verify(request):
             order.signature  = razorpay_signature
             order.status     = "processing"
             order.save()
+
+            # Push to Shiprocket
+            try:
+                create_shiprocket_order(order)
+            except Exception as e:
+                print("Failed to push to Shiprocket:", e)
 
             # Update sales counter
             for item in order.items.all():

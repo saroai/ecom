@@ -45,6 +45,10 @@ class Order(models.Model):
     order_id    = models.CharField(max_length=255, null=True, blank=True, editable=False)
     payment_id  = models.CharField(max_length=255, null=True, blank=True, editable=False)
     signature   = models.CharField(max_length=255, null=True, blank=True, editable=False)
+    
+    # Shiprocket tracking fields
+    shiprocket_order_id = models.CharField(max_length=255, null=True, blank=True)
+    shiprocket_shipment_id = models.CharField(max_length=255, null=True, blank=True)
 
     amount_paid = models.PositiveBigIntegerField(null=True, blank=True)
     is_paid     = models.BooleanField(default=False)

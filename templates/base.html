@@ -207,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const productId = this.getAttribute('data-product-id');
       const qty = this.getAttribute('data-qty') || 1;
+      const color = this.getAttribute('data-color') || '';
       const originalText = this.innerHTML;
       
       this.innerHTML = '<i class="bi bi-hourglass-split"></i>';
@@ -214,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
       fetch("{% url 'add_cart' %}", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded", "X-CSRFToken": "{{ csrf_token }}" },
-        body: `action=post&product_id=${productId}&qty=${qty}`
+        body: `action=post&product_id=${productId}&qty=${qty}&color=${color}`
       })
       .then(response => response.json())
       .then(data => {

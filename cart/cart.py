@@ -2,26 +2,19 @@ from core.models import Product
 from django.core.exceptions import ValidationError
 
 class Cart:
-
     def __init__(self,request):
         self.session = request.session
-
         cart = self.session.get("session_key")
-
         if "session_key" not in request.session:
             cart = self.session["session_key"] = {}
-
-
         self.cart = cart
 
     def add(self, product, qty, color=""):
         product = str(product)
         qty = int(qty)
         color = str(color).strip()
-
         cart_key = f"{product}_{color}" if color else product
 
-        # If it's an old cart format, clear it
         if type(self.cart.get(list(self.cart.keys())[0])) == int if self.cart else False:
              self.cart.clear()
 
@@ -50,11 +43,9 @@ class Cart:
             except (Product.DoesNotExist, ValidationError):
                 pass
         
-        # Clean up invalid keys
         invalid_keys = [k for k in self.cart.keys() if k not in valid_keys]
         for k in invalid_keys:
             self.delete(k)
-
         return items
 
     def delete(self, cart_key):
@@ -80,14 +71,3 @@ class Cart:
             except (Product.DoesNotExist, ValidationError):
                 pass
         return total
-
-
-
-
-
-
-
-
-
-
-

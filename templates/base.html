@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
       fetch("{% url 'add_cart' %}", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded", "X-CSRFToken": "{{ csrf_token }}" },
-        body: `action=post&product_id=${productId}&qty=${qty}&color=${color}`
+        body: `action=post&product_id=${productId}&qty=${qty}&color=${encodeURIComponent(color)}`
       })
       .then(response => response.json())
       .then(data => {

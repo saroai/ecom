@@ -1,4 +1,5 @@
 from core.models import Product
+from django.core.exceptions import ValidationError
 
 class Cart:
 
@@ -33,11 +34,11 @@ class Cart:
 
     def get_items(self):
         items = []
-        try:
-            for key, data in self.cart.items():
-                # Handle old session formats gracefully
-                if not isinstance(data, dict):
-                    continue
+        valid_keys = []
+        for key, data in list(self.cart.items()):
+            if not isinstance(data, dict):
+                continue
+            try:
                 product = Product.objects.get(id=data['product_id'])
                 items.append({
                     'product': product,
@@ -45,8 +46,15 @@ class Cart:
                     'color': data.get('color', ''),
                     'cart_key': key
                 })
-        except Exception as e:
-            pass
+                valid_keys.append(key)
+            except (Product.DoesNotExist, ValidationError):
+                pass
+        
+        # Clean up invalid keys
+        invalid_keys = [k for k in self.cart.keys() if k not in valid_keys]
+        for k in invalid_keys:
+            self.delete(k)
+
         return items
 
     def delete(self, cart_key):
@@ -69,7 +77,7 @@ class Cart:
                 else:
                     product_price = product.price or 0
                 total += product_price * int(data['qty'])
-            except Product.DoesNotExist:
+            except (Product.DoesNotExist, ValidationError):
                 pass
         return total
 

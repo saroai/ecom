@@ -28,4 +28,5 @@ urlpatterns = [
     path("terms/", terms, name="terms"),
     path("privacy/", policy, name="privacy_policy"),
     path("refund/", refund, name="refund"),
+    path("shipping/", shipping, name="shipping"),
 ]

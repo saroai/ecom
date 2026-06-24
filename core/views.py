@@ -288,3 +288,7 @@ def policy(request):
 
 def refund(request):
     return render(request, "refund.html")
+
+
+def shipping(request):
+    return render(request, "shipping.html")

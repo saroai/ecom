@@ -27,11 +27,11 @@ class OrderItemInline(TabularInline):
 class OrderAdmin(ModelAdmin):
     list_display   = [
         "order_badge", "customer_display", "amount_display",
-        "status_badge", "payment_badge", "ordered_date"
+        "status_badge", "payment_badge", "shiprocket_badge", "ordered_date"
     ]
     list_filter    = ["status", "is_paid", "ordered_date"]
     search_fields  = ["user__username", "user__email", "order_id"]
-    readonly_fields= ["order_id", "payment_id", "signature", "ordered_date", "updated_at"]
+    readonly_fields= ["order_id", "payment_id", "signature", "ordered_date", "updated_at", "shiprocket_order_id", "shiprocket_shipment_id"]
     inlines        = [OrderItemInline]
     ordering       = ["-ordered_date"]
     list_per_page  = 25
@@ -43,6 +43,9 @@ class OrderAdmin(ModelAdmin):
         }),
         ("💳 Payment Details", {
             "fields": ("order_id", "payment_id", "signature", "amount_paid", "is_paid")
+        }),
+        ("🚀 Shiprocket Logistics", {
+            "fields": ("shiprocket_order_id", "shiprocket_shipment_id")
         }),
         ("📦 Order Status", {
             "fields": ("status",)
@@ -96,6 +99,14 @@ class OrderAdmin(ModelAdmin):
     @display(description="Paid", boolean=True)
     def payment_badge(self, obj):
         return obj.is_paid
+
+    @display(description="Shiprocket")
+    def shiprocket_badge(self, obj):
+        if obj.shiprocket_order_id:
+            return format_html(
+                '<span style="background:#0284c7;color:#fff;padding:3px 12px;border-radius:999px;font-size:.78rem;font-weight:700;">Synced</span>'
+            )
+        return format_html('<span style="color:#888;">Not Synced</span>')
 
 
 # ─────────────────────────────────────────────

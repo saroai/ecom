@@ -20,23 +20,23 @@
     <div class="col-lg-6">
       <div class="product-gallery">
         <!-- Main Image -->
-        <div class="gallery-main">
-          <img src="{{ product.image_1.url }}" alt="{{ product.name }}" class="gallery-main-img" id="mainImg"/>
+        <div class="gallery-main zoom-container">
+          <img src="{{ product.image_1.url }}" alt="{{ product.name }}" class="gallery-main-img zoom-img" id="mainImg"/>
           {% if product.is_discount %}
-          <div class="gallery-badge">-{{ product.discount_percentage }}% OFF</div>
+          <div class="gallery-badge shadow-sm">-{{ product.discount_percentage }}% OFF</div>
           {% endif %}
         </div>
         <!-- Thumbnails -->
         <div class="gallery-thumbs">
-          <img src="{{ product.image_1.url }}" alt="View 1" class="gallery-thumb active" onclick="changeImg(this)"/>
+          <img src="{{ product.image_1.url }}" alt="View 1" class="gallery-thumb active shadow-sm" onclick="changeImg(this)"/>
           {% if product.image_2 %}
-          <img src="{{ product.image_2.url }}" alt="View 2" class="gallery-thumb" onclick="changeImg(this)"/>
+          <img src="{{ product.image_2.url }}" alt="View 2" class="gallery-thumb shadow-sm" onclick="changeImg(this)"/>
           {% endif %}
           {% if product.image_3 %}
-          <img src="{{ product.image_3.url }}" alt="View 3" class="gallery-thumb" onclick="changeImg(this)"/>
+          <img src="{{ product.image_3.url }}" alt="View 3" class="gallery-thumb shadow-sm" onclick="changeImg(this)"/>
           {% endif %}
           {% if product.image_4 %}
-          <img src="{{ product.image_4.url }}" alt="View 4" class="gallery-thumb" onclick="changeImg(this)"/>
+          <img src="{{ product.image_4.url }}" alt="View 4" class="gallery-thumb shadow-sm" onclick="changeImg(this)"/>
           {% endif %}
         </div>
       </div>
@@ -87,48 +87,49 @@
         {% if product.get_colors_list %}
         <div class="mb-4">
            <strong><i class="bi bi-palette me-1"></i> Colours available:</strong>
-           <select id="colorSelect" class="form-select mt-2" style="max-width: 200px; border-radius: 8px; font-weight: 500;">
+           <div class="swatch-group" id="colorSwatches">
              {% for color in product.get_colors_list %}
-               <option value="{{ color }}">{{ color }}</option>
+               <div class="swatch {% if forloop.first %}active{% endif %}" style="background-color: {{ color|lower }};" data-color="{{ color }}" title="{{ color }}"></div>
              {% endfor %}
-           </select>
+           </div>
+           <input type="hidden" id="colorSelect" value="{{ product.get_colors_list.0 }}">
         </div>
         {% endif %}
 
         <!-- Description -->
-        <div class="detail-description mb-4">
-          <p>{{ product.description }}</p>
+        <div class="detail-description mb-4" style="color: #4a4a4a; line-height: 1.8;">
+          {{ product.description|linebreaks }}
         </div>
 
         <!-- Add to Cart & Wishlist -->
         {% if product.is_in_stock %}
-        <div class="detail-actions">
-          <div class="qty-selector">
+        <div class="detail-actions d-flex flex-wrap">
+          <div class="qty-selector me-3 mb-3">
             <button class="qty-btn" id="qtyMinus" onclick="changeQty(-1)">−</button>
             <input type="number" id="qtyInput" value="1" min="1" max="{{ product.stock }}" class="qty-input"/>
             <button class="qty-btn" id="qtyPlus" onclick="changeQty(1)">+</button>
           </div>
-          <button class="btn-detail-cart" id="addToCartBtn" data-product-id="{{ product.id }}">
-            <i class="bi bi-bag-plus me-2"></i>Add to Cart
+          <button class="btn-detail-cart flex-grow-1 me-3 mb-3 shadow" id="addToCartBtn" data-product-id="{{ product.id }}">
+            <i class="bi bi-bag-plus-fill me-2"></i>Add to Cart
           </button>
           {% if user.is_authenticated %}
-          <button class="btn-wishlist-detail {% if in_wishlist %}active{% endif %}" data-product-id="{{ product.id }}">
+          <button class="btn-wishlist-detail shadow-sm mb-3 {% if in_wishlist %}active{% endif %}" data-product-id="{{ product.id }}">
             <i class="bi bi-heart{% if in_wishlist %}-fill{% endif %}"></i>
           </button>
           {% endif %}
         </div>
         {% else %}
-        <div class="out-of-stock-msg">
-          <i class="bi bi-exclamation-circle me-2"></i> This product is currently out of stock.
+        <div class="out-of-stock-msg p-3 mb-4 rounded" style="background:#f8d7da;color:#721c24;font-weight:600;">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> This product is currently out of stock.
         </div>
         {% endif %}
 
         <!-- Trust Badges -->
         <div class="trust-badges mt-4">
-          <div class="trust-item"><i class="bi bi-shield-check"></i> Safety Certified</div>
-          <div class="trust-item"><i class="bi bi-arrow-repeat"></i> 7-Day Returns</div>
-          <div class="trust-item"><i class="bi bi-truck"></i> Fast Delivery</div>
-          <div class="trust-item"><i class="bi bi-lock"></i> Secure Payment</div>
+          <div class="trust-item"><i class="bi bi-shield-check" style="font-size:1.5rem; color:#0284c7;"></i> Safety Certified</div>
+          <div class="trust-item"><i class="bi bi-arrow-repeat" style="font-size:1.5rem; color:#10b981;"></i> 7-Day Returns</div>
+          <div class="trust-item"><i class="bi bi-truck" style="font-size:1.5rem; color:#8b5cf6;"></i> Fast Delivery</div>
+          <div class="trust-item"><i class="bi bi-lock-fill" style="font-size:1.5rem; color:#f59e0b;"></i> Secure Payment</div>
         </div>
       </div>
     </div>
@@ -221,8 +222,20 @@
 // Image gallery switcher
 function changeImg(thumb) {
   document.getElementById("mainImg").src = thumb.src;
-  document.querySelectorAll(".gallery-thumb").forEach(t => t.classList.remove("active"));
-  thumb.classList.add("active");
+  document.querySelectorAll(".gallery-thumb").forEach(t => t.classList.remove("active", "border-primary"));
+  thumb.classList.add("active", "border-primary");
+}
+
+// Color Swatches
+const swatches = document.querySelectorAll('.swatch');
+if (swatches.length > 0) {
+  swatches.forEach(swatch => {
+    swatch.addEventListener('click', function() {
+      swatches.forEach(s => s.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById('colorSelect').value = this.dataset.color;
+    });
+  });
 }
 
 // Quantity selector

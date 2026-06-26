@@ -30,39 +30,54 @@
 </head>
 <body>
 
-
+<!-- ═══════════════════════════════════════
+     PRELOADER ANIMATION
+═══════════════════════════════════════ -->
+<div id="site-preloader" class="preloader-container">
+  <img src="{% static 'img/logo.png' %}" alt="Fimiku Loading..." class="preloader-logo" />
+</div>
 <!-- ═══════════════════════════════════════
      NAVBAR (DIRECT ACCESS - NO HAMBURGER MENU)
 ═══════════════════════════════════════ -->
 <nav class="navbar navbar-expand toy-navbar sticky-top py-2" id="mainNavbar">
   <div class="container d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
     
-    <!-- Top Row: Logo, Search, Cart -->
-    <div class="d-flex w-100 justify-content-between align-items-center mb-2 mb-lg-0">
-      <!-- Logo -->
-      <a class="navbar-brand toy-logo py-0" href="{% url 'home' %}">
-        <img src="{% static 'img/logo.png' %}" alt="Fimiku Logo" style="height: 90px; width: auto; object-fit: contain;">
-      </a>
-
-      <!-- Search Bar -->
-      <form class="search-form flex-grow-1 mx-3 d-none d-lg-flex" action="{% url 'products' %}" method="GET">
-        <div class="search-wrapper w-100">
-          <i class="bi bi-search search-icon"></i>
-          <input type="text" name="q" class="search-input" placeholder="Search toys, brands, age groups…" value="{{ request.GET.q|default:'' }}"/>
-          <button type="submit" class="search-btn">Search</button>
-        </div>
-      </form>
+    <!-- Top Row: Search, Logo, Cart -->
+    <div class="d-flex w-100 align-items-center justify-content-between mb-2 mb-lg-0">
       
-      <!-- Cart Icon (Always visible on right, Made Larger/Premium) -->
-      <a href="{% url 'cart_summary' %}" class="btn-cart-premium ms-auto d-flex align-items-center">
-        <div class="cart-icon-wrapper position-relative">
-          <i class="bi bi-bag-fill fs-4 text-primary"></i>
-          <span id="cart_qty" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light shadow-sm" style="font-size: 0.75rem; padding: 0.35em 0.6em; {% if cart|length == 0 %}display: none;{% endif %}">
-            {{ cart|length }}
-          </span>
-        </div>
-        <span class="ms-3 fw-bold text-dark d-none d-sm-block fs-5">My Cart</span>
-      </a>
+      <!-- Left side (Search Bar on desktop) -->
+      <div class="d-none d-lg-flex" style="flex: 1;">
+        <form class="search-form w-100" action="{% url 'products' %}" method="GET" style="max-width: 400px;">
+          <div class="search-wrapper w-100">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" name="q" class="search-input" placeholder="Search toys…" value="{{ request.GET.q|default:'' }}"/>
+            <button type="submit" class="search-btn">Search</button>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Mobile left placeholder so logo stays centered -->
+      <div class="d-lg-none" style="flex: 1;"></div>
+
+      <!-- Center Logo -->
+      <div class="d-flex justify-content-center" style="flex: 1;">
+        <a class="navbar-brand toy-logo py-0 m-0" href="{% url 'home' %}">
+          <img src="{% static 'img/logo.png' %}" alt="Fimiku Logo" style="height: 90px; width: auto; object-fit: contain;">
+        </a>
+      </div>
+      
+      <!-- Right side Cart Icon -->
+      <div class="d-flex justify-content-end" style="flex: 1;">
+        <a href="{% url 'cart_summary' %}" class="btn-cart-premium d-flex align-items-center text-decoration-none">
+          <div class="cart-icon-wrapper position-relative">
+            <i class="bi bi-bag-fill fs-4 text-primary"></i>
+            <span id="cart_qty" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light shadow-sm" style="font-size: 0.75rem; padding: 0.35em 0.6em; {% if cart|length == 0 %}display: none;{% endif %}">
+              {{ cart|length }}
+            </span>
+          </div>
+          <span class="ms-3 fw-bold text-dark d-none d-sm-block fs-5">My Cart</span>
+        </a>
+      </div>
     </div>
 
     <!-- Bottom Row (Mobile) / Right Side (Desktop): Direct Nav Links -->
@@ -250,6 +265,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }).then(() => location.reload());
     });
   });
+});
+
+// Preloader Script
+window.addEventListener('load', function() {
+  const preloader = document.getElementById('site-preloader');
+  if (preloader) {
+    // Keep it visible for at least 1 second to show the animation
+    setTimeout(function() {
+      preloader.classList.add('fade-out');
+      setTimeout(function() {
+        preloader.style.display = 'none';
+      }, 500); // Wait for the CSS transition to complete
+    }, 1000);
+  }
 });
 </script>
 

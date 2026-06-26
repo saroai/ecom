@@ -49,6 +49,9 @@ class Order(models.Model):
     # Shiprocket tracking fields
     shiprocket_order_id = models.CharField(max_length=255, null=True, blank=True)
     shiprocket_shipment_id = models.CharField(max_length=255, null=True, blank=True)
+    shiprocket_awb = models.CharField(max_length=255, null=True, blank=True)
+    shiprocket_label_url = models.URLField(max_length=500, null=True, blank=True)
+    shiprocket_tracking_url = models.URLField(max_length=500, null=True, blank=True)
 
     amount_paid = models.PositiveBigIntegerField(null=True, blank=True)
     is_paid     = models.BooleanField(default=False)

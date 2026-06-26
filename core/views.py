@@ -292,3 +292,43 @@ def refund(request):
 
 def shipping(request):
     return render(request, "shipping.html")
+
+@login_required
+def shiprocket_process_order(request, pk):
+    if not request.user.is_superuser:
+        return redirect('home')
+    
+    order = get_object_or_404(Order, pk=pk)
+    from core.shiprocket import generate_awb, request_pickup, generate_label
+    
+    if not order.shiprocket_shipment_id:
+        messages.error(request, 'Order not pushed to Shiprocket yet!')
+        return redirect('order_dashboard')
+        
+    # Generate AWB
+    if not order.shiprocket_awb:
+        success, response = generate_awb(order.shiprocket_shipment_id)
+        if success:
+            order.shiprocket_awb = response['response']['data']['awb_code']
+            # We don't save tracking URL immediately as it might not be available, or we construct it.
+            order.save()
+        else:
+            messages.error(request, f'AWB Error: {response}')
+            return redirect('order_dashboard')
+            
+    # Request Pickup
+    # success, response = request_pickup(order.shiprocket_shipment_id)
+    
+    # Generate Label
+    if not order.shiprocket_label_url:
+        success, response = generate_label(order.shiprocket_shipment_id)
+        if success:
+            order.shiprocket_label_url = response['label_url']
+            order.shiprocket_tracking_url = f"https://shiprocket.co/tracking/{order.shiprocket_awb}"
+            order.save()
+            messages.success(request, 'Shiprocket AWB and Label generated successfully!')
+        else:
+            messages.error(request, f'Label Error: {response}')
+            return redirect('order_dashboard')
+            
+    return redirect('order_dashboard')

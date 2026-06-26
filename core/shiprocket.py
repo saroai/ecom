@@ -105,3 +105,60 @@ def create_shiprocket_order(order):
         except:
             pass
         return False, str(e)
+
+def generate_awb(shipment_id):
+    token = get_shiprocket_token()
+    if not token:
+        return False, "Authentication failed."
+    url = "https://apiv2.shiprocket.in/v1/external/courier/assign/awb"
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {token}'
+    }
+    payload = json.dumps({
+        "shipment_id": shipment_id
+    })
+    try:
+        response = requests.post(url, headers=headers, data=payload)
+        response.raise_for_status()
+        return True, response.json()
+    except Exception as e:
+        return False, str(e)
+
+def request_pickup(shipment_id):
+    token = get_shiprocket_token()
+    if not token:
+        return False, "Authentication failed."
+    url = "https://apiv2.shiprocket.in/v1/external/courier/generate/pickup"
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {token}'
+    }
+    payload = json.dumps({
+        "shipment_id": [shipment_id]
+    })
+    try:
+        response = requests.post(url, headers=headers, data=payload)
+        response.raise_for_status()
+        return True, response.json()
+    except Exception as e:
+        return False, str(e)
+
+def generate_label(shipment_id):
+    token = get_shiprocket_token()
+    if not token:
+        return False, "Authentication failed."
+    url = "https://apiv2.shiprocket.in/v1/external/courier/generate/label"
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {token}'
+    }
+    payload = json.dumps({
+        "shipment_id": [shipment_id]
+    })
+    try:
+        response = requests.post(url, headers=headers, data=payload)
+        response.raise_for_status()
+        return True, response.json()
+    except Exception as e:
+        return False, str(e)

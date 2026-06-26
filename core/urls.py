@@ -21,6 +21,7 @@ urlpatterns = [
     # Admin order management
     path("manage/orders/", order_dashboard, name="order_dashboard"),
     path("manage/orders/update/<pk>/", update_order_status, name="update_order_status"),
+    path("manage/orders/shiprocket/<pk>/", shiprocket_process_order, name="shiprocket_process_order"),
 
     # Static pages
     path("about/", about_us, name="about"),

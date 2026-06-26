@@ -9,9 +9,16 @@
   <div class="row g-4">
     <div class="col-lg-8">
       <div class="order-detail-card">
-        <div class="order-detail-header">
-          <span class="order-status-badge status-{{ order.status }}">{{ order.get_status_display }}</span>
-          <span class="text-muted ms-3">Placed on {{ order.ordered_date|date:"M d, Y" }}</span>
+        <div class="order-detail-header d-flex justify-content-between align-items-center">
+          <div>
+            <span class="order-status-badge status-{{ order.status }}">{{ order.get_status_display }}</span>
+            <span class="text-muted ms-3">Placed on {{ order.ordered_date|date:"M d, Y" }}</span>
+          </div>
+          {% if order.shiprocket_tracking_url %}
+          <div>
+            <a href="{{ order.shiprocket_tracking_url }}" target="_blank" class="btn btn-primary shadow-sm"><i class="bi bi-box-seam me-2"></i>Track Order</a>
+          </div>
+          {% endif %}
         </div>
         <table class="table order-table mt-3">
           <thead>

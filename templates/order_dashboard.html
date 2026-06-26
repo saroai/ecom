@@ -25,6 +25,7 @@
           <th>Amount</th>
           <th>Ordered</th>
           <th>Status</th>
+          <th>Shiprocket</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -40,6 +41,16 @@
           <td>{{ order.ordered_date|date:"M d, Y" }}</td>
           <td>
             <span class="order-status-badge status-{{ order.status }}">{{ order.get_status_display }}</span>
+          </td>
+          <td>
+            {% if order.shiprocket_label_url %}
+              <a href="{{ order.shiprocket_label_url }}" target="_blank" class="btn btn-sm btn-success mb-1 w-100">Download Label</a>
+              <small class="text-muted d-block">AWB: {{ order.shiprocket_awb }}</small>
+            {% elif order.shiprocket_shipment_id %}
+              <a href="{% url 'shiprocket_process_order' order.pk %}" class="btn btn-sm btn-primary w-100">Generate Label</a>
+            {% else %}
+              <span class="text-muted small">Not pushed</span>
+            {% endif %}
           </td>
           <td>
             <form method="POST" action="{% url 'update_order_status' pk=order.pk %}" class="d-flex gap-2 align-items-center">

@@ -35,13 +35,65 @@
           </div>
         {% endif %}
 
-        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        <style>
+          .custom-allauth-form input[type="text"],
+          .custom-allauth-form input[type="email"],
+          .custom-allauth-form input[type="password"] {
+              display: block;
+              width: 100%;
+              padding: 0.8rem 1rem;
+              font-size: 1rem;
+              font-weight: 400;
+              line-height: 1.5;
+              color: var(--text-dark);
+              background-color: #fff;
+              border: 1px solid #d9d9d9;
+              border-radius: 5px;
+              transition: all 0.2s ease-in-out;
+              margin-bottom: 1.5rem;
+          }
+          .custom-allauth-form input[type="text"]:focus,
+          .custom-allauth-form input[type="email"]:focus,
+          .custom-allauth-form input[type="password"]:focus {
+              border-color: var(--primary-color);
+              outline: 0;
+              box-shadow: 0 0 0 2px rgba(177, 151, 252, 0.2);
+          }
+          .custom-allauth-form label {
+              display: block;
+              text-align: left;
+              color: var(--text-muted);
+              font-size: 0.9rem;
+              font-weight: 600;
+              margin-bottom: 0.4rem;
+          }
+          .custom-allauth-form ul.errorlist {
+              color: #dc3545;
+              font-size: 0.85rem;
+              list-style-type: none;
+              padding-left: 0;
+              text-align: left;
+              margin-top: -1rem;
+              margin-bottom: 1rem;
+          }
+        </style>
+        <form class="signup custom-allauth-form" id="signup_form" method="post" action="{% url 'account_signup' %}">
           {% csrf_token %}
+          
+          {% if form.non_field_errors %}
+          <div class="alert alert-danger py-2" style="font-size: 0.9rem;">
+            {% for error in form.non_field_errors %}
+              {{ error }}
+            {% endfor %}
+          </div>
+          {% endif %}
+
           {{ form }}
+          
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button class="btn btn-pay-now w-100 mt-4" type="submit" style="margin-top: 0;">Create Account <i class="bi bi-person-plus-fill ms-2"></i></button>
+          <button class="btn w-100 py-3 mt-2 font-weight-bold" type="submit" style="background-color: var(--primary-color); color: var(--text-dark); border-radius: var(--radius-sm); font-size: 1.1rem; border: none; font-weight: 700;">Create Account <i class="bi bi-person-plus-fill ms-2"></i></button>
         </form>
 
         <p class="text-center mt-4 mb-0" style="font-weight: 600;">

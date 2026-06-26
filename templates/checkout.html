@@ -1,82 +1,545 @@
-{% extends "base.html" %}
-{% block title %}Checkout – Fimiku{% endblock %}
-{% block content %}
-<div class="container py-5">
-  <div class="row g-5">
-    <!-- Shipping Form -->
-    <div class="col-lg-7">
-      <div class="checkout-card">
-        <h3 class="checkout-title"><i class="bi bi-geo-alt-fill me-2"></i>Shipping Address</h3>
-        <form method="POST">
-          {% csrf_token %}
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">First Name</label>
-              {{ form.first_name }}
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Last Name</label>
-              {{ form.last_name }}
-            </div>
-            <div class="col-12">
-              <label class="form-label">Email</label>
-              {{ form.email }}
-            </div>
-            <div class="col-12">
-              <label class="form-label">Phone Number</label>
-              {{ form.phone_no }}
-            </div>
-            <div class="col-12">
-              <label class="form-label">Street Address</label>
-              {{ form.address }}
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">City</label>
-              {{ form.city }}
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">State</label>
-              {{ form.state }}
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">PIN Code</label>
-              {{ form.pin_code }}
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Country</label>
-              {{ form.country }}
-            </div>
-          </div>
-          <button type="submit" class="btn-checkout-submit mt-4">
-            <i class="bi bi-arrow-right-circle me-2"></i>Continue to Payment
-          </button>
-        </form>
-      </div>
-    </div>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Fimiku</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #B197FC; 
+            --bg-left: #ffffff;
+            --bg-right: #fafafa;
+            --border-color: #d9d9d9;
+            --text-dark: #333333;
+            --text-muted: #737373;
+            --font-body: 'Nunito', sans-serif;
+            --font-heading: 'Fredoka', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-left);
+        }
 
-    <!-- Order Summary -->
-    <div class="col-lg-5">
-      <div class="checkout-summary">
-        <h5 class="summary-title">Your Order</h5>
-        {% for item in cart_items %}
-        <div class="checkout-item">
-          <img src="{{ item.product.image_1.url }}" alt="{{ item.product.name }}" class="checkout-item-img"/>
-          <div class="checkout-item-info">
-            <p class="checkout-item-name">{{ item.product.name }}</p>
-            {% if item.color %}<small class="d-block text-muted">Color: {{ item.color }}</small>{% endif %}
-            <small>Qty: {{ item.qty }}</small>
-          </div>
-          <span class="checkout-item-price">
-            ₹{% if item.product.is_discount %}{{ item.product.discount_price }}{% else %}{{ item.product.price }}{% endif %}
-          </span>
-        </div>
-        {% endfor %}
-        <hr/>
-        <div class="summary-row"><span>Subtotal</span><span>₹{{ total }}</span></div>
-        <div class="summary-row"><span>Delivery</span><span>₹100</span></div>
-        <div class="summary-row total-row"><strong>Total</strong><strong>₹{{ total|add:100 }}</strong></div>
-      </div>
+        /* Layout */
+        .checkout-container {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column-reverse; 
+        }
+        @media (min-width: 992px) {
+            .checkout-container {
+                flex-direction: row;
+            }
+        }
+        
+        .left-col {
+            flex: 1;
+            padding: 2rem 5%;
+            background-color: var(--bg-left);
+        }
+        @media (min-width: 992px) {
+            .left-col {
+                padding: 4rem 4rem 4rem auto;
+                max-width: 55%;
+                border-right: 1px solid #e6e6e6;
+            }
+        }
+
+        .right-col {
+            flex: 1;
+            padding: 2rem 5%;
+            background-color: var(--bg-right);
+            border-bottom: 1px solid #e6e6e6;
+        }
+        @media (min-width: 992px) {
+            .right-col {
+                padding: 4rem auto 4rem 4rem;
+                max-width: 45%;
+                border-bottom: none;
+            }
+            .right-col::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 45%;
+                background-color: var(--bg-right);
+                z-index: -1;
+                border-left: 1px solid #e6e6e6;
+            }
+        }
+
+        /* Header */
+        .checkout-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem 0;
+            position: relative;
+        }
+        @media (min-width: 992px) {
+            .checkout-header {
+                justify-content: flex-start;
+                padding-bottom: 2rem;
+            }
+        }
+        .checkout-logo img {
+            height: 50px;
+        }
+        
+        .global-cart {
+            position: absolute;
+            top: 1.5rem;
+            right: 5%;
+            font-size: 1.4rem;
+            color: #d11242;
+        }
+        @media (min-width: 992px) {
+            .global-cart {
+                right: 2rem;
+            }
+        }
+        .cart-badge-global {
+            position: absolute;
+            top: 2px;
+            right: -6px;
+            background: #d11242;
+            color: white;
+            font-size: 0.65rem;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        /* Forms */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .section-title a {
+            font-size: 0.85rem;
+            color: #d11242; 
+            text-decoration: none;
+        }
+
+        .form-floating > .form-control {
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            box-shadow: none;
+            height: 50px;
+            min-height: 50px;
+        }
+        .form-floating > .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(177, 151, 252, 0.2);
+        }
+        .form-floating > label {
+            padding: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        /* Payment Box Placeholder */
+        .payment-box {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background: #fff;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .payment-box-header {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fdf5f6;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .payment-box-body {
+            padding: 2rem 1rem;
+            background: #fafafa;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Billing Box Placeholder */
+        .billing-box {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background: #fff;
+            overflow: hidden;
+        }
+        .billing-option {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+        .billing-option:last-child {
+            border-bottom: none;
+        }
+        .billing-option.active {
+            background: #fdf5f6;
+        }
+
+        /* Buttons */
+        .btn-pay {
+            background-color: #cbbbe4;
+            color: #4a3b5c;
+            font-weight: 700;
+            padding: 1.2rem;
+            border-radius: 5px;
+            width: 100%;
+            border: none;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+        }
+        .btn-pay:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Footer Links */
+        .checkout-footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.8rem;
+        }
+        .checkout-footer a {
+            color: #d11242;
+            text-decoration: none;
+        }
+
+        /* RIGHT COLUMN (Order Summary) */
+        .product-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+        .product-img-wrapper {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .product-img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .product-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: rgba(115, 115, 115, 0.9);
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .product-info {
+            flex: 1;
+            padding: 0 1rem;
+        }
+        .product-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 0;
+            color: #333;
+        }
+        .product-price {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .discount-section {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+        .discount-input {
+            flex: 1;
+        }
+        .btn-apply {
+            padding: 0 1.5rem;
+            background: #f0f0f0;
+            border: 1px solid #d9d9d9;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #a3a3a3;
+        }
+
+        .summary-totals {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        .summary-row.total {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            align-items: center;
+            color: #333;
+        }
+        .currency {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-right: 0.5rem;
+            font-weight: normal;
+        }
+        .shipping-small {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Global Cart Icon -->
+<a href="{% url 'cart_summary' %}" class="global-cart text-decoration-none">
+    <i class="bi bi-bag"></i>
+    <span class="cart-badge-global">{{ cart_items|length }}</span>
+</a>
+
+<div class="checkout-container">
+    
+    <!-- LEFT COLUMN (Forms) -->
+    <div class="left-col">
+        <header class="checkout-header">
+            <a href="{% url 'index' %}" class="checkout-logo">
+                <img src="{% static 'img/logo.png' %}" alt="Fimiku">
+            </a>
+        </header>
+
+        <main style="max-width: 600px; margin: 0 auto;">
+            <!-- For now, it submits back to itself (checkout view) to save the address -->
+            <form method="POST" action="{% url 'checkout' %}">
+                {% csrf_token %}
+                
+                <!-- Contact Section -->
+                <div class="section-title">
+                    Contact
+                    {% if not user.is_authenticated %}
+                    <a href="{% url 'login' %}">Sign in</a>
+                    {% endif %}
+                </div>
+                <div class="form-floating mb-4">
+                    {{ form.email }}
+                    <label>Email</label>
+                </div>
+
+                <!-- Delivery Section -->
+                <div class="section-title mt-4">Delivery</div>
+                
+                <div class="form-floating mb-3">
+                    {{ form.country }}
+                    <label>Country/Region</label>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6 form-floating">
+                        {{ form.first_name }}
+                        <label class="ms-2">First name</label>
+                    </div>
+                    <div class="col-md-6 form-floating">
+                        {{ form.last_name }}
+                        <label class="ms-2">Last name</label>
+                    </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    {{ form.address }}
+                    <label>Address</label>
+                </div>
+                
+                <div class="row g-3 mb-3">
+                    <div class="col-md-4 form-floating">
+                        {{ form.city }}
+                        <label class="ms-2">City</label>
+                    </div>
+                    <div class="col-md-4 form-floating">
+                        {{ form.state }}
+                        <label class="ms-2">State</label>
+                    </div>
+                    <div class="col-md-4 form-floating">
+                        {{ form.pin_code }}
+                        <label class="ms-2">PIN code</label>
+                    </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    {{ form.phone_no }}
+                    <label>Phone</label>
+                </div>
+                
+                <div class="form-check mt-3 mb-4">
+                    <input class="form-check-input" type="checkbox" id="saveInfo">
+                    <label class="form-check-label text-muted" for="saveInfo" style="font-size:0.9rem;">
+                        Save this information for next time
+                    </label>
+                </div>
+
+                <!-- Shipping Method -->
+                <div class="section-title mt-5">Shipping method</div>
+                <div class="payment-box-body" style="background:#f5f5f5; border-radius:5px; border:1px solid var(--border-color); padding: 1.5rem; border-top: 1px solid var(--border-color);">
+                    Enter your shipping address to view available shipping methods.
+                </div>
+
+                <!-- Payment Placeholder -->
+                <div class="section-title mt-5">
+                    Payment
+                </div>
+                <p class="text-muted" style="font-size: 0.85rem; margin-top:-10px;">All transactions are secure and encrypted.</p>
+                
+                <div class="payment-box">
+                    <div class="payment-box-header">
+                        <div class="d-flex align-items-center fw-medium">
+                            <input type="radio" checked style="accent-color: #d11242; margin-right:10px; transform: scale(1.2);">
+                            PhonePe Secure (UPI, Cards, Wallets)
+                        </div>
+                        <div class="d-flex gap-1">
+                            <!-- Generic icons representing payment methods -->
+                            <span class="badge bg-light text-dark border">UPI</span>
+                            <span class="badge bg-primary">VISA</span>
+                            <span class="badge bg-warning text-dark">MC</span>
+                        </div>
+                    </div>
+                    <div class="payment-box-body">
+                        <i class="bi bi-box-arrow-up-right fs-4 mb-2 text-muted d-block"></i>
+                        You'll be redirected to PhonePe Secure to complete your purchase.
+                    </div>
+                </div>
+
+                <!-- Billing Address -->
+                <div class="section-title mt-5">Billing address</div>
+                <div class="billing-box">
+                    <label class="billing-option active">
+                        <input type="radio" name="billing" checked style="accent-color: #d11242; margin-right:10px; transform: scale(1.2);">
+                        <span>Same as shipping address</span>
+                    </label>
+                    <label class="billing-option">
+                        <input type="radio" name="billing" style="accent-color: #d11242; margin-right:10px; transform: scale(1.2);">
+                        <span>Use a different billing address</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-pay">Pay now</button>
+
+            </form>
+
+            <footer class="checkout-footer">
+                <a href="{% url 'refund' %}">Refund policy</a>
+                <a href="{% url 'shipping' %}">Shipping</a>
+                <a href="{% url 'privacy' %}">Privacy policy</a>
+                <a href="{% url 'terms' %}">Terms of service</a>
+            </footer>
+        </main>
     </div>
-  </div>
+    
+    <!-- RIGHT COLUMN (Order Summary) -->
+    <div class="right-col">
+        <div style="max-width: 450px; margin: 0 auto;">
+            
+            <div class="product-list">
+                {% for item in cart_items %}
+                <div class="product-item">
+                    <div class="product-img-wrapper">
+                        <img src="{{ item.product.image_1.url }}" alt="{{ item.product.name }}">
+                        <span class="product-badge">{{ item.qty }}</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">{{ item.product.name }}</h4>
+                        {% if item.color %}
+                        <small class="text-muted">{{ item.color }}</small>
+                        {% endif %}
+                    </div>
+                    <div class="product-price">
+                        ₹{% if item.product.is_discount %}{{ item.product.discount_price }}{% else %}{{ item.product.price }}{% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="discount-section">
+                <div class="form-floating discount-input">
+                    <input type="text" class="form-control" id="discountCode" placeholder="Discount code">
+                    <label for="discountCode">Discount code</label>
+                </div>
+                <button class="btn btn-apply">Apply</button>
+            </div>
+
+            <div class="summary-totals">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="fw-medium">₹{{ total }}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping <i class="bi bi-question-circle ms-1 text-muted"></i></span>
+                    <span class="shipping-small">Enter shipping address</span>
+                </div>
+                
+                <div class="summary-row total mt-3 pt-3 border-top">
+                    <span>Total</span>
+                    <div>
+                        <span class="currency">INR</span>
+                        <span class="fs-4">₹{{ total }}</span>
+                    </div>
+                </div>
+                <div class="shipping-small mt-1">
+                    Including taxes
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
 </div>
-{% endblock %}
+
+</body>
+</html>

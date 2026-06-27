@@ -1,78 +1,382 @@
 {% extends "base.html" %}
-{% block title %}Order Details – Fimiku{% endblock %}
+{% block title %}Order #{{ order.id|slice:":8"|upper }} – Fimiku{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-  <a href="{% url 'your_orders' %}" class="back-link"><i class="bi bi-arrow-left me-1"></i>Back to Orders</a>
-  <h2 class="page-title mt-3 mb-4">Order #{{ order.id|slice:":8"|upper }}</h2>
+<style>
+  /* Premium Order Details Styling */
+  .order-details-wrapper {
+    background: #fcfafc;
+    min-height: 80vh;
+    padding-bottom: 5rem;
+  }
+  .order-header-banner {
+    background: linear-gradient(135deg, #d3b3e5 0%, #e8d5f3 100%);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    margin-bottom: -3rem;
+    box-shadow: 0 10px 30px rgba(211, 179, 229, 0.25);
+    position: relative;
+    z-index: 1;
+  }
+  .order-title {
+    font-weight: 800;
+    color: #4a2c5a;
+    letter-spacing: -0.5px;
+  }
+  .order-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+  }
+  .card-title-premium {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .icon-primary {
+    color: #d3b3e5;
+  }
+  
+  /* Status Timeline */
+  .status-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+  .status-timeline::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 40px;
+    right: 40px;
+    height: 4px;
+    background: #f1f3f5;
+    z-index: 0;
+    border-radius: 4px;
+  }
+  .timeline-step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+  }
+  .step-icon {
+    width: 52px;
+    height: 52px;
+    background: #fff;
+    border: 4px solid #f1f3f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    font-size: 1.4rem;
+    color: #ced4da;
+    transition: all 0.3s ease;
+  }
+  .step-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #adb5bd;
+  }
+  .timeline-step.active .step-icon {
+    border-color: #d3b3e5;
+    background: #d3b3e5;
+    color: #fff;
+    box-shadow: 0 0 0 6px rgba(211, 179, 229, 0.15);
+  }
+  .timeline-step.active .step-label {
+    color: #4a2c5a;
+  }
+  
+  /* Item Table */
+  .order-table {
+    border-collapse: separate;
+    border-spacing: 0 0.75rem;
+  }
+  .order-table th {
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #888;
+    padding-bottom: 0.5rem;
+  }
+  .order-table td {
+    vertical-align: middle;
+    border-top: 1px solid #fdfbfd;
+    border-bottom: 1px solid #fdfbfd;
+    background: #fff;
+    padding: 1rem 0.5rem;
+  }
+  .order-table tr {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 12px;
+  }
+  .order-table tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03) !important;
+  }
+  .order-table tr td:first-child {
+    border-left: 1px solid #fdfbfd;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  .order-table tr td:last-child {
+    border-right: 1px solid #fdfbfd;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  .item-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Info blocks */
+  .info-block {
+    padding: 1.5rem;
+    background: #fdfbfd;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    border: 1px solid #f1f3f5;
+  }
+  .info-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #6c757d;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+  .info-value {
+    font-weight: 500;
+    color: #212529;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .btn-track {
+    background: #4a2c5a;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.7rem 1.8rem;
+    transition: 0.2s;
+    border: none;
+  }
+  .btn-track:hover {
+    background: #361f42;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 44, 90, 0.2);
+  }
+</style>
 
-  <div class="row g-4">
-    <div class="col-lg-8">
-      <div class="order-detail-card">
-        <div class="order-detail-header d-flex justify-content-between align-items-center">
-          <div>
-            <span class="order-status-badge status-{{ order.status }}">{{ order.get_status_display }}</span>
-            <span class="text-muted ms-3">Placed on {{ order.ordered_date|date:"M d, Y" }}</span>
-          </div>
-          {% if order.shiprocket_tracking_url %}
-          <div>
-            <a href="{{ order.shiprocket_tracking_url }}" target="_blank" class="btn btn-primary shadow-sm"><i class="bi bi-box-seam me-2"></i>Track Order</a>
-          </div>
-          {% endif %}
-        </div>
-        <table class="table order-table mt-3">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Qty</th>
-              <th>Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for item in items %}
-            <tr>
-              <td>{{ item.product_name }}</td>
-              <td>₹{{ item.product_price }}</td>
-              <td>{{ item.product_qty }}</td>
-              <td>₹{{ item.line_total }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="3" class="text-end"><strong>Delivery</strong></td>
-              <td><strong>₹100</strong></td>
-            </tr>
-            <tr>
-              <td colspan="3" class="text-end"><strong>Total Paid</strong></td>
-              <td><strong>₹{{ order.amount_paid }}</strong></td>
-            </tr>
-          </tfoot>
-        </table>
+<div class="order-details-wrapper pt-4">
+  <div class="container">
+    
+    <a href="{% url 'your_orders' %}" class="text-decoration-none text-muted fw-semibold mb-3 d-inline-block" style="transition: color 0.2s;" onmouseover="this.style.color='#d3b3e5'" onmouseout="this.style.color='#6c757d'">
+      <i class="bi bi-arrow-left me-2"></i>Back to My Orders
+    </a>
+
+    <!-- Header Banner -->
+    <div class="order-header-banner d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <div>
+        <span class="badge bg-white text-dark mb-2 px-3 py-2 rounded-pill shadow-sm fw-semibold">
+          <i class="bi bi-calendar2-check-fill icon-primary me-1"></i> {{ order.ordered_date|date:"M d, Y, h:i A" }}
+        </span>
+        <h2 class="order-title mb-0">Order #{{ order.id|slice:":8"|upper }}</h2>
       </div>
+      
+      {% if order.shiprocket_tracking_url %}
+      <div>
+        <a href="{{ order.shiprocket_tracking_url }}" target="_blank" class="btn btn-track shadow">
+          <i class="bi bi-box-seam me-2"></i>Track Package
+        </a>
+      </div>
+      {% endif %}
     </div>
-    <div class="col-lg-4">
-      <div class="order-detail-card">
-        <h5>📍 Shipping Address</h5>
-        <p>
-          {{ order.address.first_name }} {{ order.address.last_name }}<br/>
-          {{ order.address.address }}<br/>
-          {{ order.address.city }}, {{ order.address.state }} {{ order.address.pin_code }}<br/>
-          {{ order.address.country }}<br/>
-          📞 {{ order.address.phone_no }}<br/>
-          ✉️ {{ order.address.email }}
-        </p>
+
+    <!-- Main Content -->
+    <div class="row g-4 mt-2">
+      
+      <!-- Left Column: Items & Timeline -->
+      <div class="col-lg-8">
+        <div class="order-card">
+          
+          <h5 class="card-title-premium"><i class="bi bi-clock-history icon-primary fs-4"></i> Order Journey</h5>
+          
+          <!-- Status Timeline -->
+          <div class="status-timeline mb-5 mt-4">
+            <div class="timeline-step {% if order.status == 'pending' or order.status == 'processing' or order.status == 'shipped' or order.status == 'delivered' %}active{% endif %}">
+              <div class="step-icon"><i class="bi bi-cart-check"></i></div>
+              <div class="step-label">Order Placed</div>
+            </div>
+            <div class="timeline-step {% if order.status == 'processing' or order.status == 'shipped' or order.status == 'delivered' %}active{% endif %}">
+              <div class="step-icon"><i class="bi bi-box-seam"></i></div>
+              <div class="step-label">Processing</div>
+            </div>
+            <div class="timeline-step {% if order.status == 'shipped' or order.status == 'delivered' %}active{% endif %}">
+              <div class="step-icon"><i class="bi bi-truck"></i></div>
+              <div class="step-label">Shipped</div>
+            </div>
+            <div class="timeline-step {% if order.status == 'delivered' %}active{% endif %}">
+              <div class="step-icon"><i class="bi bi-house-heart"></i></div>
+              <div class="step-label">Delivered</div>
+            </div>
+          </div>
+
+          <h5 class="card-title-premium mt-5"><i class="bi bi-bag-check icon-primary fs-4"></i> Items Ordered</h5>
+          
+          <div class="table-responsive mt-3">
+            <table class="table order-table align-middle">
+              <thead>
+                <tr>
+                  <th>Product Details</th>
+                  <th class="text-center">Price</th>
+                  <th class="text-center">Qty</th>
+                  <th class="text-end">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in items %}
+                <tr class="shadow-sm border">
+                  <td>
+                    <div class="d-flex align-items-center gap-3 py-1 px-2">
+                      {% if item.product and item.product.image1 %}
+                        <img src="{{ item.product.image1.url }}" class="item-img shadow-sm border" alt="{{ item.product_name }}">
+                      {% else %}
+                        <div class="item-img bg-light border d-flex align-items-center justify-content-center text-muted">
+                          <i class="bi bi-image fs-4"></i>
+                        </div>
+                      {% endif %}
+                      <div>
+                        <h6 class="mb-1 fw-bold text-dark">{{ item.product_name }}</h6>
+                        {% if item.product_color %}
+                          <span class="badge bg-light text-dark border px-2 py-1"><small>Color: {{ item.product_color }}</small></span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center fw-medium text-secondary">₹{{ item.product_price }}</td>
+                  <td class="text-center fw-medium text-secondary">
+                    <span class="bg-light border rounded px-2 py-1">{{ item.product_qty }}</span>
+                  </td>
+                  <td class="text-end fw-bold px-3 text-dark fs-6">₹{{ item.line_total }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Order Summary -->
+          <div class="d-flex justify-content-end mt-4 border-top pt-4">
+            <div style="width: 280px; background: #fdfbfd; padding: 1.5rem; border-radius: 12px; border: 1px solid #f1f3f5;">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted fw-medium">Subtotal</span>
+                <span class="fw-bold text-dark">
+                  {% if order.amount_paid %}
+                    ₹{{ order.amount_paid|add:"-100" }}
+                  {% else %}
+                    ₹0
+                  {% endif %}
+                </span>
+              </div>
+              <div class="d-flex justify-content-between mb-3">
+                <span class="text-muted fw-medium">Delivery Fee</span>
+                <span class="fw-bold text-success">+ ₹100</span>
+              </div>
+              <div class="d-flex justify-content-between pt-3 border-top border-2">
+                <span class="fw-bold fs-5 text-dark">Total Paid</span>
+                <span class="fw-bold fs-5" style="color: #4a2c5a;">₹{{ order.amount_paid }}</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
       </div>
-      <div class="order-detail-card mt-3">
-        <h5>💳 Payment Info</h5>
-        <p>
-          <strong>Status:</strong> {% if order.is_paid %}<span class="text-success">Paid</span>{% else %}Pending{% endif %}<br/>
-          {% if order.payment_id %}
-          <strong>Payment ID:</strong> {{ order.payment_id }}
-          {% endif %}
-        </p>
+      
+      <!-- Right Column: Shipping & Payment -->
+      <div class="col-lg-4">
+        <div class="order-card p-4">
+          
+          <h5 class="card-title-premium mb-4"><i class="bi bi-journal-text icon-primary fs-4"></i> Order Info</h5>
+          
+          <div class="info-block position-relative overflow-hidden">
+            <div class="position-absolute top-0 end-0 p-3 opacity-25">
+              <i class="bi bi-geo-alt-fill fs-1" style="color: #d3b3e5;"></i>
+            </div>
+            <div class="info-label"><i class="bi bi-geo-alt-fill icon-primary me-1"></i> Shipping Address</div>
+            <div class="info-value mt-3 position-relative z-index-1">
+              <span class="fw-bold text-dark fs-6">{{ order.address.first_name }} {{ order.address.last_name }}</span><br/>
+              <div class="text-secondary mt-1">
+                {{ order.address.address }}<br/>
+                {{ order.address.city }}, {{ order.address.state }} {{ order.address.pin_code }}<br/>
+                {{ order.address.country }}
+              </div>
+              <div class="mt-3 text-secondary pt-3 border-top" style="font-size: 0.9rem;">
+                <div class="d-flex align-items-center mb-1">
+                  <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 shadow-sm" style="width: 24px; height: 24px;"><i class="bi bi-telephone-fill" style="color: #4a2c5a; font-size: 0.7rem;"></i></div> 
+                  {{ order.address.phone_no }}
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 shadow-sm" style="width: 24px; height: 24px;"><i class="bi bi-envelope-fill" style="color: #4a2c5a; font-size: 0.7rem;"></i></div> 
+                  {{ order.address.email }}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-block mb-0 position-relative overflow-hidden">
+            <div class="position-absolute top-0 end-0 p-3 opacity-25">
+              <i class="bi bi-credit-card-fill fs-1" style="color: #d3b3e5;"></i>
+            </div>
+            <div class="info-label"><i class="bi bi-credit-card-fill icon-primary me-1"></i> Payment Details</div>
+            <div class="info-value mt-3 position-relative z-index-1">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-secondary fw-semibold">Status</span>
+                {% if order.is_paid %}
+                  <span class="badge bg-success bg-opacity-10 text-success border border-success px-3 py-2 rounded-pill"><i class="bi bi-check-circle-fill me-1"></i>Paid</span>
+                {% else %}
+                  <span class="badge bg-warning bg-opacity-10 text-warning border border-warning px-3 py-2 rounded-pill"><i class="bi bi-hourglass-split me-1"></i>Pending</span>
+                {% endif %}
+              </div>
+              
+              {% if order.payment_id %}
+              <div class="mb-3">
+                <span class="text-secondary fw-semibold d-block mb-1" style="font-size: 0.8rem;">Transaction ID</span>
+                <div class="font-monospace bg-white px-3 py-2 rounded border d-flex align-items-center justify-content-between shadow-sm">
+                  <span style="font-size: 0.85rem; color: #4a2c5a; word-break: break-all;">{{ order.payment_id }}</span>
+                  <i class="bi bi-shield-check text-success ms-2"></i>
+                </div>
+              </div>
+              {% endif %}
+              
+              <div>
+                <span class="text-secondary fw-semibold d-block mb-1" style="font-size: 0.8rem;">Method</span>
+                <span class="fw-bold text-dark d-flex align-items-center">
+                  <img src="https://razorpay.com/favicon.png" width="16" height="16" class="me-2" alt="Razorpay">Razorpay Secure
+                </span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
       </div>
+      
     </div>
   </div>
 </div>

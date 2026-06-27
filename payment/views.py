@@ -154,11 +154,16 @@ def payment_verify(request):
             order.status     = "processing"
             order.save()
 
-            # Push to Shiprocket
-            try:
-                create_shiprocket_order(order)
-            except Exception as e:
-                print("Failed to push to Shiprocket:", e)
+            import threading
+
+            # Push to Shiprocket asynchronously
+            def push_shiprocket(order_obj):
+                try:
+                    create_shiprocket_order(order_obj)
+                except Exception as e:
+                    print("Failed to push to Shiprocket:", e)
+                    
+            threading.Thread(target=push_shiprocket, args=(order,)).start()
 
             # Update sales counter
             for item in order.items.all():
@@ -170,20 +175,22 @@ def payment_verify(request):
             if "session_key" in request.session:
                 del request.session["session_key"]
 
-            # Send Email Notifications
-            try:
-                subject = f"Fimiku: Payment Confirmed for Order #{order.pk} 🎉"
-                message = f"Hello,\n\nOrder #{order.pk} has been successfully paid and confirmed!\n\nAmount: ₹{order.amount_paid}\nCustomer: {order.user.username} ({order.user.email})\n\nThank you!"
-                # To Admin and Customer
-                send_mail(
-                    subject, 
-                    message, 
-                    settings.EMAIL_HOST_USER, 
-                    [settings.ADMIN_EMAIL, order.user.email], 
-                    fail_silently=True
-                )
-            except Exception:
-                pass
+            # Send Email Notifications asynchronously
+            def send_confirmation_email(order_obj):
+                try:
+                    subject = f"Fimiku: Payment Confirmed for Order #{order_obj.pk} 🎉"
+                    message = f"Hello,\n\nOrder #{order_obj.pk} has been successfully paid and confirmed!\n\nAmount: ₹{order_obj.amount_paid}\nCustomer: {order_obj.user.username} ({order_obj.user.email})\n\nThank you!"
+                    send_mail(
+                        subject, 
+                        message, 
+                        settings.EMAIL_HOST_USER, 
+                        [settings.ADMIN_EMAIL, order_obj.user.email], 
+                        fail_silently=True
+                    )
+                except Exception as e:
+                    print("Email failed:", e)
+                    
+            threading.Thread(target=send_confirmation_email, args=(order,)).start()
 
             return render(request, "payment_verify.html", {
                 "status":   "success",

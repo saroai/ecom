@@ -2,94 +2,320 @@
 {% block title %}Order Dashboard – Fimiku Admin{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-  <div class="dashboard-header">
-    <h2 class="page-title"><i class="bi bi-speedometer2 me-2"></i>Order Management Dashboard</h2>
-    <a href="/admin/" class="btn btn-outline-warning"><i class="bi bi-gear me-1"></i>Django Admin</a>
-  </div>
+<style>
+  /* Premium Dashboard Styling */
+  .dashboard-wrapper {
+    background: #fdfbfd;
+    min-height: 85vh;
+    padding: 3rem 0;
+  }
+  .dashboard-header-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .page-title {
+    font-weight: 800;
+    color: #4a2c5a;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .dash-tab-container {
+    display: flex;
+    gap: 0.5rem;
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+  }
+  .dash-tab {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    white-space: nowrap;
+  }
+  .dash-tab:hover {
+    background: #f8f9fa;
+    color: #4a2c5a;
+  }
+  .dash-tab.active {
+    background: #4a2c5a;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(74, 44, 90, 0.2);
+  }
+  .admin-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    overflow: hidden;
+  }
+  .admin-table {
+    margin: 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .admin-table thead th {
+    background: #fcfafc;
+    color: #4a2c5a;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid #f1f3f5;
+  }
+  .admin-table tbody td {
+    padding: 1.2rem 1.5rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f8f9fa;
+    color: #333;
+    font-size: 0.95rem;
+  }
+  .admin-table tbody tr {
+    transition: background 0.2s;
+  }
+  .admin-table tbody tr:hover {
+    background: #fdfbfd;
+  }
+  
+  /* Status Badges */
+  .badge-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .badge-pending { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+  .badge-processing { background: #cce5ff; color: #004085; border: 1px solid #b8daff; }
+  .badge-shipped { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+  .badge-delivered { background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
+  .badge-cancelled { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+  
+  /* Shiprocket Badges */
+  .sr-status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .sr-pushed { background: #e0f8e9; color: #198754; }
+  .sr-notpushed { background: #f8f9fa; color: #6c757d; border: 1px solid #dee2e6; }
+  
+  /* Form Elements */
+  .filter-select-sm {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.85rem;
+    color: #495057;
+    background-color: #fff;
+    cursor: pointer;
+    min-width: 110px;
+  }
+  .filter-select-sm:focus {
+    outline: none;
+    border-color: #d3b3e5;
+    box-shadow: 0 0 0 0.2rem rgba(211, 179, 229, 0.25);
+  }
+  .btn-status-update {
+    background: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #495057;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .btn-status-update:hover {
+    background: #d3b3e5;
+    color: #fff;
+    border-color: #d3b3e5;
+  }
 
-  <!-- Status Filter Tabs -->
-  <div class="dashboard-tabs mb-4">
-    <a href="{% url 'order_dashboard' %}" class="dash-tab {% if not status_filter %}active{% endif %}">All Orders</a>
-    {% for key, label in status_choices %}
-    <a href="?status={{ key }}" class="dash-tab {% if status_filter == key %}active{% endif %}">{{ label }}</a>
-    {% endfor %}
-  </div>
+  .btn-action-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: #f1f3f5;
+    color: #495057;
+    transition: 0.2s;
+    text-decoration: none;
+  }
+  .btn-action-icon:hover {
+    background: #4a2c5a;
+    color: #fff;
+  }
+  
+  .code-uuid {
+    font-family: monospace;
+    background: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #d63384;
+    border: 1px solid #eee;
+  }
+</style>
 
-  <div class="table-responsive">
-    <table class="table admin-table">
-      <thead>
-        <tr>
-          <th>Order ID</th>
-          <th>Customer</th>
-          <th>Amount</th>
-          <th>Ordered</th>
-          <th>Status</th>
-          <th>Shiprocket</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for order in orders %}
-        <tr>
-          <td><code>{{ order.id|slice:":8"|upper }}</code></td>
-          <td>
-            {{ order.user.username }}<br/>
-            <small class="text-muted">{{ order.user.email }}</small>
-          </td>
-          <td><strong>₹{{ order.amount_paid }}</strong></td>
-          <td>{{ order.ordered_date|date:"M d, Y" }}</td>
-          <td>
-            <span class="order-status-badge status-{{ order.status }}">{{ order.get_status_display }}</span>
-          </td>
-          <td>
-            {% if order.shiprocket_label_url %}
-              <a href="{{ order.shiprocket_label_url }}" target="_blank" class="btn btn-sm btn-success mb-1 w-100">Download Label</a>
-              <small class="text-muted d-block">AWB: {{ order.shiprocket_awb }}</small>
-            {% elif order.shiprocket_shipment_id %}
-              <a href="{% url 'shiprocket_process_order' order.pk %}" class="btn btn-sm btn-primary w-100">Generate Label</a>
-            {% else %}
-              <span class="text-muted small">Not pushed</span>
-            {% endif %}
-          </td>
-          <td>
-            <form method="POST" action="{% url 'update_order_status' pk=order.pk %}" class="d-flex gap-2 align-items-center">
-              {% csrf_token %}
-              <select name="status" class="filter-select-sm">
-                {% for key, label in status_choices %}
-                <option value="{{ key }}" {% if order.status == key %}selected{% endif %}>{{ label }}</option>
-                {% endfor %}
-              </select>
-              <button type="submit" class="btn-status-update">Update</button>
-            </form>
-          </td>
-        </tr>
-        {% empty %}
-        <tr><td colspan="6" class="text-center py-4 text-muted">No orders found.</td></tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+<div class="dashboard-wrapper">
+  <div class="container">
+    
+    <div class="dashboard-header-banner">
+      <h2 class="page-title">
+        <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+          <i class="bi bi-speedometer2" style="color: #d3b3e5;"></i>
+        </div>
+        Order Management
+      </h2>
+      <a href="/admin/" class="btn btn-outline-secondary rounded-pill fw-semibold px-4 shadow-sm">
+        <i class="bi bi-gear-fill me-2"></i>Django Admin
+      </a>
+    </div>
 
-  <!-- Pagination -->
-  {% if orders.has_other_pages %}
-  <div class="pagination-wrapper mt-4">
-    <nav>
-      <ul class="pagination toy-pagination">
-        {% if orders.has_previous %}
-        <li class="page-item"><a class="page-link" href="?page={{ orders.previous_page_number }}&status={{ status_filter }}"><i class="bi bi-chevron-left"></i></a></li>
-        {% endif %}
-        {% for num in orders.paginator.page_range %}
-        <li class="page-item {% if orders.number == num %}active{% endif %}">
-          <a class="page-link" href="?page={{ num }}&status={{ status_filter }}">{{ num }}</a>
-        </li>
-        {% endfor %}
-        {% if orders.has_next %}
-        <li class="page-item"><a class="page-link" href="?page={{ orders.next_page_number }}&status={{ status_filter }}"><i class="bi bi-chevron-right"></i></a></li>
-        {% endif %}
-      </ul>
-    </nav>
+    <!-- Status Filter Tabs -->
+    <div class="dash-tab-container">
+      <a href="{% url 'order_dashboard' %}" class="dash-tab {% if not status_filter %}active{% endif %}">
+        <i class="bi bi-collection me-1"></i> All Orders
+      </a>
+      {% for key, label in status_choices %}
+      <a href="?status={{ key }}" class="dash-tab {% if status_filter == key %}active{% endif %}">
+        {{ label }}
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="admin-card">
+      <div class="table-responsive">
+        <table class="table admin-table mb-0">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Amount</th>
+              <th>Ordered Date</th>
+              <th>Status</th>
+              <th>Shiprocket</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in orders %}
+            <tr>
+              <td>
+                <span class="code-uuid">#{{ order.id|stringformat:"s"|slice:":8"|upper }}</span>
+              </td>
+              <td>
+                <div class="fw-bold">{{ order.user.username }}</div>
+                <div class="text-muted small"><i class="bi bi-envelope me-1"></i>{{ order.user.email }}</div>
+              </td>
+              <td><strong class="text-success">₹{{ order.amount_paid }}</strong></td>
+              <td class="text-muted">{{ order.ordered_date|date:"M d, Y" }}</td>
+              <td>
+                {% if order.status == 'pending' %}
+                  <span class="badge-status badge-pending"><i class="bi bi-hourglass-split"></i> Pending</span>
+                {% elif order.status == 'processing' %}
+                  <span class="badge-status badge-processing"><i class="bi bi-box-seam"></i> Processing</span>
+                {% elif order.status == 'shipped' %}
+                  <span class="badge-status badge-shipped"><i class="bi bi-truck"></i> Shipped</span>
+                {% elif order.status == 'delivered' %}
+                  <span class="badge-status badge-delivered"><i class="bi bi-check-circle"></i> Delivered</span>
+                {% elif order.status == 'cancelled' %}
+                  <span class="badge-status badge-cancelled"><i class="bi bi-x-circle"></i> Cancelled</span>
+                {% else %}
+                  <span class="badge-status badge-pending">{{ order.get_status_display }}</span>
+                {% endif %}
+              </td>
+              <td>
+                {% if order.shiprocket_label_url %}
+                  <a href="{{ order.shiprocket_label_url }}" target="_blank" class="btn btn-sm btn-outline-success rounded-pill px-3 py-1 mb-1 shadow-sm" style="font-size: 0.75rem;">
+                    <i class="bi bi-download me-1"></i>Label
+                  </a>
+                  <div class="text-muted" style="font-size: 0.7rem;">AWB: {{ order.shiprocket_awb }}</div>
+                {% elif order.shiprocket_shipment_id %}
+                  <a href="{% url 'shiprocket_process_order' order.pk %}" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 shadow-sm" style="font-size: 0.75rem;">
+                    Generate Label
+                  </a>
+                {% else %}
+                  <span class="sr-status sr-notpushed">Not pushed</span>
+                {% endif %}
+              </td>
+              <td>
+                <div class="d-flex align-items-center gap-3">
+                  <!-- Actions Column: Form + View Details -->
+                  <form method="POST" action="{% url 'update_order_status' pk=order.pk %}" class="d-flex gap-2 align-items-center m-0">
+                    {% csrf_token %}
+                    <select name="status" class="filter-select-sm">
+                      {% for key, label in status_choices %}
+                      <option value="{{ key }}" {% if order.status == key %}selected{% endif %}>{{ label }}</option>
+                      {% endfor %}
+                    </select>
+                    <button type="submit" class="btn-status-update" title="Update Status">
+                      <i class="bi bi-check2"></i>
+                    </button>
+                  </form>
+                  
+                  <a href="{% url 'order_details' pk=order.pk %}" target="_blank" class="btn-action-icon" title="View Order Details">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="7" class="text-center py-5">
+                <div class="text-muted mb-2"><i class="bi bi-inbox fs-2"></i></div>
+                <h5 class="fw-bold text-dark">No orders found</h5>
+                <p class="text-muted">Try changing the status filter above.</p>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    {% if orders.has_other_pages %}
+    <div class="d-flex justify-content-center mt-4">
+      <nav>
+        <ul class="pagination pagination-sm shadow-sm">
+          {% if orders.has_previous %}
+          <li class="page-item"><a class="page-link text-dark" href="?page={{ orders.previous_page_number }}&status={{ status_filter }}"><i class="bi bi-chevron-left"></i></a></li>
+          {% endif %}
+          
+          {% for num in orders.paginator.page_range %}
+          <li class="page-item {% if orders.number == num %}active{% endif %}">
+            <a class="page-link {% if orders.number == num %}bg-dark border-dark text-white{% else %}text-dark{% endif %}" href="?page={{ num }}&status={{ status_filter }}">{{ num }}</a>
+          </li>
+          {% endfor %}
+          
+          {% if orders.has_next %}
+          <li class="page-item"><a class="page-link text-dark" href="?page={{ orders.next_page_number }}&status={{ status_filter }}"><i class="bi bi-chevron-right"></i></a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+    {% endif %}
+    
   </div>
-  {% endif %}
 </div>
 {% endblock %}

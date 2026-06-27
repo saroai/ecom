@@ -209,7 +209,12 @@ def order_details(request, pk):
     """Detailed view of a single order."""
     if not request.user.is_authenticated:
         return redirect("account_login")
-    order = get_object_or_404(Order, pk=pk, user=request.user)
+        
+    if request.user.is_superuser:
+        order = get_object_or_404(Order, pk=pk)
+    else:
+        order = get_object_or_404(Order, pk=pk, user=request.user)
+        
     items_qs = OrderItems.objects.filter(order=order)
     
     # Group duplicate items (if cart created multiple rows for the same product)

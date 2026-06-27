@@ -158,6 +158,19 @@ body {
         <div class="result-icon fail-icon"><i class="bi bi-x-circle-fill"></i></div>
         <h2 class="result-title text-danger-premium">Payment Failed</h2>
         <p class="result-msg">We couldn't verify your payment. Please try again or contact our support team.</p>
+        
+        {% if error %}
+          <div class="alert alert-danger text-start mt-4 mb-2">
+            <strong>Error:</strong> {{ error }}<br>
+            {% if details %}
+              <details>
+                <summary>View Technical Details</summary>
+                <pre class="mt-2" style="font-size: 11px; text-align: left; white-space: pre-wrap;">{{ details }}</pre>
+              </details>
+            {% endif %}
+          </div>
+        {% endif %}
+
         <div class="result-actions">
           <a href="{% url 'home' %}" class="btn-premium-primary">Go to Homepage</a>
         </div>
@@ -166,12 +179,22 @@ body {
         <div class="result-icon fail-icon" style="background:#fef3c7; color:#f59e0b;"><i class="bi bi-exclamation-triangle-fill"></i></div>
         <h2 class="result-title text-warning-premium">Invalid Request</h2>
         <p class="result-msg">Something went wrong. Please try again.</p>
+        
+        {% if error %}
+          <div class="alert alert-danger text-start mt-4 mb-2">
+            <strong>Error:</strong> {{ error }}<br>
+            {% if details %}
+              <details>
+                <summary>View Technical Details</summary>
+                <pre class="mt-2" style="font-size: 11px; text-align: left; white-space: pre-wrap;">{{ details }}</pre>
+              </details>
+            {% endif %}
+          </div>
+        {% endif %}
+        
         <div class="result-actions">
           <a href="{% url 'home' %}" class="btn-premium-primary">Go to Homepage</a>
         </div>
         {% endif %}
       </div>
-    </div>
-  </div>
-</div>
 {% endblock %}

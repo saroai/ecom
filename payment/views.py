@@ -191,9 +191,15 @@ def payment_verify(request):
             })
 
         except razorpay.errors.SignatureVerificationError:
-            return render(request, "payment_verify.html", {"status": "failed"})
+            return render(request, "payment_verify.html", {"status": "failed", "error": "Signature Verification Failed"})
+            
+        except Exception as e:
+            # Catch any other database or server errors
+            import traceback
+            error_details = traceback.format_exc()
+            return render(request, "payment_verify.html", {"status": "failed", "error": str(e), "details": error_details})
 
-    return render(request, "payment_verify.html", {"status": "invalid"})
+    return render(request, "payment_verify.html", {"status": "invalid", "error": "Invalid Request Method or Missing Data"})
 
 
 # ─────────────────────────────────────────────

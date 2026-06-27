@@ -188,9 +188,15 @@
 <div class="order-details-wrapper pt-4">
   <div class="container">
     
-    <a href="{% url 'your_orders' %}" class="text-decoration-none text-muted fw-semibold mb-3 d-inline-block" style="transition: color 0.2s;" onmouseover="this.style.color='#d3b3e5'" onmouseout="this.style.color='#6c757d'">
-      <i class="bi bi-arrow-left me-2"></i>Back to My Orders
-    </a>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <a href="{% url 'your_orders' %}" class="text-decoration-none text-muted fw-semibold d-inline-block" style="transition: color 0.2s;" onmouseover="this.style.color='#d3b3e5'" onmouseout="this.style.color='#6c757d'">
+        <i class="bi bi-arrow-left me-2"></i>Back to My Orders
+      </a>
+      <!-- Dummy Invoice Button -->
+      <button class="btn btn-sm btn-outline-secondary" onclick="alert('Invoice generation will be available soon!')">
+        <i class="bi bi-file-earmark-pdf me-1"></i> Download Invoice
+      </button>
+    </div>
 
     <!-- Header Banner -->
     <div class="order-header-banner d-flex justify-content-between align-items-center flex-wrap gap-3">
@@ -198,7 +204,8 @@
         <span class="badge bg-white text-dark mb-2 px-3 py-2 rounded-pill shadow-sm fw-semibold">
           <i class="bi bi-calendar2-check-fill icon-primary me-1"></i> {{ order.ordered_date|date:"M d, Y, h:i A" }}
         </span>
-        <h2 class="order-title mb-0">Order #{{ order.id|slice:":8"|upper }}</h2>
+        <!-- Fixed UUID slicing by stringformatting first -->
+        <h2 class="order-title mb-0">Order #{{ order.id|stringformat:"s"|slice:":8"|upper }}</h2>
       </div>
       
       {% if order.shiprocket_tracking_url %}
@@ -256,8 +263,9 @@
                 <tr class="shadow-sm border">
                   <td>
                     <div class="d-flex align-items-center gap-3 py-1 px-2">
-                      {% if item.product and item.product.image1 %}
-                        <img src="{{ item.product.image1.url }}" class="item-img shadow-sm border" alt="{{ item.product_name }}">
+                      <!-- Fixed image attribute to image_1 -->
+                      {% if item.product and item.product.image_1 %}
+                        <img src="{{ item.product.image_1.url }}" class="item-img shadow-sm border" alt="{{ item.product_name }}">
                       {% else %}
                         <div class="item-img bg-light border d-flex align-items-center justify-content-center text-muted">
                           <i class="bi bi-image fs-4"></i>
@@ -275,7 +283,8 @@
                   <td class="text-center fw-medium text-secondary">
                     <span class="bg-light border rounded px-2 py-1">{{ item.product_qty }}</span>
                   </td>
-                  <td class="text-end fw-bold px-3 text-dark fs-6">₹{{ item.line_total }}</td>
+                  <!-- Use grouped_line_total from the view -->
+                  <td class="text-end fw-bold px-3 text-dark fs-6">₹{{ item.grouped_line_total }}</td>
                 </tr>
                 {% endfor %}
               </tbody>
@@ -301,7 +310,9 @@
               </div>
               <div class="d-flex justify-content-between pt-3 border-top border-2">
                 <span class="fw-bold fs-5 text-dark">Total Paid</span>
-                <span class="fw-bold fs-5" style="color: #4a2c5a;">₹{{ order.amount_paid }}</span>
+                <span class="fw-bold fs-5" style="color: #4a2c5a;">
+                  {% if order.amount_paid %}₹{{ order.amount_paid }}{% else %}₹0{% endif %}
+                </span>
               </div>
             </div>
           </div>

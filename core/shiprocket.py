@@ -45,7 +45,7 @@ def create_shiprocket_order(order):
     if not token:
         return False, "Authentication failed. Check Shiprocket credentials."
         
-    url = "https://apiv2.shiprocket.in/v1/external/orders/create/ad-hoc"
+    url = "https://apiv2.shiprocket.in/v1/external/orders/create/adhoc"
     
     headers = {
       'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ def create_shiprocket_order(order):
     payload = {
         "order_id": str(order.id),
         "order_date": order.ordered_date.strftime("%Y-%m-%d %H:%M"),
-        "pickup_location": "Primary", # Default location in shiprocket
+        "pickup_location": "Home", # User's pickup location is Home
         "billing_customer_name": order.address.first_name,
         "billing_last_name": order.address.last_name,
         "billing_address": order.address.address,

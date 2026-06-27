@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice - Order #{{ order.id|stringformat:"s"|slice:":8"|upper }}</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    .invoice-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 3rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #d3b3e5;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    .company-details h1 {
+      margin: 0;
+      color: #4a2c5a;
+      font-size: 28px;
+    }
+    .company-details p {
+      margin: 5px 0 0;
+      color: #666;
+      font-size: 14px;
+    }
+    .invoice-title h2 {
+      margin: 0;
+      color: #d3b3e5;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 32px;
+    }
+    .invoice-title p {
+      margin: 5px 0 0;
+      text-align: right;
+      font-weight: bold;
+      color: #555;
+    }
+    .details-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .bill-to h4, .order-details-meta h4 {
+      margin: 0 0 10px;
+      color: #4a2c5a;
+      text-transform: uppercase;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+    .bill-to p, .order-details-meta p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #444;
+    }
+    .order-details-meta table {
+      width: 100%;
+    }
+    .order-details-meta table td {
+      padding: 4px 0;
+      font-size: 14px;
+    }
+    .order-details-meta table td:last-child {
+      text-align: right;
+      font-weight: bold;
+    }
+    
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    .invoice-table th {
+      background: #f8f9fa;
+      color: #4a2c5a;
+      padding: 12px;
+      text-align: left;
+      font-size: 14px;
+      border-bottom: 2px solid #d3b3e5;
+    }
+    .invoice-table th.text-right {
+      text-align: right;
+    }
+    .invoice-table th.text-center {
+      text-align: center;
+    }
+    .invoice-table td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+      color: #444;
+    }
+    .invoice-table td.text-right {
+      text-align: right;
+    }
+    .invoice-table td.text-center {
+      text-align: center;
+    }
+    
+    .totals {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .totals table {
+      width: 300px;
+      border-collapse: collapse;
+    }
+    .totals table td {
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #444;
+    }
+    .totals table tr.grand-total td {
+      font-size: 18px;
+      font-weight: bold;
+      color: #4a2c5a;
+      border-top: 2px solid #d3b3e5;
+      padding-top: 12px;
+    }
+    .totals table td:last-child {
+      text-align: right;
+    }
+    
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #888;
+      font-size: 12px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+      .invoice-container {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="invoice-container">
+  
+  <div class="header">
+    <div class="company-details">
+      <h1>Fimiku</h1>
+      <p>Gentle care for little beginnings.</p>
+      <p>Chennai, Tamil Nadu, India</p>
+      <p>support@fimiku.com | +91 98765 43210</p>
+    </div>
+    <div class="invoice-title">
+      <h2>INVOICE</h2>
+      <p>#INV-{{ order.id|stringformat:"s"|slice:":8"|upper }}</p>
+    </div>
+  </div>
+
+  <div class="details-section">
+    <div class="bill-to">
+      <h4>Bill To</h4>
+      <p><strong>{{ order.address.first_name }} {{ order.address.last_name }}</strong></p>
+      <p>{{ order.address.address }}</p>
+      <p>{{ order.address.city }}, {{ order.address.state }} {{ order.address.pin_code }}</p>
+      <p>{{ order.address.country }}</p>
+      <p>Ph: {{ order.address.phone_no }}</p>
+    </div>
+    
+    <div class="order-details-meta">
+      <h4>Order Details</h4>
+      <table>
+        <tr>
+          <td>Order Date:</td>
+          <td>{{ order.ordered_date|date:"d M Y" }}</td>
+        </tr>
+        <tr>
+          <td>Order ID:</td>
+          <td>#{{ order.id|stringformat:"s"|slice:":8"|upper }}</td>
+        </tr>
+        <tr>
+          <td>Payment Method:</td>
+          <td>Razorpay Online</td>
+        </tr>
+        <tr>
+          <td>Payment Status:</td>
+          <td>{% if order.is_paid %}Paid{% else %}Pending{% endif %}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <table class="invoice-table">
+    <thead>
+      <tr>
+        <th>Item Description</th>
+        <th class="text-center">Qty</th>
+        <th class="text-right">Unit Price</th>
+        <th class="text-right">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        <td>
+          <strong>{{ item.product_name }}</strong>
+          {% if item.product_color %}
+          <br><small style="color: #888;">Color: {{ item.product_color }}</small>
+          {% endif %}
+        </td>
+        <td class="text-center">{{ item.product_qty }}</td>
+        <td class="text-right">₹{{ item.product_price }}</td>
+        <td class="text-right">₹{{ item.grouped_line_total }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="totals">
+    <table>
+      <tr>
+        <td>Subtotal:</td>
+        <td>
+          {% if order.amount_paid %}
+            ₹{{ order.amount_paid|add:"-100" }}
+          {% else %}
+            ₹0
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td>Shipping & Handling:</td>
+        <td>₹100</td>
+      </tr>
+      <tr class="grand-total">
+        <td>Total Paid:</td>
+        <td>₹{{ order.amount_paid|default:"0" }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>Thank you for shopping with Fimiku!</p>
+    <p>This is a computer generated invoice and requires no signature.</p>
+  </div>
+
+</div>
+
+<script>
+  // Automatically trigger print dialog when the page loads
+  window.onload = function() {
+    window.print();
+  };
+</script>
+
+</body>
+</html>

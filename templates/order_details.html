@@ -192,10 +192,10 @@
       <a href="{% url 'your_orders' %}" class="text-decoration-none text-muted fw-semibold d-inline-block" style="transition: color 0.2s;" onmouseover="this.style.color='#d3b3e5'" onmouseout="this.style.color='#6c757d'">
         <i class="bi bi-arrow-left me-2"></i>Back to My Orders
       </a>
-      <!-- Dummy Invoice Button -->
-      <button class="btn btn-sm btn-outline-secondary" onclick="alert('Invoice generation will be available soon!')">
+      <!-- Download Invoice Button -->
+      <a href="{% url 'order_invoice' pk=order.id %}" target="_blank" class="btn btn-sm btn-outline-secondary">
         <i class="bi bi-file-earmark-pdf me-1"></i> Download Invoice
-      </button>
+      </a>
     </div>
 
     <!-- Header Banner -->

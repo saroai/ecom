@@ -17,6 +17,7 @@ urlpatterns = [
     # User orders
     path("my-orders/", your_order, name="your_orders"),
     path("order/<pk>/", order_details, name="order_details"),
+    path("order/<pk>/invoice/", order_invoice, name="order_invoice"),
 
     # Admin order management
     path("manage/orders/", order_dashboard, name="order_dashboard"),

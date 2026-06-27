@@ -228,6 +228,28 @@ def order_details(request, pk):
     return render(request, "order_details.html", context)
 
 
+def order_invoice(request, pk):
+    """HTML printable invoice for a single order."""
+    if not request.user.is_authenticated:
+        return redirect("account_login")
+    order = get_object_or_404(Order, pk=pk, user=request.user)
+    items_qs = OrderItems.objects.filter(order=order)
+    
+    grouped_items = {}
+    for item in items_qs:
+        key = f"{item.product_name}_{item.product_color}"
+        if key in grouped_items:
+            grouped_items[key].product_qty += item.product_qty
+            grouped_items[key].grouped_line_total += item.line_total()
+        else:
+            item.grouped_line_total = item.line_total()
+            grouped_items[key] = item
+            
+    items = list(grouped_items.values())
+    context = {"order": order, "items": items}
+    return render(request, "invoice.html", context)
+
+
 # ─────────────────────────────────────────────
 # Admin: Order Management Dashboard
 # ─────────────────────────────────────────────

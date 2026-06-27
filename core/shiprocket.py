@@ -1,7 +1,10 @@
 import os
 import requests
 import json
+import logging
 from django.conf import settings
+
+logger = logging.getLogger('django')
 
 def get_shiprocket_token():
     """
@@ -26,12 +29,12 @@ def get_shiprocket_token():
     }
 
     try:
-        response = requests.post(url, headers=headers, data=payload)
+        response = requests.post(url, headers=headers, data=payload, timeout=10)
         response.raise_for_status()
         data = response.json()
         return data.get("token")
     except Exception as e:
-        print(f"Error fetching Shiprocket token: {e}")
+        logger.error(f"Error fetching Shiprocket token: {e}")
         return None
 
 def create_shiprocket_order(order):
@@ -88,7 +91,8 @@ def create_shiprocket_order(order):
     }
 
     try:
-        response = requests.post(url, headers=headers, data=json.dumps(payload))
+        logger.info(f"Pushing order {order.id} to Shiprocket...")
+        response = requests.post(url, headers=headers, data=json.dumps(payload), timeout=15)
         response.raise_for_status()
         data = response.json()
         
@@ -96,12 +100,13 @@ def create_shiprocket_order(order):
         order.shiprocket_order_id = data.get('order_id')
         order.shiprocket_shipment_id = data.get('shipment_id')
         order.save()
+        logger.info(f"Shiprocket order created: order_id={data.get('order_id')}, shipment_id={data.get('shipment_id')}")
         
         return True, data
     except Exception as e:
-        print(f"Error creating Shiprocket order: {e}")
+        logger.error(f"Error creating Shiprocket order: {e}")
         try:
-            print("Response:", response.text)
+            logger.error(f"Shiprocket response: {response.text}")
         except:
             pass
         return False, str(e)
@@ -119,7 +124,7 @@ def generate_awb(shipment_id):
         "shipment_id": shipment_id
     })
     try:
-        response = requests.post(url, headers=headers, data=payload)
+        response = requests.post(url, headers=headers, data=payload, timeout=10)
         response.raise_for_status()
         return True, response.json()
     except Exception as e:
@@ -138,7 +143,7 @@ def request_pickup(shipment_id):
         "shipment_id": [shipment_id]
     })
     try:
-        response = requests.post(url, headers=headers, data=payload)
+        response = requests.post(url, headers=headers, data=payload, timeout=10)
         response.raise_for_status()
         return True, response.json()
     except Exception as e:
@@ -157,7 +162,7 @@ def generate_label(shipment_id):
         "shipment_id": [shipment_id]
     })
     try:
-        response = requests.post(url, headers=headers, data=payload)
+        response = requests.post(url, headers=headers, data=payload, timeout=10)
         response.raise_for_status()
         return True, response.json()
     except Exception as e:

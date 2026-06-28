@@ -240,7 +240,7 @@ body {
           {% else %}
             <form method="POST" action="{% url 'billing_info' order.pk %}" class="d-flex gap-2">
               {% csrf_token %}
-              <input type="text" name="coupon" class="form-control" placeholder="Enter Coupon Code (e.g., FIMIKU10)" style="border-radius: 8px;">
+              <input type="text" name="coupon" class="form-control" placeholder="Discount Code" style="border-radius: 8px;">
               <button type="submit" class="btn btn-dark" style="border-radius: 8px; font-weight: 600;">Apply</button>
             </form>
           {% endif %}

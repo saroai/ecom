@@ -27,6 +27,15 @@ def checkout(request):
         return redirect("cart_summary")
 
     if request.method == "POST":
+        if "apply_coupon" in request.POST:
+            coupon_code = request.POST.get("coupon", "").strip().upper()
+            if coupon_code == "FIMIKU10":
+                request.session["coupon"] = "FIMIKU10"
+                messages.success(request, "Coupon FIMIKU10 applied! 10% discount added.")
+            else:
+                messages.error(request, "Invalid coupon code.")
+            return redirect("checkout")
+            
         form = ShippingAddressForm(request.POST)
         if form.is_valid():
             address = form.save()
@@ -35,10 +44,19 @@ def checkout(request):
     else:
         form = ShippingAddressForm()
 
+    total = cart.total()
+    coupon_discount = 0
+    if request.session.get("coupon") == "FIMIKU10":
+        coupon_discount = float(total) * 0.10
+    final_total = float(total) - coupon_discount
+
     context = {
         "form":       form,
         "cart_items": cart_items,
-        "total":      cart.total(),
+        "total":      total,
+        "final_total": final_total,
+        "coupon_discount": coupon_discount,
+        "applied_coupon": request.session.get("coupon")
     }
     return render(request, "checkout.html", context)
 

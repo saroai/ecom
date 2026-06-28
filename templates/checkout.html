@@ -463,19 +463,44 @@
             </div>
 
             <div class="discount-section">
-                <div class="form-floating discount-input">
-                    <input type="text" class="form-control" id="discountCode" placeholder="Discount code">
-                    <label for="discountCode">Discount code</label>
+              {% if applied_coupon %}
+                <div class="d-flex w-100 justify-content-between align-items-center text-success fw-bold">
+                  <span><i class="bi bi-tag-fill me-2"></i>Coupon Applied: {{ applied_coupon }}</span>
+                  <span class="badge bg-success">10% OFF</span>
                 </div>
-                <button class="btn btn-apply">Apply</button>
+              {% else %}
+                <form method="POST" action="{% url 'checkout' %}" class="d-flex w-100 gap-2">
+                    {% csrf_token %}
+                    <input type="hidden" name="apply_coupon" value="1">
+                    <div class="form-floating discount-input w-100">
+                        <input type="text" name="coupon" class="form-control" id="discountCode" placeholder="Discount code">
+                        <label for="discountCode">Discount code (e.g., FIMIKU10)</label>
+                    </div>
+                    <button type="submit" class="btn btn-apply">Apply</button>
+                </form>
+              {% endif %}
             </div>
+            
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} mt-2 mb-3 py-2 fs-6">{{ message }}</div>
+              {% endfor %}
+            {% endif %}
 
             <div class="summary-totals">
                 <div class="summary-row">
                     <span>Subtotal</span>
                     <span class="fw-medium">₹{{ total }}</span>
                 </div>
-                <div class="summary-row">
+                
+                {% if coupon_discount %}
+                <div class="summary-row mt-2 text-success">
+                    <span>Coupon Discount (10%)</span>
+                    <span class="fw-bold">-₹{{ coupon_discount }}</span>
+                </div>
+                {% endif %}
+                
+                <div class="summary-row mt-2">
                     <span>Shipping <i class="bi bi-question-circle ms-1 text-muted"></i></span>
                     <span class="shipping-small">Enter shipping address</span>
                 </div>
@@ -483,11 +508,12 @@
                 <div class="summary-row total mt-3 pt-3 border-top">
                     <span>Total</span>
                     <div>
-                        <span class="currency">INR</span>
-                        <span class="fs-4">₹{{ total }}</span>
+                        <span class="fs-6 text-muted me-1">INR</span> 
+                        <span class="fs-3 fw-bold">₹{{ final_total|default:total }}</span>
                     </div>
                 </div>
-                <div class="shipping-small mt-1">
+            </div>    
+            <div class="shipping-small mt-1">
                     Including taxes
                 </div>
             </div>

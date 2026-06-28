@@ -56,20 +56,21 @@ def billing_info(request, pk):
         "total":      cart.total(),
         "order":      order,
         "delivery":   100,  # flat delivery charge ₹100
+        "delivery_discount": 100, # free delivery
     }
     return render(request, "billing_info.html", context)
 
 
-# ─────────────────────────────────────────────
-# Process Order — Create Razorpay order
-# ─────────────────────────────────────────────
+# ────────────────────────────────────────────────────────────────────────────────
+# Process Order – Create Razorpay order
+# ────────────────────────────────────────────────────────────────────────────────
 @login_required
 def proccess_order(request, pk):
     """Create Razorpay order and save order items; return JSON for frontend."""
     cart       = Cart(request)
     cart_items = cart.get_items()
     delivery   = 100  # flat ₹100 delivery
-    total_amount = cart.total() + delivery
+    total_amount = cart.total() # Free delivery applied
 
     client = razorpay.Client(auth=(settings.RAZOR_PAY_KEY_ID, settings.RAZOR_PAY_SECRET_KEY))
     razorpay_order = client.order.create({

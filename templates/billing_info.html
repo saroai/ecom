@@ -233,12 +233,13 @@ body {
         <div class="summary-container">
             <div class="summary-row"><span>Subtotal</span><span>₹{{ total }}</span></div>
             <div class="summary-row"><span>Delivery Charge</span><span>₹{{ delivery }}</span></div>
-            <div class="summary-row total-row"><strong>Grand Total</strong><strong>₹{{ total|add:delivery }}</strong></div>
+            <div class="summary-row text-success fw-medium"><span>Delivery Discount</span><span>-₹{{ delivery_discount|default:"100" }}</span></div>
+            <div class="summary-row total-row"><strong>Grand Total</strong><strong>₹{{ total }}</strong></div>
         </div>
 
         <!-- Razorpay Pay Button -->
         <button id="payNowBtn" class="btn-pay-now" data-order-pk="{{ order.pk }}">
-          <i class="bi bi-shield-lock-fill me-2"></i>Pay ₹{{ total|add:delivery }} Securely
+          <i class="bi bi-shield-lock-fill me-2"></i>Pay ₹{{ total }} Securely
         </button>
 
         <div class="secure-info">

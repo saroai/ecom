@@ -46,17 +46,42 @@ def checkout(request):
 # ─────────────────────────────────────────────
 # Billing Info — Review before payment
 # ─────────────────────────────────────────────
+from django.contrib import messages
+from django.shortcuts import redirect
+
 def billing_info(request, pk):
     """Step 2: Show billing summary and Razorpay Pay button."""
     cart  = Cart(request)
     order = get_object_or_404(Order, pk=pk)
 
+    total = cart.total()
+    
+    # Handle Coupon Submission
+    if request.method == "POST":
+        coupon_code = request.POST.get("coupon", "").strip().upper()
+        if coupon_code == "FIMIKU10":
+            request.session["coupon"] = "FIMIKU10"
+            messages.success(request, "Coupon FIMIKU10 applied successfully! 10% discount added.")
+        else:
+            messages.error(request, "Invalid coupon code.")
+        return redirect("billing_info", pk=pk)
+
+    # Calculate Discount
+    coupon_discount = 0
+    if request.session.get("coupon") == "FIMIKU10":
+        coupon_discount = float(total) * 0.10
+        
+    final_total = float(total) - coupon_discount
+
     context = {
         "cart_items": cart.get_items(),
-        "total":      cart.total(),
+        "total":      total,
+        "final_total": final_total,
+        "coupon_discount": coupon_discount,
         "order":      order,
         "delivery":   100,  # flat delivery charge ₹100
         "delivery_discount": 100, # free delivery
+        "applied_coupon": request.session.get("coupon")
     }
     return render(request, "billing_info.html", context)
 
@@ -69,8 +94,13 @@ def proccess_order(request, pk):
     """Create Razorpay order and save order items; return JSON for frontend."""
     cart       = Cart(request)
     cart_items = cart.get_items()
-    delivery   = 100  # flat ₹100 delivery
-    total_amount = cart.total() # Free delivery applied
+    
+    total = cart.total()
+    coupon_discount = 0
+    if request.session.get("coupon") == "FIMIKU10":
+        coupon_discount = float(total) * 0.10
+        
+    total_amount = float(total) - coupon_discount # Free delivery applied and 10% discount
 
     client = razorpay.Client(auth=(settings.RAZOR_PAY_KEY_ID, settings.RAZOR_PAY_SECRET_KEY))
     razorpay_order = client.order.create({
@@ -172,9 +202,11 @@ def payment_verify(request):
                     item.product.no_of_sales += item.product_qty
                     item.product.save()
 
-            # Clear cart
+            # Clear cart and coupon
             if "session_key" in request.session:
                 del request.session["session_key"]
+            if "coupon" in request.session:
+                del request.session["coupon"]
 
             # Send Email Notifications asynchronously
             def send_confirmation_email(order_obj):

@@ -230,16 +230,43 @@ body {
         </div>
         {% endfor %}
 
+        <!-- Coupon Section -->
+        <div class="summary-container" style="margin-top: 1rem; padding: 1rem 1.5rem; background: #fff; border: 1px solid #e2e8f0;">
+          {% if applied_coupon %}
+            <div class="d-flex justify-content-between align-items-center text-success fw-bold">
+              <span><i class="bi bi-tag-fill me-2"></i>Coupon Applied: {{ applied_coupon }}</span>
+              <span class="badge bg-success">10% OFF</span>
+            </div>
+          {% else %}
+            <form method="POST" action="{% url 'billing_info' order.pk %}" class="d-flex gap-2">
+              {% csrf_token %}
+              <input type="text" name="coupon" class="form-control" placeholder="Enter Coupon Code (e.g., FIMIKU10)" style="border-radius: 8px;">
+              <button type="submit" class="btn btn-dark" style="border-radius: 8px; font-weight: 600;">Apply</button>
+            </form>
+          {% endif %}
+          
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} mt-2 mb-0 py-2 fs-6">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        </div>
+
         <div class="summary-container">
             <div class="summary-row"><span>Subtotal</span><span>₹{{ total }}</span></div>
             <div class="summary-row"><span>Delivery Charge</span><span>₹{{ delivery }}</span></div>
             <div class="summary-row text-success fw-medium"><span>Delivery Discount</span><span>-₹{{ delivery_discount|default:"100" }}</span></div>
-            <div class="summary-row total-row"><strong>Grand Total</strong><strong>₹{{ total }}</strong></div>
+            
+            {% if coupon_discount %}
+            <div class="summary-row text-primary fw-bold"><span>Coupon Discount (10%)</span><span>-₹{{ coupon_discount }}</span></div>
+            {% endif %}
+
+            <div class="summary-row total-row"><strong>Grand Total</strong><strong>₹{{ final_total|default:total }}</strong></div>
         </div>
 
         <!-- Razorpay Pay Button -->
         <button id="payNowBtn" class="btn-pay-now" data-order-pk="{{ order.pk }}">
-          <i class="bi bi-shield-lock-fill me-2"></i>Pay ₹{{ total }} Securely
+          <i class="bi bi-shield-lock-fill me-2"></i>Pay ₹{{ final_total|default:total }} Securely
         </button>
 
         <div class="secure-info">

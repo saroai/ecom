@@ -74,9 +74,10 @@ class OrderAdmin(ModelAdmin):
     @display(description="Amount")
     def amount_display(self, obj):
         if obj.amount_paid:
+            formatted_amount = f"₹{float(obj.amount_paid):,.0f}"
             return format_html(
-                '<strong style="color:#10b981;">₹{:,.0f}</strong>',
-                float(obj.amount_paid)
+                '<strong style="color:#10b981;">{}</strong>',
+                formatted_amount
             )
         return format_html('<span style="color:#888;">—</span>')
 

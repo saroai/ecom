@@ -1,9 +1,66 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from django.db.models import Sum, Count
+from django.utils import timezone
 from unfold.admin import ModelAdmin
 from unfold.decorators import action, display
+from django.contrib.auth import get_user_model
 from .models import Product, Wishlist, Review, CustomerForm
+from payment.models import Order
+
+
+# ─────────────────────────────────────────────
+# Dashboard callback for Unfold
+# ─────────────────────────────────────────────
+def dashboard_callback(request, context):
+    now = timezone.now()
+    today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    week_start = today_start - timezone.timedelta(days=7)
+    
+    # Orders today
+    orders_today = Order.objects.filter(ordered_date__gte=today_start).count()
+    revenue_today = Order.objects.filter(ordered_date__gte=today_start).aggregate(Sum('amount_paid'))['amount_paid__sum'] or 0
+    
+    # Statuses
+    pending = Order.objects.filter(status='Pending').count()
+    processing = Order.objects.filter(status='Processing').count()
+    shipped = Order.objects.filter(status='Shipped').count()
+    
+    # 7-day AOV
+    week_revenue = Order.objects.filter(ordered_date__gte=week_start).aggregate(Sum('amount_paid'))['amount_paid__sum'] or 0
+    week_orders = Order.objects.filter(ordered_date__gte=week_start).count()
+    aov = week_revenue / week_orders if week_orders > 0 else 0
+    
+    # Active Products
+    total_products = Product.objects.count()
+    
+    # Total Customers
+    User = get_user_model()
+    total_customers = User.objects.filter(is_superuser=False).count()
+    
+    # Lists
+    low_stock = Product.objects.filter(stock__lte=5)
+    latest_orders = Order.objects.order_by('-ordered_date')[:5]
+    top_products = Product.objects.order_by('-no_of_sales')[:5]
+    new_enquiries = CustomerForm.objects.order_by('-created_at')[:5]
+    new_reviews = Review.objects.order_by('-created_at')[:5]
+    
+    context.update({
+        "kpi_orders_today": orders_today,
+        "kpi_revenue_today": revenue_today,
+        "kpi_pending": pending,
+        "kpi_processing": processing,
+        "kpi_shipped": shipped,
+        "kpi_aov": int(aov),
+        "kpi_total_products": total_products,
+        "kpi_total_customers": total_customers,
+        "kpi_low_stock": low_stock,
+        "kpi_latest_orders": latest_orders,
+        "kpi_top_products": top_products,
+        "kpi_new_enquiries": new_enquiries,
+        "kpi_new_reviews": new_reviews,
+    })
+    return context
 
 
 # ─────────────────────────────────────────────

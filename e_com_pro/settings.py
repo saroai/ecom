@@ -201,6 +201,7 @@ UNFOLD = {
     "SITE_TITLE":  "Fimiku Command Center",
     "SITE_HEADER": "Fimiku",
     "SITE_URL":    "/",
+    "DASHBOARD_CALLBACK": "core.admin.dashboard_callback",
     "COLORS": {
         "primary": {
             "50":  "245 243 255",

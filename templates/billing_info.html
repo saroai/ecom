@@ -264,13 +264,41 @@ body {
             <div class="summary-row total-row"><strong>Grand Total</strong><strong>₹{{ final_total|default:total }}</strong></div>
         </div>
 
+        <!-- Payment Method Selection -->
+        <div class="summary-container mt-4" style="background: #fff; border: 1px solid #e2e8f0;">
+            <h5 class="fw-bold mb-3" style="color: #0f172a;"><i class="bi bi-wallet2 me-2"></i>Select Payment Method</h5>
+            
+            <div class="form-check mb-3 p-3 border rounded" style="background: #f8fafc; cursor: pointer;" onclick="document.getElementById('methodPrepaid').click();">
+              <input class="form-check-input ms-1 me-3 mt-1" type="radio" name="paymentMethod" id="methodPrepaid" value="prepaid" checked>
+              <label class="form-check-label fw-bold d-flex align-items-center" for="methodPrepaid" style="cursor: pointer;">
+                Pay Online (UPI / Cards) 
+                <span class="badge bg-primary ms-auto" style="font-size: 0.75rem;">Recommended</span>
+              </label>
+            </div>
+            
+            <div class="form-check p-3 border rounded" style="background: #f8fafc; cursor: pointer;" onclick="document.getElementById('methodCod').click();">
+              <input class="form-check-input ms-1 me-3 mt-1" type="radio" name="paymentMethod" id="methodCod" value="cod">
+              <label class="form-check-label fw-bold d-flex align-items-center" for="methodCod" style="cursor: pointer;">
+                Cash on Delivery (COD)
+              </label>
+            </div>
+        </div>
+
         <!-- Razorpay Pay Button -->
         <button id="payNowBtn" class="btn-pay-now" data-order-pk="{{ order.pk }}">
           <i class="bi bi-shield-lock-fill me-2"></i>Pay ₹{{ final_total|default:total }} Securely
         </button>
 
+        <!-- COD Submit Form (Hidden initially) -->
+        <form id="codForm" action="{% url 'process_cod_order' order.pk %}" method="POST" style="display: none;">
+          {% csrf_token %}
+          <button type="submit" class="btn-pay-now" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">
+            <i class="bi bi-box-seam me-2"></i>Place Order (Cash on Delivery)
+          </button>
+        </form>
+
         <div class="secure-info">
-          <i class="bi bi-check-circle-fill me-1"></i> Your payment is 100% secured by Razorpay
+          <i class="bi bi-check-circle-fill me-1"></i> Your checkout is 100% secured
         </div>
       </div>
     </div>
@@ -281,6 +309,32 @@ body {
 {% block extra_js %}
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
+// Handle Payment Method Toggle
+const methodPrepaid = document.getElementById("methodPrepaid");
+const methodCod = document.getElementById("methodCod");
+const payNowBtn = document.getElementById("payNowBtn");
+const codForm = document.getElementById("codForm");
+
+methodPrepaid.addEventListener("change", function() {
+  if (this.checked) {
+    payNowBtn.style.display = "flex";
+    codForm.style.display = "none";
+  }
+});
+
+methodCod.addEventListener("change", function() {
+  if (this.checked) {
+    payNowBtn.style.display = "none";
+    codForm.style.display = "block";
+  }
+});
+
+codForm.addEventListener("submit", function() {
+  const btn = this.querySelector('button');
+  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Processing...';
+  btn.disabled = true;
+});
+
 document.getElementById("payNowBtn").addEventListener("click", function () {
   
   // Visual feedback on button

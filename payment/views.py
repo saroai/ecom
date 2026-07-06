@@ -175,6 +175,97 @@ def proccess_order(request, pk):
     })
 
 
+# ────────────────────────────────────────────────────────────────────────────────
+# Process Order – Cash on Delivery (COD)
+# ────────────────────────────────────────────────────────────────────────────────
+@login_required
+def process_cod_order(request, pk):
+    """Process Cash on Delivery order without Razorpay."""
+    cart       = Cart(request)
+    cart_items = cart.get_items()
+    
+    total = cart.total()
+    coupon_discount = 0
+    if request.session.get("coupon") == "FIMIKU10":
+        coupon_discount = float(total) * 0.10
+        
+    total_amount = float(total) - coupon_discount # Free delivery applied and 10% discount
+
+    order = get_object_or_404(Order, pk=pk)
+    order.amount_paid = total_amount
+    order.payment_id  = "COD"
+    order.is_paid     = False
+    order.status      = "processing"
+    order.save()
+
+    # Create line items & reduce stock
+    for item in cart_items:
+        product = item['product']
+        qty = item['qty']
+        color = item['color']
+        
+        price = product.discount_price if product.is_discount else product.price
+        OrderItems.objects.create(
+            order            = order,
+            product          = product,
+            product_name     = product.name,
+            product_price    = price,
+            product_qty      = qty,
+            product_color    = color,
+            product_category = product.category,
+        )
+        # Decrease stock
+        product.stock = max(0, product.stock - int(qty))
+        product.save()
+
+    import threading
+
+    # Push to Shiprocket asynchronously (it will see payment_id="COD")
+    def push_shiprocket(order_obj):
+        try:
+            create_shiprocket_order(order_obj)
+        except Exception as e:
+            print("Failed to push to Shiprocket:", e)
+            
+    threading.Thread(target=push_shiprocket, args=(order,)).start()
+
+    # Update sales counter
+    for item in order.items.all():
+        if item.product:
+            item.product.no_of_sales += item.product_qty
+            item.product.save()
+
+    # Clear cart and coupon
+    if "session_key" in request.session:
+        del request.session["session_key"]
+    if "coupon" in request.session:
+        del request.session["coupon"]
+
+    # Send Email Notifications asynchronously
+    def send_confirmation_email(order_obj):
+        try:
+            subject = f"Fimiku: COD Order Placed #{order_obj.pk} 🎉"
+            message = f"Hello,\n\nYour Cash on Delivery Order #{order_obj.pk} has been successfully placed!\n\nAmount to pay on delivery: ₹{order_obj.amount_paid}\nCustomer: {order_obj.user.username} ({order_obj.user.email})\n\nThank you!"
+            send_mail(
+                subject, 
+                message, 
+                settings.EMAIL_HOST_USER, 
+                [settings.ADMIN_EMAIL, order_obj.user.email], 
+                fail_silently=True
+            )
+        except Exception as e:
+            print("Email failed:", e)
+            
+    threading.Thread(target=send_confirmation_email, args=(order,)).start()
+
+    # Reuse payment_verify template but indicate COD
+    return render(request, "payment_verify.html", {
+        "status": "success",
+        "order": order,
+        "is_cod": True
+    })
+
+
 # ─────────────────────────────────────────────
 # Payment Verify — Razorpay Webhook
 # ─────────────────────────────────────────────

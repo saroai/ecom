@@ -142,8 +142,13 @@ body {
       <div class="payment-result-card">
         {% if status == "success" %}
         <div class="result-icon success-icon"><i class="bi bi-check-circle-fill"></i></div>
+        {% if is_cod %}
+        <h2 class="result-title text-success-premium">Order Placed Successfully!</h2>
+        <p class="result-msg">Your Cash on Delivery order has been confirmed. We'll start packing your toys right away! 🧸<br><small>Please keep cash ready at the time of delivery.</small></p>
+        {% else %}
         <h2 class="result-title text-success-premium">Payment Successful!</h2>
         <p class="result-msg">Your order has been placed successfully. We'll start packing your toys right away! 🧸</p>
+        {% endif %}
         {% if order %}
         <div class="order-ref">
           <strong>Order Reference:</strong> {{ order.pk }}

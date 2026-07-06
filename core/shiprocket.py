@@ -65,6 +65,9 @@ def create_shiprocket_order(order):
             "hsn": ""
         })
 
+    # Check if it's COD
+    payment_method = "COD" if order.payment_id == "COD" else "Prepaid"
+
     # Prepare Payload
     payload = {
         "order_id": str(order.id),
@@ -82,7 +85,7 @@ def create_shiprocket_order(order):
         "billing_phone": order.address.phone_no,
         "shipping_is_billing": True,
         "order_items": order_items,
-        "payment_method": "Prepaid",
+        "payment_method": payment_method,
         "sub_total": float(order.amount_paid or 0),
         "length": 10,
         "breadth": 10,

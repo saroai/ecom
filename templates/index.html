@@ -89,6 +89,28 @@
 </section>
 
 <!-- ═══════════════════════════════════════
+     BEST SELLERS
+═══════════════════════════════════════ -->
+{% if best_sellers %}
+<section class="section-gap">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">🔥 Best Sellers</h2>
+      <p class="section-subtitle">Most loved by kids and parents alike</p>
+      <a href="{% url 'products' %}?sort=popular" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="row g-4">
+      {% for product in best_sellers %}
+      <div class="col-6 col-md-4 col-lg-3">
+        {% include "includes/product_card.html" with product=product %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ═══════════════════════════════════════
      AGE GROUP SECTION
 ═══════════════════════════════════════ -->
 <section class="section-gap bg-section-alt">
@@ -303,27 +325,7 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     BEST SELLERS
-═══════════════════════════════════════ -->
-{% if best_sellers %}
-<section class="section-gap">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">🔥 Best Sellers</h2>
-      <p class="section-subtitle">Most loved by kids and parents alike</p>
-      <a href="{% url 'products' %}?sort=popular" class="section-cta">View All <i class="bi bi-arrow-right"></i></a>
-    </div>
-    <div class="row g-4">
-      {% for product in best_sellers %}
-      <div class="col-6 col-md-4 col-lg-3">
-        {% include "includes/product_card.html" with product=product %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
+
 
 
 

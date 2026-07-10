@@ -8,6 +8,28 @@
   <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}">
   <title>{% block title %}Fimiku – Premium Silicone Baby Toys{% endblock %}</title>
 
+  <!-- SEO Structured Data for Google Search Logo and Sitelinks Search Box -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "https://fimiku.com",
+    "logo": "https://fimiku.com{% static 'img/logo.png' %}"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://fimiku.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://fimiku.com/products/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>

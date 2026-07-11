@@ -127,6 +127,13 @@ class ProductAdmin(ModelAdmin):
             )
         return format_html('<span style="color:#888;">No img</span>')
 
+    def has_add_permission(self, request):
+        # Limit to 10 products
+        base_has_add = super().has_add_permission(request)
+        if base_has_add and Product.objects.count() >= 10:
+            return False
+        return base_has_add
+
 
 
 

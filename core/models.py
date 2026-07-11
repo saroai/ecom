@@ -60,6 +60,12 @@ class Product(models.Model):
     class Meta:
         ordering = ["-created_at"]
 
+    def clean(self):
+        super().clean()
+        from django.core.exceptions import ValidationError
+        if not self.pk and Product.objects.count() >= 10:
+            raise ValidationError("Product Limit Reached: You cannot add more than 10 products to Fimiku.")
+
     def __str__(self):
         return self.name
 

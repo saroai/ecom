@@ -35,13 +35,9 @@
   <!-- Info -->
   <div class="product-body">
     <div class="product-meta">
-      <span class="product-category" style="color: #10b981; font-weight: 600;">
-        {% if product.offer_details %}
-          <i class="bi bi-tags-fill"></i> {{ product.offer_details|truncatechars:20 }}
-        {% else %}
-          New Arrival
-        {% endif %}
-      </span>
+      <a href="{% url 'products' %}?category={{ product.category }}" class="product-category" style="color: #10b981; font-weight: 600; text-decoration: none;">
+        <i class="bi bi-tags-fill"></i> {{ product.get_category_display|default:product.category|title }}
+      </a>
     </div>
 
     <h3 class="product-name">

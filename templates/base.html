@@ -50,6 +50,24 @@
   <link rel="stylesheet" href="{% static 'css/components.css' %}"/>
 
   {% block extra_css %}{% endblock %}
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2526861387776259');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2526861387776259&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -316,6 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const productId = this.getAttribute('data-product-id');
       const qty = this.getAttribute('data-qty') || 1;
       const color = this.getAttribute('data-color') || '';
+      const price = this.getAttribute('data-price') || 0;
       const originalText = this.innerHTML;
       
       this.innerHTML = '<i class="bi bi-hourglass-split"></i>';
@@ -327,6 +346,16 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => response.json())
       .then(data => {
+        // Meta Pixel: Trigger AddToCart event
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'AddToCart', {
+            content_ids: [productId],
+            content_type: 'product',
+            value: parseFloat(price),
+            currency: 'INR'
+          });
+        }
+        
         this.innerHTML = '<i class="bi bi-check-lg"></i><span class="quick-add-text">Added</span>';
         this.style.background = '#027a48';
         this.style.borderColor = '#027a48';

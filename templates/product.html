@@ -219,7 +219,18 @@
 
 {% block extra_js %}
 <script>
-// Image gallery switcher
+  // Meta Pixel: ViewContent
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'ViewContent', {
+      content_ids: ['{{ product.id }}'],
+      content_name: '{{ product.name|escapejs }}',
+      content_type: 'product',
+      value: parseFloat('{{ product.price }}'),
+      currency: 'INR'
+    });
+  }
+
+  // Image gallery switcher
 function changeImg(thumb) {
   document.getElementById("mainImg").src = thumb.src;
   document.querySelectorAll(".gallery-thumb").forEach(t => t.classList.remove("active", "border-primary"));
@@ -267,6 +278,16 @@ if (cartBtn) {
     })
     .then(r => r.json())
     .then(json => {
+      // Meta Pixel: Trigger AddToCart event
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'AddToCart', {
+          content_ids: [productId],
+          content_type: 'product',
+          value: parseFloat('{{ product.price }}') * parseInt(qty),
+          currency: 'INR'
+        });
+      }
+
       cartBtn.innerHTML = '<i class="bi bi-check-lg me-2"></i>Added to Cart!';
       cartBtn.classList.add("added");
       

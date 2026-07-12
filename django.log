@@ -3322,3 +3322,282 @@ INFO 2026-06-26 21:32:25,565 autoreload D:\On process\e_commerce\e_commerce-main
 INFO 2026-06-26 21:32:26,652 autoreload Watching for file changes with StatReloader
 INFO 2026-06-26 21:32:26,664 autoreload Watching for file changes with StatReloader
 INFO 2026-06-26 21:32:26,782 autoreload Watching for file changes with StatReloader
+INFO 2026-06-27 20:56:04,376 autoreload Watching for file changes with StatReloader
+INFO 2026-06-27 20:56:40,455 autoreload D:\On process\e_commerce\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
+INFO 2026-06-27 20:56:41,180 autoreload Watching for file changes with StatReloader
+INFO 2026-06-27 20:56:49,389 autoreload D:\On process\e_commerce\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
+INFO 2026-06-27 20:56:50,116 autoreload Watching for file changes with StatReloader
+INFO 2026-06-27 20:57:11,193 autoreload D:\On process\e_commerce\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
+INFO 2026-06-27 20:57:11,754 autoreload Watching for file changes with StatReloader
+INFO 2026-06-27 20:57:18,710 autoreload Watching for file changes with StatReloader
+INFO 2026-06-27 20:58:01,443 autoreload D:\On process\e_commerce\e_commerce-main-main\e_com_pro\settings.py changed, reloading.
+INFO 2026-06-27 20:58:02,069 autoreload Watching for file changes with StatReloader
+INFO 2026-06-27 20:58:10,943 autoreload Watching for file changes with StatReloader
+ERROR 2026-06-27 20:58:21,055 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2026-06-27 20:58:21,062 log Bad Request: /accounts/login/
+WARNING 2026-06-27 20:58:21,062 basehttp "GET /accounts/login/ HTTP/1.1" 400 143
+INFO 2026-06-27 20:58:34,900 autoreload Watching for file changes with StatReloader
+ERROR 2026-06-27 20:58:51,362 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\middleware\security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2026-06-27 20:58:51,363 log Bad Request: /accounts/login/
+WARNING 2026-06-27 20:58:51,363 basehttp "GET /accounts/login/ HTTP/1.1" 400 143
+INFO 2026-06-28 20:22:10,468 autoreload Watching for file changes with StatReloader
+INFO 2026-06-28 20:22:46,343 autoreload D:\On process\e_commerce\e_commerce-main-main\payment\admin.py changed, reloading.
+INFO 2026-06-28 20:22:47,099 autoreload Watching for file changes with StatReloader
+INFO 2026-07-06 20:47:55,875 autoreload Watching for file changes with StatReloader
+INFO 2026-07-06 20:50:30,306 basehttp "GET / HTTP/1.1" 200 64273
+INFO 2026-07-06 20:50:30,353 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-07-06 20:50:30,355 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-07-06 20:50:30,356 basehttp "GET /static/css/style.css HTTP/1.1" 200 52932
+INFO 2026-07-06 20:50:30,356 basehttp "GET /static/img/logo.png HTTP/1.1" 200 54535
+INFO 2026-07-06 20:50:30,365 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 200 651656
+INFO 2026-07-06 20:50:30,371 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 200 629591
+INFO 2026-07-06 20:50:30,393 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 200 702170
+INFO 2026-07-06 20:50:30,399 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-07-06 20:50:30,437 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 200 589385
+INFO 2026-07-06 20:50:30,446 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 200 653032
+INFO 2026-07-06 20:50:30,452 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 200 613266
+INFO 2026-07-06 20:50:30,461 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 200 670560
+INFO 2026-07-06 20:50:30,471 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 200 906743
+INFO 2026-07-06 20:50:30,478 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 200 631376
+INFO 2026-07-06 20:50:30,484 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 200 766515
+INFO 2026-07-06 20:50:30,487 basehttp "GET /static/images2/card1.png HTTP/1.1" 200 65433
+INFO 2026-07-06 20:50:30,491 basehttp "GET /static/images2/card2.png HTTP/1.1" 200 145619
+INFO 2026-07-06 20:50:30,495 basehttp "GET /static/images2/card3.png HTTP/1.1" 200 143583
+INFO 2026-07-06 20:50:30,498 basehttp "GET /static/images2/card4.png HTTP/1.1" 200 93201
+INFO 2026-07-06 20:50:30,502 basehttp "GET /static/images2/card5.png HTTP/1.1" 200 113679
+INFO 2026-07-06 20:50:30,505 basehttp "GET /static/images2/card6.png HTTP/1.1" 200 162807
+INFO 2026-07-06 20:50:30,513 basehttp "GET /static/img/about_hands.png HTTP/1.1" 200 740598
+INFO 2026-07-06 20:50:30,519 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 200 518103
+INFO 2026-07-06 20:50:30,525 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 200 279579
+INFO 2026-07-06 20:50:30,715 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 200 600536
+INFO 2026-07-06 20:50:30,769 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:35,374 basehttp "GET /cart/ HTTP/1.1" 200 18736
+INFO 2026-07-06 20:50:35,396 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:35,397 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:35,397 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:35,397 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:35,398 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:37,741 basehttp "GET /products/ HTTP/1.1" 200 40525
+INFO 2026-07-06 20:50:37,758 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:37,759 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:37,760 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:37,760 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:37,760 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:37,954 basehttp "GET /media/default_product.jpg HTTP/1.1" 200 38556
+INFO 2026-07-06 20:50:37,959 basehttp "GET /media/product_images/81DAWrjwZKL._SL1500_.jpg HTTP/1.1" 200 214910
+INFO 2026-07-06 20:50:37,960 basehttp "GET /media/product_images/61wmDgJwBL._SL1000_.jpg HTTP/1.1" 200 89453
+INFO 2026-07-06 20:50:37,963 basehttp "GET /media/product_images/51IIPDX2HIL.jpg HTTP/1.1" 200 46047
+INFO 2026-07-06 20:50:37,964 basehttp "GET /media/product_images/61-kgLJ0-4L.jpg HTTP/1.1" 200 72274
+INFO 2026-07-06 20:50:37,969 basehttp "GET /media/product_images/61FBnRfEleL._SX569_.jpg HTTP/1.1" 200 37764
+INFO 2026-07-06 20:50:37,970 basehttp "GET /media/product_images/61iNvqcBgrL._SX569_.jpg HTTP/1.1" 200 54191
+INFO 2026-07-06 20:50:37,972 basehttp "GET /media/product_images/71on-AODBL._SY879_.jpg HTTP/1.1" 200 91244
+INFO 2026-07-06 20:50:37,975 basehttp "GET /media/product_images/71CjQ2NYkeL._SL1500_.jpg HTTP/1.1" 200 171761
+INFO 2026-07-06 20:50:37,977 basehttp "GET /media/product_images/1.jpg HTTP/1.1" 200 75737
+INFO 2026-07-06 20:50:37,978 basehttp "GET /media/product_images/61QGzJuMBLL._SL1184_.jpg HTTP/1.1" 200 111969
+INFO 2026-07-06 20:50:37,978 basehttp "GET /media/product_images/2.jpg HTTP/1.1" 200 93392
+INFO 2026-07-06 20:50:37,979 basehttp "GET /media/product_images/71dyRrwkljL._SL1500_.jpg HTTP/1.1" 200 204375
+INFO 2026-07-06 20:50:40,655 basehttp "POST /cart_add/ HTTP/1.1" 200 10
+INFO 2026-07-06 20:50:40,684 basehttp "GET /products/ HTTP/1.1" 200 40511
+INFO 2026-07-06 20:50:40,705 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:40,705 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:40,705 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:40,706 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:40,706 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:40,750 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:44,276 basehttp "GET /cart/ HTTP/1.1" 200 24836
+INFO 2026-07-06 20:50:44,296 basehttp "GET /static/css/tokens.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:44,298 basehttp "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:44,298 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:44,299 basehttp "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:44,299 basehttp "GET /static/css/components.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:46,773 basehttp "GET /payment/checkout/ HTTP/1.1" 302 0
+ERROR 2026-07-06 20:50:46,858 log Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\allauth\socialaccount\templatetags\socialaccount.py", line 21, in provider_login_url
+    provider = adapter.get_provider(request, provider)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\allauth\socialaccount\adapter.py", line 213, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yakash\AppData\Local\Programs\Python\Python311\Lib\site-packages\allauth\socialaccount\adapter.py", line 300, in get_app
+    raise MultipleObjectsReturned
+django.core.exceptions.MultipleObjectsReturned
+ERROR 2026-07-06 20:50:46,863 basehttp "GET /accounts/login/?next=/payment/checkout/ HTTP/1.1" 500 255086
+WARNING 2026-07-06 20:50:46,977 log Not Found: /favicon.ico
+WARNING 2026-07-06 20:50:46,977 basehttp "GET /favicon.ico HTTP/1.1" 404 8713
+INFO 2026-07-06 20:50:59,072 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2026-07-06 20:50:59,079 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-07-06 20:50:59,112 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 11908
+INFO 2026-07-06 20:50:59,149 basehttp "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,151 basehttp "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,152 basehttp "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,153 basehttp "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,154 basehttp "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,154 basehttp "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,155 basehttp "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,156 basehttp "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,191 basehttp "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,191 basehttp "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,192 basehttp "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,193 basehttp "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,193 basehttp "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+INFO 2026-07-06 20:50:59,234 basehttp "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 200 114812
+INFO 2026-07-06 20:50:59,236 basehttp "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 200 114348
+INFO 2026-07-06 20:50:59,237 basehttp "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 200 111268
+INFO 2026-07-06 20:50:59,238 basehttp "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 200 291696
+INFO 2026-07-10 22:27:42,031 autoreload Watching for file changes with StatReloader
+INFO 2026-07-10 22:28:44,348 basehttp "GET / HTTP/1.1" 200 64895
+INFO 2026-07-10 22:28:44,385 basehttp "GET /static/css/tokens.css HTTP/1.1" 200 1019
+INFO 2026-07-10 22:28:44,387 basehttp "GET /static/css/components.css HTTP/1.1" 200 29913
+INFO 2026-07-10 22:28:44,389 basehttp "GET /static/css/style.css HTTP/1.1" 200 52932
+INFO 2026-07-10 22:28:44,390 basehttp "GET /static/img/logo.png HTTP/1.1" 200 54535
+INFO 2026-07-10 22:28:44,398 basehttp "GET /static/img/cat_teething.png HTTP/1.1" 200 651656
+INFO 2026-07-10 22:28:44,405 basehttp "GET /static/img/cat_bath.png HTTP/1.1" 200 629591
+INFO 2026-07-10 22:28:44,409 basehttp "GET /static/img/cat_feeding.png HTTP/1.1" 200 702170
+INFO 2026-07-10 22:28:44,414 basehttp "GET /static/js/main.js HTTP/1.1" 200 1179
+INFO 2026-07-10 22:28:44,441 basehttp "GET /static/img/cat_sensory.png HTTP/1.1" 200 589385
+INFO 2026-07-10 22:28:44,452 basehttp "GET /static/img/cat_babyplay.png HTTP/1.1" 200 653032
+INFO 2026-07-10 22:28:44,461 basehttp "GET /static/img/cat_pettoys.png HTTP/1.1" 200 613266
+INFO 2026-07-10 22:28:44,468 basehttp "GET /static/img/cat_kitchen.png HTTP/1.1" 200 670560
+INFO 2026-07-10 22:28:44,479 basehttp "GET /static/img/age_0_12.png HTTP/1.1" 200 906743
+INFO 2026-07-10 22:28:44,490 basehttp "GET /static/img/age_1_3.png HTTP/1.1" 200 631376
+INFO 2026-07-10 22:28:44,501 basehttp "GET /static/images2/card1.png HTTP/1.1" 200 65433
+INFO 2026-07-10 22:28:44,501 basehttp "GET /static/images2/card4.png HTTP/1.1" 200 93201
+INFO 2026-07-10 22:28:44,504 basehttp "GET /static/images2/card5.png HTTP/1.1" 200 113679
+INFO 2026-07-10 22:28:44,505 basehttp "GET /static/images2/card3.png HTTP/1.1" 200 143583
+INFO 2026-07-10 22:28:44,505 basehttp "GET /static/images2/card2.png HTTP/1.1" 200 145619
+INFO 2026-07-10 22:28:44,510 basehttp "GET /static/img/age_3plus.png HTTP/1.1" 200 766515
+INFO 2026-07-10 22:28:44,513 basehttp "GET /static/images2/card6.png HTTP/1.1" 200 162807
+INFO 2026-07-10 22:28:44,517 basehttp "GET /static/img/newsletter_gift.png HTTP/1.1" 200 279579
+INFO 2026-07-10 22:28:44,520 basehttp "GET /static/img/silicone_vs_plastic_bg.png HTTP/1.1" 200 518103
+INFO 2026-07-10 22:28:44,521 basehttp "GET /static/img/about_hands.png HTTP/1.1" 200 740598
+INFO 2026-07-10 22:28:44,522 basehttp "GET /static/img/hero_desktop.png HTTP/1.1" 200 600536
+INFO 2026-07-10 22:29:06,571 basehttp "GET /media/product_images/61FBnRfEleL._SX569_.jpg HTTP/1.1" 200 37764
+INFO 2026-07-10 22:29:06,575 basehttp "GET /media/product_images/71on-AODBL._SY879_.jpg HTTP/1.1" 200 91244
+INFO 2026-07-10 22:29:06,577 basehttp "GET /media/product_images/2.jpg HTTP/1.1" 200 93392
+INFO 2026-07-10 22:29:06,579 basehttp "GET /media/default_product.jpg HTTP/1.1" 200 38556
+INFO 2026-07-10 22:29:06,579 basehttp "GET /media/product_images/1.jpg HTTP/1.1" 200 75737
+INFO 2026-07-10 22:29:06,579 basehttp "GET /media/product_images/61iNvqcBgrL._SX569_.jpg HTTP/1.1" 200 54191
+INFO 2026-07-10 22:29:06,585 basehttp "GET /media/product_images/51IIPDX2HIL.jpg HTTP/1.1" 200 46047
+INFO 2026-07-10 22:29:06,587 basehttp "GET /media/product_images/71dyRrwkljL._SL1500_.jpg HTTP/1.1" 200 204375
+INFO 2026-07-10 22:29:06,588 basehttp "GET /media/product_images/61-kgLJ0-4L.jpg HTTP/1.1" 200 72274
+INFO 2026-07-10 22:29:06,590 basehttp "GET /media/product_images/61QGzJuMBLL._SL1184_.jpg HTTP/1.1" 200 111969
+INFO 2026-07-10 22:29:06,592 basehttp "GET /media/product_images/71CjQ2NYkeL._SL1500_.jpg HTTP/1.1" 200 171761
+INFO 2026-07-10 22:29:06,593 basehttp "GET /media/product_images/61wmDgJwBL._SL1000_.jpg HTTP/1.1" 200 89453
+INFO 2026-07-10 22:29:06,593 basehttp "GET /media/product_images/81DAWrjwZKL._SL1500_.jpg HTTP/1.1" 200 214910

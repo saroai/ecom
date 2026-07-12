@@ -203,3 +203,36 @@ body {
         {% endif %}
       </div>
 {% endblock %}
+
+{% block extra_js %}
+<script>
+  // Meta Pixel: Purchase
+  if (typeof fbq !== 'undefined') {
+    {% if status == "success" and order %}
+    
+    // Gather product IDs
+    var contentIds = [
+      {% for item in order.items.all %}
+        "{{ item.product.id }}"{% if not forloop.last %},{% endif %}
+      {% endfor %}
+    ];
+    
+    // Count total items
+    var numItems = 0;
+    {% for item in order.items.all %}
+      numItems += parseInt('{{ item.product_qty }}') || 1;
+    {% endfor %}
+
+    // Send Purchase Event
+    fbq('track', 'Purchase', {
+      value: parseFloat('{{ order.amount_paid|default:0 }}') || 0,
+      currency: 'INR',
+      content_ids: contentIds,
+      content_type: 'product',
+      num_items: numItems
+    });
+    
+    {% endif %}
+  }
+</script>
+{% endblock %}

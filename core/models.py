@@ -23,16 +23,16 @@ class Product(models.Model):
 
     # Age group choices
     AGE_GROUP_CHOICES = [
-        ("0-3", "0–3 Years"),
-        ("3-7", "3–7 Years"),
-        ("7+", "7+ Years"),
+        ("0-12m", "0-12 Months"),
+        ("1-3y",  "1-3 Years"),
+        ("3+",    "3+ Years"),
     ]
 
     id            = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name          = models.CharField(max_length=255)
     description   = models.TextField()
-    category      = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="educational")
-    age_group     = models.CharField(max_length=10, choices=AGE_GROUP_CHOICES, default="3-7")
+    category      = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="play")
+    age_group     = models.CharField(max_length=10, choices=AGE_GROUP_CHOICES, default="1-3y")
     
     # NEW FIELDS based on user request
     colors        = models.CharField(max_length=200, default="Pink", help_text="e.g., Pink, Blue, Green")

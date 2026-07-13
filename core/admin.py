@@ -107,10 +107,13 @@ class ProductAdmin(ModelAdmin):
 
     fieldsets = (
         ("💎 Product Details", {
-            "fields": ("name", "description", "colors")
+            "fields": ("name", "description", "category", "age_group", "colors")
         }),
         ("💰 Pricing & Offers", {
             "fields": ("mrp", "price", "offer_details")
+        }),
+        ("⚙️ Inventory & Settings", {
+            "fields": ("stock", "is_featured", "is_active")
         }),
         ("🖼️ Product Images", {
             "fields": ("image_1", "image_2", "image_3", "image_4"),

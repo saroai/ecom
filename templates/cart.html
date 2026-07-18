@@ -57,11 +57,7 @@
                 <!-- Quantity -->
                 <div class="col-6 col-md-3 p-0 d-flex justify-content-start justify-content-md-center">
                   <div class="qty-selector-premium">
-                    <select class="form-select qty-select mx-auto" data-cart-key="{{ item.cart_key }}" data-product-id="{{ item.product.id }}">
-                      {% for i in "123456789"|make_list %}
-                      <option value="{{ forloop.counter }}" {% if item.qty|slugify == forloop.counter|slugify %}selected{% endif %}>{{ forloop.counter }}</option>
-                      {% endfor %}
-                    </select>
+                    <input type="number" class="form-control qty-input text-center mx-auto" data-cart-key="{{ item.cart_key }}" data-product-id="{{ item.product.id }}" value="{{ item.qty }}" min="1" max="{{ item.product.stock|default:999 }}" style="max-width: 80px;">
                   </div>
                 </div>
 
@@ -170,7 +166,7 @@
 
 {% block extra_js %}
 <script>
-$('.qty-select').on('change', function(e) {
+$('.qty-input').on('change', function(e) {
   const qty = $(this).val();
   const cartKey = $(this).data('cart-key');
   const productId = $(this).data('product-id');
